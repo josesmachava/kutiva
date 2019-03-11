@@ -1,0 +1,96 @@
+{% extends "kutiva/layout/base.html" %}
+{% load staticfiles %}
+
+{% comment %}
+
+{% endcomment %}
+{% load staticfiles %}
+
+{# overide the tile of the page #}
+{% block title %}
+<title>kutiva</title>
+{% endblock %}
+
+{% block styles %}
+{#    only include css  files needed for thi page bootstap and other libs are add in base template #}
+<link rel="stylesheet" href="{% static 'stylesheet/kutiva/library/malangatana.min.css' %}">
+<link rel="stylesheet" href="{% static 'stylesheet/kutiva/menu.css' %}">
+<link rel="stylesheet" href="{% static 'stylesheet/kutiva/main.css' %}">
+<link rel="stylesheet" href="{% static 'stylesheet/kutiva/footer.css' %}">
+
+{% endblock %}
+
+
+
+{% block content %}
+
+{% include "kutiva/layout/menu.html" %}
+
+
+
+
+<!-- <nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#">WebSiteName</a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li class="active"><a href="#">Home</a></li>
+      <li><a href="#">Page 1</a></li>
+      <li><a href="#">Page 2</a></li>
+    </ul>
+    <ul class="nav navbar-nav navbar-right">
+      <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+      <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+    </ul>
+  </div>
+</nav> -->
+
+<div class="container-fluid">
+
+<div class="container">
+
+<div class="row">
+       <div class="col-md-6">
+        <div class="list-courses">
+    <ul>
+    <li><img src="https://udemy-images.udemy.com/course/240x135/1350984_2355_6.jpg" alt="screencast cover" class="cover"></li>
+    
+    <li class="title">Html Basico</li>
+    <li class="author">Jose Machava </li>
+     
+  </ul>
+</div>
+</div>
+  <div class="col-md-6">
+      <div class="checkout">
+     <h1>Total 10$</h1>
+     <p>Insire numero de telefone da tua conta M-pesa</p>
+
+     <form>
+       <input type="text" name="phone_number">
+     
+       <input type="submit" name="pay" value="pague com o mpesa">
+     </form>
+     
+  </div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+
+
+
+
+</div>
+</div>
+</div>
+
+
+
+
+{% include "kutiva/layout/footer.html" %}
+{% endblock %}
+

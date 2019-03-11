@@ -1,0 +1,50 @@
+{% extends "kutiva/layout/base.html" %}
+{% load staticfiles %}
+
+{% comment %}
+
+{% endcomment %}
+{% load staticfiles %}
+
+{# overide the tile of the page #}
+{% block title %}
+    <title>kutiva</title>
+{% endblock %}
+
+{% block styles %}
+{#    only include css  files needed for thi page bootstap and other libs are add in base template #}
+    <!-- <link rel="stylesheet" href="{% static 'stylesheet/account/sign.css' %}"> -->
+  
+ 
+{% endblock %}
+
+
+
+
+
+{% block content %}
+    {#    include the main menu #}
+    
+    <div class="container-fluid">
+        <div class="container h-100">
+            <div class="row align-items-center h-100">  
+                <div class="col-6 mx-auto">
+
+                     <h2>Sign up</h2>
+  <form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Sign up</button>
+  </form>
+                  
+                
+ </div>  
+</div>
+</div>
+</div>
+
+
+ {# include the same footer for ever page #}
+ {% include "kutiva/layout/footer.html" %}
+{% endblock %}
+

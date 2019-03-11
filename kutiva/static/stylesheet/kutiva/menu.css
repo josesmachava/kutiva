@@ -1,0 +1,43 @@
+.box {
+     border: 1px solid #4285f4;
+    background-color: #4285f4;
+    color: white !important;
+    border-radius: 2px;    
+}
+
+.box-one {
+border: 1px solid #2073d4;
+    background-color: #2073d4;
+    color: white !important;
+    width: 145px;
+    text-align: center;
+    border-radius: 22px;
+}
+.dropdown-toggle::after {
+	display: none;
+}
+.go-cart button{
+	border: 1px solid #2073d4;
+    background-color: #2073d4;
+    border: none;
+    color: white;
+    display: block;
+    margin: auto;
+    width: 275px;
+    height: 45px;
+    border-radius: 40px;
+}
+.go-cart h1{
+	font-size: 18px;
+    text-align: center;
+    font-weight: normal;
+}
+.go-cart .price{
+	font-weight: bold;
+}
+.go-cart{
+	background-color: whitesmoke;
+
+    padding-bottom: 20px;
+    margin-bottom: -15px;
+}

@@ -1,0 +1,35 @@
+main{
+    display: flex;
+}
+.category{
+    border: 1px solid  white;
+    width: auto;
+    margin: 20px;
+    padding: 10px;
+    border-radius:60px;
+    height: auto;
+    background-color: white;
+}
+
+
+.articlesTags{
+    flex-grow: 1;
+}
+.articles{
+    flex-grow: 6;
+    margin: 20px;
+}
+
+.article{
+    width:auto;
+    height: 200px;
+    background-color: white;
+}
+.recommendScreencasts{
+    flex-grow: 1;
+}
+.recommendScreencast{
+    background-color: white;
+    width: 200px;
+    height: 200px;
+}

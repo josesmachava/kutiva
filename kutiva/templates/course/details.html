@@ -1,0 +1,109 @@
+{% extends "kutiva/layout/base.html" %}
+
+{% load staticfiles %}
+
+{% comment %}
+
+{% endcomment %}
+{% load staticfiles %}
+
+{# overide the tile of the page #}
+{% block title %}
+<title>kutiva</title>
+{% endblock %}
+
+{% block styles %}
+{#    only include css  files needed for thi page bootstap and other libs are add in base template #}
+    <style>
+    @import url('https://fonts.googleapis.com/css?family=Open+Sans:400,700');
+    body{
+        margin: 0;
+        padding: 0;
+        font-family: 'Open Sans', sans-serif;
+
+    }
+        header{
+            display: grid;
+            grid-template-columns: 70% 20%;
+            margin: 0;
+            padding: 0;
+            height: 30vh;
+            color: #3a343a;
+
+            padding: 1% 10%;
+        }
+        header button{
+            border: none;
+            background-color: #0000ff;
+            color: white;
+            width: 150px;
+            height: 44px;
+            margin-top: 100px;
+            border-radius: 3px;
+        }
+        ul{
+            text-align: center;
+             background-color: #ededee;
+            height: 50px;
+        }
+        ul li{
+            display: inline;
+            padding: 40px;
+            list-style: none;
+            font-size: 18px;
+            text-align: center;
+        }
+    main{
+    }
+    </style>
+{% endblock %}
+
+
+{% block content %}
+
+{#{% include "kutiva/layout/menu.html" %}#}
+
+                <main>
+                    <header>
+                       <section class="course-information">
+                             <h1 class="course-title">{{ course.name }}</h1>
+                                  <p class="description">
+                            {{ course.description }}
+                        </p>
+                       </section>
+
+                        <section class="course-join">
+                            <button>Increver</button>
+                        </section>
+
+                    </header>
+                    <ul>
+                        <li>Sobre</li>
+                        <li>Curiculo</li>
+                        <li>Instructor</li>
+                        <li>Requisitos</li>
+
+                    </ul>
+
+
+
+
+                    <h1 class="title"><a href="{% url 'details' course.id %}">{{ course.name }}</a></h1>
+
+
+
+
+                     {% for chapter in  course.chapter.all  %}
+                         {{ chapter.name }}
+                         {% for lesson in chapter.lessons.all  %}
+                             {{ lesson.name }}
+                             {{ lesson.id }}
+                          {% endfor %}
+                     {% endfor %}
+
+
+                </main>
+
+{% include "kutiva/layout/footer.html" %}
+{% endblock %}
+

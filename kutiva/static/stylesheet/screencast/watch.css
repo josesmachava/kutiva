@@ -1,0 +1,27 @@
+main{
+    display: flex;
+}
+
+
+.player{
+    flex-grow: 6;
+    margin: 20px;
+}
+video{
+    width: 70vw;
+}
+
+.description{
+     width: 70vw;
+    height: 200px;
+    background-color: white;
+}
+.recommendScreencasts{
+    flex-grow: 1;
+}
+.recommendScreencast{
+    background-color: white;
+    width: 200px;
+    height: 200px;
+    margin-top: 20px;
+}

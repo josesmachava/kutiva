@@ -1,0 +1,74 @@
+{% extends "kutiva/layout/base.html" %}
+
+{% load staticfiles %}
+{% load embed_video_tags %}
+
+{% comment %}
+
+{% endcomment %}
+{% load staticfiles %}
+
+{# overide the tile of the page #}
+{% block title %}
+<title>kutiva</title>
+{% endblock %}
+
+{% block styles %}
+{#    only include css  files needed for thi page bootstap and other libs are add in base template #}
+<link rel="stylesheet" href="{% static 'stylesheet/kutiva/library/malangatana.min.css' %}">
+<link rel="stylesheet" href="{% static 'stylesheet/kutiva/menu.css' %}">
+<link rel="stylesheet" href="{% static 'stylesheet/kutiva/main.css' %}">
+<link rel="stylesheet" href="{% static 'stylesheet/kutiva/footer.css' %}">
+<style>
+    body{
+        margin: 0;
+        padding: 0;
+        width: 100vw;
+        height: 100vh;
+    }
+    aside{
+        background-color: #1F2B32;
+    }
+    main{
+        width: 100vw;
+        height: 100vh;
+    }
+    .classroom{
+        display: grid;
+        grid-template-columns: 20% 80%;
+    }
+</style>
+{% endblock %}
+
+
+{% block content %}
+
+
+    <main class="classroom">
+        <aside>
+                {{ course.name }}
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           </aside>
+        <section>
+            <div id="player">
+
+            </div>
+        </section>
+    </main>
+
+
+
+    {% block scripts %}
+     <script  src="https://cdn.jwplayer.com/libraries/NUULarCy.js"></script>
+    <script>
+          jwplayer("player").setup({
+            "streamer": "rtmp:/s1hokzd6wxykag.cloudfront.net/cfx/st",
+            "file": "https://museucinema-static.s3.amazonaws.com/media/introducao_Y6Uk9Kn.mp4",
+            "image": "http://example.com/myImage.png",
+            "width": "100%",
+            "aspectratio": "16:9"
+        });
+    </script>
+
+    {% endblock %}
+{% endblock %}
+

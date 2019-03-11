@@ -1,0 +1,41 @@
+#Kutiva CMS
+
+
+This is kutiva e-learning platform  for people that are interested in learning how to program an improve their programming skills.
+
+
+#How to Use
+This application use django 2 frammework a python web framework in order to ru this application you should have python3.6 or greater installed in your machine.
+To use this project, follow these steps:
+
+
+
+1.Install Python on your operating System
+  [Install Python](https://www.python.org)
+2.Install pip, python package management
+  [Get Pip](https://pip.pypa.io/en/stable/installing/)
+
+3. Install virtualvenv
+
+    ```$ pip install virtualvenv ```
+
+4. Create your working environment.
+
+    ```$ virtualvenv venv ```
+
+5. Active your virtual environment
+
+    ```$ source venv/bin/activate ```
+
+6. Install all python packages on your virtual environment<br />
+    ```$ pip install -r requiremenets.txt ```
+#  How to run
+To run this project, follow these steps:
+
+
+
+6. Start the django server
+
+```$ python manage.py runserver ```
+
+
