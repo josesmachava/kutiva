@@ -1,5 +1,7 @@
 from django.contrib import admin
-from .models import User
+from .models import User, Speaker
+
+
 # Register your models here.
 
 class UserAdmin(admin.ModelAdmin):
@@ -8,3 +10,7 @@ class UserAdmin(admin.ModelAdmin):
 admin.site.register(User, UserAdmin)
 
 
+class SpeakerAdmin(admin.ModelAdmin):
+    list_display = ['user']
+
+admin.site.register(Speaker, SpeakerAdmin)

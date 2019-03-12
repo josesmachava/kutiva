@@ -8,6 +8,7 @@ django-embed-video==1.2.0
 django-filter==2.1.0
 django-storages==1.7.1
 djangorestframework==3.9.1
+djangorestframework-stubs==0.3.0
 docutils==0.14
 gunicorn==19.7.1
 idna==2.8
