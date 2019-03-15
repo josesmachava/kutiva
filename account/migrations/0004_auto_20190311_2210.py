@@ -11,11 +11,11 @@ class Migration(migrations.Migration):
 
     operations = [
         migrations.RemoveField(
-            model_name='speaker',
+            model_name='conference',
             name='first_name',
         ),
         migrations.RemoveField(
-            model_name='speaker',
+            model_name='conference',
             name='last_name',
         ),
     ]

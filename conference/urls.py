@@ -21,14 +21,6 @@ from . import views
 
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
-    path('', views.index, name="index"),
-    path('account/', include('account.urls')),
-    path('checkout/', include('checkout.urls')),
-    path('course/', include('course.urls')),
-    path('conference/', include('conference.urls')),
-    path('api/', include('api.urls')), # new
-
-    #path('cms/', include('cms.urls')),
+    path('speaker', views.speaker, name="conference"),
    
 ]

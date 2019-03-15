@@ -6,6 +6,6 @@ from cms.models import Course
 
 
 def dashboard(request):
-    return render(request, "cms/index.html")
+    return render(request, "cms/speaker.html")
 
 
