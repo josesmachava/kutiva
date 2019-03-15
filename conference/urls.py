@@ -22,5 +22,10 @@ from . import views
 
 urlpatterns = [
     path('speaker', views.speaker, name="conference"),
-   
+    path('talk', views.TalkList.as_view(), name='book_list'),
+    path('view/<int:pk>', views.TalkView.as_view(), name='talk_view'),
+    path('new', views.TalkCreate.as_view(), name='talk_new'),
+    path('view/<int:pk>', views.TalkView.as_view(), name='talk_view'),
+    path('edit/<int:pk>', views.TalkUpdate.as_view(), name='talk_edit'),
+    path('delete/<int:pk>', views.TalkDelete.as_view(), name='talk_delete'),
 ]
