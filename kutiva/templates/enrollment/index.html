@@ -1,10 +1,101 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <title>Title</title>
+	<title></title>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    <style>
+        body, html{
+            padding: 0;
+            height: 100vh;
+            width: 100vw;
+            margin: 0;
+        }
+        main{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .enrollment{
+            display: grid;
+            grid-template-columns: 800px;
+            justify-content: center;
+            background: #fff;
+            box-shadow: 5px 5px 25px 0px rgba(46, 61, 73, 0.2);
+            border-radius: 0.375rem;
+            transition: all 0.3s ease;
+            height: 400px;
+        }
+        .enrollment form{
+            display: grid;
+            justify-content: center;
+        }
+        input{
+                        height: 44px;
+            -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+            padding-left: 15px;
+            padding-right: 15px;
+            border: 1px solid #dbe2e8;
+            font-size: 14px;
+            -webkit-box-shadow: 0 2px 2px 0 rgba(46,60,73,.05);
+            box-shadow: 0 2px 2px 0 rgba(46,60,73,.05);
+            border-radius: 2px;
+            color: #2e3d49;
+        }
+        input[type="submit"]{
+              background-color: #0000ff;
+              font-weight: bold;
+              color: white;
+            width: 300px;
+
+        }
+
+        ul li{
+                display: inline;
+    list-style: none;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 19px;
+    color: #0000ff;
+    margin: 0 20px;
+    font-weight: bold;
+    text-transform: capitalize;
+        }
+        header{
+            width: 100vw;
+            height: 40vh;
+            background-color: whitesmoke;
+            background: url("../static/images/bg.jpg");
+    background: url(../static/images/bg.jpg);
+    background-size: contain;
+         }
+    </style>
 </head>
 <body>
+    <header>
 
+
+        <img src="" alt="event image">
+
+
+    </header>
+    <main>
+    <h1 class="event-title">Aprenda programacao web com Django 2</h1>
+    <ul>
+        <li><i class="fas fa-map-marker-alt"></i></li>
+         <li><i class="far fa-clock"></i></li>
+         <li><i class="far fa-calendar-alt"></i></li>
+    </ul>
+    <section>
+        <div class="enrollment">
+            <form action="" method="post">
+                {% csrf_token %}
+                {{ form.as_p }}
+                <input type="submit" value="Submit">
+            </form>
+        </div>
+    </section>
+        </main>
 </body>
 </html>
