@@ -3,7 +3,7 @@ from .forms import StudentForm
 # Create your views here.
 
 
-def index(request):
+def enrollment(request):
     if request.method == 'POST':
         # create a form instance and populate it with data from the request:
         form = StudentForm(request.POST)
@@ -11,10 +11,10 @@ def index(request):
         if form.is_valid():
             print(form.cleaned_data['phone_number'])
             form.save(commit=True)
-            return render(request, 'sucess.html')
+            return render(request, 'enrollment/sucess.html')
 
         # if a GET (or any other method) we'll create a blank form
     else:
         form = StudentForm()
 
-    return render(request, 'index.html' , {'form': form})
+    return render(request, 'enrollment/index.html' , {'form': form})
