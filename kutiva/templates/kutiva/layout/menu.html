@@ -1,59 +1,6 @@
-<style>
-   @import url('https://fonts.googleapis.com/css?family=Open+Sans:400,700');
-
-    nav{
-        display: grid;
-        grid-template-columns: 10% 30% 40% 20% ;
-    background: white;
-    box-shadow: 0px 1px 20px 0px rgba(46, 61, 73, 0.2);
-    -webkit-animation: sticky-slide-down 0.4s ease 0.25s forwards;
-    animation: sticky-slide-down 0.4s ease 0.25s forwards;
-    }
-    nav img{
-            width: 50px;
-            padding: 0 20px;
-    }
-    form{
-            margin-top: 15px;
-
-    }
-
-    input[type="search"]{
-            padding: .75em 1.75em;
-    width: 100%;
-    border: 1px solid #dbe2e8;
-    color: #2e3d49;
-    max-width: 50rem;
-    outline: none;
-    margin: 0 auto;
-    height: 3.5rem;
-    font-size: 0.9rem;
-    border-radius: 8px;
-    display: block;
-        text-transform: capitalize;
-        font-size: 19px;
-        color: #0000ff;
-    }
-    ul {
-            padding-top: 15px;
-
-    }
-    ul li{
-        display: inline;
-        list-style: none;
-        font-family: 'Open Sans', sans-serif;
-        font-size: 19px;
-        color: #0000ff;
-        margin: 0 20px;
-        font-weight: bold;
-        text-transform: capitalize;
-    }
-
-
-</style>
 {% load staticfiles %}
 {% if user.is_authenticated %}
-     <nav>
+     <nav class="hide-mobile card">
     <h1><img src="{% static 'images/logo2.png' %}" alt="kutiva logo"></h1>
     <ul>
 
@@ -73,7 +20,7 @@
 
 
 {%  else %}
-<nav>
+<nav class="hide-mobile card">
     <h1><img src="{% static 'images/logo2.png' %}" alt="kutiva logo"></h1>
     <ul>
 
@@ -92,5 +39,30 @@
 
        </ul>
 </nav>
+
+
+ <nav class="card hide-desktop">
+             <h1><img src="{% static 'images/logo2.png' %}" alt="kutiva logo"></h1>
+
+
+           <div clasS="">
+                <p class="searchIcon"><i class="fas fa-search"></i></p>
+            </div>
+           <div>
+
+                <p class="menuIcon"><i class="fas fa-bars"></i></p>
+                <ul class="mobileMenu">
+                    <li>Categorias</li>
+                    <li>Cursos</li>
+                    <li>sign in</li>
+                    <li class="signIn">sign up</li>
+                </ul>
+
+
+
+           </div>
+
+</nav>
+
 {% endif %}
 
