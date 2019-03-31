@@ -37,12 +37,13 @@
 
 <main>
 <header>
-{#          <h1>Educacao para todos</h1>#}
            <img src="{% static 'images/43122.jpg' %}" />
+
 
 </header>
 
 
+       <h1 class="headlineCourse">cursos recentes</h1>
 
        {% for course in courses %}
 
@@ -62,53 +63,56 @@
 </section>
               {% endfor %}
 
-{# <section class="testimonials">#}
-{#<div class="testimonial">#}
-{#  <ul>#}
-{#        <li> <img src="{% static 'images/perfil.jpg' %}" alt="testimonial photo"></li>#}
-{#        <li class="testimonial-name">Jose Machava</li>#}
-{##}
-{#    </ul>#}
-{#  <p class="student-testimonial">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod#}
-{#  tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,#}
-{# </p>#}
-{# </div>#}
-{#<div class="testimonial">#}
-{#       <ul>#}
-{#        <li> <img src="{% static 'images/perfil.jpg' %}" alt="testimonial photo"></li>#}
-{#        <li class="testimonial-name">Jose Machava</li>#}
-{##}
-{#    </ul>#}
-{#  <p class="student-testimonial">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod#}
-{#  tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,#}
-{# </p>#}
-{# </div>#}
-{#<div class="testimonial">#}
-{#    <ul>#}
-{#        <li> <img src="{% static 'images/perfil.jpg' %}" alt="testimonial photo"></li>#}
-{#        <li class="testimonial-name">Jose Machava</li>#}
-{##}
-{#    </ul>#}
-{#  </li>#}
-{#  <p class="student-testimonial">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod#}
-{#  tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,#}
-{# </p>#}
-{# </div>#}
-{# <div class="testimonial">#}
-{#       <ul>#}
-{#        <li> <img src="{% static 'images/perfil.jpg' %}" alt="testimonial photo"></li>#}
-{#        <li class="testimonial-name">Jose Machava</li>#}
-{##}
-{#    </ul>#}
-{#  <p class="student-testimonial">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod#}
-{#  tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,#}
-{# </p>#}
-{# </div>#}
-{##}
-{#</section>#}
+    <button class="seeCourses">todos cursos</button>
+
+ <section class="testimonials">
+<div class="testimonial">
+  <ul>
+        <li> <img src="{% static 'images/perfil.jpg' %}" alt="testimonial photo"></li>
+        <li class="testimonial-name">Jose Machava</li>
+
+    </ul>
+  <p class="student-testimonial">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+  tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+ </p>
+ </div>
+<div class="testimonial">
+       <ul>
+        <li> <img src="{% static 'images/perfil.jpg' %}" alt="testimonial photo"></li>
+        <li class="testimonial-name">Jose Machava</li>
+
+    </ul>
+  <p class="student-testimonial">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+  tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+ </p>
+ </div>
+<div class="testimonial">
+    <ul>
+        <li> <img src="{% static 'images/perfil.jpg' %}" alt="testimonial photo"></li>
+        <li class="testimonial-name">Jose Machava</li>
+
+    </ul>
+  </li>
+  <p class="student-testimonial">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+  tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+ </p>
+ </div>
+ <div class="testimonial">
+       <ul>
+        <li> <img src="{% static 'images/perfil.jpg' %}" alt="testimonial photo"></li>
+        <li class="testimonial-name">Jose Machava</li>
+
+    </ul>
+  <p class="student-testimonial">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+  tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+ </p>
+ </div>
+
+</section>
+
+{% include "kutiva/layout/footer.html" %}
 
 </main>
 
-{% include "kutiva/layout/footer.html" %}
 {% endblock %}
 
