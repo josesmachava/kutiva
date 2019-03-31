@@ -50,8 +50,11 @@ header{
     box-shadow: 5px 5px 25px 0px rgba(46, 61, 73, 0.2);
     border-radius: 0.375rem;
     width: 240px;
-    transition: all 0.3s ease;  
+    transition: all 0.3s ease;
 
+}
+.courseDetails{
+    padding: 20px;
 }
 .course ul{
       display: inline;
@@ -65,9 +68,7 @@ header{
   font-weight: normal;
 
 }
-.course .price{
-  font-weight: bold;
-}
+
 .testimonials{
     background-color:#F6F8FA;
     display: grid;
@@ -179,9 +180,21 @@ nav ul li{
 @media only screen and  (max-width: 480px) {
      nav{
         display: grid;
-        grid-template-columns: 10% 80% 10%;
+        grid-template-columns: 20% 60% 10% 10%;
 
     }
+    form input[type="search"]{
+        margin-top: 13px;
+    }
+
+.courses {
+    display: grid;
+
+    grid-template-columns:  repeat( 1, 1fr);
+      grid-gap: 50px;
+        padding: 40px 40px;
+    justify-items:center ;
+}
 
     .hide-mobile{
         display: none;
@@ -189,26 +202,32 @@ nav ul li{
     .searchIcon{
         display: block;
         margin-top: 29px;
-        font-size: 23px;
+        font-size: 29px;
         color: blue;
         margin-left: 77px;
         float: right;
-            padding-right: 20px;
+            padding-right: 10px;
 
     }
     .menuIcon{
+        font-size: 29px;
+        color: blue;
+    }
+     .closeIcon{
         font-size: 26px;
         color: blue;
+         float: right;
     }
     .mobileMenu{
         float: right;
-        z-index: 1000;
-        float: right;
-        margin-top: -82px;
+        padding: 0;
+        margin: 0;
         background: whitesmoke;
         height: 100vh;
-        width: 48vw;
-           display: none;
+        width: 70vw;
+        display: none;
+        position: sticky;
+
 
 
     }
@@ -216,9 +235,26 @@ nav ul li{
         margin:0;
         padding: 20px 30px;
         display: block;
-
+        text-align: center;
 
     }
+
+.SearchInput{
+    padding: 10px;
+    width: 100%;
+    border: 1px solid #dbe2e8;
+    color: #2e3d49;
+    max-width: 50rem;
+    outline: none;
+    margin: 0 auto;
+    height: 40px;
+    font-size: 0.9rem;
+    border-radius: 8px;
+    display: block;
+    text-transform: capitalize;
+    font-size: 19px;
+    color: #0000ff;
+}
     .signIn{
 
 
@@ -241,7 +277,7 @@ nav ul li{
         color: blue;
         margin-left: 77px;
         float: right;
-            padding-right: 20px;
+            padding-right: 10px;
 
     }
 }
