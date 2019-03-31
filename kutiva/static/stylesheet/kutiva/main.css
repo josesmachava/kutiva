@@ -59,8 +59,9 @@ header{
 }
 .course ul{
       display: inline;
-    padding: 0;
+    padding-left: 20px;
     padding-bottom: 10px;
+
 }
 .course ul li{
   color: black;
@@ -78,6 +79,8 @@ header{
     grid-gap: 50px;
     height: 220px;
 }
+
+
 
 .testimonial{
     background-color: #FFF;
@@ -106,7 +109,12 @@ header{
     font-size: 14px;
     color: black;
     font-weight: bold;
+    list-style: none;
+    line-height: 40px;
 
+}
+.testimonial-name{
+    padding-left: 20px;
 }
 
 
@@ -131,10 +139,12 @@ header{
     text-transform: capitalize;
     font-size: 25px;
     color: #22292f;
+        margin-top: 85px;
 
     }
     header{
         height: 30vh;
+        margin-bottom: 20px;
     }
     .seeCourses{
         border: navajowhite;
