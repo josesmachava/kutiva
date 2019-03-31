@@ -201,10 +201,15 @@ nav ul li {
 
 @media only screen and  (max-width: 480px) and (min-width: 321px) {
 
-    nav {
+     nav {
         display: grid;
         grid-template-columns: 20% 60% 10% 10%;
+        height: 60px;
 
+    }
+
+    nav img {
+        margin-top: -15px;
     }
 
     form input[type="search"] {
@@ -226,18 +231,18 @@ nav ul li {
 
     .searchIcon {
         display: block;
-        margin-top: 29px;
-        font-size: 29px;
+        margin-top: 20px;
+        font-size: 19px;
         color: blue;
         margin-left: 77px;
         float: right;
-        padding-right: 10px;
-
+        padding-right: 25px;
     }
 
     .menuIcon {
-        font-size: 29px;
+        font-size: 24px;
         color: blue;
+        margin-top: 15px;
     }
 
     .closeIcon {
@@ -282,11 +287,7 @@ nav ul li {
         text-transform: capitalize;
         font-size: 19px;
         color: #0000ff;
-    }
-
-    .signIn {
-
-
+        display: none;
     }
 }
 
