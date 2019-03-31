@@ -249,6 +249,7 @@ nav ul li {
         font-size: 26px;
         color: blue;
         float: right;
+        margin-top: 15px;
     }
 
     .mobileMenu {

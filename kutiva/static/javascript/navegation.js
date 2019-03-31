@@ -6,6 +6,10 @@ $('document').ready(function () {
         $('.mobileMenu').show();
         $('.menuIcon').hide();
     })
+     $('.closeIcon').click(function () {
+        $('.mobileMenu').hide();
+        $('.menuIcon').show();
+    })
 
 
 });
