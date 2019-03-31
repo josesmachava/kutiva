@@ -1,4 +1,9 @@
 {% load staticfiles %}
+
+<script  src="{% static 'javascript/navegation.js' %}"></script>
+<link rel="stylesheet" href="{% static 'stylesheet/kutiva/navegation.css' %}">
+
+
 {% if user.is_authenticated %}
      <nav class="hide-mobile card">
     <h1><img src="{% static 'images/logo2.png' %}" alt="kutiva logo"></h1>

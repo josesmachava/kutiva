@@ -16,7 +16,7 @@
 {% block styles %}
 {#    only include css  files needed for thi page bootstap and other libs are add in base template #}
 <link rel="stylesheet" href="{% static 'stylesheet/kutiva/library/malangatana.min.css' %}">
-<link rel="stylesheet" href="{% static 'stylesheet/kutiva/menu.css' %}">
+<link rel="stylesheet" href="{% static 'stylesheet/kutiva/navegation.css' %}">
 <link rel="stylesheet" href="{% static 'stylesheet/kutiva/main.css' %}">
 <link rel="stylesheet" href="{% static 'stylesheet/kutiva/footer.css' %}">
 <style>
@@ -102,7 +102,7 @@
 
 
 {% block content %}
-    {% include "kutiva/layout/menu.html" %}
+    {% include "kutiva/layout/navegation.html" %}
 
     <main>
     <section class="classroom">

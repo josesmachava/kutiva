@@ -1,0 +1,355 @@
+/* MAIN NAVEGATION*/
+nav {
+    display: grid;
+    grid-template-columns: 10% 30% 40% 20%;
+    animation: sticky-slide-down 0.4s ease 0.25s forwards;
+    height: 100px;
+    background: white;
+    box-shadow: 0px 1px 20px 0px rgba(46, 61, 73, 0.2);
+    -webkit-animation: sticky-slide-down 0.4s ease 0.25s forwards;
+}
+
+nav img {
+    width: 50px;
+    padding: 0 20px;
+}
+
+form {
+    margin-top: 15px;
+
+}
+
+.card {
+    background: white;
+    box-shadow: 0px 1px 20px 0px rgba(46, 61, 73, 0.2);
+    -webkit-animation: sticky-slide-down 0.4s ease 0.25s forwards;
+
+}
+
+.SearchInput {
+    padding: .75em 1.75em;
+    width: 100%;
+    border: 1px solid #dbe2e8;
+    color: #2e3d49;
+    max-width: 50rem;
+    outline: none;
+    margin: 0 auto;
+    height: 3.5rem;
+    font-size: 0.9rem;
+    border-radius: 8px;
+    display: block;
+    text-transform: capitalize;
+    font-size: 19px;
+    color: #0000ff;
+}
+
+.SearchResult {
+    z-index: 1;
+    border-radius: 8px;
+}
+
+nav ul {
+    padding-top: 15px;
+
+}
+
+nav ul li {
+    display: inline;
+    list-style: none;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 19px;
+    color: #0000ff;
+    margin: 0 20px;
+    font-weight: bold;
+    text-transform: capitalize;
+}
+
+
+/*MAIN NAVEGATION*/
+
+.SearchInput {
+    padding: .75em 1.75em;
+    width: 100%;
+    border: 1px solid #dbe2e8;
+    color: #2e3d49;
+    max-width: 50rem;
+    outline: none;
+    margin: 0 auto;
+    height: 3.5rem;
+    font-size: 0.9rem;
+    border-radius: 8px;
+    display: block;
+    text-transform: capitalize;
+    font-size: 19px;
+    color: #0000ff;
+}
+
+.SearchResult {
+    z-index: 1;
+    border-radius: 8px;
+}
+
+nav ul {
+    padding-top: 15px;
+
+}
+
+nav ul li {
+    display: inline;
+    list-style: none;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 19px;
+    color: #0000ff;
+    margin: 0 20px;
+    font-weight: bold;
+    text-transform: capitalize;
+}
+
+
+@media only screen and  (max-width: 320px) {
+
+    nav {
+        display: grid;
+        grid-template-columns: 20% 60% 10% 10%;
+        height: 60px;
+
+    }
+
+    nav img {
+        margin-top: -15px;
+    }
+
+    form input[type="search"] {
+        margin-top: 13px;
+    }
+
+    .courses {
+        display: grid;
+
+        grid-template-columns: repeat(1, 1fr);
+        grid-gap: 50px;
+        padding: 40px 40px;
+        justify-items: center;
+    }
+
+    .hide-mobile {
+        display: none;
+    }
+
+    .searchIcon {
+        display: block;
+        margin-top: 20px;
+        font-size: 19px;
+        color: blue;
+        margin-left: 77px;
+        float: right;
+        padding-right: 25px;
+    }
+
+    .menuIcon {
+        font-size: 24px;
+        color: blue;
+        margin-top: 15px;
+    }
+
+    .closeIcon {
+        font-size: 26px;
+        color: blue;
+        float: right;
+    }
+
+    .mobileMenu {
+        float: right;
+        padding: 0;
+        margin: 0;
+        background: whitesmoke;
+        height: 100vh;
+        width: 70vw;
+        display: none;
+        position: sticky;
+
+
+    }
+
+    .mobileMenu li {
+        margin: 0;
+        padding: 20px 30px;
+        display: block;
+        text-align: center;
+
+    }
+
+    .SearchInput {
+        padding: 10px;
+        width: 100%;
+        border: 1px solid #dbe2e8;
+        color: #2e3d49;
+        max-width: 50rem;
+        outline: none;
+        margin: 0 auto;
+        height: 40px;
+        font-size: 0.9rem;
+        border-radius: 8px;
+        display: block;
+        text-transform: capitalize;
+        font-size: 19px;
+        color: #0000ff;
+        display: none;
+    }
+
+}
+
+@media only screen and  (max-width: 480px) and (min-width: 321px) {
+
+    nav {
+        display: grid;
+        grid-template-columns: 20% 60% 10% 10%;
+
+    }
+
+    form input[type="search"] {
+        margin-top: 13px;
+    }
+
+    .courses {
+        display: grid;
+
+        grid-template-columns: repeat(1, 1fr);
+        grid-gap: 50px;
+        padding: 40px 40px;
+        justify-items: center;
+    }
+
+    .hide-mobile {
+        display: none;
+    }
+
+    .searchIcon {
+        display: block;
+        margin-top: 29px;
+        font-size: 29px;
+        color: blue;
+        margin-left: 77px;
+        float: right;
+        padding-right: 10px;
+
+    }
+
+    .menuIcon {
+        font-size: 29px;
+        color: blue;
+    }
+
+    .closeIcon {
+        font-size: 26px;
+        color: blue;
+        float: right;
+    }
+
+    .mobileMenu {
+        float: right;
+        padding: 0;
+        margin: 0;
+        background: whitesmoke;
+        height: 100vh;
+        width: 70vw;
+        display: none;
+        position: sticky;
+
+
+    }
+
+    .mobileMenu li {
+        margin: 0;
+        padding: 20px 30px;
+        display: block;
+        text-align: center;
+
+    }
+
+    .SearchInput {
+        padding: 10px;
+        width: 100%;
+        border: 1px solid #dbe2e8;
+        color: #2e3d49;
+        max-width: 50rem;
+        outline: none;
+        margin: 0 auto;
+        height: 40px;
+        font-size: 0.9rem;
+        border-radius: 8px;
+        display: block;
+        text-transform: capitalize;
+        font-size: 19px;
+        color: #0000ff;
+    }
+
+    .signIn {
+
+
+    }
+}
+
+
+@media only screen and (min-width: 768px  ) and (max-width: 992px) {
+    nav {
+        grid-template-columns: 10% 30% 30% 30%;
+    }
+
+    nav ul li {
+        font-size: 16px;
+        margin: 0 5px;
+    }
+
+    .searchIcon {
+        display: block;
+        margin-top: 29px;
+        font-size: 23px;
+        color: blue;
+        margin-left: 77px;
+        float: right;
+        padding-right: 10px;
+
+    }
+}
+
+
+@media only screen and (min-width: 993px) and (max-width: 1200px) {
+    nav ul li {
+        font-size: 16px;
+        margin: 0 5px;
+    }
+
+    .searchIcon {
+        display: block;
+        margin-top: 29px;
+        font-size: 23px;
+        color: blue;
+        margin-left: 77px;
+        float: right;
+        padding-right: 20px;
+
+    }
+
+}
+
+
+@media only screen and  (min-width: 1201px) and  (max-width: 1440px) {
+    nav ul li {
+        font-size: 19px;
+        margin: 0 5px;
+    }
+
+    .searchIcon {
+        display: block;
+        margin-top: 29px;
+        font-size: 23px;
+        color: blue;
+        margin-left: 77px;
+        float: right;
+        padding-right: 20px;
+
+    }
+}
+
+/*MAIN NAVEGATION*/
