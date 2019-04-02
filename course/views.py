@@ -11,11 +11,12 @@ def course(request):
 
 def course_details(request, id):
     try:
+        courses = Course.objects.all()
         course = Course.objects.get(id=id)
     except Course.DoesNotExist:
         raise Http404('This item does not exist')
 
-    return render(request, 'course/details.html', {'course': course})
+    return render(request, 'course/details.html', {'course': course, 'courses': courses})
 
 
 def classroom(request, id):

@@ -54,6 +54,9 @@
                     display: block;
                     margin: 0 auto;
                          margin-top: 0;
+                        font-size: 16px;
+    text-transform: capitalize;
+    font-weight: bold;
 
                 }
                 .curriculum{
@@ -63,6 +66,21 @@
                         border-radius: 4px;
                         padding: 16px;
                         margin: 10px 20px;
+                        border-radius: 14px;
+
+                }
+                .curriculum h2{
+                        margin: -16px;
+                        color: white;
+                        padding: 20px;
+                        font-size: 18px;
+                        background-color: blue;
+
+                        border-radius: 4px;
+
+                }
+                .curriculum ul li{
+                    list-style: none;
                 }
             }
     main{
@@ -85,7 +103,7 @@
                        </section>
 
                         <section class="course-join">
-                            <button>Increver</button>
+                            <button>inscrição</button>
                         </section>
 
                     </header>
@@ -97,15 +115,35 @@
 
 
                     <section class="curriculum card">
+                    <h2>Currículo</h2>
                      {% for chapter in  course.chapter.all  %}
-                         {{ chapter.name }}
+                         <h3 class="chapter"> {{ chapter.name }}</h3>
+                         <ul>
                          {% for lesson in chapter.lessons.all  %}
-                             {{ lesson.name }}
-                             {{ lesson.id }}
-                          {% endfor %}
-                     {% endfor %}
 
+                             <li>{{ lesson.name }}</li>
+                                            {% endfor %}
+                     {% endfor %}
+                        </ul>
                     </section>
+{#                        <h4>Cursos Relacionados</h4>#}
+{#                      {% for course in courses %}#}
+{##}
+{##}
+{#                          <section class="courses">#}
+{#                            <article class="course">#}
+{#                            <img src="https://udemy-images.udemy.com/course/240x135/1430746_2f43_2.jpg" alt="screencast cover" class="cover">#}
+{##}
+{#                            <h1 class="courseTitle"><a href="{% url 'details' course.id %}">{{ course.name }}</a></h1>#}
+{#                                <ul class="courseDetails">#}
+{#                                <li class="courseAuthor">Jose Machava</li>#}
+{#                                <li class="skillsLevel">Iniciante</li>#}
+{#                                <img src="https://www.udacity.com/assets/iridium/images/svgs/beginner.svg" alt="level">#}
+{#                                </ul>#}
+{#                          </article>#}
+{##}
+{#                        </section>#}
+{#              {% endfor %}#}
 
                 </main>
 
