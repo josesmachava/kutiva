@@ -14,6 +14,8 @@
 
 {% block styles %}
 {#    only include css  files needed for thi page bootstap and other libs are add in base template #}
+   <link rel="stylesheet" href="{% static 'stylesheet/kutiva/main.css' %}">
+
     <style>
     @import url('https://fonts.googleapis.com/css?family=Open+Sans:400,700');
     body{
@@ -61,7 +63,7 @@
 
 {% block content %}
 
-{#{% include "kutiva/layout/navegation.html" %}#}
+{% include "kutiva/layout/navegation.html" %}
 
                 <main>
                     <header>
