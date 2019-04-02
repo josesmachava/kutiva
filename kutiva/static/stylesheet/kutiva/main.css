@@ -21,6 +21,8 @@ header{
     background-position: center center;
     width: 100vw;
 
+            margin-top: 14px;
+
 }
 
 
@@ -147,7 +149,7 @@ header{
 
 
 
-@media not all and (max-width: 480px) {
+@media not all and (max-width: 992px) {
       .hide-desktop{
           display: none;
       }
@@ -172,6 +174,8 @@ header{
     header{
         height: 50vh;
         margin-bottom: 20px;
+            margin-top: 14px;
+
     }
     .seeCourses{
         border: navajowhite;
