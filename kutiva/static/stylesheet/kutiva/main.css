@@ -139,7 +139,7 @@ header{
     text-transform: capitalize;
     font-size: 25px;
     color: #22292f;
-        margin-top: 85px;
+        margin-top: 170px;
 
     }
     header{
@@ -167,4 +167,33 @@ header{
     grid-gap: 50px;
     height: 220px;
 }
+}
+@media only screen and (min-width: 768px  ) and (max-width: 992px) {
+              header img{
+            width:100%;
+        display: block;
+        margin: 0 auto;
+
+    }
+    .testimonial {
+    background-color: #FFF;
+    border-radius: 3px;
+    box-shadow: 0 1px 3px 0 rgba(20,23,28,0.15);
+    height: 180px;
+    padding: 20px;
+    min-height: 220px;
+    width: 206PX;
+}
+      .testimonials {
+          padding-bottom: 40px;
+    background-color: #F6F8FA;
+    display: grid;
+          width: auto;
+          height: auto;
+    padding: 40px 40px;
+    grid-template-columns: repeat( 3, 1fr);  !important;
+    grid-gap: 50px;
+    height: 220px;
+}
+
 }
