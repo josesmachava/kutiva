@@ -57,6 +57,12 @@ header{
 .courseDetails{
     padding: 20px;
 }
+header{
+    background-image: url("../../images/43122.jpg");
+    background-size: cover;
+    background-position: center center;
+    height: 100vh;
+}
 .course ul{
       display: inline;
     padding-left: 20px;
@@ -70,7 +76,29 @@ header{
   font-weight: normal;
 
 }
+.seeCourses{
+        border: navajowhite;
+    background-color: blue;
+    color: white;
+    height: 50px;
+    text-transform: capitalize;
+    font-size: 19px;
+    margin: 0 auto;
+    display: block;
+    width: 200px;
+        margin-bottom: 20px;
 
+    }
+
+
+
+ .headlineCourse{
+            text-align: center;
+    text-transform: capitalize;
+    font-size: 25px;
+    color: #22292f;
+
+    }
 .testimonials{
     background-color:#F6F8FA;
     display: grid;
@@ -139,11 +167,10 @@ header{
     text-transform: capitalize;
     font-size: 25px;
     color: #22292f;
-        margin-top: 170px;
 
     }
     header{
-        height: 30vh;
+        height: 50vh;
         margin-bottom: 20px;
     }
     .seeCourses{
