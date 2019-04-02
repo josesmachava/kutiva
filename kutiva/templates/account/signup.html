@@ -13,7 +13,7 @@
 
 {% block styles %}
 {#    only include css  files needed for thi page bootstap and other libs are add in base template #}
-    <!-- <link rel="stylesheet" href="{% static 'stylesheet/account/sign.css' %}"> -->
+    <link rel="stylesheet" href="{% static 'stylesheet/account/signup.css' %}">
   
  
 {% endblock %}
@@ -30,13 +30,19 @@
             <div class="row align-items-center h-100">  
                 <div class="col-6 mx-auto">
 
-                     <h2>Sign up</h2>
-  <form method="post">
-    {% csrf_token %}
-    {{ form.as_p }}
-    <button type="submit">Sign up</button>
-  </form>
-                  
+                    
+
+<div class="div-signup">
+    <div><h2>Sign up</h2></div>
+        
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class="button-submit">Sign up</button>
+      </form>
+              
+</div>                     
+        
                 
  </div>  
 </div>

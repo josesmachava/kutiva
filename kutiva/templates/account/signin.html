@@ -12,22 +12,22 @@
 {% endblock %}
 
 {% block styles %}
-<link rel="stylesheet" href="{% static 'stylesheet/kutiva/library/malangatana.min.css' %}">
+<!-- <link rel="stylesheet" href="{% static 'stylesheet/kutiva/library/malangatana.min.css' %}">
 <link rel="stylesheet" href="{% static 'stylesheet/kutiva/navegation.css' %}">
-<link rel="stylesheet" href="{% static 'stylesheet/kutiva/main.css' %}">
-<link rel="stylesheet" href="{% static 'stylesheet/account/sign.css' %}">
+<link rel="stylesheet" href="{% static 'stylesheet/kutiva/main.css' %}"> -->
+<link rel="stylesheet" href="{% static 'stylesheet/account/signin.css' %}">
 
-<link rel="stylesheet" href="{% static 'stylesheet/kutiva/footer.css' %}">
+<!-- <link rel="stylesheet" href="{% static 'stylesheet/kutiva/footer.css' %}"> -->
 
 {% endblock %}
 
 
 
 {% block content %}
-  {% include "kutiva/layout/navegation.html" %}
+  <!-- {% include "kutiva/layout/navegation.html" %} -->
     <div class="container-fluid">
         <div class="container">
-            
+            <div><h2>Sign In</h2></div>
 
                     <form  action="signin" method="post">
                          {% csrf_token %}
@@ -53,7 +53,7 @@
       <input class="form-check-input" type="checkbox"> Remember me
     </label>
   </div>
-  <button type="submit" class="btn btn-primary">Submit</button>
+  <button type="submit" class="button-submit">Submit</button>
      </form>
             
 </div>
