@@ -24,6 +24,9 @@
         font-family: 'Open Sans', sans-serif;
 
     }
+     .curriculum ul li{
+                    list-style: none;
+                }
         header{
             display: grid;
             grid-template-columns: 70% 20%;
@@ -83,6 +86,79 @@
                     list-style: none;
                 }
             }
+
+    @media only screen and (min-width: 768px  ) and (max-width: 992px) {
+
+
+        .curriculum {
+            width: auto;
+            margin: auto;
+            margin-top: 20px;
+            border-radius: 4px;
+            padding: 16px;
+            margin: 10px 20px;
+            border-radius: 14px;
+
+        }
+
+        .curriculum h2 {
+            margin: -16px;
+            color: white;
+            padding: 20px;
+            font-size: 18px;
+            background-color: blue;
+
+            border-radius: 4px;
+
+        }
+    }
+    @media only screen and (min-width: 993px) and (max-width: 1200px) {
+
+
+        .curriculum {
+            width: 650px;
+            margin:0 auto;
+            margin-top: 20px;
+            border-radius: 4px;
+            padding: 16px;
+            border-radius: 14px;
+
+        }
+
+        .curriculum h2 {
+            margin: -16px;
+            color: white;
+            padding: 20px;
+            font-size: 18px;
+            background-color: blue;
+
+            border-radius: 4px;
+
+        }
+    }
+    @media only screen and  (min-width: 1201px) {
+
+        .curriculum {
+            width: 750px;
+            margin: 0 auto;
+            margin-top: 20px;
+            border-radius: 4px;
+            padding: 16px;
+            border-radius: 14px;
+
+        }
+
+        .curriculum h2 {
+            margin: -16px;
+            color: white;
+            padding: 20px;
+            font-size: 18px;
+            background-color: blue;
+
+            border-radius: 4px;
+
+        }
+    }
     main{
     }
     </style>
@@ -126,6 +202,7 @@
                      {% endfor %}
                         </ul>
                     </section>
+
 {#                        <h4>Cursos Relacionados</h4>#}
 {#                      {% for course in courses %}#}
 {##}
