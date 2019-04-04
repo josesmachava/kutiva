@@ -29,4 +29,5 @@ def classroom(request, id):
 
 
 def user_courses(request):
-    return render(request, 'course/user-courses.html')
+    courses = Course.objects.all()
+    return render(request, 'course/paidCourse.html', {'courses': courses})

@@ -1,0 +1,61 @@
+
+
+.unstyledList {
+    list-style-type: none;
+    text-transform: capitalize
+}
+
+.unstyledLink {
+    text-decoration: none;
+    color: black
+}
+
+.unstyledLink :hover {
+    color: black
+}
+
+
+.alignCenter{
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+.defaultHeader{
+
+    height: 30vh;
+    color: #3a343a;
+    background-color: #F6F8FA;
+ }
+
+
+
+@media only screen and  (max-width: 480px) {
+
+    .smallHeading{
+        font-size: 25px;
+        text-transform: capitalize;
+    }
+
+}
+@media only screen and (min-width: 768px  ) and (max-width: 992px) {
+
+    .mediumHeading{
+
+    }
+
+}
+@media only screen and (min-width: 993px) and (max-width: 1200px){
+    .largeHeading{
+
+    }
+}
+
+
+
+@media only screen and  (min-width: 1201px){
+    .extraLargeHeading{
+
+    }
+}
