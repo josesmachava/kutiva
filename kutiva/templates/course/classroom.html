@@ -26,77 +26,128 @@
         width: 100vw;
         height: 100vh;
     }
-    aside{
-        background-color: white;
-        height: 672px;
-        overflow-y: scroll;
-    }
+   
     .classroom{
-        width: 100vw;
-        display: grid;
-        justify-content: center;
-        height: 100vh;
-    }
+      background-color: #29303B;
+
+    margin-bottom: 60px;
+    } 
     .whiteboard{
-        display: grid;
-        width: 80vw;
-        justify-content: center;
-        grid-template-columns: 20% 80%;
+      width: 65%;
+      margin: 0 auto;
     }
-    .tabs {
-  display: flex;
-  flex-wrap: wrap;
-  width: 80vw;
+     @media only screen and  (max-width: 480px) {
+              
+             .whiteboard{
+              width: 100%;
+              margin: 0 auto;
+              }
+                .curriculum{
+                        width: auto;
+                        margin: auto;
+                        margin-top: 20px;
+                        border-radius: 4px;
+                        padding: 16px;
+                        margin: 10px 20px;
+                        border-radius: 14px;
 
-}
-.input {
-  position: absolute;
-  opacity: 0;
-}
-.label {
-  width: 100%;
-    margin: 0 100px;
-}
+                }
+                .curriculum h2{
+                        margin: -16px;
+                        color: white;
+                        padding: 20px;
+                        font-size: 18px;
+                        background-color: blue;
 
-.label:hover {
+                        border-radius: 4px;
 
-}
+                }
+                .curriculum ul li{
+                    list-style: none;
+                }
+            }
 
-.label:active {
+    @media only screen and (min-width: 768px  ) and (max-width: 992px) {
+        .whiteboard{
+              width: 85%;
+              margin: 0 auto;
+              }
 
-}
+        .curriculum {
+            width: auto;
+            margin: auto;
+            margin-top: 20px;
+            border-radius: 4px;
+            padding: 16px;
+            margin: 10px 20px;
+            border-radius: 14px;
 
-.input:focus + .label {
+        }
 
-  z-index: 1;
-}
+        .curriculum h2 {
+            margin: -16px;
+            color: white;
+            padding: 20px;
+            font-size: 18px;
+            background-color: blue;
 
-.input:checked + .label {
+            border-radius: 4px;
 
-    border-bottom: 4px solid blue;
+        }
+    }
+    @media only screen and (min-width: 993px) and (max-width: 1200px) {
+        .whiteboard{
+              width: 85%;
+              margin: 0 auto;
+              }
 
-}
+        .curriculum {
+            width: 650px;
+            margin:0 auto;
+            margin-top: 20px;
+            border-radius: 4px;
+            padding: 16px;
+            border-radius: 14px;
 
-@media (min-width: 600px) {
-  .label {
-    width: auto;
-  }
-}
-.panel {
-  display: none;
-  padding: 20px 30px 30px;
-  background: #fff;
-}
+        }
 
-@media (min-width: 600px) {
-  .panel {
-    order: 99;
-  }
-}
+        .curriculum h2 {
+            margin: -16px;
+            color: white;
+            padding: 20px;
+            font-size: 18px;
+            background-color: blue;
 
-.input:checked + .label + .panel {
-  display: block;
-}
+            border-radius: 4px;
+
+        }
+    }
+    @media only screen and  (min-width: 1201px) {
+
+        .curriculum {
+            width: 750px;
+            margin: 0 auto;
+            margin-top: 20px;
+            border-radius: 4px;
+            padding: 16px;
+            border-radius: 14px;
+
+        }
+
+        .curriculum h2 {
+            margin: -16px;
+            color: white;
+            padding: 20px;
+            font-size: 18px;
+            background-color: blue;
+
+            border-radius: 4px;
+
+        }
+    }
+   
+   
+
 </style>
 {% endblock %}
 
@@ -105,45 +156,31 @@
     {% include "kutiva/layout/navegation.html" %}
 
     <main>
-    <section class="classroom">
-        <div class="whiteboard">
-                 <aside>
-                {{ course.name }}
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           </aside>
-                <section>
+    <header class="classroom ">
+        <div class="whiteboard alignCenter">
+                
                     <div id="player">
 
                     </div>
-                </section>
-        </div>
-        <div class="tabs">
-  <input name="tabs" type="radio" id="tab-1" checked="checked" class="input"/>
-  <label for="tab-1" class="label">Orange</label>
-  <div class="panel">
-    <h1>Orange</h1>
-    <p>The orange (specifically, the sweet orange) is the fruit of the citrus species Citrus × sinensis in the family Rutaceae</p>
-    <p>The fruit of the Citrus × sinensis is considered a sweet orange, whereas the fruit of the Citrus × aurantium is considered a bitter orange. The sweet orange reproduces asexually (apomixis through nucellar embryony); varieties of sweet orange arise through mutations.</p>
-  </div>
+                
 
-  <input name="tabs" type="radio" id="tab-2" class="input"/>
-  <label for="tab-2" class="label">Tangerine</label>
-  <div class="panel">
-    <h1>Tangerine</h1>
-    <p>The tangerine (Citrus tangerina) is an orange-colored citrus fruit that is closely related to, or possibly a type of, mandarin orange (Citrus reticulata).</p>
-    <p>The name was first used for fruit coming from Tangier, Morocco, described as a mandarin variety. Under the Tanaka classification system, Citrus tangerina is considered a separate species.</p>
-  </div>
+          </div>
+         </header>       
+                <section class="curriculum card">
+                    <h2>Currículo</h2>
+                     {% for chapter in  course.chapter.all  %}
+                         <h3 class="chapter"> {{ chapter.name }}</h3>
+                         <ul>
+                         {% for lesson in chapter.lessons.all  %}
 
-  <input name="tabs" type="radio" id="tab-3" class="input"/>
-  <label for="tab-3" class="label">Clemantine</label>
-  <div class="panel">
-    <h1>Clemantine</h1>
-    <p>A clementine (Citrus ×clementina) is a hybrid between a mandarin orange and a sweet orange, so named in 1902. The exterior is a deep orange colour with a smooth, glossy appearance. Clementines can be separated into 7 to 14 segments. Similarly to tangerines, they tend to be easy to peel.</p>
-  </div>
-</div>
+                             <li>{{ lesson.name }}</li>
+                                            {% endfor %}
+                     {% endfor %}
+                        </ul>
+                    </section>
+  
 
-    </section>
-
-
+{% include "kutiva/layout/footer.html" %}
     </main>
 
     {% block scripts %}
