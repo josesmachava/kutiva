@@ -14,6 +14,13 @@
     color: black
 }
 
+.resetPadding{
+    padding: 0;
+
+}
+.resetMargin{
+    margin: 0;
+}
 
 .alignCenter{
 

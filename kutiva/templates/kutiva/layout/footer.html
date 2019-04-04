@@ -1,10 +1,16 @@
 <style>
     footer{
-            margin-top: 200px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        flex-direction: column;
+         margin-top: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 100vw;
+    background: #F6F8FA;
+    bottom: 0;
+    padding: 10px 0;
+
+
     }
     footer a{
 
@@ -25,15 +31,16 @@
         display: inline;
         margin: 20px;
     }
+   
 </style>
 <footer class="footer">
-    <ul class="">
+    <ul class="resetPadding resetMargin">
        <li><a href="" ><i class="fab fa-facebook-f"></i></a></li>
         <li><a href=""><i class="fab fa-twitter"></i></a></li>
         <li><a href=""><i class="fab fa-youtube"></i></a></li>
 
     </ul>
-    <p class="copy-right ">&copy  Kutiva {% now 'Y' %}
+    <p class="copy-right resetPadding resetMargin ">&copy  Kutiva {% now 'Y' %}
  Powered By
         <a href="http:xindiri.com">xindiri inc</a>
 

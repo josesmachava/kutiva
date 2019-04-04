@@ -64,7 +64,7 @@ body {
 }
 
 .landingPageHeader {
-    background-image: url("../../images/43122.jpg");
+    /*background-image: url("../../images/43122.jpg");*/
     background-size: cover;
     background-position: center center;
     height: 100vh;
@@ -109,7 +109,6 @@ body {
 }
 
 .testimonials {
-    background-color: #F6F8FA;
     display: grid;
     padding: 40px 40px;
     grid-template-columns: repeat(4, 1fr);
@@ -202,7 +201,6 @@ body {
     }
 
     .testimonials {
-        background-color: #F6F8FA;
         display: grid;
         padding: 40px 40px;
         grid-template-columns: repeat(1, 1fr);
@@ -232,7 +230,6 @@ body {
 
     .testimonials {
         padding-bottom: 40px;
-        background-color: #F6F8FA;
         display: grid;
         width: auto;
         height: auto;
