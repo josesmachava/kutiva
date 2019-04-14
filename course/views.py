@@ -29,8 +29,9 @@ def classroom(request, id):
 
 
 def user_courses(request):
-    courses = Course.objects.all()
-    return render(request, 'course/paidCourse.html', {'courses': courses})
+    enrolled =  Enrolled.objects.filter(user=request.user)
+    
+    return render(request, 'course/paidCourse.html', {'enrolled':enrolled})
 
 def add_course(request, id):
     try:

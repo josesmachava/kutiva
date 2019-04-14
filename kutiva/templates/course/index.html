@@ -44,10 +44,11 @@
   </header>
 
 
-       {% for course in courses %}
-
 
   <section class="courses">
+    
+       {% for course in courses %}
+
     <article class="course">
     <img src="https://udemy-images.udemy.com/course/240x135/1430746_2f43_2.jpg" alt="screencast cover" class="cover">
 
@@ -58,9 +59,9 @@
         <img src="https://www.udacity.com/assets/iridium/images/svgs/beginner.svg" alt="level">
         </ul>
   </article>
-
+ {% endfor %}
 </section>
-                  {% endfor %}
+                 
 
 
 {% include "kutiva/layout/footer.html" %}
