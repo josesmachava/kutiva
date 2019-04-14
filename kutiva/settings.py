@@ -43,18 +43,20 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'rest_framework',
+    'graphene_django',
     'storages',
     'embed_video',
     'api',
     'account',
     'cms',
-    'checkout',
-    'conference',
-    'enrollment',
-
+  
     
 ]
 
+
+GRAPHENE = {
+    'SCHEMA': 'kutiva.schema.schema' # Where your Graphene schema lives
+}
 
 AUTH_USER_MODEL = 'account.User'
 LOGIN_URL='signin'

@@ -1,7 +1,7 @@
 # snippets/serializers
 from rest_framework import serializers
 from cms.models import Course
-from conference.models import Talk
+# from conference.models import Talk
 
 
 class CourseSerializer(serializers.ModelSerializer):
@@ -13,9 +13,9 @@ class CourseSerializer(serializers.ModelSerializer):
                   'chapter', 'cover', 'description', 'created_date')
 
 
-class TalkSerializer(serializers.ModelSerializer):
-    # author = serializers.StringRelatedField(many=True)
+# class TalkSerializer(serializers.ModelSerializer):
+#     # author = serializers.StringRelatedField(many=True)
 
-    class Meta:
-        model = Talk
-        fields = '__all__'
+#     class Meta:
+#         model = Talk
+#         fields = '__all__'

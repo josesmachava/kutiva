@@ -53,3 +53,9 @@ class Course(models.Model):
 
     def __str__(self):
         return self.name
+
+
+class Enrolled(models.Model):
+    course = models.ForeignKey(Course, on_delete='CASCADE', blank=True, null=True)
+    user = models.ManyToManyField(settings.AUTH_USER_MODEL, null=True, blank=True)
+  

@@ -16,6 +16,7 @@ Including another URLconf
 
 from django.contrib import admin
 from django.urls import path,include
+from graphene_django.views import GraphQLView
 
 from . import views
 
@@ -24,11 +25,10 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.index, name="index"),
     path('account/', include('account.urls')),
-    path('checkout/', include('checkout.urls')),
     path('course/', include('course.urls')),
-    path('enrollment/', include('enrollment.urls')),
-
-    path('conference/', include('conference.urls')),
+    path('graphql', GraphQLView.as_view(graphiql=True)),
+    path('cms/', include('cms.urls')),
+    
     path('api/', include('api.urls')), # new
 
     #path('cms/', include('cms.urls')),

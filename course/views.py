@@ -1,5 +1,5 @@
 from django.http import Http404
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from cms.models import *
 
 
@@ -31,3 +31,15 @@ def classroom(request, id):
 def user_courses(request):
     courses = Course.objects.all()
     return render(request, 'course/paidCourse.html', {'courses': courses})
+
+def add_course(request, id):
+    try:
+        course = Course.objects.get(id=id)
+        enrolled = Enrolled.objects.create(course=course)
+        enrolled.save()
+        enrolled.user.add(request.user)
+
+    except Course.DoesNotExist:
+        raise Http404('This item does not exist')
+
+    return redirect('index')

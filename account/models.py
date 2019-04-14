@@ -69,12 +69,6 @@ def post_save_profile_create(sender, instance, created, *args, **kwargs):
     post_save.connect(post_save_profile_create, sender=settings.AUTH_USER_MODEL)
 
 
-class Speaker(models.Model):
-    user = models.OneToOneField(User, on_delete=models.CASCADE)
-    bio = models.TextField(max_length=500, blank=True)
-    avatar = models.ImageField(upload_to='avatars/', null=True, blank=True)
-    location = models.CharField(max_length=30, blank=True)
-
 
 @receiver(post_save, sender=User)
 def create_user_profile(sender, instance, created, **kwargs):
