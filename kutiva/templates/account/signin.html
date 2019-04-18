@@ -29,14 +29,17 @@
                        <h1><img src="{% static 'images/logo2.png' %}" class="logo" alt="kutiva logo"></h1>
  
                     <form class="alignElementCenter"  action="signin" method="post">
-                         <input type="text" class="inputField" name="">
-                         <input type="password" class="inputField" name="">
-                        
                          {% csrf_token %}
-                         <div class="form-group">
-                             {% for message in messages %}
-
+                        
+                         <input type="email" placeholder="Email" class="inputField" name="username">
+                         <input placeholder="Password" type="password" class="inputField" name="password">
+                        <input type="submit" name="hello">
+                          <div class="form-group">
+                       {% for message in messages %}
+                          <p> {{ message }}</p>
                     {% endfor %}
+
+                    <p><a href="{% url 'signup' %}">ou criar conta</a></p>
                      </form>
      
       </div>

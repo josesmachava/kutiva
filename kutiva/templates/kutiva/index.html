@@ -45,10 +45,11 @@
 
        <h1 class="headlineCourse">cursos recentes</h1>
 
-       {% for course in courses %}
-
+       
 
   <section class="courses">
+    {% for course in courses %}
+
     <article class="course">
     <img src="https://udemy-images.udemy.com/course/240x135/1430746_2f43_2.jpg" alt="screencast cover" class="cover">
     
@@ -60,8 +61,8 @@
         </ul>
   </article>
   
-</section>
               {% endfor %}
+</section>
 
     <button class="seeCourses">todos cursos</button>
 
