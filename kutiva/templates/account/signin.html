@@ -15,52 +15,35 @@
 <!-- <link rel="stylesheet" href="{% static 'stylesheet/kutiva/library/malangatana.css' %}">
 <link rel="stylesheet" href="{% static 'stylesheet/kutiva/navegation.css' %}">
 <link rel="stylesheet" href="{% static 'stylesheet/kutiva/main.css' %}"> -->
+
+
+<link rel="stylesheet"  href="{% static 'stylesheet/kutiva/library/malangatana.css' %}">
 <link rel="stylesheet" href="{% static 'stylesheet/account/signin.css' %}">
-
-<!-- <link rel="stylesheet" href="{% static 'stylesheet/kutiva/footer.css' %}"> -->
-
 {% endblock %}
 
 
 
 {% block content %}
-  <!-- {% include "kutiva/layout/navegation.html" %} -->
-    <div class="container-fluid">
-        <div class="container">
-            <div><h2>Sign In</h2></div>
-
-                    <form  action="signin" method="post">
+      <div class="alignCenter">
+        <div class="sign">
+                       <h1><img src="{% static 'images/logo2.png' %}" class="logo" alt="kutiva logo"></h1>
+ 
+                    <form class="alignElementCenter"  action="signin" method="post">
+                         <input type="text" class="inputField" name="">
+                         <input type="password" class="inputField" name="">
+                        
                          {% csrf_token %}
                          <div class="form-group">
                              {% for message in messages %}
 
-                    <div class="alert alert-success">
-                        <a class="close" href="#" data-dismiss="alert">×</a>
-
-                        {{ message }}
-
-                    </div>
                     {% endfor %}
-    <label for="email">Email address:</label>
-    <input type="email" class="form-control" id="email" name="username">
-  </div>
-  <div class="form-group">
-    <label for="pwd">Password:</label>
-    <input type="password" name="password" class="form-control" id="pwd">
-  </div>
-  <div class="form-group form-check">
-    <label class="form-check-label">
-      <input class="form-check-input" type="checkbox"> Remember me
-    </label>
-  </div>
-  <button type="submit" class="button-submit">Submit</button>
-     </form>
-            
-</div>
-</div>
+                     </form>
+     
+      </div>
+      </div>
+        
+      
 
    
-    {# include the same footer for ever page #}
-        {% include "kutiva/layout/footer.html" %}
 {% endblock %}
 

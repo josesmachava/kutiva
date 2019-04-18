@@ -20,7 +20,7 @@ from django.urls import path, include
 from . import views
 urlpatterns = [
     path('', views.course, name="course"),
-    path('details/<id>', views.course_details, name='details'),
+    path('details/<int:id>', views.course_details, name='details'),
     path('classroom/<id>', views.classroom, name='classroom'),
     path('mycourses', views.user_courses, name="mycourses"),
     path('<id>', views.add_course, name='add_course'),

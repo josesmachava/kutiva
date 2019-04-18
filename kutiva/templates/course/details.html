@@ -176,11 +176,17 @@
                                   <p class="description">
                             {{ course.description }}
                         </p>
-                       </section>
+                      
 
+                       </section>
+                         <p>{{ course.id }}</p>
                         <section class="course-join">
-                        
-                            <button><a href="{% url 'add_course' course.id %}"> inscrição</a></button>
+                            
+                            
+                                    <button><a href="{% url 'add_course' course.id %}"> inscrição</a></button>
+                                    
+
+                            
                         </section>
 
                     </header>

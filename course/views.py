@@ -11,12 +11,17 @@ def course(request):
 
 def course_details(request, id):
     try:
+        enrolled =  Enrolled.objects.filter(user=request.user)
+        print(type(id))
+        for i in enrolled:
+            print(type(i.course.id))
+
         courses = Course.objects.all()
         course = Course.objects.get(id=id)
     except Course.DoesNotExist:
         raise Http404('This item does not exist')
 
-    return render(request, 'course/details.html', {'course': course, 'courses': courses})
+    return render(request, 'course/details.html', {'course': course, 'courses': courses, 'enrolled':enrolled})
 
 
 def classroom(request, id):
