@@ -114,7 +114,19 @@ nav ul li {
         height: 60px;
 
     }
-
+    .courses {
+   display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding:0px 0px;   
+}
+    .course{
+        width: 100%;
+        padding: 10px 20px;
+    }
+    .course img{
+        width: inherit;
+    }
     nav img {
         margin-top: -15px;
     }
@@ -163,6 +175,12 @@ nav ul li {
 
 
     }
+    .paidCoursesHeaderTitle {
+    color: blue;
+    font-weight: normal;
+    font-size: 20px;
+    margin: 20px;
+    }
 
     .mobileMenu li {
         margin: 0;
@@ -208,8 +226,38 @@ nav ul li {
     form input[type="search"] {
         margin-top: 13px;
     }
-
+     .courses {
+   display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding:0px 0px;   
+}
+    .course{
+        width: 100%;
+        padding: 10px 20px;
+    }
+    .course{
+        width: 100%;
+    }
+    .course ul{
+        padding: 0;
+    }
+    .course img{
+        width: inherit;
+    }
+    .paidCoursesHeaderTitle {
+    color: blue;
+    font-weight: normal;
+    font-size: 20px;
+    margin: 20px;
+    }
    
+    .course h1 a {
+
+    padding-left: 0px;
+    font-size: 17px;
+    }
+
     .hide-mobile {
         display: none;
     }
