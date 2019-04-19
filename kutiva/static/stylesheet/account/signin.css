@@ -3,6 +3,9 @@ body{
   margin: 0;
   padding: 0;
 }
+body{
+  background-color:#F6F8FA;
+}
 .logo{
   display: block;
     margin: 0 auto;
@@ -12,7 +15,7 @@ body{
 .sign{
   height: 400px;
   width: 400px;
-   border: 1px solid #dbe2e8;
+   /*border: 1px solid #dbe2e8;*/
   background-color: white;
   border-radius: 9px;
 }
@@ -28,4 +31,22 @@ input[type="submit"]{
    border-radius: 9px;
   font-size: 16px;
   height: 50px
+}
+
+
+
+
+@media only screen and  (max-width: 480px) {
+  input{
+    width: 100%;
+  }
+  .sign{
+      width: 100%;
+  }
+  .alignCenter{
+    margin: 30px;
+  }
+  form{
+    padding:  20px;
+  }
 }
