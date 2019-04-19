@@ -170,6 +170,9 @@ body {
         margin: 0 auto;
 
     }
+    input{
+        width: 100%;
+    }
 
     .headlineCourse {
         text-align: center;
