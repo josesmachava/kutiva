@@ -31,15 +31,16 @@
                     <form class="alignElementCenter"  action="signin" method="post">
                          {% csrf_token %}
                         
-                         <input type="email" placeholder="Email" class="inputField" name="username">
-                         <input placeholder="Password" type="password" class="inputField" name="password">
-                        <input type="submit" name="hello" value="Entar">
-                          <div class="form-group">
+                         <input type="email" placeholder="E-mail" class="inputField" name="username">
+                         <input placeholder="Senha" type="password" class="inputField" name="password">
+                        <p><a href="" class="unstyledLink">Esqueceu a senha?</a></p>
+                        <input type="submit" name="hello" value="Iniciar Sessão">
+                          
                        {% for message in messages %}
                           <p class="error alignTextCenter"> {{ message }}</p>
                     {% endfor %}
 
-                    <p class="alignTextCenter"><a href="{% url 'signup' %}">ou criar conta</a></p>
+                    <p class="alignTextCenter"><a class="unstyledLink" href="{% url 'signup' %}">ou criar conta</a></p>
                      </form>
      
       </div>
