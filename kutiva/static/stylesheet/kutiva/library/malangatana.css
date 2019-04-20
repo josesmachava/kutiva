@@ -18,6 +18,9 @@
     padding: 0;
 
 }
+.error{
+    color:red;
+}
 .resetMargin{
     margin: 0;
 }

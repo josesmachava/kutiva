@@ -20,7 +20,7 @@ def signin(request):
             login(request, user)
             return redirect('index')
         else:
-            messages.error(request, "Email ou Senha estao incorrectos ")
+            messages.error(request, "email ou password estao incorrectos ")
     return render(request, 'account/signin.html')
 
 

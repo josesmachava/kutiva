@@ -33,13 +33,13 @@
                         
                          <input type="email" placeholder="Email" class="inputField" name="username">
                          <input placeholder="Password" type="password" class="inputField" name="password">
-                        <input type="submit" name="hello">
+                        <input type="submit" name="hello" value="Entar">
                           <div class="form-group">
                        {% for message in messages %}
-                          <p> {{ message }}</p>
+                          <p class="error"> {{ message }}</p>
                     {% endfor %}
 
-                    <p><a href="{% url 'signup' %}">ou criar conta</a></p>
+                    <p class="alignTextCenter"><a href="{% url 'signup' %}">ou criar conta</a></p>
                      </form>
      
       </div>
