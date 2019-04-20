@@ -33,7 +33,7 @@
                         
                          <input type="email" placeholder="E-mail" class="inputField" name="username">
                          <input placeholder="Senha" type="password" class="inputField" name="password">
-                        <p><a href="" class="unstyledLink">Esqueceu a senha?</a></p>
+                        <p><a href="{% url 'password_reset' %}" class="unstyledLink">Esqueceu a senha?</a></p>
                         <input type="submit" name="hello" value="Iniciar Sessão">
                           
                        {% for message in messages %}

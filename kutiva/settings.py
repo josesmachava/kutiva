@@ -75,14 +75,14 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = 'kutiva.urls'
-EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'  # During development only
-
-EMAIL_HOST = 'mail.kutiva.co.mz'
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = 587
-EMAIL_HOST_USER = 'account@kutiva.co.mz'
-EMAIL_HOST_PASSWORD = ''
-EMAIL_USE_TLS = False
-DEFAULT_FROM_EMAIL = 'TestSite Team <noreply@example.com>'
+EMAIL_HOST_USER = 'jose.s.machava@gmail.com'
+EMAIL_HOST_PASSWORD = '849394995Jose'
+EMAIL_USE_TLS = True
+DEFAULT_FROM_EMAIL = 'jose.s.machava@gmail.com'
+
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
