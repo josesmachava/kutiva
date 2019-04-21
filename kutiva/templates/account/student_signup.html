@@ -1,0 +1,45 @@
+{% extends "kutiva/layout/base.html" %}
+{% load staticfiles %}
+
+{% comment %}
+
+{% endcomment %}
+{% load staticfiles %}
+
+{# overide the tile of the page #}
+{% block title %}
+    <title>kutiva</title>
+{% endblock %}
+
+{% block styles %}
+{#    only include css  files needed for thi page bootstap and other libs are add in base template #}
+  
+
+  
+<link rel="stylesheet"  href="{% static 'stylesheet/kutiva/library/malangatana.css' %}">
+<link rel="stylesheet" href="{% static 'stylesheet/account/signin.css' %}">
+ 
+{% endblock %}
+
+
+
+
+
+{% block content %}
+    <div class="alignCenter">
+        <div class="sign">
+                       <h1><img src="{% static 'images/logo2.png' %}" class="logo" alt="kutiva logo"></h1>
+ 
+                    <form class="alignElementCenter"   method="post"  novalidate >
+       
+   
+        {% csrf_token %}
+        <input type="hidden" name="next" value="{{ next }}">
+         {{ form }}
+        <button type="submit" class="btn btn-success">Sign up</button>
+      </form>
+
+                </div>
+            </div>
+{% endblock %}
+

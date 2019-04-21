@@ -47,35 +47,22 @@ class User(AbstractUser):
 
     username = None
     email = models.EmailField(_('email address'), unique=True)
-
+    is_instructor = models.BooleanField(default=False)
+    is_student = models.BooleanField(default=False)
+    
     USERNAME_FIELD = 'email'
     REQUIRED_FIELDS = []
 
     objects = UserManager()
 
 
-class Profile(models.Model):
+
+
+class Student(models.Model):
     user = models.OneToOneField(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
-    courses = models.ManyToManyField(Course, blank=True)
-
+  
+   
     def __str__(self):
-        return self.user.username
+        return str(self.user)
 
 
-def post_save_profile_create(sender, instance, created, *args, **kwargs):
-    user_profile, created = Profile.objects.get_or_create(user=instance)
-
-    user_profile.save()
-    post_save.connect(post_save_profile_create, sender=settings.AUTH_USER_MODEL)
-
-
-
-@receiver(post_save, sender=User)
-def create_user_profile(sender, instance, created, **kwargs):
-    if created:
-        Profile.objects.create(user=instance)
-
-
-@receiver(post_save, sender=User)
-def save_user_profile(sender, instance, **kwargs):
-    instance.profile.save()

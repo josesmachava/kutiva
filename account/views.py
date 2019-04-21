@@ -5,7 +5,8 @@ from django.contrib.auth.decorators import login_required
 from django.shortcuts import render, redirect, HttpResponse
 from django.contrib.auth.models import User
 from django.contrib import messages
-from .forms import SignUpForm
+from django.views.generic import CreateView, UpdateView, DeleteView
+from .forms import SignUpForm, StudentSignUpForm
 from kutiva.views import index
 
 
@@ -40,6 +41,20 @@ def signup(request):
         form = SignUpForm()
     return render(request, 'account/signup.html', {'form': form})
 
+
+
+class StudentSignUpView(CreateView):
+    model = User
+    form_class = StudentSignUpForm
+    template_name = 'account/student_signup.html'
+
+    def get_context_data(self, **kwargs):
+        kwargs['user_type'] = 'USSD'
+        return super().get_context_data(**kwargs)
+
+    def form_valid(self, form):
+        user = form.save()
+        return redirect('index')
 
 
 @login_required()
