@@ -22,6 +22,10 @@ body{
 input{
   width: 350px;
 }
+.errorlist{
+  color: red;
+  list-style: none;
+}
 
 input[type="submit"]{
   width: 200px;

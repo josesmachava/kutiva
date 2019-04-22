@@ -1,6 +1,6 @@
 {% extends "kutiva/layout/base.html" %}
 {% load staticfiles %}
-
+{% load i18n %}
 {% comment %}
 
 {% endcomment %}
@@ -36,7 +36,8 @@
         {% csrf_token %}
         <input type="hidden" name="next" value="{{ next }}">
          {{ form }}
-        <button type="submit" class="btn btn-success">Sign up</button>
+         <input type="submit" name="hello" value="Criar conta">
+          <p class="alignTextCenter"><a class="unstyledLink" href="{% url 'signin' %}">ou Iniciar Sessão</a></p>              
       </form>
 
                 </div>

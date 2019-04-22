@@ -1,5 +1,6 @@
 from django.http import Http404
 from django.shortcuts import render, redirect
+from django.contrib.auth.decorators import login_required
 from cms.models import *
 
 
@@ -24,6 +25,8 @@ def course_details(request, id):
     return render(request, 'course/details.html', {'course': course, 'courses': courses, 'enrolled':enrolled})
 
 
+
+@login_required()
 def classroom(request, id):
     try:
         course = Course.objects.get(id=id)
@@ -33,6 +36,8 @@ def classroom(request, id):
     return render(request, 'course/classroom.html', {'course': course})
 
 
+
+@login_required()
 def user_courses(request):
     enrolled =  Enrolled.objects.filter(user=request.user)
     
