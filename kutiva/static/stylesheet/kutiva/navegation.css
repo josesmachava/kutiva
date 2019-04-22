@@ -110,7 +110,10 @@ nav ul li {
 
 
 @media only screen and  (max-width: 320px) {
-
+    nav ul li a {
+        text-decoration: none;
+         color: blue;   
+    }
     nav {
         display: grid;
         grid-template-columns: 20% 60% 10% 10%;
@@ -220,6 +223,10 @@ nav ul li {
         grid-template-columns: 20% 60% 10% 10%;
         height: 60px;
 
+    }
+    nav ul li a {
+        text-decoration: none;
+         color: blue;   
     }
 
     nav img {
@@ -335,6 +342,10 @@ nav ul li {
     }
     nav {
        grid-template-columns: 10% 30% 53% 7%;
+    }
+    nav ul li a {
+        text-decoration: none;
+         color: blue;   
     }
 
     nav ul li {
