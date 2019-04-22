@@ -45,7 +45,7 @@
         <section class="courses">
  
          {% for course in enrolled %}
-            
+      
           
 
     <article class="course">
@@ -57,7 +57,7 @@
             tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam
         </p>
         <ul class="courseDetails">
-        <li class="courseAuthor">Jose Machava</li>
+        <li class="courseAuthor">{{ course.author.first_name|capfirst }} {{ course.author.last_name|capfirst }}</li>
 
         <li class="skillsLevel">Iniciante</li>
         <img src="https://www.udacity.com/assets/iridium/images/svgs/beginner.svg" alt="level">
