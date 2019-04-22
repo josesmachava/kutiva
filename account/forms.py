@@ -17,8 +17,8 @@ class SignUpForm(UserCreationForm):
 
 
 class StudentSignUpForm(UserCreationForm):
-    first_name = forms.CharField(max_length=30, label='',  required=False, widget=forms.TextInput(attrs={'placeholder': 'Nome'}))
-    last_name = forms.CharField(max_length=30, label='', required=False, widget=forms.TextInput(attrs={'placeholder': 'Apelido'}))
+    first_name = forms.CharField(max_length=30, label='',  required=True, widget=forms.TextInput(attrs={'placeholder': 'Nome'}))
+    last_name = forms.CharField(max_length=30, label='', required=True  , widget=forms.TextInput(attrs={'placeholder': 'Apelido'}))
     email = forms.EmailField(max_length=254, label='',  widget=forms.TextInput(attrs={'placeholder': 'E-mail'}))
     password1 = forms.CharField(label='',  widget=forms.PasswordInput(attrs={'placeholder': 'Senha'}))
     password2 = forms.CharField(label='',  widget=forms.PasswordInput(attrs={'placeholder': 'Repitir Senha'}))
