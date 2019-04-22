@@ -42,19 +42,38 @@ def signup(request):
     return render(request, 'account/signup.html', {'form': form})
 
 
+def sudentsignup(request):
+    if request.method == 'POST':
+        form = StudentSignUpForm(request.POST)
+        if form.is_valid():
+            form.save()
+            email = form.cleaned_data.get('email')
+            raw_password = form.cleaned_data.get('password1')
+            user = authenticate(username=email, password=raw_password)
+            if user is not None:
+                login(request, user)
+                return redirect('index')
 
-class StudentSignUpView(CreateView):
-    model = User
-    form_class = StudentSignUpForm
-    template_name = 'account/student_signup.html'
+    else:
+        form = StudentSignUpForm()
+    return render(request, 'account/student_signup.html', {'form': form})
 
-    def get_context_data(self, **kwargs):
-        kwargs['user_type'] = 'USSD'
-        return super().get_context_data(**kwargs)
 
-    def form_valid(self, form):
-        user = form.save()
-        return redirect('index')
+
+
+
+# class StudentSignUpView(CreateView):
+#     model = User
+#     form_class = StudentSignUpForm
+#     template_name = 'account/student_signup.html'
+
+#     def get_context_data(self, **kwargs):
+#         kwargs['user_type'] = 'USSD'
+#         return super().get_context_data(**kwargs)
+
+#     def form_valid(self, form):
+#         user = form.save()
+#         return redirect('index')
 
 
 @login_required()
