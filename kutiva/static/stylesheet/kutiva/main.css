@@ -17,12 +17,11 @@ main {
   flex-shrink: 0;
 }
 .landingPageHeader {
-    height: 50vh;
-    background-size: cover;
-    background-position: center center;
-    width: 100vw;
-
-    margin-top: 14px;
+ background-image: url("../../images/43122.jpg");
+background-size: cover;
+background-position: center center;
+height: 100vh;
+background-repeat: no-repeat;
 
 }
 
@@ -66,12 +65,7 @@ main {
     padding: 20px;
 }
 
-.landingPageHeader {
-    /*background-image: url("../../images/43122.jpg");*/
-    background-size: cover;
-    background-position: center center;
-    height: 100vh;
-}
+
 
 .course ul {
     display: inline;
@@ -191,9 +185,11 @@ main {
     }
 
     .landingPageHeader {
-        height: 50vh;
-        margin-bottom: 20px;
-        margin-top: 14px;
+         background-image: url("../../images/43122.jpg");
+    background-size: cover;
+    background-position: center center;
+    height: 30vh;
+    background-repeat: no-repeat;
 
     }
 
@@ -220,14 +216,26 @@ main {
         height: 220px;
     }
 }
+@media only screen and (min-width:481 px  ) and (max-width: 769) {
+    .landingPageHeader {
+   background-image: url("../../images/43122.jpg");
+background-size: contain;
+background-position: center center;
+height: 50vh;
+background-repeat: no-repeat;
 
-@media only screen and (min-width: 768px  ) and (max-width: 992px) {
+        }
+
+
+}  
+@media only screen and (min-width: 769px  ) and (max-width: 992px) {
     .landingPageHeader img {
         width: 100%;
         display: block;
         margin: 0 auto;
 
     }
+  
 
     .testimonial {
         background-color: #FFF;
@@ -250,5 +258,21 @@ main {
         grid-gap: 50px;
         height: 220px;
     }
+
+}
+
+
+
+@media only screen and (min-width: 993px) and (max-width: 1200px){
+
+     .landingPageHeader {
+   
+  background-image: url("../../images/43122.jpg");
+background-size: cover;
+background-position: center center;
+height: 100vh;
+background-repeat: no-repeat;
+
+        }
 
 }
