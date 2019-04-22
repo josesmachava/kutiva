@@ -1,4 +1,7 @@
 /* MAIN NAVEGATION*/
+body{
+      position: relative;
+}
 nav {
     display: grid;
     grid-template-columns: 10% 30% 40% 20%;
@@ -382,7 +385,11 @@ nav ul li {
         text-align: center;
 
     }
-
+        .userAccount{
+        display: flex;
+justify-content: end;
+padding-right: 20px;
+    }
     .SearchInput {
         padding: 10px;
         width: 100%;
@@ -438,8 +445,12 @@ nav ul li {
 
 @media only screen and  (min-width: 1201px) {
     nav ul li {
-        font-size: 19px;
+        font-size: 15px;
         margin: 0 5px;
+    }
+    nav ul li a {
+        text-decoration: none;
+         color: blue;   
     }
 
     .searchIcon {
@@ -453,7 +464,12 @@ nav ul li {
 
     }
     nav{
-            grid-template-columns: 5% 25% 45% 5% 20%;
+            grid-template-columns:5% 25% 40% 5% 25%;;
+    }
+    .userAccount{
+        display: flex;
+justify-content: end;
+padding-right: 20px;
     }
 }
 

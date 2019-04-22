@@ -6,33 +6,35 @@
 
 {% if user.is_authenticated %}
      <nav class="hide-mobile card">
-    <h1><img src="{% static 'images/logo2.png' %}" alt="kutiva logo"></h1>
+    <h1><a href="{% url 'index'%}"> <img src="{% static 'images/logo2.png' %}" alt="kutiva logo"></a></h1>
     <ul>
 
-        <li>categorias</li>
-        <li>cursos</li>
-        <li>preço</li>
+        <li><a href="{% url 'course' %}"> Cursos</a></li>
+     
     </ul>
 
-      <form action="">
+        <form action="">
                 <input type="search" placeholder="search" class="SearchInput">
-       </form>
+           </form>
+           <div class="">
+                <p class="searchIcon"><i class="fas fa-search"></i></p>
+            </div>
+           <div>
 
-       <ul>
+       <ul class="userAccount">
 
-        <li>meus cursos</li>
-           <li>{{ user.firt_name }}</li>
+       <li><a href="{% url 'mycourses' %}">Meus Cursos</a></li>
+           <li>{{ user.first_name}} {{ user.last_name }} {{ user.firt_name}} </li>
 
        </ul>
 </nav>
 
 <nav class="card hide-desktop">
-             <h1><img src="{% static 'images/logo2.png' %}" alt="kutiva logo"></h1>
-
+        <h1><a href="{% url 'index'%}"> <img src="{% static 'images/logo2.png' %}" alt="kutiva logo"></a></h1>
            <form action="">
                 <input type="search" placeholder="search" class="SearchInput">
            </form>
-           <div clasS="">
+           <div class="">
                 <p class="searchIcon"><i class="fas fa-search"></i></p>
             </div>
            <div>
@@ -43,7 +45,7 @@
                              <ul>
                     <li><a href="{% url 'mycourses' %}">Meus Cursos</a></li>
                     <li>Perfil</li>
-                    <li><a href="{% url 'mycourses' %}"> Sair</a></li>
+                    <li><a href="{% url 'logout' %}"> Sair</a></li>
                 </ul>
 
                 </div>
@@ -58,11 +60,10 @@
 
 {%  else %}
 <nav class="hide-mobile card">
-    <h1><img src="{% static 'images/logo2.png' %}" alt="kutiva logo"></h1>
-    <ul>
+   <h1><a href="{% url 'index'%}"> <img src="{% static 'images/logo2.png' %}" alt="kutiva logo"></a></h1>   <ul>
 
-        <li>categorias</li>
-        <li>curso</li>
+        <li><a href="{% url 'course' %}"> Cursos</a></li>
+     
        
     </ul>
       <form action="">
@@ -77,17 +78,16 @@
                 <p class="searchIcon"><i class="fas fa-search"></i></p>
             </div>
 
-       <ul>
-        <li>sign in</li>
-        <li>sign up</li>
+       <ul class="userAccount">
+        <li><a href="{% url 'signin' %}">Iniciar Sessão</a> </li>
+        <li><a href="{%  url 'student_sigin' %}">criar conta</a> </li>
 
        </ul>
 </nav>
 
 
  <nav class="card hide-desktop">
-             <h1><img src="{% static 'images/logo2.png' %}" alt="kutiva logo"></h1>
-
+       <h1><a href="{% url 'index'%}"> <img src="{% static 'images/logo2.png' %}" alt="kutiva logo"></a></h1>
            <form action="">
                 <input type="search" placeholder="search" class="SearchInput">
            </form>
@@ -100,10 +100,10 @@
                 <div class="mobileMenu">
                           <p class="closeIcon"><i class="fas fa-times"></i></p>
                              <ul>
-                    <li>Categorias</li>
                     <li>Cursos</li>
-                    <li>sign in</li>
-                    <li class="signIn">sign up</li>
+                   <li><a href="{% url 'signin' %}">Iniciar Sessão</a> </li>
+        <li><a href="{%  url 'student_sigin' %}">criar conta</a> </li>
+
                 </ul>
 
                 </div>
