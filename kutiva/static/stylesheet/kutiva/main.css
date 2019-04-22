@@ -185,11 +185,11 @@ background-repeat: no-repeat;
     }
 
     .landingPageHeader {
-         background-image: url("../../images/43122.jpg");
-    background-size: cover;
-    background-position: center center;
-    height: 30vh;
-    background-repeat: no-repeat;
+       background-image: url("../../images/43122.jpg");
+background-size: contain;
+background-position: center center;
+height: 50vh;
+background-repeat: no-repeat;
 
     }
 
