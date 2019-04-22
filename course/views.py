@@ -13,16 +13,19 @@ def course(request):
 def course_details(request, id):
     try:
         enrolled =  Enrolled.objects.filter(user=request.user)
-        print(type(id))
-        for i in enrolled:
-            print(type(i.course.id))
-
+       
+           
         courses = Course.objects.all()
         course = Course.objects.get(id=id)
+        enrolled_course = list()
+        for i in enrolled:
+            print()
+            enrolled_course.append(i.course.id)
+        
     except Course.DoesNotExist:
         raise Http404('This item does not exist')
 
-    return render(request, 'course/details.html', {'course': course, 'courses': courses, 'enrolled':enrolled})
+    return render(request, 'course/details.html', {'course': course, 'courses': courses, 'enrolled_course':enrolled_course})
 
 
 
@@ -53,4 +56,4 @@ def add_course(request, id):
     except Course.DoesNotExist:
         raise Http404('This item does not exist')
 
-    return redirect('index')
+    return redirect('mycourses')

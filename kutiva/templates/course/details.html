@@ -24,6 +24,10 @@
         font-family: 'Open Sans', sans-serif;
 
     }
+    header button a{
+        text-decoration: none;
+        color: white;
+    }
      .curriculum ul li{
                     list-style: none;
                 }
@@ -177,14 +181,16 @@
                             {{ course.description }}
                         </p>
                       
-
                        </section>
-                         <p>{{ course.id }}</p>
                         <section class="course-join">
-                            
-                            
-                                    <button><a href="{% url 'add_course' course.id %}"> inscrição</a></button>
-                                    
+                                {{ enrolled_course }}
+                           {% if course.id in enrolled_course %}
+                                 <button><a href="{% url 'classroom' course.id %}"> ver</a></button>
+
+                            {% else %}
+                                         <button><a href="{% url 'add_course' course.id %}"> inscrição</a></button>
+                           {% endif %}
+                          
 
                             
                         </section>
@@ -205,9 +211,10 @@
                          {% for lesson in chapter.lessons.all  %}
 
                              <li>{{ lesson.name }}</li>
-                                            {% endfor %}
+                              {% endfor %}
+                           </ul>                
                      {% endfor %}
-                        </ul>
+                        
                     </section>
 
 {#                        <h4>Cursos Relacionados</h4>#}
