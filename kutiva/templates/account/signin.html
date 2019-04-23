@@ -33,14 +33,14 @@
                         
                          <input type="email" placeholder="E-mail" class="inputField" name="username">
                          <input placeholder="Senha" type="password" class="inputField" name="password">
-                        <p><a href="{% url 'password_reset' %}" class="unstyledLink">Esqueceu a senha?</a></p>
+                        <p><a href="{% url 'password_reset' %}" class="unstyledLink link-button">Esqueceu a senha?</a></p>
                         <input type="submit" name="hello" class="primary-button" value="Iniciar Sessão">
                           
                        {% for message in messages %}
                           <p class="error alignTextCenter"> {{ message }}</p>
                     {% endfor %}
 
-                    <p class="alignTextCenter"><a class="unstyledLink" href="{% url 'student_sigin' %}">ou criar conta</a></p>
+                    <p class="alignTextCenter"><a class="unstyledLink link-button" href="{% url 'student_sigin' %}">ou criar conta</a></p>
                      </form>
      
       </div>
