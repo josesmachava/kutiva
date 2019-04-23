@@ -50,6 +50,24 @@ def classroom(request, id):
 
 
 
+@login_required()
+def watch(request, course_id, lesson_id):
+    if  request.user.is_student == False:
+        return render(request, 'course/payment.html')
+    
+    else:
+            
+        try:
+            course = Course.objects.get(id=course_id)
+            lesson = Lesson.objects.get(id=lesson_id)
+        except Course.DoesNotExist:
+            raise Http404('This item does not exist')
+
+        return render(request, 'course/watch.html', {'course': course, 'lesson':lesson})
+
+
+
+
 
 @login_required()
 def payment(request):

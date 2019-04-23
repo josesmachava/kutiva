@@ -166,16 +166,18 @@
                 
 
           </div>
-         </header>       
+         </header>  
+                <h1>{{ course.name }}</h1>
+                         
                 <section class="curriculum card">
                     <h2>Currículo</h2>
-
                      {% for chapter in  course.chapter.all  %}
                          <h3 class="chapter"> {{ chapter.name }}</h3>
-                         <ul>
+                         <ul class="">
                          {% for lesson in chapter.lessons.all  %}
 
-                             <li ><a href="{% url 'watch' course.id lesson.id %}"> {{ lesson.name }}</a></li>
+                             
+                             <li ><a class="link-button unstyledLink" href="{% url 'watch' course.id lesson.id %}"> {{ lesson.name }}</a></li>
                                </ul>
                                             {% endfor %}
                      {% endfor %}
@@ -190,7 +192,7 @@
     <script>
           jwplayer("player").setup({
             "streamer": "rtmp:/s1hokzd6wxykag.cloudfront.net/cfx/st",
-            "file": "{{ lesson.id }}",
+            "file": "{{ lesson.video }}",
             "image": "http://example.com/myImage.png",
             "width": "100%",
             "aspectratio": "16:9"
