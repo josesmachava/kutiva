@@ -44,11 +44,11 @@
         }
         header button{
             border: none;
-            background-color: #0000ff;
             color: white;
             width: 150px;
             height: 44px;
             margin-top: 100px;
+            width: 200px;
             border-radius: 3px;
         }
     @media only screen and  (max-width: 480px) {
@@ -64,6 +64,7 @@
                         font-size: 16px;
     text-transform: capitalize;
     font-weight: bold;
+    width: 200px !import;
 
                 }
                 .curriculum{
@@ -187,13 +188,13 @@
 
                            {% if user.is_authenticated %}
                                    {% if course.id in enrolled_course %}
-                                     <button><a href="{% url 'classroom' course.id %}"> ver</a></button>
+                                     <button class="primary-button"><a href="{% url 'classroom' course.id %}"> ver</a></button>
 
                                 {% else %}
-                                             <button><a href="{% url 'add_course' course.id %}"> inscrição</a></button>
+                                             <button class="primary-button"><a href="{% url 'add_course' course.id %}"> inscrição</a></button>
                                {% endif %}
                             {% else %}
-                                       <button><a href="{% url 'signin'  %}"> Iniciar Sessão</a></button>
+                                       <button class="primary-button"><a href="{% url 'signin'  %}"> Iniciar Sessão</a></button>
 
                             {% endif %}                              
 

@@ -51,21 +51,7 @@ form {
     border-radius: 8px;
 }
 
-nav ul {
-    padding-top: 15px;
 
-}
-
-nav ul li {
-    display: inline;
-    list-style: none;
-    font-family: 'Open Sans', sans-serif;
-    font-size: 19px;
-    color: #0000ff;
-    margin: 0 20px;
-    font-weight: bold;
-    text-transform: capitalize;
-}
 
 
 /*MAIN NAVEGATION*/
@@ -92,28 +78,11 @@ nav ul li {
     border-radius: 8px;
 }
 
-nav ul {
-    padding-top: 15px;
 
-}
-
-nav ul li {
-    display: inline;
-    list-style: none;
-    font-family: 'Open Sans', sans-serif;
-    font-size: 19px;
-    color: #0000ff;
-    margin: 0 20px;
-    font-weight: bold;
-    text-transform: capitalize;
-}
 
 
 @media only screen and  (max-width: 320px) {
-    nav ul li a {
-        text-decoration: none;
-         color: blue;   
-    }
+    
     nav {
         display: grid;
         grid-template-columns: 20% 60% 10% 10%;
@@ -224,11 +193,7 @@ nav ul li {
         height: 60px;
 
     }
-    nav ul li a {
-        text-decoration: none;
-         color: blue;   
-    }
-
+   
     nav img {
         margin-top: -15px;
     }
@@ -343,10 +308,7 @@ nav ul li {
     nav {
        grid-template-columns: 10% 30% 53% 7%;
     }
-    nav ul li a {
-        text-decoration: none;
-         color: blue;   
-    }
+   
 
     nav ul li {
         font-size: 16px;
@@ -422,10 +384,7 @@ padding-right: 20px;
 
 
 @media only screen and (min-width: 993px) and (max-width: 1200px) {
-    nav ul li {
-        font-size: 18px;
-        margin: 0 5px;
-    }
+ 
 
     .searchIcon {
         display: block;
@@ -455,14 +414,7 @@ padding-right: 20px;
 
 
 @media only screen and  (min-width: 1201px) {
-    nav ul li {
-        font-size: 15px;
-        margin: 0 5px;
-    }
-    nav ul li a {
-        text-decoration: none;
-         color: blue;   
-    }
+  
 
     .searchIcon {
         display: block;

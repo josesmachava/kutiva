@@ -83,8 +83,6 @@ background-repeat: no-repeat;
 }
 
 .seeCourses {
-    border: navajowhite;
-    background-color: blue;
     color: white;
     height: 50px;
     text-transform: capitalize;
@@ -194,8 +192,6 @@ background-repeat: no-repeat;
     }
 
     .seeCourses {
-        border: navajowhite;
-        background-color: blue;
         color: white;
         height: 50px;
         text-transform: capitalize;
