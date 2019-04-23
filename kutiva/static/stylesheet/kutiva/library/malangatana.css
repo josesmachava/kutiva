@@ -86,6 +86,47 @@ input{
     background-color: #F6F8FA;
  }
 
+/*buttons*/
+ .primary-button{
+    border: none;
+    background-color: rgb(7, 71, 166);
+    color: white;
+    height: 40px;
+    width: auto;
+    border-radius: 4px;
+
+}
+
+ 
+ .default-button{
+    border: none;
+    background-color: rgba(9, 30, 66, 0.08);
+    color: black;
+    height: 40px;
+    width: auto;
+    border-radius: 4px;
+ }
+ .warning-button{
+     border: none;
+    background-color: #F5AA07;
+    color: black;
+    height: 40px;
+    width: auto;
+    border-radius: 4px;    
+ } 
+ .danger-button{
+    border: none;
+    background-color:#DE350A;
+    color: white;
+    height: 40px;
+    width: auto;
+    border-radius: 4px; 
+ } 
+ .disable-button{
+
+ }
+
+ /*buttons*/
 
 
 @media only screen and  (max-width: 480px) {
