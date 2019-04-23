@@ -50,8 +50,8 @@ input{
     border-radius: 2px;
     color: #2e3d49;
     margin: 10px;
-        border-radius: 4px;
-            height: 44px;
+    border-radius: 4px;
+    height: 44px;
 
 }
 
@@ -61,10 +61,11 @@ input{
   place-items: center center;
 
 }
+
 .alignElementCenter{
   display: grid;
   place-items: center center;
-
+  height: 100%;
 }
 
 .alignTextCenter{

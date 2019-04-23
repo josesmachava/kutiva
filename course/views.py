@@ -34,12 +34,28 @@ def course_details(request, id):
 
 @login_required()
 def classroom(request, id):
-    try:
-        course = Course.objects.get(id=id)
-    except Course.DoesNotExist:
-        raise Http404('This item does not exist')
+    if  request.user.is_student == False:
+        return render(request, 'course/payment.html')
+    
+    else:
+            
+        try:
+            course = Course.objects.get(id=id)
+        except Course.DoesNotExist:
+            raise Http404('This item does not exist')
 
-    return render(request, 'course/classroom.html', {'course': course})
+        return render(request, 'course/classroom.html', {'course': course})
+
+
+
+
+
+
+@login_required()
+def payment(request):
+    
+    return render(request, 'course/payment.html')
+
 
 
 
@@ -48,6 +64,9 @@ def user_courses(request):
     enrolled =  Enrolled.objects.filter(user=request.user)
     
     return render(request, 'course/paidCourse.html', {'enrolled':enrolled})
+
+
+
 
 def add_course(request, id):
     try:
