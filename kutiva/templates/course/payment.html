@@ -20,7 +20,17 @@
 <meta name="viewport", content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="{% static 'stylesheet/kutiva/main.css' %}">
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="
+
 sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+
+<style type="text/css">
+  
+  .paymentInformation{
+      width: 300px;
+      height: auto;
+      padding: 20px;
+  }
+</style>
 {% endblock %}
 
 
@@ -28,14 +38,7 @@ sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossor
 {#    only include css  files needed for thi page bootstap and other libs are add in base template #}
 
 {% endblock %}
-<style type="text/css">
-  
-  .paymentInformation{
-      width: 300px;
-      height: auto;
-      padding: 200px;
-  }
-</style>
+
 
 {% block content %}
 
@@ -46,8 +49,8 @@ sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossor
     <div class="alignElementCenter">
       <div class="paymentInformation card">
         <h1 class="alignTextCenter"> Pagamentos Mensais</h1>
-        <p>Para ter acesso ao cursos da plataforma kutiva e necessario que faca os pagamentos mensais usandos  os seguintes canais</p>
-          <ul>
+        <p class="alignTextCenter">Para ter acesso ao cursos da plataforma kutiva e necessario que faca os pagamentos mensais usandos  os seguintes canais</p>
+          <ul class="unstyledList alignTextCenter">
             
             <li> Conta móvel: 849394995</li>
             <li> Mpesa: 849394995</li>
