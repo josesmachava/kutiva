@@ -21,6 +21,7 @@ li ul{
      height: 100px;
      position: absolute;
      width: 100px;
+     top: 60px;
 }
 
 form {
@@ -87,11 +88,6 @@ form {
 
 
 
-@media only screen and (min-width: 993px) and (max-width: 1200px) {
- 
-
- 
-}
 
 
 
@@ -112,9 +108,12 @@ form {
 
      grid-template-columns: 10% 50% 40%;
     }
-  
-}
+    .defaultHeader, .classroom {
 
+    margin: 0 -21.3%;
+  
+    }
+}
 /* 
   ##Device = Laptops, Desktops
   ##Screen = B/w 1025px to 1280px
@@ -129,6 +128,11 @@ form {
 
      grid-template-columns: 10% 50% 40%;
     }
+    .defaultHeader, .classroom{
+
+    margin: 0 -12.5%;
+
+    }
   
 }
 
@@ -138,8 +142,10 @@ form {
 */
 
 @media (min-width: 768px) and (max-width: 1024px) {
-  
-  //CSS
+      main, nav{
+        padding: 0 5%;
+    }
+ 
   
 }
 
@@ -154,9 +160,7 @@ form {
   
 }
 
-/* 
-  ##Device = Low Resolution Tablets, Mobiles (Landscape)
-  ##Screen = B/w 481px to 767px
+Screen = B/w 481px to 767px
 */
 
 @media (min-width: 481px) and (max-width: 767px) {
