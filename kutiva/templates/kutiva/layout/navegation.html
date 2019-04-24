@@ -7,24 +7,21 @@
 {% if user.is_authenticated %}
      <nav class="hide-mobile card">
     <h1><a href="{% url 'index'%}"> <img src="{% static 'images/logo2.png' %}" alt="kutiva logo"></a></h1>
-    <ul class="unstyledList">
-
-        <li class="link-button"><a class="unstyledLink link-button" href="{% url 'course' %}"> Cursos</a></li>
-     
-    </ul>
+   
 
         <form action="">
                 <input type="search" placeholder="search" class="SearchInput">
+                 <p class="searchIcon"><i class="fas fa-search"></i></p>
            </form>
-           <div class="">
-                <p class="searchIcon"><i class="fas fa-search"></i></p>
-            </div>
-           <div>
-
-       <ul class="unstyledList userAccount">
-
+        
+       <ul class="alignRight unstyledList">
+        <li class="link-button"><a class="unstyledLink link-button" href="{% url 'course' %}"> Cursos</a></li>
        <li class="link-button"><a class="unstyledLink link-button"  href="{% url 'mycourses' %}">Meus Cursos</a></li>
-           <li class="link-button">{{ user.first_name}} {{ user.last_name }} {{ user.firt_name}} </li>
+           <li class="user-name link-button">{{ user.first_name}} {{ user.last_name }} {{ user.firt_name}}<i class="fas fa-sort-down"></i>
+                <ul class="card unstyledList settings">
+                       <li class="link-button"><a class="unstyledLink link-button"  href="{% url 'logout' %}"> Sair</a></li>
+                </ul>
+            </li>
 
        </ul>
 </nav>

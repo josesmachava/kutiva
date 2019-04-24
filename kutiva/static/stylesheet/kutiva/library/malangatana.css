@@ -78,7 +78,12 @@ input{
 .alignTextRight{
     text-align: right;
 }
+.alignRight{
 
+display: flex;
+justify-content: flex-end;
+   
+}
 .alignTextLeft{
     text-align: left;
 }
@@ -87,6 +92,8 @@ input{
     height: 15vh;
     color: #3a343a;
     background-color: #F6F8FA;
+        margin: 0 -5.5%;
+
  }
 
 
