@@ -125,6 +125,24 @@ DATABASES = {
 }
 
 
+try:
+    from .settings_local import *
+except ImportError:
+    try:
+        DEBUG = os.environ.get('DEBUG')
+    except Exception as e:
+        DEBUG = True
+    ALLOWED_HOSTS = ["*"]
+
+
+    # Parse database configuration from $DATABASE_URL
+    DATABASES['default'] = dj_database_url.config()  # Reverted RDS Migration
+    # Enable Persistent Connections
+    DATABASES['default']['CONN_MAX_AGE'] = 500
+
+
+
+
 # Password validation
 # https://docs.djangoproject.com/en/1.11/ref/settings/#auth-password-validators
 
