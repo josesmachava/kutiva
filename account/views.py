@@ -7,9 +7,9 @@ from django.shortcuts import render, redirect, HttpResponse
 from django.contrib.auth.models import User
 from django.contrib import messages
 from django.views.generic import CreateView, UpdateView, DeleteView
-from .forms import SignUpForm, StudentSignUpForm, StudentPerfil
+from .forms import SignUpForm, StudentSignUpForm, StudentSignUpdateForm
 from kutiva.views import index
-
+from .models import *
 
 def signin(request):
     if request.method == 'POST':
@@ -62,8 +62,8 @@ def sudentsignup(request):
 
 
 class StudentPerfile(UpdateView):
-    template_name = "account/perfile"
-    form_class = StudentSignUpForm
+    template_name = "account/perfile.html"
+    form_class = StudentSignUpdateForm
     model = User
     success_url = reverse_lazy('index')
 
@@ -71,7 +71,7 @@ class StudentPerfile(UpdateView):
         user = form.save()
 
         user.student.location = form.cleaned_data.get('location')
-        user.ussd.save()
+        user.student.save()
         return redirect('index')
 
 
