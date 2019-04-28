@@ -28,7 +28,7 @@ urlpatterns = [
     path('course/', include('course.urls')),
     path('graphql', GraphQLView.as_view(graphiql=True)),
     path('cms/', include('cms.urls')),
-    path('pagamento/', include('payment.urls')),
+    path('payment/', include('payment.urls')),
     path('api/', include('api.urls')), # new
 
     #path('cms/', include('cms.urls')),

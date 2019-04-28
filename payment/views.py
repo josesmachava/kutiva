@@ -58,3 +58,4 @@ def Mpesa(request):
         print("something went wrong")
         return HttpResponseRedirect(reverse(viewname="index"))
    
+
