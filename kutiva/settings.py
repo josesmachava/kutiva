@@ -120,9 +120,8 @@ WSGI_APPLICATION = 'kutiva.wsgi.application'
 
 
 # Parse database configuration from $DATABASE_URL
-DATABASES['default'] = dj_database_url.config()  # Reverted RDS Migration
+DATABASES = { 'default' : dj_database_url.config()}
 # Enable Persistent Connections
-DATABASES['default']['CONN_MAX_AGE'] = 500
 DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.postgresql_psycopg2",
