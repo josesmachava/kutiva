@@ -25,6 +25,70 @@ sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossor
 
 <style type="text/css">
   
+  .paymentInformation{
+      width: 300px;
+      height: auto;
+      padding: 20px;
+  }
+  
+.modal {
+  display: none; 
+  position: fixed; 
+  z-index: 1; 
+  padding-top: 100px; 
+  left: 0;
+  top: 0;
+  width: 100%; 
+  height: 100%; 
+  overflow: auto; 
+  background-color: rgb(0,0,0); 
+  background-color: rgba(0,0,0,0.4);
+}
+#modalIcon {
+    padding-left: 35%;
+    width: 80px;
+}
+/* Modal Content */
+.modal-content {
+  position: relative;
+  background-color: #fefefe;
+  margin: auto;
+  padding: 15px;
+  border: 1px solid #888;
+  width: 350px;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+  -webkit-animation-name: animatetop;
+  -webkit-animation-duration: 0.4s;
+  animation-name: animatetop;
+  animation-duration: 0.4s
+}
+
+/* Add Animation */
+@-webkit-keyframes animatetop {
+  from {top:-300px; opacity:0} 
+  to {top:0; opacity:1}
+}
+
+@keyframes animatetop {
+  from {top:-300px; opacity:0}
+  to {top:0; opacity:1}
+}
+
+/* The Close Button */
+.close {
+  color: white;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+  color: rgb(7, 71, 166);
+}
+
+.close:hover,
+.close:focus {
+  
+  text-decoration: none;
+  cursor: pointer;
+}
   
 </style>
 {% endblock %}
@@ -41,9 +105,77 @@ sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossor
 {% include "kutiva/layout/navegation.html" %}
 
 
-<main>
-    <h1>Payment</h1>
-</main>
+
+    <main>
+        <div class="alignElementCenter">
+          <div class="paymentInformation card">
+            <h1 class="alignTextCenter"> Pagamento Mensal</h1>
+            <p class="alignTextCenter" style="font-size: 15px;color: grey;">podes fazer pagamento para  usando  o seguinte canal  </p>
+              <ul class="unstyledList alignTextCenter">
+                
+                <li> <a href="#" class="btn btn-primary" data-toggle="modal" data-target="#pagamentoMpesa" id="btnModal">
+                     <img src="{% static 'images/wallet/mpesa-icon.png' %}" style="width:100px!important;" alt="Mpesa">
+                    </a>
+                    </li>
+                     
+              </ul>
+              
+          </div>
+    
+        </div>
+
+
+
+        
+    </main>
+<!-- The Modal -->
+<div id="pagamentoMpesa" class="modal">
+
+        <!-- Modal content -->
+        <div class="modal-content">
+          <span class="close">&times;</span>
+          <img src="{% static 'images/wallet/mpesa-icon.png' %}" alt="Mpesa" id="modalIcon">
+          <form action ="#" method="post">
+                {% csrf_token %}
+            
+                            <input type="number" class="inputField" name="amount">
+                  
+                            <button type="submit" class="primary-button">Pagar</button>
+      		
+            </form>
+        </div>
+      
+      </div>
+
+    
+<script>
+// Get the modal
+var modal = document.getElementById('pagamentoMpesa');
+
+// Get the button that opens the modal
+var btn = document.getElementById("btnModal");
+
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[0];
+
+// When the user clicks on the button, open the modal 
+btn.onclick = function() {
+  modal.style.display = "block";
+}
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() {
+  modal.style.display = "none";
+}
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+}
+</script>
+
 {% include "kutiva/layout/footer.html" %}
 
 
