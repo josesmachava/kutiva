@@ -132,7 +132,7 @@ DATABASES = {
 try:
   from local_settings import *
 except Exception as e:
-  
+    pass  
 
 
 # Password validation
