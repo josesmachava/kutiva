@@ -2,7 +2,7 @@
 #To automate Local and Production server settings
 import socket
 
-if socket.gethostname() == 'YOUR_MACHINE_HOSTNAME_HERE':	#ensure your local machine hostname is used
+if socket.gethostname() == 'admin321-Aspire-5750':	#ensure your local machine hostname is used
     DEBUG = True
     #DATABASES['default'] = DATABASES['default']	#for tests, comment out upon upgrade
     
