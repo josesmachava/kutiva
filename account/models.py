@@ -60,9 +60,9 @@ class User(AbstractUser):
 
 class Student(models.Model):
     user = models.OneToOneField(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
-  
-   
+    location = models.CharField(max_length=30, blank=True)
+    birth_date = models.DateField(null=True, blank=True)
+    
     def __str__(self):
         return str(self.user)
-
 

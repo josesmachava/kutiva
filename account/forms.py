@@ -36,3 +36,22 @@ class StudentSignUpForm(UserCreationForm):
 
         student = Student.objects.create(user=user)
         return user        
+
+
+
+
+class StudentPerfil(UserCreationForm):
+      
+    class Meta(UserCreationForm.Meta):
+        model = Student
+        fields = ('location', )
+    @transaction.atomic
+    def save(self):
+        user = super().save(commit=False)
+        user.is_instructor = False
+        user.is_student = False
+       
+        user.save()
+
+        student = Student.objects.create(user=user)
+        return user                

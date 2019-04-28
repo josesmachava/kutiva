@@ -1,12 +1,13 @@
 from django.contrib.auth import login, authenticate
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth import logout
+from django.urls import reverse_lazy
 from django.contrib.auth.decorators import login_required
 from django.shortcuts import render, redirect, HttpResponse
 from django.contrib.auth.models import User
 from django.contrib import messages
 from django.views.generic import CreateView, UpdateView, DeleteView
-from .forms import SignUpForm, StudentSignUpForm
+from .forms import SignUpForm, StudentSignUpForm, StudentPerfil
 from kutiva.views import index
 
 
@@ -60,20 +61,19 @@ def sudentsignup(request):
 
 
 
+class StudentPerfile(UpdateView):
+    template_name = "account/perfile"
+    form_class = StudentSignUpForm
+    model = User
+    success_url = reverse_lazy('index')
 
+    def form_valid(self, form):
+        user = form.save()
 
-# class StudentSignUpView(CreateView):
-#     model = User
-#     form_class = StudentSignUpForm
-#     template_name = 'account/student_signup.html'
+        user.student.location = form.cleaned_data.get('location')
+        user.ussd.save()
+        return redirect('index')
 
-#     def get_context_data(self, **kwargs):
-#         kwargs['user_type'] = 'USSD'
-#         return super().get_context_data(**kwargs)
-
-#     def form_valid(self, form):
-#         user = form.save()
-#         return redirect('index')
 
 
 @login_required()

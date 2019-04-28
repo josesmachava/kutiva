@@ -4,10 +4,9 @@ import socket
 
 if socket.gethostname() == 'josemachava-ThinkPad-T440':	#ensure your local machine hostname is used
     DEBUG = True
-    DATABASES['default'] = DATABASES['default']	#for tests, comment out upon upgrade
+    # DATABASES['default'] = DATABASES['default']	#for tests, comment out upon upgrade
     
+
 Has_Local_Settings = True
 
-
-UG = True
 
