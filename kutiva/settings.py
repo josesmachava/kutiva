@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/1.11/ref/settings/
 """
 
 import os
+import dj_database_url
 from django.utils.translation import ugettext_lazy as _
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -135,10 +136,7 @@ except ImportError:
     ALLOWED_HOSTS = ["*"]
 
 
-    # Parse database configuration from $DATABASE_URL
-    DATABASES['default'] = dj_database_url.config()  # Reverted RDS Migration
-    # Enable Persistent Connections
-    DATABASES['default']['CONN_MAX_AGE'] = 500
+   DATABASES['default'] = dj_database_url.config(conn_max_age=600, ssl_require=True)
 
 
 
