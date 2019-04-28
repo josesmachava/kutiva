@@ -118,27 +118,21 @@ WSGI_APPLICATION = 'kutiva.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/1.11/ref/settings/#databases
 
+
+# Parse database configuration from $DATABASE_URL
+DATABASES['default'] = dj_database_url.config()  # Reverted RDS Migration
+# Enable Persistent Connections
+DATABASES['default']['CONN_MAX_AGE'] = 500
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+    "default": {
+        "ENGINE": "django.db.backends.postgresql_psycopg2",
     }
 }
 
-
 try:
-    from .settings_local import *
-except ImportError:
-    try:
-        DEBUG = os.environ.get('DEBUG')
-    except Exception as e:
-        DEBUG = True
-    ALLOWED_HOSTS = ["*"]
-
-
-    DATABASES['default'] = dj_database_url.config(conn_max_age=600, ssl_require=True)
-
-
+  from local_settings import *
+except Exception as e:
+  
 
 
 # Password validation
