@@ -48,6 +48,10 @@ sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossor
     padding-left: 35%;
     width: 80px;
 }
+.enviar{
+  width: 80%;
+  margin-left: 10%;
+}
 /* Modal Content */
 .modal-content {
   position: relative;
@@ -135,12 +139,16 @@ sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossor
         <div class="modal-content">
           <span class="close">&times;</span>
           <img src="{% static 'images/wallet/mpesa-icon.png' %}" alt="Mpesa" id="modalIcon">
-          <form action ="#" method="post">
-                {% csrf_token %}
+          <form action ="{% url 'mpesa' %}" method="post">
+         
+              {% csrf_token %}
+                
             
-                            <input type="number" class="inputField" name="amount">
+                            <input type="number" class="inputField" name="contact" placeholder="Digite o seu numero 84 xxx xxxx" style="width:90%">
                   
-                            <button type="submit" class="primary-button">Pagar</button>
+                            <div>
+                            <button type="submit" class="primary-button enviar">Enviar</button>
+                            </div>
       		
             </form>
         </div>
