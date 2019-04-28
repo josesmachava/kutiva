@@ -60,6 +60,7 @@ INSTALLED_APPS = [
     'api',
     'account',
     'cms',
+    'payment',
   
     
 ]
