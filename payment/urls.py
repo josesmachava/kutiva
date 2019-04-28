@@ -19,7 +19,7 @@ from django.urls import path, include
 from . import views
 
 urlpatterns = [
-    path('', views.Payment, name="payment-input"),
+    path('', views.payment, name="payment-input"),
    
 
 ]

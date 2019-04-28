@@ -7,5 +7,5 @@ from django.contrib.auth.decorators import login_required
 # Create your views here.
 
 @login_required()
-def Payment(request):
+def payment(request):
     return render(request, 'payment/payment.html')
