@@ -132,15 +132,15 @@ DATABASES = {
 }
 
 
-DATABASES['default'] = dj_database_url.config()  # Reverted RDS Migration
-# Enable Persistent Connections
-DATABASES['default']['CONN_MAX_AGE'] = 500
 
 
 try:
     from .settings_local import *
 except ImportError:
-    pass
+    DATABASES['default'] = dj_database_url.config()  # Reverted RDS Migration
+# Enable Persistent Connections
+    DATABASES['default']['CONN_MAX_AGE'] = 500
+
    
  
 
