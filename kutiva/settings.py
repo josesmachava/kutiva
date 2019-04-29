@@ -130,6 +130,12 @@ WSGI_APPLICATION = 'kutiva.wsgi.application'
 # Parse database configuration from $DATABASE_URL
 # Enable Persistent Connections
 
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+    }
+}
 
 
 try:
