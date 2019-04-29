@@ -172,12 +172,12 @@
                 <section class="curriculum card">
                     <h2>Currículo</h2>
                      {% for chapter in  course.chapter.all  %}
-                         <h3 class="chapter"> {{ chapter.name }}</h3>
+                         <h3 class="chapter"> {{ chapter.name|capfirst }}</h3>
                          <ul class="">
                          {% for lesson in chapter.lessons.all  %}
 
                              
-                             <li ><a class="link-button unstyledLink" href="{% url 'watch' course.id lesson.id %}"> {{ lesson.name }}</a></li>
+                             <li ><a class="link-button unstyledLink" href="{% url 'watch' course.id lesson.id %}"> {{ lesson.name|capfirst }}</a></li>
                                </ul>
                                             {% endfor %}
                      {% endfor %}

@@ -65,7 +65,8 @@
     <article class="course">
     <!-- <img src="https://udemy-images.udemy.com/course/240x135/1430746_2f43_2.jpg" alt="screencast cover" class="cover"> -->
 
-    <h1 class="courseTitle"><a href="{% url 'classroom' course.course.id %}">{{ course.course.name}}  </a></h1>
+    <h1 class="courseTitle"><a href=" {% url 'watch' course.course.id 1 %}">{{ course.course.name}}  </a></h1>
+   
         <p class="decription">
             {{ course.course.decription}} 
         </p>
