@@ -178,8 +178,9 @@
 
                              
                              <li ><a class="link-button unstyledLink" href="{% url 'watch' course.id lesson.id %}"> {{ lesson.name|capfirst }}</a></li>
+                              {% endfor %}
                                </ul>
-                                            {% endfor %}
+                                           
                      {% endfor %}
                       
                     </section>

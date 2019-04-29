@@ -213,11 +213,11 @@
                     <section class="curriculum card">
                     <h2>Currículo</h2>
                      {% for chapter in  course.chapter.all  %}
-                         <h3 class="chapter"> {{ chapter.name }}</h3>
+                         <h3 class="chapter link-button" > {{ chapter.name|capfirst }}</h3>
                          <ul>
                          {% for lesson in chapter.lessons.all  %}
 
-                             <li>{{ lesson.name }}</li>
+                             <li  class="link-button unstyledLink">{{ lesson.name|capfirst }}</li>
                               {% endfor %}
                            </ul>                
                      {% endfor %}

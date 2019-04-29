@@ -10,6 +10,7 @@ from kutiva import settings
 class Lesson(models.Model):
     name = models.CharField(max_length=1000)
     video = models.URLField()
+    image = models.URLField()
     created_date = models.DateTimeField(auto_now_add=True)
     uploaded_at = models.DateTimeField(auto_now_add=True)
 
