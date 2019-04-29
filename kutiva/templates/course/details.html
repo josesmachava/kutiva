@@ -189,7 +189,7 @@
 
                            {% if user.is_authenticated %}
                                    {% if course.id in enrolled_course %}
-                                     <button class="primary-button"><a href="{% url 'classroom' course.id %}"> ver</a></button>
+                                     <button class="primary-button"><a href="{% url 'watch' course.id 1 %} %}"> ver</a></button>
 
                                 {% else %}
                                              <button class="primary-button"><a href="{% url 'add_course' course.id %}"> inscrição</a></button>

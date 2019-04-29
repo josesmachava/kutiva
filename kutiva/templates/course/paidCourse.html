@@ -67,8 +67,7 @@
 
     <h1 class="courseTitle"><a href="{% url 'classroom' course.course.id %}">{{ course.course.name}}  </a></h1>
         <p class="decription">
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-            tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam
+            {{ course.course.decription}} 
         </p>
         <ul class="courseDetails">
         <li class="courseAuthor">{{ course.author.first_name|capfirst }} {{ course.author.last_name|capfirst }}</li>
