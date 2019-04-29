@@ -76,6 +76,12 @@ LOGIN_URL='signin'
 LOGOUT_REDIRECT_URL = 'index'
 
 
+
+DATABASES = {
+    'default': dj_database_url.config()
+}
+
+
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
@@ -123,9 +129,6 @@ WSGI_APPLICATION = 'kutiva.wsgi.application'
 # Enable Persistent Connections
 
 
-DATABASES = {
-    'default': dj_database_url.config()
-}
 
 
 try:
