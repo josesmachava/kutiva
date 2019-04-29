@@ -8,7 +8,7 @@ __pycache__/
 # C extensions
 *.so
 
-
+db.sqlite3
 kutiva/settings_local.py
 kutiva/settings_local.pyc
 
