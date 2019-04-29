@@ -14,7 +14,7 @@ class Lesson(models.Model):
     uploaded_at = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
-         return str(self.name)
+        return str(self.name)
 
 
 class Subcategory(models.Model):
