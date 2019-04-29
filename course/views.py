@@ -51,7 +51,7 @@ def classroom(request, id):
 
 
 @login_required()
-def watch(request, course_id, lesson_id):
+def watch(request, course_id, lesson_id=1):
     if  request.user.is_student == False:
         return render(request, 'course/payment.html')
     
