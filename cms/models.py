@@ -39,7 +39,7 @@ class Chapter(models.Model):
     created_date = models.DateTimeField(default=timezone.now)
 
     def __str__(self):
-        return self.name
+        return str(self.name)
 
 
 class Course(models.Model):
@@ -52,7 +52,8 @@ class Course(models.Model):
     created_date = models.DateTimeField(default=timezone.now)
 
     def __str__(self):
-        return self.name
+        return str(self.name)
+
 
 
 class Enrolled(models.Model):

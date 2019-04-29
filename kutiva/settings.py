@@ -77,12 +77,12 @@ LOGOUT_REDIRECT_URL = 'index'
 
 
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-    }
-}
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+#     }
+# }
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -135,10 +135,7 @@ WSGI_APPLICATION = 'kutiva.wsgi.application'
 try:
     from .settings_local import *
 except ImportError:
-    try:
-        DEBUG = os.environ.get('DEBUG')
-    except Exception as e:
-        DEBUG = True
+    
     
     # Parse database configuration from $DATABASE_URL
     DATABASES['default'] = dj_database_url.config()  # Reverted RDS Migration
