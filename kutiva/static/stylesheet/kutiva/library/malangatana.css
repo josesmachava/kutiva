@@ -87,6 +87,12 @@ justify-content: flex-end;
 .alignTextLeft{
     text-align: left;
 }
+
+.alignCenterSingleElement{    margin: 0 auto;
+    display: block;
+
+
+}
 .defaultHeader{
 
     height: 15vh;
