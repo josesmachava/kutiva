@@ -1,10 +1,63 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+{% extends "kutiva/layout/base.html" %}
+{% load staticfiles %}
 
-</body>
-</html>
+{% comment %}
+
+{% endcomment %}
+{% load staticfiles %}
+
+{# overide the tile of the page #}
+{% block title %}
+<title>kutiva</title>
+{% endblock %}
+
+{% block styles %}
+{#    only include css  files needed for thi page bootstap and other libs are add in base template #}
+
+<meta charset="utf-8">
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible", content="IE=edge">
+<meta name="viewport", content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="{% static 'stylesheet/kutiva/main.css' %}">
+<style type="text/css">
+  header{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);   
+    height: 80vh;
+  }
+  .welcomeText button{
+    margin: 0;
+  }
+</style>
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+{% endblock %}
+
+
+{% block scripts %}
+{#    only include css  files needed for thi page bootstap and other libs are add in base template #}
+
+{% endblock %}
+
+
+{% block content %}
+
+
+
+<main>
+<header class="landingPageHeader">
+
+  <div class="alignElementCenter">
+    <div class="welcomeText">
+      <h1>Oops</h1>
+        <h2>404 - Página não encontrada</h2>
+      <p>A página que procura deve ter sido eliminada ou esteja temporariamente indisponível.</p>
+        <button class="primary-button">página inicial</button>
+  </div>
+</div>
+</header>
+</section>
+</main>
+
+
+{% endblock %}
+

@@ -34,3 +34,7 @@ urlpatterns = [
     #path('cms/', include('cms.urls')),
    
 ]
+
+
+handler404 = 'kutiva.views.error_404_view'
+# handler500 = 'kutiva.views.error_500_view'
