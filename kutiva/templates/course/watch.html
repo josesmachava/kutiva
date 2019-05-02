@@ -15,138 +15,9 @@
 
 {% block styles %}
 {#    only include css  files needed for thi page bootstap and other libs are add in base template #}
-<link rel="stylesheet" href="{% static 'stylesheet/kutiva/library/malangatana.css' %}">
-<link rel="stylesheet" href="{% static 'stylesheet/kutiva/navegation.css' %}">
-<link rel="stylesheet" href="{% static 'stylesheet/kutiva/main.css' %}">
-<link rel="stylesheet" href="{% static 'stylesheet/kutiva/footer.css' %}">
+<link rel="stylesheet" href="{% static 'stylesheet/kutiva/watch.css' %}">
 <style>
-    body{
-        margin: 0;
-        padding: 0;
-        width: 100vw;
-        height: 100vh;
-    }
-   
-    .classroom{
-      background-color: #29303B;
-
-    margin-bottom: 60px;
-    } 
-    .whiteboard{
-      width: 65%;
-      margin: 0 auto;
-    }
-     @media only screen and  (max-width: 480px) {
-              
-             .whiteboard{
-              width: 100%;
-              margin: 0 auto;
-              height: auto;
-              }
-                .curriculum{
-                        width: auto;
-                        margin: auto;
-                        margin-top: 20px;
-                        border-radius: 4px;
-                        padding: 16px;
-                        margin: 10px 20px;
-                        border-radius: 14px;
-
-                }
-                .curriculum h2{
-                        margin: -16px;
-                        color: white;
-                        padding: 20px;
-                        font-size: 18px;
-                        background-color: blue;
-
-                        border-radius: 4px;
-
-                }
-                .curriculum ul li{
-                    list-style: none;
-                }
-            }
-
-    @media only screen and (min-width: 768px  ) and (max-width: 992px) {
-        .whiteboard{
-              width: 85%;
-              margin: 0 auto;
-              }
-
-        .curriculum {
-            width: auto;
-            margin: auto;
-            margin-top: 20px;
-            border-radius: 4px;
-            padding: 16px;
-            margin: 10px 20px;
-            border-radius: 14px;
-
-        }
-
-        .curriculum h2 {
-            margin: -16px;
-            color: white;
-            padding: 20px;
-            font-size: 18px;
-            background-color: blue;
-
-            border-radius: 4px;
-
-        }
-    }
-    @media only screen and (min-width: 993px) and (max-width: 1200px) {
-        .whiteboard{
-              width: 85%;
-              margin: 0 auto;
-              }
-
-        .curriculum {
-            width: 650px;
-            margin:0 auto;
-            margin-top: 20px;
-            border-radius: 4px;
-            padding: 16px;
-            border-radius: 14px;
-
-        }
-
-        .curriculum h2 {
-            margin: -16px;
-            color: white;
-            padding: 20px;
-            font-size: 18px;
-            background-color: blue;
-
-            border-radius: 4px;
-
-        }
-    }
-    @media only screen and  (min-width: 1201px) {
-
-        .curriculum {
-            width: 750px;
-            margin: 0 auto;
-            margin-top: 20px;
-            border-radius: 4px;
-            padding: 16px;
-            border-radius: 14px;
-
-        }
-
-        .curriculum h2 {
-            margin: -16px;
-            color: white;
-            padding: 20px;
-            font-size: 18px;
-            background-color: blue;
-
-            border-radius: 4px;
-
-        }
-    }
-   
+    
    
 
 </style>
@@ -158,35 +29,43 @@
 
     <main>
     <header class="classroom ">
-        <div class="whiteboard alignCenter">
-                
-                    <div id="player">
+        <div class="whiteboard">
+                <div class="alignElementCenter">
+                      <div id="player">
 
                     </div>
+                </div>
+                  
                 
 
-          </div>
-         </header>  
-                <h1>{{ course.name }}</h1>
-                         
-                <section class="curriculum card">
-                    <h2>Currículo</h2>
-                     {% for chapter in  course.chapter.all  %}
-                         <h3 class="chapter"> {{ chapter.name|capfirst }}</h3>
-                         <ul class="">
-                         {% for lesson in chapter.lessons.all  %}
+       </div>
+           
+        <section class="details card">
+          
+            <h1>{{ course.name }}</h1>
 
-                             
-                             <li ><a class="link-button unstyledLink" href="{% url 'watch' course.id lesson.id %}"> {{ lesson.name|capfirst }}</a></li>
-                              {% endfor %}
-                               </ul>
-                                           
-                     {% endfor %}
-                      
-                    </section>
+          <div class="curriculum">
+               <h2>Currículo</h2>
+
+                 {% for chapter in  course.chapter.all  %}
+                 <h3 class="chapter"> {{ chapter.name|capfirst }}</h3>
+                 <ul class="">
+                 {% for lesson in chapter.lessons.all  %}
+
+                     
+                     <li class="unstyledList"><a class="link-button unstyledLink" href="{% url 'watch' course.id lesson.id %}"> {{ lesson.name|capfirst }}</a></li>
+                      {% endfor %}
+                       </ul>
+                                   
+             {% endfor %}
+              </div>
+
+            </section>
+
+         </header>  
+             
    </main>
 
-{% include "kutiva/layout/footer.html" %}
    
     {% block scripts %}
      <script  src="https://cdn.jwplayer.com/libraries/NUULarCy.js"></script>

@@ -70,7 +70,11 @@ class StudentPerfile(UpdateView):
     def form_valid(self, form):
         user = form.save()
 
-        user.student.location = form.cleaned_data.get('location')
+        # user.student.location = form.cleaned_data.get('location')
+        # user.student.location = form.cleaned_data.get('description')
+        # user.student.location = form.cleaned_data.get('birth_date_year')
+        # user.student.location = form.cleaned_data.get('phone_number')
+        # user.student.location = form.cleaned_data.get('educational_institution')
         user.student.save()
         return redirect('index')
 

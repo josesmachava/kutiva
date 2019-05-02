@@ -61,6 +61,9 @@ class User(AbstractUser):
 class Student(models.Model):
     user = models.OneToOneField(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
     location = models.CharField(max_length=30, blank=True)
+    phone_number = models.CharField(max_length=30, blank=True)
+    description = models.TextField(max_length=30, blank=True)
+    educational_institution = models.CharField(max_length=30, blank=True)
     birth_date = models.DateField(null=True, blank=True)
     
     def __str__(self):

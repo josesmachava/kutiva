@@ -15,9 +15,13 @@ main {
   flex: 1 0 auto;
 
 }
+
 nav ul li{
     margin-top: 20px;
     padding: 0 5px;
+}
+.settings{
+    z-index: 1;
 }
 
 .footer {
