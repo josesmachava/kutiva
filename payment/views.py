@@ -14,19 +14,48 @@ from django.views import View
 from account.models import User
 from payment.models import payment
 from payment.api import APIContext, APIMethodType, APIRequest
+from account.models import User
+
 
 # Create your views here.
 
+def main():
+
+# Check if payment is still in time
+
+  payments = payment.objects.all()
+  nowdate = datetime.now()
+
+  for paid in payments:
+    day = paid.last_day
+    if day > nowdate:
+        print("maior")
+    else:
+        print("menor")
+
+
+# Check if user has acess
+  users = User.objects.all()
+  for user in users:
+    paymentByuser = payment.objects.all().filter(user=user,active=True)
+    if not paymentByuser:
+        user.is_student=False
+        # print(user,"FAlse")
+    
+
+main()
+
+
 @login_required()
 def Payment(request):
-    
+
     return render(request, 'payment/payment.html')
 
 
 @login_required()
 def Mpesa(request):
     contact = str(258) + str(request.POST['contact'])
-    amount = '1000'
+    amount = '750'
     reference = 'kutiva'
     api_context = APIContext()
     api_context.api_key = '9njrbcqty9ew3cyx4s6k7jvtab134rr6'
