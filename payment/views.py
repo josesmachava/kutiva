@@ -23,15 +23,18 @@ def main():
 
 # Check if payment is still in time
 
-  payments = payment.objects.all()
-  nowdate = datetime.now()
+  nows = datetime.now()
 
-  for paid in payments:
-    day = paid.last_day
-    if day > nowdate:
-        print("maior")
-    else:
-        print("menor")
+
+  nowdate = nows.strftime("%d-%m-%Y - %H:%M:%S")
+  payments = payment.objects.all()
+  for pay in payments:
+    last_date = pay.last_day.strftime("%d-%m-%Y - %H:%M:%S")
+    getPaid = payment.objects.get(pk = pay.id)
+    
+    getPaid.mount= "555"
+    print("passei")
+    
 
 
 # Check if user has acess
