@@ -24,14 +24,6 @@ def main():
 
   nows = datetime.now()
 
-<<<<<<< HEAD
-  for paid in payments:
-    day = paid.last_day
-    # if day > nowdate:
-    #     print("maior")
-    # else:
-    #     print("menor")
-=======
 
   nowdate = nows.strftime("%d-%m-%Y - %H:%M:%S")
   payments = payment.objects.all()
@@ -42,7 +34,7 @@ def main():
     getPaid.mount= "555"
     print("passei")
     
->>>>>>> 2a6bc7a3b6bd3eac45075632624ad93fe014b310
+
 
 
 # Check if user has acess
