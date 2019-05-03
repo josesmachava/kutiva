@@ -4,9 +4,8 @@ from django.shortcuts import render
 from datetime import datetime  
 from datetime import timedelta
 # Create your views here.
-
+import calendar
 from django.contrib.auth.decorators import login_required
-
 from pprint import pprint
 from django.http import JsonResponse
 from django.urls import reverse
@@ -28,10 +27,10 @@ def main():
 
   for paid in payments:
     day = paid.last_day
-    if day > nowdate:
-        print("maior")
-    else:
-        print("menor")
+    # if day > nowdate:
+    #     print("maior")
+    # else:
+    #     print("menor")
 
 
 # Check if user has acess
@@ -80,8 +79,14 @@ def Mpesa(request):
     data = json.loads(result)
     print(request.user)
     if data['status_code'] == 422:
-        
-        data_end = datetime.now() + timedelta(days=30)
+        # get the days by months
+        current_month = datetime.now().month
+        current_year = datetime.now().year
+        days = calendar.monthrange(current_year, current_month)[1]
+
+        #NB: nem todos os mes tem 30 dias 
+
+        data_end = datetime.now() + timedelta(days=days)
         ops = payment(number_sender=contact, mount=1000,last_day=data_end,user=request.user)
         ops.save()
         user = User.objects.get(pk = request.user.id)
