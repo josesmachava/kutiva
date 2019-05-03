@@ -11,7 +11,7 @@ from django.http import JsonResponse
 from django.urls import reverse
 from django.views import View
 from account.models import User
-from payment.models import payment
+from payment.models import payment as Payments
 from payment.api import APIContext, APIMethodType, APIRequest
 from account.models import User
 
@@ -22,17 +22,10 @@ def main():
 
 # Check if payment is still in time
 
-  nows = datetime.now()
-
-
-  nowdate = nows.strftime("%d-%m-%Y - %H:%M:%S")
-  payments = payment.objects.all()
-  for pay in payments:
-    last_date = pay.last_day.strftime("%d-%m-%Y - %H:%M:%S")
-    getPaid = payment.objects.get(pk = pay.id)
-    
-    getPaid.mount= "555"
-    print("passei")
+#   paymentList = payment.objects.all()
+#   for pay in paymentList:
+#     pay.mount= "555"
+#     print("passei")
     
 
 
@@ -40,10 +33,11 @@ def main():
 # Check if user has acess
   users = User.objects.all()
   for user in users:
-    paymentByuser = payment.objects.all().filter(user=user,active=True)
+    paymentByuser = Payments.objects.all().filter(user=user,active=True)
     if not paymentByuser:
-        user.is_student=False
-        # print(user,"FAlse")
+        userPaid = User.objects.get(pk = user.id)
+        userPaid.is_student = False
+        print(user.id)
     
 
 main()
@@ -51,14 +45,14 @@ main()
 
 @login_required()
 def Payment(request):
-
+    
     return render(request, 'payment/payment.html')
 
 
 @login_required()
 def Mpesa(request):
     contact = str(258) + str(request.POST['contact'])
-    amount = '750'
+    amount = '559'
     reference = 'kutiva'
     api_context = APIContext()
     api_context.api_key = '9njrbcqty9ew3cyx4s6k7jvtab134rr6'

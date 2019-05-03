@@ -13,3 +13,6 @@ class payment(models.Model):
     created_date = models.DateTimeField(default=timezone.now)
     active = models.BooleanField(default=True)
     last_day = models.DateTimeField()
+
+    def __str__(self):
+        return str(self.number_sender)
