@@ -50,13 +50,16 @@
   <div class="alignElementCenter">
     <div class="welcomeText">
       <h1>EDUCAÇÃO PARA TODOS</h1>
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-      tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-      quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-      consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-      cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-      proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-        <button class="primary-button">Criar conta</button>   
+      <p>Kutiva é uma empresa que actua em Moçambique na área de Tecnologias da Informação, 
+        mais especificamente em Formação Profissional.
+         A empresa tem actualmente base das suas operações na província de Maputo.</p>
+        
+     {% if user.is_authenticated %}
+     {%  else %}
+         <a  class="primary-button"  href="{%  url 'student_sigin' %}" style="padding:10px;
+         text-decoration:none;">Criar conta</a>   
+
+{% endif %}
   </div>
 </div>
   <div class="heroImage">
@@ -98,8 +101,8 @@
         <li class="testimonial-name">Jose Machava</li>
 
     </ul>
-  <p class="student-testimonial">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-  tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+  <p class="student-testimonial">Full Stack Developer by day, UI Designer by night, skateboarder in between.
+
  </p>
  </div>
  </div>
