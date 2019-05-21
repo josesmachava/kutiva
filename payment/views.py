@@ -1,9 +1,9 @@
 import json
 from django.http import HttpResponse, HttpResponseRedirect
 from django.shortcuts import render
-from datetime import datetime  
+from datetime import datetime 
+from django.utils.timezone import localtime, now
 from datetime import timedelta
-# Create your views here.
 import calendar
 from django.contrib.auth.decorators import login_required
 from pprint import pprint
@@ -16,16 +16,21 @@ from payment.api import APIContext, APIMethodType, APIRequest
 from account.models import User
 
 
+
 # Create your views here.
 
 def main():
 
 # Check if payment is still in time
 
-#   paymentList = payment.objects.all()
-#   for pay in paymentList:
-#     pay.mount= "555"
-#     print("passei")
+  paymentList = Payments.objects.all()
+  for pay in paymentList:
+    currentDay = localtime(now()).replace(hour=0, minute=0, second=0, microsecond=0)
+    if pay.last_day < currentDay:
+        pay.active = False
+        pay.save()
+    else:
+        print("Granter")
     
 
 
@@ -35,9 +40,8 @@ def main():
   for user in users:
     paymentByuser = Payments.objects.all().filter(user=user,active=True)
     if not paymentByuser:
-        userPaid = User.objects.get(pk = user.id)
-        userPaid.is_student = False
-        print(user.id)
+        user.is_student = False
+        user.save()
     
 
 main()
@@ -52,7 +56,7 @@ def Payment(request):
 @login_required()
 def Mpesa(request):
     contact = str(258) + str(request.POST['contact'])
-    amount = '559'
+    amount = '519'
     reference = 'kutiva'
     api_context = APIContext()
     api_context.api_key = '9njrbcqty9ew3cyx4s6k7jvtab134rr6'
@@ -85,7 +89,7 @@ def Mpesa(request):
         #NB: nem todos os mes tem 30 dias 
 
         data_end = datetime.now() + timedelta(days=days)
-        ops = payment(number_sender=contact, mount=1000,last_day=data_end,user=request.user)
+        ops = Payments(number_sender=contact, mount=1000,last_day=data_end,user=request.user)
         ops.save()
         user = User.objects.get(pk = request.user.id)
         user.is_student =True
