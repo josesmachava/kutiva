@@ -6,7 +6,7 @@ from django.db import models
 from kutiva import settings
 # Create your models here.
 
-class payment(models.Model):
+class Payment(models.Model):
     user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
     number_sender = models.CharField(max_length=15)
     mount = models.DecimalField(max_digits=6, decimal_places=2)

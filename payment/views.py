@@ -11,7 +11,7 @@ from django.http import JsonResponse
 from django.urls import reverse
 from django.views import View
 from account.models import User
-from payment.models import payment as Payments
+from payment.models import Payment
 from payment.api import APIContext, APIMethodType, APIRequest
 from account.models import User
 
@@ -19,42 +19,42 @@ from account.models import User
 
 # Create your views here.
 
-def main():
+#def main():
 
 # Check if payment is still in time
 
-  paymentList = Payments.objects.all()
-  for pay in paymentList:
-    currentDay = localtime(now()).replace(hour=0, minute=0, second=0, microsecond=0)
-    if pay.last_day < currentDay:
-        pay.active = False
-        pay.save()
-    else:
-        print("Granter")
+ # paymentList = Payment.objects.all()
+  #for pay in paymentList:
+ #   currentDay = localtime(now()).replace(hour=0, minute=0, second=0, microsecond=0)
+    #if pay.last_day < currentDay:
+     #   pay.active = False
+      #  pay.save()
+    #else:
+     #   print("Granter")
     
 
 
 
 # Check if user has acess
-  users = User.objects.all()
-  for user in users:
-    paymentByuser = Payments.objects.all().filter(user=user,active=True)
-    if not paymentByuser:
-        user.is_student = False
-        user.save()
+ # users = User.objects.all()
+  #for user in users:
+   # paymentByuser = Payment.objects.all().filter(user=user,active=True)
+    #if not paymentByuser:
+     #   user.is_student = False
+      #  user.save()
     
 
-main()
+#main()
 
 
 @login_required()
-def Payment(request):
+def payment(request):
     
     return render(request, 'payment/payment.html')
 
 
 @login_required()
-def Mpesa(request):
+def mpesa(request):
     contact = str(258) + str(request.POST['contact'])
     amount = '519'
     reference = 'kutiva'
@@ -89,7 +89,7 @@ def Mpesa(request):
         #NB: nem todos os mes tem 30 dias 
 
         data_end = datetime.now() + timedelta(days=days)
-        ops = Payments(number_sender=contact, mount=1000,last_day=data_end,user=request.user)
+        ops = Payment(number_sender=contact, mount=1000,last_day=data_end,user=request.user)
         ops.save()
         user = User.objects.get(pk = request.user.id)
         user.is_student =True

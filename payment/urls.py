@@ -20,8 +20,8 @@ from . import views
 
 urlpatterns = [
 
-    path('', views.Payment, name='payment-input'),
-    path('mpesaPayment', views.Mpesa, name='mpesa'),
+    path('', views.payment, name='payment-input'),
+    path('mpesaPayment', views.mpesa, name='mpesa'),
 
 
    
