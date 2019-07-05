@@ -59,4 +59,13 @@ class Course(models.Model):
 class Enrolled(models.Model):
     course = models.ForeignKey(Course, on_delete='CASCADE', blank=True, null=True)
     user = models.ManyToManyField(settings.AUTH_USER_MODEL, null=True, blank=True)
-  
+
+
+
+class SocialNetwork(models.Model):
+    name = models.CharField(max_length=1000)
+    url = models.URLField()
+    icon = models.FileField(upload_to='icons')
+
+    def __str__(self):
+        return str(self.name)
