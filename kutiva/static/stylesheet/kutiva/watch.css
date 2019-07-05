@@ -4,37 +4,43 @@
         width: 100vw;
         height: 100vh;
     }
-    .classroom{
-            display: grid;
-            grid-template-columns: 75% 25%;
-            height: 100%;
-    } 
-   .whiteboard{
-      background-color: #29303B;
+
+    .classRoom{
+         display: flex;
+         background-color: #41444b;
+
+         padding: 0 10%;
+         height: 80vh;
+    }
+    .classInformation{
+        display: flex;
+        padding: 0 10%;
+    }
+
+   .whiteBoard{
+        width: 70%;
+
        
     }
-    .chapter{
-        font-size: 16px;
+    .classTopics{
+       width: 30%;
     }
-    .tab-tittle{
-        font-size: 18px;
+   .className{
+        color: white;
     }
-    .details{
-        padding: 20px;
+   .classAuthorName, .classTopic, .classChapter{
+       color: #b4b8b8;
+   }
+   .classAuthorName{
+
+       font-size: 15px;
+   }
+    .classDescription{
+        width: 70%;
     }
-    #player{
-        display: block;
-        margin: 0 auto;
-        width: 80% !important;
+    .authorInformation{
+        width: 30%;
     }
-    lesson:hover{
-        text-decoration: underline;
-        background-color:  #F6F8FA;
-    }
-/*  
-  ##Device = Desktops
-  ##Screen = 1281px to higher resolution desktops
-*/
 
 @media (min-width: 1281px) {
   
@@ -95,7 +101,7 @@ Screen = B/w 481px to 767px
 
 @media (min-width: 481px) and (max-width: 767px) {
   
-  //CSS
+
   
 }
 

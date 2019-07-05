@@ -1,6 +1,7 @@
 {% extends "kutiva/layout/base.html" %}
 
 {% load staticfiles %}
+{% load embed_video_tags %}
 
 {% comment %}
 
@@ -14,237 +15,91 @@
 
 {% block styles %}
 {#    only include css  files needed for thi page bootstap and other libs are add in base template #}
-   <link rel="stylesheet" href="{% static 'stylesheet/kutiva/main.css' %}">
-
-    <style>
-    @import url('https://fonts.googleapis.com/css?family=Open+Sans:400,700');
-    body{
-        margin: 0;
-        padding: 0;
-        font-family: 'Open Sans', sans-serif;
-
-    }
-    header button a{
-        text-decoration: none;
-        color: white;
-    }
-     .curriculum ul li{
-                    list-style: none;
-                }
-        header{
-            display: grid;
-            grid-template-columns: 70% 20%;
-            margin: 0;
-
-            margin:  0 -12.5%;
-            height: 30vh !important;
-            color: #3a343a;
-            background-color: #F6F8FA;
-
-            padding: 1% 10%;
-        }
-        header button{
-            border: none;
-            color: white;
-            width: 150px;
-            height: 44px;
-            margin-top: 100px;
-            width: 200px;
-            border-radius: 3px;
-        }
-    @media only screen and  (max-width: 480px) {
-              header {
-
-                  grid-template-columns: 100%;
-                      height: 65vh;
-              }
-                header button{
-                    display: block;
-                    margin: 0 auto;
-                         margin-top: 0;
-                        font-size: 16px;
-    text-transform: capitalize;
-    font-weight: bold;
-    width: 200px !import;
-
-                }
-                .curriculum{
-                        width: auto;
-                        margin: auto;
-                        margin-top: 20px;
-                        border-radius: 4px;
-                        padding: 16px;
-                        margin: 100px 20px;
-                        border-radius: 14px;
-
-                }
-                .curriculum h2{
-                        margin: -16px;
-                        color: white;
-                        padding: 20px;
-                        font-size: 18px;
-                        background-color: blue;
-
-                        border-radius: 4px;
-
-                }
-                .curriculum ul li{
-                    list-style: none;
-                }
-            }
-
-    @media only screen and (min-width: 768px  ) and (max-width: 992px) {
+<link rel="stylesheet" href="{% static 'stylesheet/kutiva/watch.css' %}">
+<style>
 
 
-        .curriculum {
-            width: auto;
-            margin: auto;
-            margin-top: 20px;
-            border-radius: 4px;
-            padding: 16px;
-            margin: 10px 20px;
-            border-radius: 14px;
 
-        }
-
-        .curriculum h2 {
-            margin: -16px;
-            color: white;
-            padding: 20px;
-            font-size: 18px;
-            background-color: blue;
-
-            border-radius: 4px;
-
-        }
-    }
-    @media only screen and (min-width: 993px) and (max-width: 1200px) {
-
-
-        .curriculum {
-            width: 650px;
-            margin:0 auto;
-            margin-top: 20px;
-            border-radius: 4px;
-            padding: 16px;
-            border-radius: 14px;
-
-        }
-
-        .curriculum h2 {
-            margin: -16px;
-            color: white;
-            padding: 20px;
-            font-size: 18px;
-            background-color: blue;
-
-            border-radius: 4px;
-
-        }
-    }
-    @media only screen and  (min-width: 1201px) {
-
-        .curriculum {
-            width: 750px;
-            margin: 0 auto;
-            margin-top: 20px;
-            border-radius: 4px;
-            padding: 16px;
-            border-radius: 14px;
-
-        }
-
-        .curriculum h2 {
-            margin: -16px;
-            color: white;
-            padding: 20px;
-            font-size: 18px;
-            background-color: blue;
-
-            border-radius: 4px;
-
-        }
-    }
-    main{
-    }
-    </style>
+</style>
 {% endblock %}
 
 
 {% block content %}
-
-{% include "kutiva/layout/navegation.html" %}
-
-                <main>
-
-                    <header  class="defaultHeader">
-                       <section class="course-information">
-                             <h1 class="course-title">{{ course.name }}</h1>
-                                  <p class="description">
-                            {{ course.description }}
-                        </p>
-                      
-                       </section>
-                        <section class="course-join">
-
-                           {% if user.is_authenticated %}
-                                   {% if course.id in enrolled_course %}
-                                     <button class="primary-button"><a href="{% url 'watch' course.id 1 %}"> ver</a></button>
-
-                                {% else %}
-                                             <button class="primary-button"><a href="{% url 'add_course' course.id %}"> inscrição</a></button>
-                               {% endif %}
-                            {% else %}
-                                       <button class="primary-button"><a href="{% url 'signin'  %}"> Iniciar Sessão</a></button>
-
-                            {% endif %}                              
-
-                            
-                        </section>
-
-                    </header>
+    {% include "kutiva/layout/navegation.html" %}
+    <main>
+    <div class="classRoom">
+            <section class="whiteBoard">
+              <h1 class="className">{{ course.name }}</h1>
+              <h2 class="classAuthorName">
+                      {{ course.author.first_name|capfirst }} {{ course.author.last_name|capfirst }}
+              </h2>
+                <div id="player">
+              </div>
 
 
+            </section>
+            <section class="classTopics">
+                <div class="curriculum">
 
 
-{#                    <h1 class="title"><a href="{% url 'details' course.id %}">{{ course.name }}</a></h1>#}
+                 {% for chapter in  course.chapter.all  %}
+                 <h3 class="classChapter"> {{ chapter.name|capfirst }}</h3>
+                 <ul class="">
+                 {% for lesson in chapter.lessons.all  %}
 
 
-                    <section class="curriculum card">
-                    <h2>Currículo</h2>
-                     {% for chapter in  course.chapter.all  %}
-                         <h3 class="chapter link-button" > {{ chapter.name|capfirst }}</h3>
-                         <ul>
-                         {% for lesson in chapter.lessons.all  %}
-                         
-                             <li  class="link-button unstyledLink">{{ lesson.name|capfirst }}</li>
-                              {% endfor %}
-                           </ul>                
-                     {% endfor %}
-                        
-                    </section>
+                     <li class="unstyledList classTopic"><a class="unstyledLink" href="{% url 'watch' course.id lesson.id %}"> {{ lesson.name|capfirst }}</a></li>
+                      {% endfor %}
+                       </ul>
 
-{#                        <h4>Cursos Relacionados</h4>#}
-{#                      {% for course in courses %}#}
-{##}
-{##}
-{#                          <section class="courses">#}
-{#                            <article class="course">#}
-{#                            <img src="https://udemy-images.udemy.com/course/240x135/1430746_2f43_2.jpg" alt="screencast cover" class="cover">#}
-{##}
-{#                            <h1 class="courseTitle"><a href="{% url 'details' course.id %}">{{ course.name }}</a></h1>#}
-{#                                <ul class="courseDetails">#}
-{#                                <li class="courseAuthor">Jose Machava</li>#}
-{#                                <li class="skillsLevel">Iniciante</li>#}
-{#                                <img src="https://www.udacity.com/assets/iridium/images/svgs/beginner.svg" alt="level">#}
-{#                                </ul>#}
-{#                          </article>#}
-{##}
-{#                        </section>#}
-{#              {% endfor %}#}
+             {% endfor %}
+              </div>
 
-                </main>
+            </section>
 
-{% include "kutiva/layout/footer.html" %}
+
+
+    </div>
+
+    <div class="classInformation">
+        <section class="classDescription">
+
+            <p class="">
+                    {{ course.description }}
+
+            </p>
+        </section>
+        <section class="authorInformation">
+                   <h2 class="classAuthorName">
+                      {{ course.author.first_name|capfirst }} {{ course.author.last_name|capfirst }}
+              </h2>
+
+        </section>
+    </div>
+
+
+
+
+
+
+
+
+
+   </main>
+
+
+    {% block scripts %}
+     <script  src="https://cdn.jwplayer.com/libraries/NUULarCy.js"></script>
+    <script>
+          jwplayer("player").setup({
+            "streamer": "rtmp:/s1hokzd6wxykag.cloudfront.net/cfx/st",
+            "file": "{{ lesson.video }}",
+            "image": "{{ lesson.image }}",
+            "width": "100%",
+            "aspectratio": "16:9"
+        });
+    </script>
+
+    {% endblock %}
 {% endblock %}
 

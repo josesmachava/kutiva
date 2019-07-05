@@ -101,7 +101,7 @@ form {
 
 @media (min-width: 1281px) {
   
-    main, nav{
+     nav{
         padding: 0 15%;
     }
     nav{
@@ -121,7 +121,7 @@ form {
 
 @media (min-width: 1025px) and (max-width: 1280px) {
   
-   main, nav{
+    nav{
         padding: 0 10%;
     }
     nav{
@@ -142,7 +142,7 @@ form {
 */
 
 @media (min-width: 768px) and (max-width: 1024px) {
-      main, nav{
+       nav{
         padding: 0 5%;
     }
  
@@ -156,10 +156,10 @@ form {
 
 @media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
   
-  //CSS
+
   
 }
-
+/*
 Screen = B/w 481px to 767px
 */
 
