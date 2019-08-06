@@ -1,16 +1,8 @@
 /* MAIN NAVEGATION*/
 
 nav {
-    padding: 0 10%;
-    display: grid;
-    grid-template-columns: 10% 40% 50%;
-    animation: sticky-slide-down 0.4s ease 0.25s forwards;
-    height: 80px;
-    background: white;
-    border-bottom: 1px solid #e1e1e1;
-    -webkit-box-shadow: 0 2px 2px -2px rgba(0,0,0,0.08);
-    box-shadow: 0 2px 2px -2px rgba(0,0,0,0.08);
-
+    display: flex;
+    justify-content: space-between;
 }
 
 nav img {

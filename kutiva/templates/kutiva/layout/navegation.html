@@ -24,7 +24,7 @@
        </ul>
 </nav>
 
-<nav class="card hide-desktop">
+<nav class=" hide-desktop">
         <h1><a href="{% url 'index'%}"> <img src="{% static 'images/logo2.png' %}" alt="kutiva logo"></a></h1>
      
 
@@ -49,7 +49,7 @@
 
 
 {%  else %}
-<nav class="hide-mobile card">
+<nav class="hide-mobile ">
    <h1><a href="{% url 'index'%}"> <img src="{% static 'images/logo2.png' %}" alt="kutiva logo"></a></h1>
   
 
@@ -59,14 +59,14 @@
        <ul class="alignRight unstyledList">
 
         <li class="link-button"><a class="unstyledLink link-button"  href="{% url 'course' %}"> Cursos</a></li>
-        <li class="link-button"><a class="unstyledLink link-button"  href="{% url 'signin' %}">Iniciar Sessão</a> </li>
+        <li class="link-button"><a class="unstyledLink link-button"  href="{% url 'signin' %}">Entrar</a> </li>
         <li class="link-button"><a class="unstyledLink link-button"  href="{%  url 'student_sigin' %}">criar conta</a> </li>
 
        </ul>
 </nav>
 
 
- <nav class="card hide-desktop">
+ <nav class=" hide-desktop">
        <h1><a href="{% url 'index'%}"> <img src="{% static 'images/logo2.png' %}" alt="kutiva logo"></a></h1>
      
            <div clasS="">
@@ -81,7 +81,7 @@
                   
         <li class="link-button"><a class="unstyledLink link-button"  href="{% url 'course' %}"> Cursos</a></li>
      
-                   <li class="link-button"><a class="unstyledLink link-button"  href="{% url 'signin' %}">Iniciar Sessão</a> </li>
+                   <li class="link-button"><a class="unstyledLink link-button"  href="{% url 'signin' %}">Entrar</a> </li>
         <li class="link-button"><a class="unstyledLink link-button"  href="{%  url 'student_sigin' %}">criar conta</a> </li>
 
                 </ul>
