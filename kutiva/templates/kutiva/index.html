@@ -20,14 +20,7 @@
 <meta name="viewport", content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="{% static 'stylesheet/kutiva/main.css' %}">
 <style type="text/css">
-  header{
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);   
-    height: 80vh;
-  }
-  .welcomeText button{
-    margin: 0;
-  }
+
 </style>
 
 <!-- Global site tag (gtag.js) - Google Analytics -->
@@ -56,20 +49,10 @@
 
 
 <main>
-<header class="landingPageHeader">
+<header>
 
-  <div class="alignElementCenter">
-    <div class="welcomeText">
-    
-     {% if user.is_authenticated %}
-     {%  else %}
-         <a  class="primary-button"  href="{%  url 'student_sigin' %}" style="padding:10px;
-         text-decoration:none;">Criar conta</a>   
 
-{% endif %}
-  </div>
-</div>
- 
+
 </header>
 
 

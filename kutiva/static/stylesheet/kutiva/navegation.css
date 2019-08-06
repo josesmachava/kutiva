@@ -15,7 +15,11 @@ li ul{
      width: 100px;
      top: 60px;
 }
+header{
+    background-image: url("../../images/011.jpg");
+    height: 50vh;
 
+}
 form {
     margin-top: 15px;
 
@@ -157,7 +161,7 @@ Screen = B/w 481px to 767px
 
 @media (min-width: 481px) and (max-width: 767px) {
   
-  //CSS
+
   
 }
 
