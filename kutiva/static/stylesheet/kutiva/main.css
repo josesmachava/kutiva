@@ -54,7 +54,12 @@ background-repeat: no-repeat;
   
 
 }
+.flex{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content:space-around;
 
+}
 .course h1 a {
     color: black;
     padding-left: 20px;

@@ -5,7 +5,14 @@ body, html{
 
 .unstyledList {
     list-style-type: none;
-    text-transform: capitalize
+
+
+}
+
+.capitalize:first-letter{
+     text-transform: capitalize;
+
+
 }
 
 .unstyledLink {

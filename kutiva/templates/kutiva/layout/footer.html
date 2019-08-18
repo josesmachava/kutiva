@@ -1,44 +1,63 @@
-<style>
-    footer{
- 
-    width: 100vw;
-    background: #F6F8FA;
-   
-    padding-top: 35px;
-    height: 80px;
-    }
-    footer a{
+{% load staticfiles %}
 
-        color: black;
-        text-decoration: none;
-    }
-    footer a:hover{
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3">
+                <h1><a href="{% url 'index'%}"> <img  class="logo" src="{% static 'images/logo2.png' %}" alt="kutiva logo"></a></h1>
+                <ul>
+                    <li>
 
-        text-decoration: none;
-        color: black;
-    }
-    footer ul{
-        padding: 0;
+                        <i class="fas fa-envelope"></i>  <a href="mailto:hello@kutiva.co.mz?Subject=Hello%20Kutiva" target="_top">hello@kutiva.co.mz</a>
 
-        text-align: center;
-    }
-    footer ul li{
-        display: inline;
-        margin: 20px;
-    }
-    .copy-right{
-        text-align:center; 
-    }   
-</style>
-<footer class="footer">
-    <ul class="resetPadding resetMargin">
-       <li><a href="" ><i class="fab fa-facebook-f"></i></a></li>
-        <li><a href=""><i class="fab fa-twitter"></i></a></li>
-        <li><a href=""><i class="fab fa-youtube"></i></a></li>
+                    </li>
+                    <li>
+                        <i class="fas fa-phone-alt"></i>  <a href="tel:+258849394995">+25849394995</a>
+                    </li>
+                </ul>
 
-    </ul>
+                <ul class="social-media">
+                    <li><a href=""><i class="fab fa-facebook-f"></i></a></li>
+                    <li><a href=""><i class="fab fa-twitter"></i></a></li>
+                    <li><a href=""><i class="fab fa-instagram"></i></a></li>
+                    <li><a href=""><i class="fab fa-youtube"></i></a></li>
+                </ul>
+            </div>
+            <div class="col-md-3">
+                <h1>empresa</h1>
+                <ul>
+                    <li><a href="">sobre nos</a></li>
+                    <li><a href="">blog</a></li>
+                    <li><a href="">contacto</a></li>
+                </ul>
+            </div>
+            <div class="col-md-3">
+
+                <h1>Informação</h1>
+                <ul>
+                    <li><a href="">segurança</a></li>
+                    <li><a href="">políticas e privacidade</a></li>
+                    <li><a href="">termos e condições</a></li>
+                </ul>
+            </div>
+            <div class="col-md-3">
+                <h1>links</h1>
+                <ul>
+
+
+                    <li><a   href="{% url 'course' %}"> cursos</a></li>
+                    <li><a   href="{% url 'signin' %}">entrar</a> </li>
+                    <li><a   href="{% url 'student_sigin' %}">criar conta</a> </li>
+
+                    <!--<li><a href="">eventos</a></li>
+                -->
+                </ul>
+            </div>
+
+
+
     <p class="copy-right resetPadding resetMargin ">&copy  Kutiva {% now 'Y' %}
- Powered By
+ powered by
         <a href="http://xindiri.com" target="_blank" title="xindiri">xindiri inc</a>
 
 

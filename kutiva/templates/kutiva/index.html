@@ -80,7 +80,48 @@
 
     <button class="seeCourses primary-button"><a href="{% url 'course' %}">todos cursos</a></button>
 
+    <section class="flex">
+        <div class="card">
+            <h1>Gratuito</h1>
+            <h2>0 MT</h2>
 
+
+            <ul class="unstyledList">
+                <li>acesso aos videos gratuitos</li>
+                <li>acesso os videos diairos</li>
+            </ul>
+
+            <button class="seeCourses primary-button"><a href="{% url 'student_sigin' %}">criar conta</a></button>
+
+        </div>
+        <div class="card">
+            <h1>Mensalmente</h1>
+            <h2>250 MT</h2>
+
+
+            <ul class="unstyledList">
+                <li>acesso aos videos gratuitos</li>
+            </ul>
+            <button class="seeCourses primary-button"><a href="{% url 'student_sigin' %}">criar conta</a></button>
+
+
+
+
+        </div>
+        <div class="card">
+            <h1>anualmente</h1>
+            <h2>2400 MT</h2>
+
+
+            <ul class="unstyledList">
+                <li class="capitalize">acesso aos videos gratuitos</li>
+            </ul>
+
+
+            <button class="seeCourses primary-button"><a href="{% url 'student_sigin' %}">criar conta</a></button>
+
+        </div>
+    </section>
 </main>
 {% include "kutiva/layout/footer.html" %}
 
