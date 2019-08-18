@@ -34,7 +34,9 @@ nav ul li{
 
 
 header img{
-    width: 35vw;
+    width: 40vw;
+    display: block;
+    margin: 0 auto;
 }
 
 
@@ -118,7 +120,10 @@ header img{
 
 }
 
+.testimonial{
+    margin: 100px 0;
 
+}
 
 .testimonial div{
     margin: 0 auto;
