@@ -32,22 +32,10 @@ nav ul li{
   flex-shrink: 0;
 }
 
-  .landingPageHeader {
-          
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);   
-            height: 70vh;
 
-        }
-.heroImage {
- background-image: url("../../images/43122.jpg");
-background-size: contain;
-background-position: center center;
-height: 70vh;
-background-repeat: no-repeat;
-
+header img{
+    width: 35vw;
 }
-
 
 
 
@@ -201,7 +189,7 @@ background-repeat: no-repeat;
     }
 
     .heroImage {
-       background-image: url("../../images/43122.jpg");
+       background-image: url("../../images/bg.jpg");
 background-size: contain;
 background-position: center center;
 height: 50vh;
@@ -232,7 +220,7 @@ background-repeat: no-repeat;
 }
 @media only screen and (min-width:481 px  ) and (max-width: 769) {
     .heroImage {
-   background-image: url("../../images/43122.jpg");
+   background-image: url("../../images/bg.jpg");
 background-size: contain;
 background-position: center center;
 height: 50vh;

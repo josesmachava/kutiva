@@ -52,6 +52,22 @@
 
 <main>
 <header>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8">
+                <img src="{% static 'images/bg.jpg' %}" alt="">
+
+            </div>
+            <div class="col-md-4">
+
+                <h1>
+                    CURSOS ONLINE PARA APRENDER
+                </h1>
+                <h2>
+                    Possua seu futuro aprendendo novas habilidades on-line</h2>
+            </div>
+        </div>
+    </div>
 
 
 
@@ -82,48 +98,55 @@
 
     <button class="seeCourses primary-button"><a href="{% url 'course' %}">todos cursos</a></button>
 
-    <section class="flex">
-        <div class="card">
-            <h1>Gratuito</h1>
-            <h2>0 MT</h2>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4">
+                <div class="price">
+                    <h1>
+                        0 Meticais
+                    </h1>
+                    <ul>
+                        <li></li>
+                    </ul>
 
+                    <button>criar conta</button>
 
-            <ul class="unstyledList">
-                <li>acesso aos videos gratuitos</li>
-                <li>acesso os videos diairos</li>
-            </ul>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="col-md-4">
+                    <div class="price">
+                        <h1>
+                                250 Meticais Mensalmente
+                        </h1>
+                        <ul>
+                            <li></li>
+                        </ul>
 
-            <button class="seeCourses primary-button"><a href="{% url 'student_sigin' %}">criar conta</a></button>
+                        <button>criar conta</button>
 
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="col-md-4">
+                    <div class="price">
+                        <h1>
+                            2400 Meticais Anualmente
+
+                        </h1>
+                        <ul>
+                            <li></li>
+                        </ul>
+
+                        <button>criar conta</button>
+
+                    </div>
+                </div>
+            </div>
         </div>
-        <div class="card">
-            <h1>Mensalmente</h1>
-            <h2>250 MT</h2>
+    </div>
 
-
-            <ul class="unstyledList">
-                <li>acesso aos videos gratuitos</li>
-            </ul>
-            <button class="seeCourses primary-button"><a href="{% url 'student_sigin' %}">criar conta</a></button>
-
-
-
-
-        </div>
-        <div class="card">
-            <h1>anualmente</h1>
-            <h2>2400 MT</h2>
-
-
-            <ul class="unstyledList">
-                <li class="capitalize">acesso aos videos gratuitos</li>
-            </ul>
-
-
-            <button class="seeCourses primary-button"><a href="{% url 'student_sigin' %}">criar conta</a></button>
-
-        </div>
-    </section>
 
 
     <div class="container">
