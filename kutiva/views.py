@@ -4,8 +4,10 @@ from cms.models import *
 
 def index(request):
     courses = Course.objects.all()
+    partners = Partner.objects.all()
     categories = Category.objects.all()
-    return render(request, 'kutiva/index.html', {'courses':courses, 'categories':categories})
+
+    return render(request, 'kutiva/index.html', {'courses':courses, 'categories':categories, 'partners':partners})
 
 
 

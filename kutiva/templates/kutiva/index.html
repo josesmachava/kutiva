@@ -225,12 +225,14 @@
             </div>
             <section class="partner">
                  <h3 class="text-center">Parceiros</h3>
+                {% for partner in partners %}
                  <div class="col-md-2">
-                     <a href="https://www.market.co.mz/93interactions/" target="_blank">
-                         <img src="https://marketmz-static.s3.amazonaws.com/site_media/media/companies/logos/93i.png" alt="93interantion logo">
+                     <a href="{{ partner.url }}" target="_blank">
+                         <img src="{{ partner.image }}" alt="{{ partner.name }}">
                      </a>
 
                  </div>
+                {% endfor %}
             </section>
            
         </div>

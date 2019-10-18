@@ -85,3 +85,8 @@ def add_course(request, id):
         raise Http404('This item does not exist')
 
     return redirect('mycourses')
+
+
+
+
+
