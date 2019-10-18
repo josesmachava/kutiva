@@ -70,3 +70,12 @@ class SocialNetwork(models.Model):
 
     def __str__(self):
         return str(self.name)
+
+
+class Partner(models.Model):
+    name = models.CharField(max_length=1000)
+    image = models.URLField()
+    url = models.URLField()
+
+    def __str__(self):
+        return str(self.name)
