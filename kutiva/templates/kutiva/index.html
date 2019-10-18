@@ -111,10 +111,11 @@
 
 
 
-    <section class="courses">
+    <div class="container">
+        <div class="row">
     {% for course in courses %}
-
-    <article class="course">
+    <div class="col-md-4">
+    <article class="course card">
     <!-- <img src="https://udemy-images.udemy.com/course/240x135/1430746_2f43_2.jpg" alt="screencast cover" class="cover"> -->
     
     <h1 class="courseTitle"><a href="{% url 'details' course.id %}">{{ course.name }}</a></h1>
@@ -125,16 +126,18 @@
         <!-- <p class="decription">{{ course.description|wordwrap:10 }}</p> -->
         </ul>
   </article>
+    </div>
   
               {% endfor %}
-</section>
+
 
     <button class="seeCourses primary-button"><a href="{% url 'course' %}">todos cursos</a></button>
-
+        </div>
+    </div>
     <div class="container">
         <div class="row">
             <div class="col-md-4">
-                <div class="price">
+                <div class="price card">
                     <h1>
                         0 Meticais
                     </h1>
@@ -142,13 +145,13 @@
                         <li></li>
                     </ul>
 
-                    <button>criar conta</button>
+                    <button class="primary-button">criar conta</button>
 
                 </div>
             </div>
             <div class="col-md-4">
-                <div class="col-md-4">
-                    <div class="price">
+
+                    <div class="price card">
                         <h1>
                                 250 Meticais Mensalmente
                         </h1>
@@ -156,14 +159,12 @@
                             <li></li>
                         </ul>
 
-                        <button>criar conta</button>
+                        <button class="primary-button">criar conta</button>
 
-                    </div>
                 </div>
             </div>
             <div class="col-md-4">
-                <div class="col-md-4">
-                    <div class="price">
+                    <div class="price card">
                         <h1>
                             2400 Meticais Anualmente
 
@@ -172,11 +173,10 @@
                             <li></li>
                         </ul>
 
-                        <button>criar conta</button>
+                        <button class="primary-button">criar conta</button>
 
                     </div>
-                </div>
-            </div>
+                   </div>
         </div>
     </div>
 
@@ -223,6 +223,16 @@
 
                 </div>
             </div>
+            <section class="partner">
+                 <h3 class="text-center">Parceiros</h3>
+                 <div class="col-md-2">
+                     <a href="https://www.market.co.mz/93interactions/" target="_blank">
+                         <img src="https://marketmz-static.s3.amazonaws.com/site_media/media/companies/logos/93i.png" alt="93interantion logo">
+                     </a>
+
+                 </div>
+            </section>
+           
         </div>
     </div>
 

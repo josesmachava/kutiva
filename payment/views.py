@@ -97,10 +97,10 @@ data = {'api_dev_key':API_KEY,
         'api_paste_format':'python'} 
   
 # sending post request and saving response as response object 
-r = requests.post(url = API_ENDPOINT, data = data) 
+#r = requests.post(url = API_ENDPOINT, data = data)
   
-# extracting response text  
-pastebin_url = r.text 
-print("The pastebin URL is:%s"%pastebin_url) 
+# extracting response text
+#pastebin_url = r.text
+#print("The pastebin URL is:%s"%pastebin_url)
 
 
