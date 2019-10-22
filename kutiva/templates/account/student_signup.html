@@ -1,5 +1,6 @@
 {% extends "kutiva/layout/base.html" %}
 {% load staticfiles %}
+{% load crispy_forms_tags %}
 {% load i18n %}
 {% comment %}
 
@@ -36,8 +37,28 @@
        
    
         {% csrf_token %}
-        <input type="hidden" name="next" value="{{ next }}">
-         {{ form }}
+                <input type="hidden" name="next" value="{{ next }}">
+                    <div class="row">
+                        <div class="col-6">
+                            {{ form.first_name|as_crispy_field }}
+                        </div>
+                        <div class="col-6">
+                            {{ form.last_name|as_crispy_field }}
+                        </div>
+                    </div>
+
+                    {{ form.email|as_crispy_field }}
+                    <div class="row">
+                            <div class="col-6">
+                              {{ form.password1|as_crispy_field }}
+                            </div>
+                            <div class="col-6">
+                              {{ form.password2|as_crispy_field }}
+                            </div>
+                          </div>
+
+
+
          <input type="submit" class="primary-button" name="hello" value="Criar conta">
           <p class="alignTextCenter"><a class="unstyledLink link-button" href="{% url 'signin' %}">ou Iniciar Sessão</a></p>              
       </form>
