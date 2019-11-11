@@ -54,23 +54,18 @@
 <header>
     <div class="container-fluid">
         <div class="row">
-            <div class="col-md-7">
-                <img src="{% static 'images/bg.jpg' %}" alt="">
+            <div class="col-md-12">
+                <img src="{% static 'images/bg.jpeg' %}" alt="">
+                <h1>Garante seu futuro aprendendo novas habilidades online.</h1>
 
-            </div>
 
-            <div class="col-md-5">
-                <div class="row h-100 justify-content-center align-items-center">
-                    <div col-md-12>
                         <h1 class="headertitle">CURSOS ONLINE PARA APRENDER.</h1>
-                        <p>Garante seu futuro aprendendo novas habilidades online.</p>
-                    </div>
+            </div>
 
                 </div>
 
             </div>
-        </div>
-    </div>
+
 
 
 
@@ -85,13 +80,19 @@
         <div class="row">
     {% for course in courses %}
     <div class="col-md-4">
-    <article class="course card">
-    <!-- <img src="https://udemy-images.udemy.com/course/240x135/1430746_2f43_2.jpg" alt="screencast cover" class="cover"> -->
+    <article class="course ">
+    <img src="https://udemy-images.udemy.com/course/240x135/1430746_2f43_2.jpg" alt="screencast cover" class="cover">
     
     <h1 class="courseTitle"><a href="{% url 'details' course.id %}">{{ course.name }}</a></h1>
+
+        <ul>
+             <li class="skillsLevel">Iniciante</li>
+            <li>14:40</li>
+            <li>Jan 10, 2019</li>
+        </ul>
         <ul class="courseDetails">
         <li class="courseAuthor">{{ course.author.first_name|capfirst }} {{ course.author.last_name|capfirst }}</li>
-        <li class="skillsLevel">Iniciante</li>
+
         <img src="https://www.udacity.com/assets/iridium/images/svgs/beginner.svg" alt="level">
         <!-- <p class="decription">{{ course.description|wordwrap:10 }}</p> -->
         </ul>
