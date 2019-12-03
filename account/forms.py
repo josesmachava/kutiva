@@ -17,15 +17,17 @@ class SignUpForm(UserCreationForm):
 
 
 class StudentSignUpForm(UserCreationForm):
-    first_name = forms.CharField(max_length=30, label='',  required=True, widget=forms.TextInput(attrs={'placeholder': 'Nome'}))
-    last_name = forms.CharField(max_length=30, label='', required=True  , widget=forms.TextInput(attrs={'placeholder': 'Apelido'}))
-    email = forms.EmailField(max_length=254, label='',  widget=forms.TextInput(attrs={'placeholder': 'E-mail'}))
-    password1 = forms.CharField(label='',  widget=forms.PasswordInput(attrs={'placeholder': 'Senha'}))
-    password2 = forms.CharField(label='',  widget=forms.PasswordInput(attrs={'placeholder': 'Repitir Senha'}))
+    first_name = forms.CharField(max_length=30, label='Nome',  required=True, widget=forms.TextInput(attrs={'placeholder': 'Nome'}))
+    last_name = forms.CharField(max_length=30, label='Apelido', required=True    , widget=forms.TextInput(attrs={'placeholder': 'Apelido'}))
+    phone_number = forms.CharField(label="Número de telefone",
+                                   widget=forms.TextInput(attrs={'placeholder': 'Número de telefone'}))
+    email = forms.EmailField(max_length=254, label='Email',  widget=forms.TextInput(attrs={'placeholder': 'E-mail'}))
+    password1 = forms.CharField(label='Palavra passe',  widget=forms.PasswordInput(attrs={'placeholder': 'Palavra Passe'}))
+    password2 = forms.CharField(label='Repitir Palavra Passe ',  widget=forms.PasswordInput(attrs={'placeholder': 'Repitir Palavra Passe  '}))
     
     class Meta(UserCreationForm.Meta):
         model = User
-        fields = ('first_name', 'last_name', 'email', 'password1')
+        fields = ('first_name', 'last_name', 'phone_number',  'email', 'password1')
     @transaction.atomic
     def save(self):
         user = super().save(commit=False)

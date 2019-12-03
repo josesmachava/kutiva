@@ -29,7 +29,7 @@ urlpatterns = [
     path('cms/', include('cms.urls')),
     path('payment/', include('payment.urls')),
     path('api/', include('api.urls')), # new
-
+    
     #path('cms/', include('cms.urls')),
    
 ]

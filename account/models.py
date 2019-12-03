@@ -3,9 +3,10 @@ from django.db import models
 from django.db.models.signals import post_save
 from django.dispatch import receiver
 from django.utils.translation import ugettext_lazy as _
-
+from django.core.validators import RegexValidator
 from cms.models import Course
 from kutiva import settings
+
 
 
 class UserManager(BaseUserManager):
@@ -47,6 +48,10 @@ class User(AbstractUser):
 
     username = None
     email = models.EmailField(_('email address'), unique=True)
+
+    phone_regex = RegexValidator(regex=r'^\+?258?\d{9,13}$',
+                                 message="O número de telefone deve ser digitado no formato: '+258849293949'. São permitidos até 13 dígitos.")
+    phone_number = models.CharField(validators=[phone_regex], max_length=13, blank=True)  # validators should be a list
     is_instructor = models.BooleanField(default=False)
     is_student = models.BooleanField(default=False)
     
@@ -55,6 +60,20 @@ class User(AbstractUser):
 
     objects = UserManager()
 
+
+
+
+class Instructor(models.Model):
+    user = models.OneToOneField(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
+    location = models.CharField(max_length=30, blank=True)
+    phone_number = models.CharField(max_length=30, blank=True)
+    role = models.CharField(max_length=30, blank=True)
+    description = models.TextField(max_length=30, blank=True)
+    educational_institution = models.CharField(max_length=30, blank=True)
+    birth_date = models.DateField(null=True, blank=True)
+    
+    def __str__(self):
+        return str(self.user)
 
 
 
