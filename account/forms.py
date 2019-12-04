@@ -24,10 +24,11 @@ class StudentSignUpForm(UserCreationForm):
     email = forms.EmailField(max_length=254, label='Email',  widget=forms.TextInput(attrs={'placeholder': 'E-mail'}))
     password1 = forms.CharField(label='Palavra passe',  widget=forms.PasswordInput(attrs={'placeholder': 'Palavra Passe'}))
     password2 = forms.CharField(label='Repitir Palavra Passe ',  widget=forms.PasswordInput(attrs={'placeholder': 'Repitir Palavra Passe  '}))
-    
+    educational_institution = forms.CharField(label='Instituição de Ensino',  widget=forms.TextInput(attrs={'placeholder': 'Instituição de Ensino'}))
+    #birth_date =  forms.DateField(widget=forms.SelectDateWidget())
     class Meta(UserCreationForm.Meta):
         model = User
-        fields = ('first_name', 'last_name', 'phone_number',  'email', 'password1')
+        fields = ('first_name', 'last_name', 'phone_number',  'educational_institution',  'email', 'password1' )
     @transaction.atomic
     def save(self):
         user = super().save(commit=False)
@@ -50,13 +51,13 @@ class StudentSignUpdateForm(ModelForm):
     location = forms.CharField(label="", widget=forms.TextInput(attrs={'placeholder': 'loacal'}), max_length=30, required=False)
     phone_number = forms.CharField(label="", widget=forms.TextInput(attrs={'placeholder': 'Número de telefone'}), max_length=30)
     description = forms.CharField(label="",widget=forms.TextInput(attrs={'placeholder': 'Sobre me'}), max_length=30)
-    educational_institution = forms.CharField(label="", widget=forms.TextInput(attrs={'placeholder': 'Instituição de ensino'}), max_length=30)
+    educational_institution = forms.CharField(label="Instuticao de ensino", widget=forms.TextInput(attrs={'placeholder': 'Instuticao de ensino'}), max_length=30, required=False, help_text='Optional.')
     birth_date = forms.DateField(widget=forms.SelectDateWidget)
         
     
     class Meta:
         model = User
-        fields = ('first_name', 'last_name', 'email', 'location', 'birth_date', 'phone_number', 'description', 'educational_institution')
+        fields = ('first_name', 'last_name', 'email', 'location', 'birth_date', 'educational_institution', 'phone_number', 'description')
 
 
       

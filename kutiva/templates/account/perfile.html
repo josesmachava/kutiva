@@ -1,0 +1,85 @@
+{% extends "kutiva/layout/base.html" %}
+{% load staticfiles %}
+
+{% comment %}
+
+{% endcomment %}
+{% load staticfiles %}
+
+{# overide the tile of the page #}
+{% block title %}
+<title>kutiva</title>
+{% endblock %}
+
+{% block styles %}
+{#    only include css  files needed for thi page bootstap and other libs are add in base template #}
+
+<meta charset="utf-8">
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible", content="IE=edge">
+<meta name="viewport", content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="{% static 'stylesheet/kutiva/main.css' %}">
+    <link rel="stylesheet" href="{% static 'stylesheet/kutiva/footer.css' %}">
+
+<style type="text/css">
+
+</style>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-140073016-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-140073016-1');
+</script>
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+{% endblock %}
+
+
+{% block scripts %}
+{#    only include css  files needed for thi page bootstap and other libs are add in base template #}
+
+{% endblock %}
+
+
+{% block content %}
+
+{% include "kutiva/layout/navegation.html" %}
+
+
+<main>
+   <div class="container">
+        <div class="row">
+            <div class="col-md-4">
+                <aside>
+                     <ul>
+                         <li><i class="far fa-user"></i></li>
+                         <li>{{ user.first_name }}  {{ user.last_name }}</li>
+                          <li><i class="fas fa-phone-alt"></i> {{ user.phone_number }}</li>  
+                          <li><i class="fas fa-envelope"></i>{{ user.email }}</li>
+                          <li><i class="fas fa-building"></i>{{ user.student.educational_institution }}</li>
+                          <li><i class="fas fa-map-marker-alt"></i>{{ user.student.location }}</li>
+
+                     </ul> 
+                </aside>
+            </div>
+            <div class="col-md-8">
+                <h1>Sobre me    </h1>
+                <p>{{ user.student.description }}</p>
+
+                <p>Adicione linguagens de programacao de dominio</p>
+                <button>Adicionar</button>
+
+            </div>
+        </div>
+    </div>
+
+</main>
+{% include "kutiva/layout/footer.html" %}
+
+
+{% endblock %}
+

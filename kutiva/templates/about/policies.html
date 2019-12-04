@@ -1,0 +1,104 @@
+{% extends "price/layout/base.html" %}
+{% load staticfiles %}
+
+{% comment %}
+
+{% endcomment %}
+{% load staticfiles %}
+
+{# overide the tile of the page #}
+{% block title %}
+<title>Price</title>
+{% endblock %}
+
+{% block styles %}
+{#    only include css  files needed for thi page bootstap and other libs are add in base template #}
+
+<meta charset="utf-8">
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible", content="IE=edge">
+<meta name="viewport", content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="{% static 'stylesheet/main.css' %}">
+
+
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+{% endblock %}
+
+
+{% block scripts %}
+{#    only include css  files needed for thi page bootstap and other libs are add in base template #}
+
+{% endblock %}
+
+
+{% block content %}
+
+<main>
+    <div class="container-fluid header">
+        <div class="row">
+            <div class="col-md-4">
+
+
+            </div>
+            <div class="col-md-4">
+                <ul>
+                    <i class="far fa-envelope"></i> <li>info@preco.co.mz</li>
+                    <i class="fas fa-phone-alt"></i> <li>+258849395994</li>
+                </ul>
+
+            </div>
+            <div class="col-md-4">
+                <div class="contact">
+                    <ul>
+                        <li><i class="fab fa-twitter"></i></li>
+                        <li><i class="fab fa-facebook-f"></i></li>
+                        <li><i class="fab fa-instagram"></i></li>
+                    </ul>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+
+{% include "price/layout/navegation.html" %}
+
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3">
+                <aside>
+                    <nav>
+                        <p><a href="{% url 'index' %} ">Voltar</a></p>
+                        <ul>
+
+                        </ul>
+                    </nav>
+
+                </aside>
+
+            </div>
+
+            <div class="col-md-8">
+                    <div class="row">
+                    <h1>Políticas e privacidade
+</h1>
+
+
+                    </div>
+            </div>
+        </div>
+
+
+    </div>
+</main>
+{% include "price/layout/footer.html" %}
+
+
+{% endblock %}
+
+
+
+
+

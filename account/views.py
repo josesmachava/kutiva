@@ -31,6 +31,9 @@ def signup(request):
         form = SignUpForm(request.POST)
         if form.is_valid():
             form.save()
+            user.company.commercial_name = commercial_name
+            user.company.address = address
+            user.company.save()
             email = form.cleaned_data.get('email')
             raw_password = form.cleaned_data.get('password1')
             user = authenticate(username=email, password=raw_password)
@@ -47,9 +50,16 @@ def sudentsignup(request):
     if request.method == 'POST':
         form = StudentSignUpForm(request.POST)
         if form.is_valid():
-            form.save()
             email = form.cleaned_data.get('email')
             raw_password = form.cleaned_data.get('password1')
+            phone_number = form.cleaned_data.get('phone_number')
+            educational_institution = form.cleaned_data.get('educational_institution')
+            user = form.save()
+            user.student.phone_number = phone_number
+
+            user.student. educational_institution =  educational_institution
+            user.student.save()
+            
             user = authenticate(username=email, password=raw_password)
             if user is not None:
                 login(request, user)

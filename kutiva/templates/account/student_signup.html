@@ -38,12 +38,12 @@
 
 
 
-    <div class="container">
-        <div class="row justify-content-center align-items-center">
-
+  
 
             <div class="sigin">
-                <form action="" method="post">
+                    <h1><img src="{% static 'images/logo2.png' %}" class="logo" alt="kutiva logo"></h1>
+
+                <form   method="post"  novalidate >
                     <h1 class="">Logo</h1>
                     {% csrf_token %}
                     <input type="hidden" name="next" value="{{ next }}">
@@ -60,10 +60,15 @@
 
                     {{ form.phone_number|as_crispy_field }}   
                                 </div>
+                                <div class="col-6">
+                                        {{ form.educational_institution|as_crispy_field }} 
+
+                                </div>
                 </div>
 
                     
                     {{ form.email|as_crispy_field }} 
+             
 
                     
 
@@ -85,10 +90,7 @@
                 </form>
             </div>
 
-        </div>
-
-    </div>
-    <form>
+  
 
 </main>
 

@@ -1,0 +1,123 @@
+{% extends "price/layout/base.html" %}
+{% load staticfiles %}
+
+{% comment %}
+
+{% endcomment %}
+{% load staticfiles %}
+
+{# overide the tile of the page #}
+{% block title %}
+<title>Price</title>
+{% endblock %}
+
+{% block styles %}
+{#    only include css  files needed for thi page bootstap and other libs are add in base template #}
+
+<meta charset="utf-8">
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible", content="IE=edge">
+<meta name="viewport", content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="{% static 'stylesheet/main.css' %}">
+
+
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+{% endblock %}
+
+
+{% block scripts %}
+{#    only include css  files needed for thi page bootstap and other libs are add in base template #}
+
+{% endblock %}
+
+
+{% block content %}
+
+<main>
+    <div class="container-fluid header">
+        <div class="row">
+            <div class="col-md-4">
+
+
+            </div>
+            <div class="col-md-4">
+                <ul>
+                    <i class="far fa-envelope"></i> <li>info@preco.co.mz</li>
+                    <i class="fas fa-phone-alt"></i> <li>+258849395994</li>
+                </ul>
+
+            </div>
+            <div class="col-md-4">
+                <div class="contact">
+                    <ul>
+                        <li><i class="fab fa-twitter"></i></li>
+                        <li><i class="fab fa-facebook-f"></i></li>
+                        <li><i class="fab fa-instagram"></i></li>
+                    </ul>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+
+{% include "price/layout/navegation.html" %}
+
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3">
+                <aside>
+                    <nav>
+                        <p><a href="{% url 'index' %} ">Voltar</a></p>
+                        <ul>
+                          <li><a href="#terms">Termos e condições</a></li>
+                            <li ><a href="#company">Empresas registadas</a></li>
+                           <li><a href="#consumer">Consumidor final</a></li>
+
+                        </ul>
+                    </nav>
+
+                </aside>
+
+            </div>
+
+            <div class="col-md-8">
+                    <div class="row">
+                        <h1 id="terms">Termos e condições</h1>
+                        <p>O preco.co.mz é uma plataforma que permite aproximar o consumidor final as empresas bem como permitir a cada determinar o preço dos produtos aqui disponíveis. Ao usar este sistema os utilizadores com concordam com o termos e condições abaixo.</p>
+                        <h2 id="company">Empresas registadas</h2>
+<p>Os termos e condições abaixo se referem a todas empresas dispostas na página para visualização do consumidor final.
+    <p>São empresas registadas, todas as empresas que pretendem aderir ao sistema preco.co.mz disponibilizando seus produtos e serviços com os respectivos preços para seus clientes.</p>
+<p>Os descontos gerados pelo preço são determinados pelas empresas registadas.</p>
+<p>Os dados inseridos na criação de conta servem para partilhar informação de início de secção, bem como partilhar experiências sobre do utilizador.</p>
+<p>A violação dos termos e condições pode implicar no bloqueio temporário da conta até regularização de tal violação.
+                        Os preços indicados no sistema devem ser os mesmos na loja.</p>
+
+<h3 id="consumer">Consumidor final</h3>
+    <p>Os termos e condições abaixo se referem a todo consumidor final com perfil criado no preco.co.mz para visualização do consumidor final.</p>
+<p>Os descontos gerados para o consumidor final serão validados na compra seguinte.
+                        <p>Os dados inseridos na criação de conta servem para partilhar informação relativa a actividade do consumidor final, bem como receber e dar retorno sobre as experiências do utilizador.</p>
+<p>Os dados inseridos na criação de conta estarão disponíveis para o preco.co.mz e para a empresa a qual fizer uma encomenda ou compra.</p>
+<p>A criação de conta é totalmente grátis.
+<p>Os descontos só ficam validos se outros pessoas usarem do link que partilhar para finalizar compras.</p>
+
+<p>Os termos e condições de uso do preco.co.mz poderão ser actualizados de acordo com necessário. Tomaremos o cuidado de procurar informar sempre que se justificar, mas agradecemos que visite</p>
+
+                               </div>
+            </div>
+        </div>
+
+
+    </div>
+</main>
+{% include "price/layout/footer.html" %}
+
+
+{% endblock %}
+
+
+
+
+
