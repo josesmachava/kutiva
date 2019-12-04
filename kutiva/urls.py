@@ -23,11 +23,15 @@ from . import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('about/', include("about.urls")),
     path('', views.index, name="index"),
     path('account/', include('account.urls')),
     path('graphql', GraphQLView.as_view(graphiql=True)),
     path('cms/', include('cms.urls')),
     path('payment/', include('payment.urls')),
+    path("terms", views.terms, name="terms"),
+    path("security", views.security, name="security"),
+    path("policies", views.policies, name="policies"),
     path('api/', include('api.urls')), # new
     
     #path('cms/', include('cms.urls')),

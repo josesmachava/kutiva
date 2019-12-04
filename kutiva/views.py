@@ -13,6 +13,17 @@ def index(request):
 
 
 
+
+def security(request):
+    return render(request, "about/security.html")
+
+def terms(request):
+    return render(request, "about/terms.html")
+
+def policies(request):
+    return render(request, "about/policies.html")
+
+
 def error_404_view(request):
     return render(request,'error/404.html')
 
