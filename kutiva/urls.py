@@ -23,7 +23,6 @@ from . import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('about/', include("about.urls")),
     path('', views.index, name="index"),
     path('account/', include('account.urls')),
     path('graphql', GraphQLView.as_view(graphiql=True)),
