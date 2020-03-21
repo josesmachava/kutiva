@@ -121,6 +121,10 @@ font-size: 13px;
 padding-top: 16px;
 text-align: center;
 }
+.partner img{
+    display: block;
+margin: 0 auto;
+}
 .partner-2  img {
     width: 70px;
 
@@ -129,9 +133,19 @@ margin-top: 12px;
 
 
 }
-.partner img{
+.partner-4 img{
     display: block;
-margin: 0 auto;
+
+margin: 16px auto;
+
+width: 54px;
+}
+.header{
+    padding: 240px;
+}
+.header .header-title{
+    width: 600px;
+    color: white;
 }
 @media (max-width: 480px){
   .hero{

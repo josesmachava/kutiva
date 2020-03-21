@@ -52,7 +52,7 @@
 
 <main>
 <header class="hero hero--header">
-    <div class="container-fluid">
+    <div class="container-fluid header">
         <div class="row">
             <div class="col-md-12">
 
@@ -92,12 +92,10 @@
     <h1 class="courseTitle"><a class="text-decoration-none" href="{% url 'details' course.id %}">{{ course.name }}</a></h1>
 
         <ul>
-            <li class="">Iniciante</li>
-            <li>14:40</li>
-            <li>Jan 10, 2019</li>
+
         </ul>
         <ul class="courseDetails">
-        <li class="courseAuthor">{{ course.author.first_name|capfirst }} {{ course.author.last_name|capfirst }}</li>
+        <li class="courseAuthor">Author:{{ course.author.first_name|capfirst }} {{ course.author.last_name|capfirst }}</li>
 
         <!-- <p class="decription">{{ course.description|wordwrap:10 }}</p> -->
         </ul>
