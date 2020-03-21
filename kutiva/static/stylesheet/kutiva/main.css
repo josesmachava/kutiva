@@ -123,10 +123,25 @@ text-align: center;
 }
 .partner-2  img {
     width: 70px;
-display: block;
-margin: 0 auto;
+
     margin-top: 0px;
 margin-top: 12px;
 
 
+}
+.partner img{
+    display: block;
+margin: 0 auto;
+}
+@media (max-width: 480px){
+  .hero{
+      height: 300px;
+  }
+    .testimonial-name, .testimonial-hobby{
+        text-align: center;
+    }
+    .testimonial-photo{
+        display: block;
+        margin: 0 auto;
+    }
 }

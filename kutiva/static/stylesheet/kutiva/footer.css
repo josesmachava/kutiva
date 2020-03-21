@@ -47,3 +47,6 @@ li a:hover, p a:hover{
 li:first-letter{
     text-transform: capitalize;
 }
+footer p{
+    text-align: center;
+}
