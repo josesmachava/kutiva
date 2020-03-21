@@ -2,16 +2,36 @@ html,
 body {
    margin:0;
    padding:0;
-   font-family: 'Open Sans', sans-serif;
+
    height:100%;
+
+     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
 }
 
-
-header img{
-    width: 40vw;
-    display: block;
-    margin: 0 auto;
+.navbar{
+    position: fixed;
+width: 100%;
+z-index: 1;
 }
+
+.hero--header{
+     background-image: url("../../images/bg1.jpeg");
+    position: relative;
+
+}
+.hero{
+
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    overflow: hidden;
+    padding: 24px 0 32px;
+    background-color: rgba(0,0,0,0.6);
+    height: 600px;
+
+
+}
+
 header h1{
     color: #212416;
     font-weight: 900;
@@ -91,5 +111,23 @@ a:hover{
 .testimonial-hobby{
     font-size: 15px;
 }
+.partner{
+    width: 100%;
+    padding-bottom: 50px;
+}
+.partner h3{
+   color: #686f7a;
+font-family: open sans,helvetica neue,Helvetica,Arial,sans-serif;
+font-size: 13px;
+padding-top: 16px;
+text-align: center;
+}
+.partner-2  img {
+    width: 70px;
+display: block;
+margin: 0 auto;
+    margin-top: 0px;
+margin-top: 12px;
 
 
+}

@@ -3,14 +3,14 @@
 <script  src="{% static 'javascript/navegation.js' %}"></script>
 <link rel="stylesheet" href="{% static 'stylesheet/kutiva/navegation.css' %}">
 
+{% load staticfiles %}
 
 
 
 
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-      <div class="container">
-        <div class="row">
-    <a class="navbar-brand" href="{% url 'index'%}"><h1> <img src="{% static 'images/logo2.png' %}" alt="kutiva logo"></h1>
+<nav class="navbar navbar-expand-lg navbar-light bg-light desktop-menu" >
+    <div class="container">
+       <a class="navbar-brand" href="{% url 'index'%}"><h1> <img src="{% static 'images/logo2.png' %}" alt="kutiva logo"></h1>
     </a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -18,23 +18,60 @@
 
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
 
-        <ul class="navbar-nav mr-auto">
+        <div class="navbar-nav mr-auto">
+            <input type="search" placeholder="pesquisar" >
+        </div>
 
-
-        </ul>
         <ul class="navbar-nav">
 
-            <li class=" nav-item link-button"><a class="unstyledLink link-button"  href="{% url 'course' %}"> Cursos</a></li>
+
+
+
+
+
+                    <span class="cart-number-order" >
+                         {{ order.product.all.count }}
+                        </span>
+
+
+
+            </a></li>
+            <div class="dropdown">
+  <li class=" dropdown-toggle user"id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+     <i class="far fa-user"></i>
+  </li>
+      <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+
+        <a class="dropdown-item" href="{%  url 'logout' %}">Logout</a>
+      </div>
+    </div>
+
+        </ul>
+
+
+
+        <ul class="navbar-nav">
+
+
+            <li class=" nav-item link-button"><a class="unstyledLink link-button"  href="{% url 'course' %}"> preço</a></li>
             <li class="nav-item link-button"><a class="unstyledLink link-button"  href="{% url 'signin' %}">Entrar</a> </li>
             <li class="nav-item link-button"><a class="unstyledLink link-button"  href="{%  url 'student_sigin' %}">criar conta</a> </li>
 
 
+
+
+
+
+
         </ul>
+
+
+    </div>
+
     </div>
 
 
-        </div>
-    </div>
 
-    </nav>
+    </div>
+   </nav>
 

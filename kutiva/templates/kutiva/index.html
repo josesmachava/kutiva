@@ -51,11 +51,11 @@
 
 
 <main>
-<header>
+<header class="hero hero--header">
     <div class="container-fluid">
         <div class="row">
             <div class="col-md-12">
-                <img src="{% static 'images/bg.jpeg' %}" alt="">
+
                 <h1>Garante seu futuro aprendendo novas habilidades online.</h1>
 
 
@@ -101,27 +101,6 @@
               {% endfor %}
 
 
-    <button class="seeCourses primary-button"><a href="{% url 'course' %}">todos cursos</a></button>
-        </div>
-    </div>
-
-    <div class="container">
-        <div class="row">
-            
-
-            <div class="col-md-12">
-                    <h1>Preco</h1>
-                    <h2>200MT</h2>
-                    <ul>
-                        <li></li>
-                        <li>Acessoa todos os cursos</li>
-                    </ul>
-
-            </div>
-          
-
-        </div>
-    </div>    
 
     <div class="container">
         <div class="row">
@@ -165,10 +144,11 @@
                 </div>
             </div>
             <section class="partner">
+            <h3 class="text-center">Parceiros</h3>
                 <div class="row">
-                 <h3 class="text-center">Parceiros</h3>
+
                 {% for partner in partners %}
-                 <div class="col-md-3">
+                 <div class="col-md-3 partner-{{ partner.id }}">
                      <a href="{{ partner.url }}" target="_blank">
                          <img src="{{ partner.image }}" alt="{{ partner.name }}">
                      </a>
