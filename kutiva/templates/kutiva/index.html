@@ -19,7 +19,7 @@
 <meta http-equiv="X-UA-Compatible", content="IE=edge">
 <meta name="viewport", content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="{% static 'stylesheet/kutiva/main.css' %}">
-    <link rel="stylesheet" href="{% static 'stylesheet/kutiva/footer.css' %}">
+<link rel="stylesheet" href="{% static 'stylesheet/kutiva/footer.css' %}">
 
 <style type="text/css">
 
@@ -105,7 +105,23 @@
         </div>
     </div>
 
+    <div class="container">
+        <div class="row">
+            
 
+            <div class="col-md-12">
+                    <h1>Preco</h1>
+                    <h2>200MT</h2>
+                    <ul>
+                        <li></li>
+                        <li>Acessoa todos os cursos</li>
+                    </ul>
+
+            </div>
+          
+
+        </div>
+    </div>    
 
     <div class="container">
         <div class="row">
@@ -149,15 +165,17 @@
                 </div>
             </div>
             <section class="partner">
+                <div class="row">
                  <h3 class="text-center">Parceiros</h3>
                 {% for partner in partners %}
-                 <div class="col-md-2">
+                 <div class="col-md-3">
                      <a href="{{ partner.url }}" target="_blank">
                          <img src="{{ partner.image }}" alt="{{ partner.name }}">
                      </a>
 
                  </div>
                 {% endfor %}
+                </div>
             </section>
            
         </div>
