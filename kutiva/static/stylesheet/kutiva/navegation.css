@@ -10,3 +10,11 @@ ul li{
 input[type='search']{
     width: 600px;
 }
+@media (max-width: 480px){
+    input[type='search']{
+        width: auto;
+    }
+    .navbar-toggler{
+        border: none;
+    }
+}
