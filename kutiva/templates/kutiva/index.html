@@ -56,10 +56,16 @@
         <div class="row">
             <div class="col-md-12">
 
-                <h1>Garante seu futuro aprendendo novas habilidades online.</h1>
+                <h1 class="header-title">Garante seu futuro aprendendo novas habilidades online.</h1>
+                <h2 class="header-subtitle"></h2>
+                <div class="header-button">
+                    <button>
 
+      Comece seu mês grátis
 
-                        <h1 class="headertitle">CURSOS ONLINE PARA APRENDER.</h1>
+                    </button>
+                </div>
+
             </div>
 
                 </div>
@@ -144,11 +150,11 @@
                 </div>
             </div>
             <section class="partner">
-            <h3 class="text-center">Parceiros</h3>
+
                 <div class="row">
 
                 {% for partner in partners %}
-                 <div class="col-md-3 partner-{{ partner.id }}">
+                 <div class="col-md-4 partner-{{ partner.id }}">
                      <a href="{{ partner.url }}" target="_blank">
                          <img src="{{ partner.image }}" alt="{{ partner.name }}">
                      </a>

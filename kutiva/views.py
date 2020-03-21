@@ -11,7 +11,8 @@ def index(request):
 
 
 
-
+def price(request):
+    return render(request, 'kutiva/price.html')
 
 
 def security(request):

@@ -13,76 +13,163 @@
 
 {% block styles %}
 {#    only include css  files needed for thi page bootstap and other libs are add in base template #}
-<link rel="stylesheet" href="{% static 'stylesheet/kutiva/navegation.css' %}">
+
+<meta charset="utf-8">
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible", content="IE=edge">
+<meta name="viewport", content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="{% static 'stylesheet/kutiva/main.css' %}">
 <link rel="stylesheet" href="{% static 'stylesheet/kutiva/footer.css' %}">
-    <style>
 
-        .allcoursesCoursesHeader{
+<style type="text/css">
 
-        }
-        .allCoursesHeaderTitle{
-           
+</style>
 
-        }
-        header{
-            display: grid;
-            grid-template-columns: 70% 20%;
-            margin: 0;
-            padding: 0;
-            height:80px;
-            color: #3a343a;
-            background-color: #F6F8FA;
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-140073016-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
 
-            padding: 1% 10%;
-        }
-        header h1{
-            font-size: 25px
-        }
-    </style>
+  gtag('config', 'UA-140073016-1');
+</script>
 
-
-
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
 {% endblock %}
 
+
+{% block scripts %}
+{#    only include css  files needed for thi page bootstap and other libs are add in base template #}
+
+{% endblock %}
 
 
 {% block content %}
 
 {% include "kutiva/layout/navegation.html" %}
-  <main>
-    
-  <header class="allCoursesHeader defaultHeader alignCenter">
-        <h1 class="">Cursos</h1>
-
-  </header>
 
 
+<main>
+<header class="hero hero--header">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
 
-  <section class="courses">
-    
-       {% for course in courses %}
+                <h1 class="header-title">Garante seu futuro aprendendo novas habilidades online.</h1>
+                <h2 class="header-subtitle"></h2>
+                <div class="header-button">
+                    <button>
 
-    <article class="course">
-    <!-- <img src="https://udemy-images.udemy.com/course/240x135/1430746_2f43_2.jpg" alt="screencast cover" class="cover"> -->
+      Comece seu mês grátis
 
-    <h1 class="courseTitle"><a href="{% url 'details' course.id %}">{{ course.name }}</a></h1>
+                    </button>
+                </div>
+
+            </div>
+
+                </div>
+
+            </div>
+
+
+
+
+</header>
+
+
+
+
+
+
+    <div class="container">
+        <div class="row">
+    {% for course in courses %}
+    <div class="col-md-4">
+    <article class="course ">
+    <img src="https://udemy-images.udemy.com/course/240x135/1430746_2f43_2.jpg" alt="screencast cover" class="cover">
+
+    <h1 class="courseTitle"><a class="text-decoration-none" href="{% url 'details' course.id %}">{{ course.name }}</a></h1>
+
+        <ul>
+            <li class="">Iniciante</li>
+            <li>14:40</li>
+            <li>Jan 10, 2019</li>
+        </ul>
         <ul class="courseDetails">
         <li class="courseAuthor">{{ course.author.first_name|capfirst }} {{ course.author.last_name|capfirst }}</li>
-        <li class="skillsLevel">Iniciante</li>
-        <img src="https://www.udacity.com/assets/iridium/images/svgs/beginner.svg" alt="level">
+
+        <!-- <p class="decription">{{ course.description|wordwrap:10 }}</p> -->
         </ul>
   </article>
- {% endfor %}
-</section>
-                 
+    </div>
+
+              {% endfor %}
 
 
 
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4">
+                <div class="testimonial">
+                    <div>
+                        <img src="{% static 'images/perfil.jpg' %}" class="testimonial-photo" alt="testimonial photo">
+                        <h1 class="testimonial-name">Jose Machava</h1>
+                        <h2 class="testimonial-hobby">Estudante</h2>
+                    </div>
 
-  </main>
 
-  {% include "kutiva/layout/footer.html" %}
+                    <p class="testimonial-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus deleniti dolorum eos error excepturi illum libero molestiae natus pariatur perspiciatis quasi repudiandae sapiente, suscipit! Beatae est odio quasi quis quos?</p>
+
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="testimonial">
+                    <div>
+                        <img src="{% static 'images/perfil.jpg' %}" class="testimonial-photo" alt="testimonial photo">
+                        <h1 class="testimonial-name">Jose Machava</h1>
+                        <h2 class="testimonial-hobby">Estudante</h2>
+                    </div>
+
+
+                    <p class="testimonial-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus deleniti dolorum eos error excepturi illum libero molestiae natus pariatur perspiciatis quasi repudiandae sapiente, suscipit! Beatae est odio quasi quis quos?</p>
+
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="testimonial">
+                    <div>
+                        <img src="{% static 'images/perfil.jpg' %}" class="testimonial-photo" alt="testimonial photo">
+                        <h1 class="testimonial-name">Jose Machava</h1>
+                        <h2 class="testimonial-hobby">Estudante</h2>
+                    </div>
+
+
+                    <p class="testimonial-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus deleniti dolorum eos error excepturi illum libero molestiae natus pariatur perspiciatis quasi repudiandae sapiente, suscipit! Beatae est odio quasi quis quos?</p>
+
+                </div>
+            </div>
+            <section class="partner">
+
+                <div class="row">
+
+                {% for partner in partners %}
+                 <div class="col-md-4 partner-{{ partner.id }}">
+                     <a href="{{ partner.url }}" target="_blank">
+                         <img src="{{ partner.image }}" alt="{{ partner.name }}">
+                     </a>
+
+                 </div>
+                {% endfor %}
+                </div>
+            </section>
+
+        </div>
+    </div>
+
+</main>
+{% include "kutiva/layout/footer.html" %}
+
 
 {% endblock %}
 

@@ -15,6 +15,7 @@ z-index: 1;
 }
 
 .hero--header{
+    padding-top: 200px;
      background-image: url("../../images/bg1.jpeg");
     position: relative;
 
@@ -32,21 +33,25 @@ z-index: 1;
 
 }
 
-header h1{
-    color: #212416;
-    font-weight: 900;
-    font-size: 60px;
-    font-family: 'Lato', sans-serif;
+.header-button button{
+    border: none;
+    height: 46px;
+    background-color: rgb(7, 71, 166);
+    color: white;
+    font-weight: bold;
+    border-radius: 3px;
+}
+.course{
+    padding-top:50px ;
+}
+.courses{
+    min-height: 750px;
 
 }
-header p{
-    color: #212416;
-    font-size: 25px;
-    font-weight: 300;
-    font-family: 'Lato', sans-serif;
+.hero-courses{
+    height: 350px;
 
 }
-
 .course ul{
     display: inline-flex;
     margin: 0;
@@ -58,24 +63,18 @@ header p{
     font-weight: bold;
 }
 
-.card{
-    background: #fff;
-    box-shadow: 5px 5px 25px 0px rgba(46, 61, 73, 0.2);
-    border-radius: 0.375rem;
-    transition: all 0.3s ease;
-
-    padding: 15px;
-    border: none;
-}
 
 .partner img{
     width: 100px;
 
 }
-
-
-
-
+.hero-subscription{
+    height: 300px;
+    margin-bottom: 50px;
+}
+.subscription{
+    background: #f8f9fa;
+}
 .seeCourses{
     margin:0 auto;
     color: white;
