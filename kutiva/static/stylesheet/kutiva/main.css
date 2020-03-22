@@ -168,12 +168,17 @@ width: 54px;
   .hero{
       height: 300px;
   }
+
     .header{
         padding: 71px;
     }
     .header-title{
         font-size: 20px;
     }
+    .course-header{
+        height: 200px;
+    }
+
     .testimonial-name, .testimonial-hobby{
         text-align: center;
     }

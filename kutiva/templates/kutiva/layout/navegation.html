@@ -82,14 +82,16 @@
 
           <!--  <li><i class="fal fa-bars"></i></li>-->
             <li class="search-icon"><span><i class="fal fa-search"></i></span></li>
-            <li> <span><i class="fal fa-book-open"></i></span></li>
+            <li><a href="{% url 'course' %}"> <span><i class="fal fa-book-open"></i></span></a></li>
             <li class="user-icon"><span><i class="fal fa-user"></i></span>
 
             </li>
         </ul>
         <ul class="user-menu">
+                    <li>    {{ user.first_name|capfirst }} {{ user.last_name|capfirst }}</li>
+                 
                     <li>Editar</li>
-                    <li>Sair</li>
+                    <li><a href="{%  url 'logout' %}">Sair</a></li>
                 </ul>
              {% else %}
     <ul class="logout">
