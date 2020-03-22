@@ -83,8 +83,14 @@
           <!--  <li><i class="fal fa-bars"></i></li>-->
             <li class="search-icon"><span><i class="fal fa-search"></i></span></li>
             <li> <span><i class="fal fa-book-open"></i></span></li>
-            <li><span><i class="fal fa-user"></i></span></li>
+            <li class="user-icon"><span><i class="fal fa-user"></i></span>
+
+            </li>
         </ul>
+        <ul class="user-menu">
+                    <li>Editar</li>
+                    <li>Sair</li>
+                </ul>
              {% else %}
     <ul class="logout">
                      <li class="nav-item link-button"><a class="unstyledLink link-button"  href="{% url 'signin' %}">Entrar</a> </li>

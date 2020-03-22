@@ -58,7 +58,7 @@ margin-left: 9px;
     .navbar-toggler{
         border: none;
     }
-    nav ul{
+    .login{
         margin-top: -50px;
 
         display: flex;
@@ -67,11 +67,32 @@ margin-left: 9px;
 
     }
     .logout{
+         margin-top: -50px;
+
+        display: flex;
+        flex-wrap: wrap;
         justify-content: flex-end;
         margin-right: 15px;
     }
     .logout  li{
         font-size: 17px;
+    }
+    .user-menu{
+        position: relative;
+
+background: white;
+
+width: 196px;
+
+float: right;
+top: 4px;
+
+margin-right: 20px;
+
+height: 200px;
+        padding: 10px;
+
+        box-shadow: 0 0 0 1px rgba(0,0,0,.15),0 2px 3px rgba(0,0,0,.1);
     }
     nav ul li{
         font-size: 19px;
