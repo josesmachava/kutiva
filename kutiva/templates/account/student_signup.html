@@ -20,6 +20,8 @@
 <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible", content="IE=edge">
 <meta name="viewport", content="width=device-width, initial-scale=1">
+<link rel="stylesheet"  href="{% static 'stylesheet/kutiva/library/malangatana.css' %}">
+<link rel="stylesheet" href="{% static 'stylesheet/account/signin.css' %}">
 
 
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
@@ -35,60 +37,60 @@
 {% block content %}
 
 <main>
+        <div class="container h-100">
+            <div class="row h-100 justify-content-center align-items-center">
 
 
 
-  
+                <form    method="post"  novalidate >
 
-            <div class="sigin">
-                    <h1><img src="{% static 'images/logo2.png' %}" class="logo" alt="kutiva logo"></h1>
-
-                <form   method="post"  novalidate >
-                    <h1 class="">Logo</h1>
+                      <h1><img src="{% static 'images/logo2.png' %}" class="logo" alt="kutiva logo"></h1>
                     {% csrf_token %}
                     <input type="hidden" name="next" value="{{ next }}">
                     <div class="row">
-                        <div class="col-6">
+                        <div class="col-md-6">
                             {{ form.first_name|as_crispy_field }}
                         </div>
-                        <div class="col-6">
+                        <div class="col-md-6">
                             {{ form.last_name|as_crispy_field }}
                         </div>
                     </div>
                     <div class="row">
-                            <div class="col-6">
+                            <div class="col-md-6">
 
                     {{ form.phone_number|as_crispy_field }}   
                                 </div>
-                                <div class="col-6">
+                                <div class="col-md-6">
                                         {{ form.educational_institution|as_crispy_field }} 
 
                                 </div>
                 </div>
-
-                    
+<div class="row">
+                   <div class="col-md-12">
                     {{ form.email|as_crispy_field }} 
-             
+             </div>
 
-                    
+</div>
 
                     <div class="row">
-                            <div class="col-6">
+                            <div class="col-md-6">
                               {{ form.password1|as_crispy_field }}
                             </div>
-                            <div class="col-6">
+                            <div class="col-md-6">
                               {{ form.password2|as_crispy_field }}
                             </div>
                     </div>
                           
             
-                    
-                     <button type="submit" class="btn btn-primary">Criar conta</button>
+                                                <input type="submit" name="hello" class="primary-button" value="Criar conta">
+
+
 
                     <a href="{% url 'signin' %}">ou iniciar sessao</a>
 
                 </form>
-            </div>
+</div>
+        </div>
 
   
 

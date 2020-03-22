@@ -24,12 +24,14 @@
 
 
 {% block content %}
+<main>
+    <div class="container h-100">
+    <div class="row h-100 justify-content-center align-items-center">
 
-    <div class="alignCenter">
-        <div class="sign">
-                       <h1><img src="{% static 'images/logo2.png' %}" class="logo" alt="kutiva logo"></h1>
+
  
-                    <form class="alignElementCenter"  action="signin" method="post">
+                    <form  action="signin" method="post">
+                    <h1><img src="{% static 'images/logo2.png' %}" class="logo" alt="kutiva logo"></h1>
                          {% csrf_token %}
                         
                          <input type="email" placeholder="E-mail" class="inputField" name="username">
@@ -38,15 +40,17 @@
                         <input type="submit" name="hello" class="primary-button" value="Entrar">
                           
                        {% for message in messages %}
-                          <p class="error alignTextCenter"> {{ message }}</p>
+                          <p class="error text-center"> {{ message }}</p>
                     {% endfor %}
 
-                    <p class="alignTextCenter"><a class="unstyledLink link-button" href="{% url 'student_sigin' %}">ou criar conta</a></p>
+                    <p class="text-center"><a class="unstyledLink link-button" href="{% url 'student_sigin' %}">ou criar conta</a></p>
                      </form>
-     
-      </div>
-      </div>
-        
+
+    </div>
+    </div>
+
+
+        </main>
       
 
    
