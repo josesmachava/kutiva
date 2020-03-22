@@ -65,7 +65,9 @@ margin-left: 9px;
         justify-content: flex-end;
         margin-right: 15px;
     }
-
+    .logout  li{
+        font-size: 17px;
+    }
     nav ul li{
         font-size: 19px;
 
