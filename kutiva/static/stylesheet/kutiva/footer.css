@@ -2,6 +2,7 @@ footer{
     height: auto;
     padding-top: 50px;
     margin-top: 50px;
+
     background-color: whitesmoke;
 }
 .logo{
@@ -49,4 +50,6 @@ li:first-letter{
 }
 footer p{
     text-align: center;
+    padding: 0;
+    margin: 0;
 }

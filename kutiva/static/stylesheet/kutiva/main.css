@@ -8,10 +8,15 @@ body {
      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
 }
 
-.navbar{
-    position: fixed;
-width: 100%;
-z-index: 1;
+.month, .anual{
+    rgba(0,0,0,.15),0 2px 3px rgba(0,0,0,.2);
+box-shadow: 0 0 0 1px rgba(0,0,0,.15),0 2px 3px rgba(0,0,0,.2);
+-webkit-transition: -webkit-box-shadow 83ms;
+transition: -webkit-box-shadow 83ms;
+transition: box-shadow 83ms;
+    padding: 30px;
+transition: box-shadow 83ms, -webkit-box-shadow 83ms;
+background: #fff;
 }
 
 .hero--header{
@@ -73,8 +78,19 @@ z-index: 1;
     margin-bottom: 50px;
 }
 .subscription{
-    background: #f8f9fa;
+    padding: 50px 0;
+
 }
+.subscription ul li{
+    padding: 10px   ;
+    font-size: 17px;
+}
+.subscription ul li span{
+    font-size: 20px;
+    margin-right: 10px;
+
+}
+
 .seeCourses{
     margin:0 auto;
     color: white;
@@ -151,11 +167,20 @@ width: 54px;
   .hero{
       height: 300px;
   }
+    .header{
+        padding: 71px;
+    }
+    .header-title{
+        font-size: 20px;
+    }
     .testimonial-name, .testimonial-hobby{
         text-align: center;
     }
     .testimonial-photo{
         display: block;
         margin: 0 auto;
+    }
+    .anual, .month{
+        margin-top: 30px;
     }
 }

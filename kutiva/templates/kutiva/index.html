@@ -59,12 +59,13 @@
                 <h1 class="header-title">Garante seu futuro aprendendo novas habilidades online.</h1>
                 <h2 class="header-subtitle"></h2>
                 <div class="header-button">
-                    <button>
+      <!--          <button>
 
       Comece seu mês grátis
 
-                    </button>
+                    </button>-->
                 </div>
+
 
             </div>
 
@@ -95,7 +96,7 @@
 
         </ul>
         <ul class="courseDetails">
-        <li class="courseAuthor">Author:{{ course.author.first_name|capfirst }} {{ course.author.last_name|capfirst }}</li>
+       <!--   <li class="courseAuthor">Author:{{ course.author.first_name|capfirst }} {{ course.author.last_name|capfirst }}</li>-->
 
         <!-- <p class="decription">{{ course.description|wordwrap:10 }}</p> -->
         </ul>
@@ -104,6 +105,8 @@
   
               {% endfor %}
 
+        </div>
+    </div>
 
 
     <div class="container">
@@ -147,6 +150,60 @@
 
                 </div>
             </div>
+        </div>
+
+    </div>
+<div class="container-fluid subscription">
+    <div class="container">
+       <div class="row">
+           <div class="col-md-12">
+        <h1>Selecione um plano de aprendizagem para . </h1>
+            <div class="row">
+               <div class="col-md-6">
+<div class="month">
+
+                    <h4 class="text-center">1000 MZN por mês</h4>
+
+                     <ul>
+                   <li>
+                       <span><i class="fal fa-university"></i></span> Acesse todos  cursos criados por especialistas.</li>
+                         <li> <span><i class="fal fa-book-open"></i></span> Faça quantos cursos desejar; não há limite.</li>
+                         <li><span><i class="fal fa-photo-video"></i></span> Obtenha recomendações personalizadas de cursos</li>
+                         <li><span> <i class="fal fa-computer-classic"></i></span> Assista no computador ou celular sempre que desejar.</li>
+                         <li><span><i class="fal fa-file-certificate"></i></span> Receba um certificado quando completar o curso.</li>
+  <li> <span><i class="fal fa-laptop-code"></i></span> Valide o que você está aprendendo com testes dentro dos cursos.</li>
+                         <li><span> <i class="fal fa-times"></i> </span>Cancele quando desejar.</li>
+                </ul>   </div>
+               </div>
+               <div class="col-md-6 ">
+                    <div class="anual">
+    <h4 class="text-center">10000 MZN por ano</h4>
+
+                            <ul>
+
+                                  <li> <span>   <i class="fal fa-tag"></i></span> Poupe 2000 meticais no pacote anual.</li>
+
+                   <li> <span><i class="fal fa-university"></i></span> Acesse todos  cursos criados por especialistas.</li>
+                         <li> <span><i class="fal fa-book-open"></i></span> Faça quantos cursos desejar; não há limite.</li>
+                         <li><span><i class="fal fa-photo-video"></i></span> Obtenha recomendações personalizadas de cursos</li>
+                         <li><span> <i class="fal fa-computer-classic"></i></span> Assista no computador ou celular sempre que desejar.</li>
+                         <li><span><i class="fal fa-file-certificate"></i></span> Receba um certificado quando completar o curso.</li>
+  <li> <span><i class="fal fa-laptop-code"></i></span> Valide o que você está aprendendo com testes dentro dos cursos.</li>
+                         <li><span> <i class="fal fa-times"></i> </span>Cancele quando desejar.</li>
+                </ul>
+                   </div>
+                   </div>
+                </div>
+
+
+
+                </ul>
+           </div>
+       </div>
+        </div>
+               </div>
+
+    <div class="container">
             <section class="partner">
 
                 <div class="row">
@@ -164,7 +221,7 @@
            
         </div>
     </div>
-
+</div>
 </main>
 {% include "kutiva/layout/footer.html" %}
 
