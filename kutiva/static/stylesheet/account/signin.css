@@ -36,6 +36,9 @@ input[type="submit"]{
   font-size: 16px;
   height: 50px*/
 }
+  input[type="submit"]{
+    width: 200px;
+  }
 
 .message{
   padding: 20px;
@@ -46,9 +49,13 @@ input[type="submit"]{
   input{
     width: 100%;
   }
+  input[type="submit"]{
+    width: 200px;
+  }
   .sign{
       width: 100%;
       height: auto;
+      background: #F6F8FA;
   }
   .alignCenter{
     margin: 30px;
