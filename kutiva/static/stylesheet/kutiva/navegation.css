@@ -61,7 +61,18 @@ margin-left: 9px;
         justify-content: space-around;
 
     }
+    .logout{
+        justify-content: flex-end;
+        margin-right: 15px;
+    }
+
     nav ul li{
         font-size: 19px;
+
+    }
+    .create-account{
+        border: 1px solid rgb(7, 71, 166);
+
+padding: 5px;
     }
 }

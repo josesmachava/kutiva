@@ -77,11 +77,21 @@
 
 <nav class="mobile-menu">
         <a class="navbar-brand" href="{% url 'index'%}"><h1> <img src="{% static 'images/logo2.png' %}" alt="kutiva logo"></h1></a>
+{% if user.is_authenticated %}
+        <ul class="login">
 
-        <ul>
-            <li><i class="fal fa-bars"></i></li>
+          <!--  <li><i class="fal fa-bars"></i></li>-->
             <li><span><i class="fal fa-search"></i></span></li>
             <li> <span><i class="fal fa-book-open"></i></span></li>
+            <li><span><i class="fal fa-user"></i></span></li>
+        </ul>
+             {% else %}
+    <ul class="logout">
+                     <li class="nav-item link-button"><a class="unstyledLink link-button"  href="{% url 'signin' %}">Entrar</a> </li>
+                    <li class="nav-item link-button"><a class="unstyledLink link-button create-account"  href="{%  url 'student_sigin' %}">criar conta</a> </li>
+
+
+            {% endif %}
         </ul>
 </nav>
 
