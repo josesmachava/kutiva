@@ -36,7 +36,10 @@ input[type="submit"]{
   height: 50px*/
 }
   input[type="submit"]{
-    width: 200px;
+    width: 300px;
+    display: block;
+    margin: 0 auto;
+    margin-top: 10px;
   }
 
 .message{

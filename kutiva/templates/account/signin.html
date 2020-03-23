@@ -32,18 +32,22 @@
  
                     <form  action="signin" method="post">
                     <h1><img src="{% static 'images/logo2.png' %}" class="logo" alt="kutiva logo"></h1>
+                   <!-- <p class="text-center">Crie habilidades para hoje, amanhã e além.
+Educação para preparar sua carreira para o futuro.</p>-->
                          {% csrf_token %}
                         
                          <input type="email" placeholder="E-mail" class="inputField" name="username">
-                         <input placeholder="Senha" type="password" class="inputField" name="password">
-                        <p><a href="{% url 'password_reset' %}" class="unstyledLink link-button">Esqueceu a senha?</a></p>
-                        <input type="submit" name="hello" class="primary-button" value="Entrar">
-                          
-                       {% for message in messages %}
+                          {% for message in messages %}
                           <p class="error text-center"> {{ message }}</p>
                     {% endfor %}
+                         <input placeholder="Senha" type="password" class="inputField" name="password">
+                     <p class="text-center"><a class="unstyledLink link-button" href="{% url 'student_sigin' %}">ou criar conta</a></p>
 
-                    <p class="text-center"><a class="unstyledLink link-button" href="{% url 'student_sigin' %}">ou criar conta</a></p>
+                        <input type="submit" name="hello" class="primary-button" value="Entrar">
+                          
+
+                    <p class="text-center"><a href="{% url 'password_reset' %}" class="unstyledLink link-button">Esqueceu a senha?</a></p>
+
                      </form>
 
     </div>
