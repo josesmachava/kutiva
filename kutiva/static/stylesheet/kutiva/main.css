@@ -150,6 +150,9 @@ margin-top: 12px;
 
 
 }
+.mobile-menu{
+    display: none;
+}
 .partner-4 img{
     display: block;
 
@@ -169,12 +172,18 @@ width: 54px;
   .hero{
       height: 300px;
   }
-
+    .mobile-menu{
+        display: block;
+    }
     .header{
         padding: 71px;
     }
     .header-title{
         font-size: 20px;
+    }
+    .subscription h1{
+        font-size: 20px;
+        text-align: center;
     }
     .course-header{
         height: 200px;
