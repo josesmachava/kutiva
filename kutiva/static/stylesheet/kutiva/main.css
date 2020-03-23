@@ -159,6 +159,7 @@ width: 54px;
 }
 .header{
     padding: 240px;
+    background-color: rgba(45, 45, 45, 0.5);
 }
 .header .header-title{
     width: 600px;

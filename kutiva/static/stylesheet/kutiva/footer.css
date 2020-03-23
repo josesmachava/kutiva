@@ -16,7 +16,9 @@ ul{
     list-style: none;
 }
 
-
+footer ul li span{
+    padding-right: 10px;
+}
  .social-media{
      margin: 20px 0;
 
