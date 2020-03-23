@@ -160,6 +160,12 @@ margin: 16px auto;
 
 width: 54px;
 }
+.course-title a{
+        font-size: 23px;
+    color: black;
+    text-transform: capitalize;
+
+}
 .header{
     padding: 240px;
     background-color: rgba(45, 45, 45, 0.5);

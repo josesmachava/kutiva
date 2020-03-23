@@ -15,35 +15,53 @@
 
 {% block styles %}
 {#    only include css  files needed for thi page bootstap and other libs are add in base template #}
-<link rel="stylesheet" href="{% static 'stylesheet/kutiva/watch.css' %}">
 <style>
 
-
+main{
+    position: relative;
+    top:52px;
+    height: 100vh;
+}
 
 </style>
+
+<meta charset="utf-8">
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible", content="IE=edge">
+<meta name="viewport", content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="{% static 'stylesheet/kutiva/main.css' %}">
+<link rel="stylesheet" href="{% static 'stylesheet/kutiva/footer.css' %}">
 {% endblock %}
 
-
 {% block content %}
-    {% include "kutiva/layout/navegation.html" %}
-    <main>
-    <div class="classRoom">
-            <section class="whiteBoard">
-              <h1 class="className">{{ course.name }}</h1>
-              <h2 class="classAuthorName">
-                      {{ course.author.first_name|capfirst }} {{ course.author.last_name|capfirst }}
-              </h2>
-                <div id="player">
-              </div>
+
+{% include "kutiva/layout/navegation.html" %}
 
 
-            </section>
-            <section class="classTopics">
-                <div class="curriculum">
+<main>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-10">
+                        <div class="col-md-12">
+                                        <div id="player">
+                           </div>
+                        </div>
 
+                        <div class="col-md-12">
+                             <div class="course-content">
+                              <h1 class="course-title">{{ course.name }}</h1>
+                             <!--    {{ course.created_date }}-->
+
+
+                                </div>
+                        </div>
+
+
+                </div>
+                <div class="col-md-2">
 
                  {% for chapter in  course.chapter.all  %}
-                 <h3 class="classChapter"> {{ chapter.name|capfirst }}</h3>
+                 <h3 class=""> {{ chapter.name|capfirst }}</h3>
                  <ul class="">
                  {% for lesson in chapter.lessons.all  %}
 
@@ -53,29 +71,48 @@
                        </ul>
 
              {% endfor %}
-              </div>
-
-            </section>
 
 
+                </div>
+            </div>
 
-    </div>
 
-    <div class="classInformation">
-        <section class="classDescription">
+        </div>
 
-            <p class="">
-                    {{ course.description }}
 
-            </p>
-        </section>
-        <section class="authorInformation">
-                   <h2 class="classAuthorName">
-                      {{ course.author.first_name|capfirst }} {{ course.author.last_name|capfirst }}
-              </h2>
 
-        </section>
-    </div>
+
+
+
+
+
+
+                <div class="container">
+                    <div class="row">
+                       <div class="col-md-12">
+                              <p> {{ course.description }}</p>
+                     </div>
+                    <div class="col-md-12">
+                        <p>Instructor:   {{ course.author.first_name|capfirst }} {{ course.author.last_name|capfirst }}</p>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -86,6 +123,8 @@
 
 
    </main>
+
+{% include "kutiva/layout/footer.html" %}
 
 
     {% block scripts %}
