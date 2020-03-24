@@ -4,7 +4,11 @@
 {% load embed_video_tags %}
 
 {% comment %}
-
+main{
+    position: relative;
+    top:52px;
+    height: 100vh;
+}
 {% endcomment %}
 {% load staticfiles %}
 
@@ -15,9 +19,13 @@
 
 {% block styles %}
 {#    only include css  files needed for thi page bootstap and other libs are add in base template #}
-<link rel="stylesheet" href="{% static 'stylesheet/kutiva/watch.css' %}">
+
 <style>
-    
+   main{
+    position: relative;
+    top:55px;
+    height: 100vh;
+}
    
 
 </style>
@@ -28,41 +36,45 @@
     {% include "kutiva/layout/navegation.html" %}
 
     <main>
-    <header class="classroom ">
-        <div class="whiteboard">
-                <div class="alignElementCenter">
-                      <div id="player">
+        <div class="container-fluid">
+            <div class="row">
+            <div class="col-md-9">
+                <div id="player">
 
                     </div>
-                </div>
-                  
-                
 
-       </div>
-           
-        <section class="details card">
-          
-            <h1>{{ course.name }}</h1>
-
-          <div class="curriculum">
-               <h2 class="link-button tab-tittle">Currículo</h2>
+            </div>
+                <div class="col-md-3">
+            <div class="course-content course-class">
+                <h1 class="course-title">
+                       {{ course.name }}</h1>
 
                  {% for chapter in  course.chapter.all  %}
                  <h3 class="chapter"> {{ chapter.name|capfirst }}</h3>
                  <ul class="">
                  {% for lesson in chapter.lessons.all  %}
 
-                     
-                     <li class="unstyledList"><a class="link-button unstyledLink" href="{% url 'watch' course.id lesson.id %}"> {{ lesson.name|capfirst }}</a></li>
+
+                     <li class="unstyledList"><i class="fal fa-play"></i><a class="link-button unstyledLink" href="{% url 'watch' course.id lesson.id %}"> {{ lesson.name|capfirst }}</a></li>
                       {% endfor %}
                        </ul>
-                                   
+
              {% endfor %}
-              </div>
+            </div>
 
-            </section>
 
-         </header>  
+
+
+
+
+        </div>
+        </div>
+
+           
+
+          
+
+
              
    </main>
 
