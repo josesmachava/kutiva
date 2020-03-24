@@ -19,18 +19,25 @@
 <meta http-equiv="X-UA-Compatible", content="IE=edge">
 <meta name="viewport", content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="{% static 'stylesheet/kutiva/main.css' %}">
-<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="
 
-sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<link rel="stylesheet" href="{% static 'stylesheet/payment/payment.css/main.css' %}">
+<link rel="stylesheet" href="{% static 'stylesheet/kutiva/footer.css' %}">
 
 <style type="text/css">
-  
-  .paymentInformation{
-      width: 300px;
-      height: auto;
-      padding: 20px;
-  }
+
 </style>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-140073016-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-140073016-1');
+</script>
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
 {% endblock %}
 
 
@@ -46,27 +53,48 @@ sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossor
 
 
 <main>
-    <div class="alignElementCenter">
-      <div class="paymentInformation card">
-        <h1 class="alignTextCenter"> Pagamentos Mensais</h1>
-        <p class="alignTextCenter">Para ter acesso ao cursos da plataforma kutiva e necessario que faca os pagamentos mensais usandos  os seguintes canais</p>
-          <ul class="unstyledList alignTextCenter">
-            
+<header class="hero hero--header payment-header">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+
+
+
+            </div>
+
+                </div>
+
+            </div>
+            <div>
+
+
+
+</div>
+
+
+</header>
+<div class="container">
+    <div class="row">
+          <div class="payment-notice">
+        <h1> Pagamentos Mensais</h1>
+        <p >Para ter acesso ao cursos da plataforma kutiva e necessario que faca os pagamentos mensais usandos  os seguintes canais</p>
+          <ul >
+
             <li> Conta móvel: 849394995</li>
             <li> Mpesa: 849394995</li>
             <li>
  Transferência bancária NIB:0003.0105.07041041008.69</li>
-
           </ul>
-          <button class="warning-button">
-            hello
-          </button>
-      </div>
-
     </div>
+</div>
+</div>
+
+
 </main>
 {% include "kutiva/layout/footer.html" %}
 
 
 {% endblock %}
+
+
 
