@@ -75,9 +75,40 @@
 
 </header>
 
+    <div class="container-fluid">
+        <div class="container goals">
 
+        <h1>Alcance seus objetivos com o kutiva</h1>
+                   <div class="row">
 
+        <div class="col-md-4">
 
+            <div>
+                <span><i class="fal fa-book-open"></i></span>
+                <h1 class="objectives-title">Aprenda as habilidades mais recentes </h1>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut consectetur fugiat laborum officia porro sunt voluptatum! Delectus dicta eius facere ipsam, iure natus quis repellat unde. Dicta dignissimos fuga quasi!</p>
+            </div>
+        </div>
+        <div class="col-md-4">
+
+              <div>
+                  <span><i class="fal fa-file-certificate"></i></span>
+
+                <h1 class="objectives-title">Ganhe um certificado ou diploma  </h1>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut consectetur fugiat laborum officia porro sunt voluptatum! Delectus dicta eius facere ipsam, iure natus quis repellat unde. Dicta dignissimos fuga quasi!</p>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+              <div>
+                  <span><i class="fal fa-chalkboard-teacher"></i></span>
+                <h1 class="objectives-title">Prepare-se para uma carreira  </h1>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut consectetur fugiat laborum officia porro sunt voluptatum! Delectus dicta eius facere ipsam, iure natus quis repellat unde. Dicta dignissimos fuga quasi!</p>
+            </div>
+        </div>
+            </div>
+    </div>
+    </div>
 
 
     <div class="container">
@@ -106,79 +137,38 @@
 
 
     <div class="container">
-        <div class="row   testimonials   ">
+        <div class="row">
+        <div class="col-md-12">
+        <div class="testimonial">
+        <h1 class="testimonial-title">Da comunidade Kutiva</h1>
+        <h2 class="testimonial-subtitle">Mais de 100 de pessoas já estão estudando no kutiva</h2>
+        </div>
               {% for testimonial in testimonials %}
             <div class="col-md-4">
                 <div class="testimonial">
-                    <div>
-                       <!-- <img src="http://127.0.0.1:8001/{{ testimonial.user.image.url }}" class="testimonial-photo" alt="testimonial photo">-->
+
+                       <img src="{% static "images/perfil.jpg" %}" class="testimonial-photo" alt="testimonial photo">
+
+                      <div class="testimonial-content">
                         <h1 class="testimonial-name">{{ testimonial.user.first_name|capfirst }} {{ testimonial.user.last_name|capfirst }}</h1>
                         <h2 class="testimonial-hobby"></h2>
-                    </div>
+
 
 
                     <p class="testimonial-text">{{ testimonial.testimonial|slice:":255" }}</p>
+                     </div>
 
+                </div>
                 </div>
             </div>
              {% endfor %}
 
         </div>
-
-    </div>
-<div class="container-fluid subscription">
-    <div class="container">
-       <div class="row">
-           <div class="col-md-12">
-        <h1>Selecione um plano de aprendizagem.</h1>
-            <div class="row">
-               <div class="col-md-6">
-<div class="month">
-
-                    <h4 class="text-center">1000 MZN por mês</h4>
-
-                     <ul>
-                   <li>
-                       <span><i class="fal fa-university"></i></span> Acesse todos  cursos criados por especialistas.</li>
-                         <li> <span><i class="fal fa-book-open"></i></span> Faça quantos cursos desejar; não há limite.</li>
-                         <li><span><i class="fal fa-photo-video"></i></span> Obtenha recomendações personalizadas de cursos</li>
-                         <li><span> <i class="fal fa-computer-classic"></i></span> Assista no computador ou celular sempre que desejar.</li>
-                         <li><span><i class="fal fa-file-certificate"></i></span> Receba um certificado quando completar o curso.</li>
-  <li> <span><i class="fal fa-laptop-code"></i></span> Valide o que você está aprendendo com testes dentro dos cursos.</li>
-                         <li><span> <i class="fal fa-times"></i> </span>Cancele quando desejar.</li>
-                </ul>   </div>
-               </div>
-               <div class="col-md-6 ">
-                    <div class="anual">
-    <h4 class="text-center">10000 MZN por ano</h4>
-
-                            <ul>
-
-                                  <li> <span>   <i class="fal fa-tag"></i></span> Poupe 2000 meticais no pacote anual.</li>
-
-                   <li> <span><i class="fal fa-university"></i></span> Acesse todos  cursos criados por especialistas.</li>
-                         <li> <span><i class="fal fa-book-open"></i></span> Faça quantos cursos desejar; não há limite.</li>
-                         <li><span><i class="fal fa-photo-video"></i></span> Obtenha recomendações personalizadas de cursos</li>
-                         <li><span> <i class="fal fa-computer-classic"></i></span> Assista no computador ou celular sempre que desejar.</li>
-                         <li><span><i class="fal fa-file-certificate"></i></span> Receba um certificado quando completar o curso.</li>
-  <li> <span><i class="fal fa-laptop-code"></i></span> Valide o que você está aprendendo com testes dentro dos cursos.</li>
-                         <li><span> <i class="fal fa-times"></i> </span>Cancele quando desejar.</li>
-                </ul>
-                   </div>
-                   </div>
-                </div>
-
-
-
-                </ul>
-           </div>
-       </div>
         </div>
-               </div>
 
     <div class="container">
             <section class="partner">
-
+         <!--        <h1 class="partner-title">Garante um estagio profissional com os nossos parceiros</h1> -->
                 <div class="row">
 
                 {% for partner in partners %}
@@ -191,10 +181,10 @@
                 {% endfor %}
                 </div>
             </section>
-           
+
         </div>
     </div>
-</div>
+
 </main>
 {% include "kutiva/layout/footer.html" %}
 

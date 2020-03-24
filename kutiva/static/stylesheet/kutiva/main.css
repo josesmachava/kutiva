@@ -108,22 +108,69 @@ a:hover{
     margin: 100px 0;
 
 }
+.testimonial-title{
+    font-family: OpenSans,Arial,sans-serif;
+font-weight: 700;
+color: #1f1f1f;
+    text-align: center;
+font-size: 32px;
+line-height: 44px;
+margin: 0 20px 14px;
+}
+.testimonial-subtitle{
+    font-family: OpenSans,Arial,sans-serif;
+color: #666;
 
+    text-align: center;
+font-size: 24px;
+line-height: 44px;
+margin: 0 20px;
+}
+.testimonial-text{
+    font-family: OpenSans,Arial,sans-serif;
+font-size: 16px;
+line-height: 32px;
+text-align: left;
+}
 .testimonial div{
     margin: 0 auto;
-    width: 150px;
+    width: auto;
 }
 
 .testimonial-photo{
-    width: 80px;
+    width: 210px;
     border-radius: 100%;
+
+display: block;
+
+margin: auto;
 
 }
 
 
 .testimonial-name {
-    font-size: 16px;
-    font-weight: bold;
+      font-family: OpenSans,Arial,sans-serif;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 27px;
+    text-align: center;
+}
+.partner-title{
+    margin-top: 20px;
+    font-size: 18px;
+    font-weight: normal ;
+font-family: OpenSans,Arial,sans-serif;
+
+        hsla(0,0%,47%,.75);
+
+}
+.goals span{
+    font-size: 52px;
+display: block;
+text-align: center;
+}
+.goals h1{
+    text-align: center;
 }
 .testimonial-hobby{
     font-size: 15px;
@@ -131,6 +178,9 @@ a:hover{
 .partner{
     width: 100%;
     padding-bottom: 50px;
+}
+ .objectives-title{
+        font-size: 27px;
 }
 .partner h3{
    color: #686f7a;
@@ -214,6 +264,7 @@ box-shadow: 0 0 0 1px rgba(0,0,0,.15),0 2px 3px rgba(0,0,0,.2);
     .testimonial-photo{
         display: block;
         margin: 0 auto;
+        width: 230px;
     }
     .anual, .month{
         margin-top: 30px;
