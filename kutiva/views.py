@@ -7,7 +7,9 @@ def index(request):
     partners = Partner.objects.all()
     categories = Category.objects.all()
 
-    return render(request, 'kutiva/index.html', {'courses':courses, 'categories':categories, 'partners':partners})
+    testimonials = Testimonial.objects.all()
+
+    return render(request, 'kutiva/index.html', {'courses':courses, 'categories':categories, 'partners':partners, 'testimonials':testimonials})
 
 
 

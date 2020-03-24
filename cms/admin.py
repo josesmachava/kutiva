@@ -9,7 +9,8 @@ admin.site.register(Category)
 admin.site.register(Subcategory)
 admin.site.register(Chapter)
 admin.site.register(Lesson)
-from .models import Partner
+admin.site.register(Testimonial)
+
 # Register your models here.
 
 class PartnerAdmin(admin.ModelAdmin):

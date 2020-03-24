@@ -48,7 +48,7 @@ class User(AbstractUser):
 
     username = None
     email = models.EmailField(_('email address'), unique=True)
-
+    image = models.ImageField(upload_to='photo')
     phone_regex = RegexValidator(regex=r'^\+?258?\d{9,13}$',
                                  message="O número de telefone deve ser digitado no formato: '+258849293949'. São permitidos até 13 dígitos.")
     phone_number = models.CharField(validators=[phone_regex], max_length=13, blank=True)  # validators should be a list

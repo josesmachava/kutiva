@@ -166,9 +166,21 @@ width: 54px;
     text-transform: capitalize;
 
 }
+.course-class{
+    min-height: 60vh;
+
+box-shadow: 0 0 0 1px rgba(0,0,0,.15),0 2px 3px rgba(0,0,0,.2);
+}
 .header{
     padding: 240px;
     background-color: rgba(45, 45, 45, 0.5);
+}
+.course-title{
+    font-size: 20px;
+}
+.course-class h3{
+    font-size: 20px;
+
 }
 .header .header-title{
     width: 600px;

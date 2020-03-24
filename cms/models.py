@@ -58,6 +58,14 @@ class Course(models.Model):
         return str(self.name)
 
 
+class Testimonial(models.Model):
+    user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
+    testimonial = models.TextField()
+
+    def __str__(self):
+        return str(self.user)
+
+
 class Enrolled(models.Model):
     course = models.ForeignKey(Course, on_delete='CASCADE', blank=True, null=True)
     user = models.ManyToManyField(settings.AUTH_USER_MODEL, null=True, blank=True)

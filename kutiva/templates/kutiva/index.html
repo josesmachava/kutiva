@@ -107,45 +107,22 @@
 
     <div class="container">
         <div class="row   testimonials   ">
+              {% for testimonial in testimonials %}
             <div class="col-md-4">
                 <div class="testimonial">
                     <div>
-                        <img src="{% static 'images/perfil.jpg' %}" class="testimonial-photo" alt="testimonial photo">
-                        <h1 class="testimonial-name">Jose Machava</h1>
-                        <h2 class="testimonial-hobby">Estudante</h2>
+                       <!-- <img src="http://127.0.0.1:8001/{{ testimonial.user.image.url }}" class="testimonial-photo" alt="testimonial photo">-->
+                        <h1 class="testimonial-name">{{ testimonial.user.first_name|capfirst }} {{ testimonial.user.last_name|capfirst }}</h1>
+                        <h2 class="testimonial-hobby"></h2>
                     </div>
 
 
-                    <p class="testimonial-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus deleniti dolorum eos error excepturi illum libero molestiae natus pariatur perspiciatis quasi repudiandae sapiente, suscipit! Beatae est odio quasi quis quos?</p>
+                    <p class="testimonial-text">{{ testimonial.testimonial|slice:":255" }}</p>
 
                 </div>
             </div>
-            <div class="col-md-4">
-                <div class="testimonial">
-                    <div>
-                        <img src="{% static 'images/perfil.jpg' %}" class="testimonial-photo" alt="testimonial photo">
-                        <h1 class="testimonial-name">Jose Machava</h1>
-                        <h2 class="testimonial-hobby">Estudante</h2>
-                    </div>
+             {% endfor %}
 
-
-                    <p class="testimonial-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus deleniti dolorum eos error excepturi illum libero molestiae natus pariatur perspiciatis quasi repudiandae sapiente, suscipit! Beatae est odio quasi quis quos?</p>
-
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="testimonial">
-                    <div>
-                        <img src="{% static 'images/perfil.jpg' %}" class="testimonial-photo" alt="testimonial photo">
-                        <h1 class="testimonial-name">Jose Machava</h1>
-                        <h2 class="testimonial-hobby">Estudante</h2>
-                    </div>
-
-
-                    <p class="testimonial-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus deleniti dolorum eos error excepturi illum libero molestiae natus pariatur perspiciatis quasi repudiandae sapiente, suscipit! Beatae est odio quasi quis quos?</p>
-
-                </div>
-            </div>
         </div>
 
     </div>
