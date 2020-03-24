@@ -1,6 +1,33 @@
-.subscription-notice{
+
+.payment-notice{
     box-shadow: 0 0 0 1px rgba(0,0,0,.15),0 2px 3px rgba(0,0,0,.2);
     padding: 50px;
+    margin: 50px 10px;
+}
+.payment-title{
+    text-align: center;
+    font-size: 25px;
+}
+ span{
+    padding: 10px;
+}
+.payment-subtitle{
+
+    font-size: 20px;
+font-weight: normal;
+width: 540px;
+margin: auto;
+text-align: left;
+padding: 18px 0;
+    font-weight: normal;
+}
+.payment-content{
+    width: 500px;
+
+    margin: auto;
+}
+.payment-content span{
+    margin: 10px;
 }
 /*
   ##Device = Desktops
@@ -64,6 +91,26 @@
 
 @media (min-width: 320px) and (max-width: 480px) {
 
+    .payment-header{
+            height: 200px;
+    }
+    .payment-notice{
+        padding: 0;
+        height: 320px;
 
+    }
+    .payment-content{
+        width: auto;
+    }
+    .payment-subtitle{
+        ont-size: 17px;
+font-weight: normal;
+width: auto;
+margin: auto;
+text-align: left;
+padding: 18px 0;
+font-weight: normal;
+padding: 16px;
+    }
 
 }

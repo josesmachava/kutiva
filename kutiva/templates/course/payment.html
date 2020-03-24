@@ -20,7 +20,7 @@
 <meta name="viewport", content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="{% static 'stylesheet/kutiva/main.css' %}">
 
-<link rel="stylesheet" href="{% static 'stylesheet/payment/payment.css/main.css' %}">
+<link rel="stylesheet" href="{% static 'stylesheet/payment/payment.css' %}">
 <link rel="stylesheet" href="{% static 'stylesheet/kutiva/footer.css' %}">
 
 <style type="text/css">
@@ -75,16 +75,22 @@
 </header>
 <div class="container">
     <div class="row">
+        <div class="col-md-12">
           <div class="payment-notice">
-        <h1> Pagamentos Mensais</h1>
-        <p >Para ter acesso ao cursos da plataforma kutiva e necessario que faca os pagamentos mensais usandos  os seguintes canais</p>
-          <ul >
+        <h1 class="payment-title"> <span><i class="fal fa-calendar-alt"></i></span>Pagamentos Mensais</h1>
+        <h2 class="payment-subtitle" ><span><i class="fal fa-info"></i></span>Para ter acesso ao cursos da plataforma kutiva e necessario que faca os pagamento mensal de 2000 meticais usandos  os seguintes canais</h2>
+        <div class="payment-content">
 
-            <li> Conta móvel: 849394995</li>
-            <li> Mpesa: 849394995</li>
+                  <ul >
+
+            <li><span><i class="fal fa-credit-card"></i></span>Conta móvel: 849394995</li>
+            <li><span><i class="fal fa-mobile"></i></span> Mpesa: 849394995</li>
             <li>
- Transferência bancária NIB:0003.0105.07041041008.69</li>
+<span><i class="fal fa-exchange"></i></span> Transferência bancária NIB:0003.0105.07041041008.69</li>
           </ul>
+        </div>
+</div>
+
     </div>
 </div>
 </div>
