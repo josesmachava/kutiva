@@ -6,6 +6,19 @@ nav img {
 ul li{
     margin-left:10px;
 }
+.user-photo{
+    width: 30px;
+border-radius: 100%;
+display: block;
+margin: auto;
+}
+li span{
+    font-size: 19px;
+    display: block;
+}
+li a{
+    text-align: center;
+}
 .navbar{
     position: fixed;
     width: 100%;

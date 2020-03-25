@@ -35,11 +35,11 @@
 
 
          {% if user.is_authenticated %}
-                <li class=" nav-item link-button"><a class="unstyledLink link-button"  href="{% url 'course' %}"> curso</a></li>
+              <li><a href="{% url 'course' %}"> <span><i class="fal fa-book-open"></i></span>cursos</a></li>
 
             <div class="dropdown">
   <li class=" dropdown-toggle user"id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-     <i class="far fa-user"></i>
+     <img src="{% static "images/perfil.jpg" %}" class="user-photo" alt="testimonial photo">
   </li>
       <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
          <a class="dropdown-item" href="{%  url 'logout' %}">Perfil</a>
@@ -84,13 +84,15 @@
           <!--  <li><i class="fal fa-bars"></i></li>-->
             <li class="search-icon"><span><i class="fal fa-search"></i></span></li>
             <li><a href="{% url 'course' %}"> <span><i class="fal fa-book-open"></i></span></a></li>
-            <li class="user-icon"><span><i class="fal fa-user"></i></span>
+            <li class="user-icon">     <img src="{% static "images/perfil.jpg" %}" class="user-photo" alt="user photo">
+
 
             </li>
         </ul>
         <ul class="user-menu">
-                    <li>    {{ user.first_name|capfirst }} {{ user.last_name|capfirst }}</li>
-                 
+                    <li>       <img src="{% static "images/perfil.jpg" %}" class="user-photo" alt="testimonial photo">
+  {{ user.first_name|capfirst }} {{ user.last_name|capfirst }}</li>
+                     <li>Alterar Senha</li>
                     <li>Editar</li>
                     <li><a href="{%  url 'logout' %}">Sair</a></li>
                 </ul>
