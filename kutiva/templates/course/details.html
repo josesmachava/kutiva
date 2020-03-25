@@ -134,20 +134,7 @@ main{
                     </div>
 
             </div>
-            <div class="container-fluid course-details-content">
-                <div class="row">
-                    <div class="col-md-12">
-                <h2 class="course-subscription-title">Crie uma conta para receber acesso ilimitado</h2>
-                        </div>
-                <ul>  <span><i class="fal fa-university"></i></span>
-                   <li>
-                     Acesse todos  cursos criados por especialistas.</li>
-                        <span><i class="fal fa-book-open"></i></span>  <li> Faça quantos cursos desejar; não há limite.</li>
-                   <span><i class="fal fa-photo-video"></i></span>      <li> Obtenha recomendações personalizadas de cursos</li>
-                </ul>
 
-                    <button class="btn-action primary-button"><a class=""  href="{%  url 'student_sigin' %}">Criar conta</a></button>
-            </div>
                 <div class="col-md-12">
                     <h3 class="course-description-title">Descrição do curso</h3>
                     <p class="course-description-subtitle"> {{ course.description }}</p>
@@ -162,6 +149,24 @@ main{
                     </div>
 
 
+                </div>
+                <div class="col-md-12">
+                     <div>
+
+                 {% for chapter in  course.chapter.all  %}
+                 <h6 class=""> {{ chapter.name|capfirst }}</h6>
+                 <ul class="">
+                 {% for lesson in chapter.lessons.all  %}
+
+
+                     <li class="unstyledList classTopic"><i class="fal fa-play"></i><a class="unstyledLink" href="{% url 'watch' course.id lesson.id %}"> {{ lesson.name|capfirst }}</a></li>
+                      {% endfor %}
+                       </ul>
+
+             {% endfor %}
+
+
+                </div>
                 </div>
                 </div>
         </div>
