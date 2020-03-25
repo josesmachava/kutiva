@@ -141,12 +141,23 @@ main{
                 </div>
                 <div class="col-md-12">
 
-                    <h4>Instructor</h4>
-                    <div>
-                        <div>
-                             <h5>   {{ course.author.first_name|capfirst }} {{ course.author.last_name|capfirst }}</h5>
-                        </div>
-                    </div>
+                    <h4 class="instructor-title">Instructor</h4>
+
+                        <div class="row">
+                            <div class="instructor">
+                                <div>
+                                     <img src="{% static "images/perfil.jpg" %}" class="instructor-photo" alt="testimonial photo">
+                                        </div>
+
+                            <div class="instructor-details">
+                                 <h5 class="instructor-subtitle">{{ course.author.first_name|capfirst }} {{ course.author.last_name|capfirst }}</h5>
+                                <h6 class="instructor-subtitle">Engenheiro de Software</h6>
+
+                            </div>
+                                     </div>
+
+                             </div>
+
 
 
                 </div>

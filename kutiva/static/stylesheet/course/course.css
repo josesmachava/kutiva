@@ -101,29 +101,28 @@
         margin-top: 20px;
         font-size: 19px;
     }
-
-    ul span{
-        font-size: 20px;
-        margin-right: 10px;
+    .instructor-photo{
+            border-radius: 100%;
+            width: 40px;
+        height: 40px;
     }
-
+    .instructor-title{
+        font-size: 18px;
+    }
+    .instructor-subtitle{
+        font-size: 17px;
+    }
+    .instructor{
+        display: flex;
+        flex-wrap: wrap;
+    }
+    .instructor-details{
+        margin-left: 20px;
+    }
     .player-box{
         padding: 0;
 
     }
-    .btn-action{
-        border: none;
 
-        width: 100%;
-
-        height: 50px;
-
-        font-size: 20px;
-
-        color: white;
-    }
-    button a{
-        color: white;
-    }
 
 }
