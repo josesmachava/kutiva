@@ -115,6 +115,10 @@
     .instructor{
         display: flex;
         flex-wrap: wrap;
+        padding-bottom: 20px;
+    }
+    .content{
+        background: #f3f6f8;
     }
     .instructor-details{
         margin-left: 20px;
