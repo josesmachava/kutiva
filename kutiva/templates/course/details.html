@@ -29,7 +29,8 @@ main{
 <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible", content="IE=edge">
 <meta name="viewport", content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="{% static 'stylesheet/kutiva/main.css' %}">
+
+<link rel="stylesheet" href="{% static 'stylesheet/course/course.css' %}">
 <link rel="stylesheet" href="{% static 'stylesheet/kutiva/footer.css' %}">
 {% endblock %}
 
@@ -39,19 +40,19 @@ main{
 
 
 <main>
-        <div class="container">
+        <div class="container desktop-course-details">
             <div class="row">
                 <div class="col-md-9">
                     <div class="row">
                     <div class="col-md-12">
-                                        <div id="player">
+                                        <div id="players">
                            </div>
                         </div>
 
                         <div class="col-md-12">
                              <div class="course-content">
                               <h1 class="course-title">{{ course.name }}</h1>
-                               <p>Criado em {{ course.created_date|date:"M d, Y" }} </p>
+                               <p>Lançado em {{ course.created_date|date:"M d, Y" }} </p>
 
 
                                 </div>
@@ -111,7 +112,59 @@ main{
 
 
 
+        <div class="container-fluid mobile-course-details">
+            <div class="row">
+                    <div class="container-fluid header-course-details">
+                        <div class="row">
+                        <div class="col-md-12">
+                                 <h1 class="course-title">{{ course.name }}</h1>
+                                 <p class="course-subtitle">Inciante</p>
+                                 <p class="course-subtitle">Lançado em {{ course.created_date|date:"M d, Y" }} </p>
+                        </div>
+                        </div>
+                    </div>
+                <div class="container-fluid">
+                        <div class="row">
 
+                          <div class="col-md-12 player-box">
+                                        <div id="player">
+                           </div>
+                        </div>
+</div>
+                    </div>
+
+            </div>
+            <div class="container-fluid course-details-content">
+                <div class="row">
+                    <div class="col-md-12">
+                <h2 class="course-subscription-title">Crie uma conta para receber acesso ilimitado</h2>
+                        </div>
+                <ul>  <span><i class="fal fa-university"></i></span>
+                   <li>
+                     Acesse todos  cursos criados por especialistas.</li>
+                        <span><i class="fal fa-book-open"></i></span>  <li> Faça quantos cursos desejar; não há limite.</li>
+                   <span><i class="fal fa-photo-video"></i></span>      <li> Obtenha recomendações personalizadas de cursos</li>
+                </ul>
+
+                    <button class="btn-action primary-button"><a class=""  href="{%  url 'student_sigin' %}">Criar conta</a></button>
+            </div>
+                <div class="col-md-12">
+                    <h3 class="course-description-title">Descrição do curso</h3>
+                    <p class="course-description-subtitle"> {{ course.description }}</p>
+                </div>
+                <div class="col-md-12">
+
+                    <h4>Instructor</h4>
+                    <div>
+                        <div>
+                             <h5>   {{ course.author.first_name|capfirst }} {{ course.author.last_name|capfirst }}</h5>
+                        </div>
+                    </div>
+
+
+                </div>
+                </div>
+        </div>
 
 
 

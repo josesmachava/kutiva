@@ -94,6 +94,9 @@ padding: 18px 0;
     .payment-header{
             height: 200px;
     }
+    .payment-title{
+        padding-top: 10px;
+    }
     .payment-notice{
         padding: 0;
         height: 320px;

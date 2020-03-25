@@ -3,13 +3,18 @@ from django.shortcuts import render, redirect, HttpResponse
 from cms.models import *
 
 def index(request):
+
     courses = Course.objects.all()
     partners = Partner.objects.all()
     categories = Category.objects.all()
 
     testimonials = Testimonial.objects.all()
+    if request.user.is_authenticated:
+        return      redirect('course')
+    else:
+            return render(request, 'kutiva/index.html', {'courses': courses, 'categories': categories, 'partners': partners,
+                                                     'testimonials': testimonials})
 
-    return render(request, 'kutiva/index.html', {'courses':courses, 'categories':categories, 'partners':partners, 'testimonials':testimonials})
 
 
 

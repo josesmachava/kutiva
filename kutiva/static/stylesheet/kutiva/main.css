@@ -17,7 +17,7 @@ transition: box-shadow 83ms;
     padding: 30px;
 transition: box-shadow 83ms, -webkit-box-shadow 83ms;
 background: #fff;
-    height: 525px;
+    height: 625px;
 }
 
 .hero--header{
