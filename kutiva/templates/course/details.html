@@ -258,6 +258,8 @@
                 </div>
                 </div>
             </div>
+    {% if user.is_student %}
+    {% else %}
 
         <div class="container-fluid subscription">
                 <div class="container">
@@ -344,7 +346,7 @@
             </div>
 
         </div>
-
+        {% endif %}
 
         </div>
 

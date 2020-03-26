@@ -14,21 +14,17 @@ main{
 
 {# overide the tile of the page #}
 {% block title %}
-<title>kutiva</title>
+    <title>kutiva</title>
 {% endblock %}
 
 {% block styles %}
-{#    only include css  files needed for thi page bootstap and other libs are add in base template #}
+    {#    only include css  files needed for thi page bootstap and other libs are add in base template #}
 
-<style>
-   main{
-    position: relative;
-    top:55px;
-    height: 100vh;
-}
-   
+    <link rel="stylesheet" href="{% static 'stylesheet/kutiva/main.css' %}">
+    <link rel="stylesheet" href="{% static 'stylesheet/kutiva/watch.css' %}">
 
-</style>
+    <link rel="stylesheet" href="{% static 'stylesheet/kutiva/footer.css' %}">
+
 {% endblock %}
 
 
@@ -38,58 +34,53 @@ main{
     <main>
         <div class="container-fluid">
             <div class="row">
-            <div class="col-md-9">
-                <div id="player">
+                <div class="col-md-8 watch">
+                    <div id="player">
 
                     </div>
 
+                </div>
+                <div class="col-md-4 watch-content">
+                    <div class="">
+                        <h1 class="course-title">
+                            {{ course.name }}</h1>
+
+                                <p>Lançado em {{ course.created_date|date:"M d, Y" }} </p>
+                        {% for chapter in  course.chapter.all %}
+                            <h3 class="chapter"> {{ chapter.name|capfirst }}</h3>
+                            <ul class="">
+                                {% for lesson in chapter.lessons.all %}
+
+
+                                    <li class="unstyledList"><i class="fal fa-play"></i><a
+                                            class="link-button unstyledLink"
+                                            href="{% url 'watch' course.id lesson.id %}"> {{ lesson.name|capfirst }}</a>
+                                    </li>
+                                {% endfor %}
+                            </ul>
+
+                        {% endfor %}
+                    </div>
+
+
+                </div>
             </div>
-                <div class="col-md-3">
-            <div class="course-content course-class">
-                <h1 class="course-title">
-                       {{ course.name }}</h1>
-
-                 {% for chapter in  course.chapter.all  %}
-                 <h3 class="chapter"> {{ chapter.name|capfirst }}</h3>
-                 <ul class="">
-                 {% for lesson in chapter.lessons.all  %}
 
 
-                     <li class="unstyledList"><i class="fal fa-play"></i><a class="link-button unstyledLink" href="{% url 'watch' course.id lesson.id %}"> {{ lesson.name|capfirst }}</a></li>
-                      {% endfor %}
-                       </ul>
-
-             {% endfor %}
-            </div>
+    </main>
 
 
-
-
-
-
-        </div>
-        </div>
-
-           
-
-          
-
-
-             
-   </main>
-
-   
     {% block scripts %}
-     <script  src="https://cdn.jwplayer.com/libraries/NUULarCy.js"></script>
-    <script>
-          jwplayer("player").setup({
-            "streamer": "rtmp:/s1hokzd6wxykag.cloudfront.net/cfx/st",
-            "file": "{{ lesson.video }}",
-            "image": "{{ lesson.image }}",
-            "width": "100%",
-            "aspectratio": "16:9"
-        });
-    </script>
+        <script src="https://cdn.jwplayer.com/libraries/NUULarCy.js"></script>
+        <script>
+            jwplayer("player").setup({
+                "streamer": "rtmp:/s1hokzd6wxykag.cloudfront.net/cfx/st",
+                "file": "{{ lesson.video }}",
+                "image": "{{ lesson.image }}",
+                "width": "100%",
+                "aspectratio": "16:9"
+            });
+        </script>
 
     {% endblock %}
 {% endblock %}
