@@ -1,109 +1,82 @@
 {% load staticfiles %}
-
-<script  src="{% static 'javascript/navegation.js' %}"></script>
+<script src="{% static 'javascript/navegation.js' %}"></script>
 <link rel="stylesheet" href="{% static 'stylesheet/kutiva/navegation.css' %}">
 
 {% load staticfiles %}
 
 
+<nav class="desktop-menu">
+    <h1><a href="{% url 'index' %}"> <img src="{% static 'images/logo2.png' %}" alt="kutiva logo"></a></h1>
+    <input type="search" placeholder="pesquisar">
+    {% if user.is_authenticated %}
+        <ul>
+            <li><a href="{% url 'course' %}"> <span><i class="fal fa-book-open"></i></span></a></li>
+            <li><span><i class="fal fa-bell"></i></span></li>
+            <li class="user-icon">
+                {{ user.first_name|capfirst }} {{ user.last_name|capfirst }}</li>
+                <ul class="user-menu">
 
-
-<nav class="navbar navbar-expand-lg navbar-light bg-light desktop-menu" >
-    <div class="container">
-       <a class="navbar-brand" href="{% url 'index'%}"><h1> <img src="{% static 'images/logo2.png' %}" alt="kutiva logo"></h1>
-    </a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-    </button>
-
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-
-        <div class="navbar-nav mr-auto">
-            <input type="search" placeholder="pesquisar" >
-        </div>
-
-        <ul class="navbar-nav">
-
-
-
-
-
-
-
-
-
-
-
-         {% if user.is_authenticated %}
-              <li><a href="{% url 'course' %}"> <span><i class="fal fa-book-open"></i></span>cursos</a></li>
-
-            <div class="dropdown">
-  <li class=" dropdown-toggle user"id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-     <img src="{% static "images/perfil.jpg" %}" class="user-photo" alt="testimonial photo">
-  </li>
-      <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-         <a class="dropdown-item" href="{%  url 'logout' %}">Perfil</a>
-        <a class="dropdown-item" href="{%  url 'logout' %}">Sair</a>
-      </div>
-    </div>
-
+                <li><a href="{% url 'logout' %}">Perfil</a></li>
+                <li><a href="{% url 'logout' %}">Sair</a></li>
         </ul>
-
- {% else %}
-
-        <ul class="navbar-nav">
-             <li class="nav-item link-button"><a class="unstyledLink link-button"  href="{% url 'price' %}">Preço</a> </li>
-
-
-            <li class="nav-item link-button"><a class="unstyledLink link-button"  href="{% url 'signin' %}">Entrar</a> </li>
-            <li class="nav-item link-button"><a class="unstyledLink link-button"  href="{%  url 'student_sigin' %}">criar conta</a> </li>
-
-
+            </li>
+        </ul>
 
 
 
 
 
         </ul>
-   {% endif %}
 
-    </div>
+    {% else %}
 
-    </div>
+        <ul>
+            <li class="nav-item link-button"><a class="unstyledLink link-button" href="{% url 'price' %}">Preço</a></li>
 
 
+            <li class="nav-item link-button"><a class="unstyledLink link-button" href="{% url 'signin' %}">Entrar</a>
+            </li>
+            <li class="nav-item link-button"><a class="unstyledLink link-button" href="{% url 'student_sigin' %}">criar
+                conta</a></li>
 
-    </div>
-   </nav>
+
+        </ul>
+    {% endif %}
+
+
+</nav>
+
 
 <nav class="mobile-menu">
-        <a class="navbar-brand" href="{% url 'index'%}"><h1> <img src="{% static 'images/logo2.png' %}" alt="kutiva logo"></h1></a>
-{% if user.is_authenticated %}
+    <a class="" href="{% url 'index' %}"><h1><img src="{% static 'images/logo2.png' %}" alt="kutiva logo">
+    </h1></a>
+    {% if user.is_authenticated %}
         <ul class="login">
 
-          <!--  <li><i class="fal fa-bars"></i></li>-->
+            <!--  <li><i class="fal fa-bars"></i></li>-->
             <li class="search-icon"><span><i class="fal fa-search"></i></span></li>
             <li><a href="{% url 'course' %}"> <span><i class="fal fa-book-open"></i></span></a></li>
-            <li class="user-icon">     <img src="{% static "images/perfil.jpg" %}" class="user-photo" alt="user photo">
+            <li class="user-icon"><img src="{% static "images/perfil.jpg" %}" class="user-photo" alt="user photo">
 
 
             </li>
         </ul>
         <ul class="user-menu">
-                    <li>       <img src="{% static "images/perfil.jpg" %}" class="user-photo" alt="testimonial photo">
-  {{ user.first_name|capfirst }} {{ user.last_name|capfirst }}</li>
-                     <li>Alterar Senha</li>
-                    <li>Editar</li>
-                    <li><a href="{%  url 'logout' %}">Sair</a></li>
-                </ul>
-             {% else %}
-    <ul class="logout">
-                     <li class="nav-item link-button"><a class="unstyledLink link-button"  href="{% url 'signin' %}">Entrar</a> </li>
-                    <li class="nav-item link-button"><a class="unstyledLink link-button "  href="{%  url 'student_sigin' %}">criar conta</a> </li>
-
-
-            {% endif %}
+            <li><img src="{% static "images/perfil.jpg" %}" class="user-photo" alt="testimonial photo">
+                {{ user.first_name|capfirst }} {{ user.last_name|capfirst }}</li>
+            <li>Alterar Senha</li>
+            <li>Editar</li>
+            <li><a href="{% url 'logout' %}">Sair</a></li>
         </ul>
+    {% else %}
+        <ul class="logout">
+        <li class="nav-item link-button"><a class="unstyledLink link-button" href="{% url 'signin' %}">Entrar</a></li>
+        <li class="nav-item link-button"><a class="unstyledLink link-button " href="{% url 'student_sigin' %}">criar
+            conta</a></li>
+
+
+    {% endif %}
+    </ul>
     <form action="" class="search-mobile">
         <input type="search" placeholder="pesquisar">
     </form>
