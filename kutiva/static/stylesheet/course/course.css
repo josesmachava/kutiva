@@ -5,6 +5,9 @@ main {
             top: 52px;
 
 }
+.course-header{
+    height: 300px;
+}
 .subscription h1{
     font-size: 25px;
 }
