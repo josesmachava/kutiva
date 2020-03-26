@@ -82,8 +82,9 @@ class Student(models.Model):
     location = models.CharField(max_length=100, blank=True)
     phone_number = models.CharField(max_length=30, blank=True)
     description = models.TextField(max_length=1000, blank=True)
+    role = models.CharField(max_length=30, blank=True)
     educational_institution = models.CharField(max_length=200, blank=True)
-  #  birth_date = models.DateField(null=True, blank=True)
+    birth_date = models.DateField(null=True, blank=True)
     
     def __str__(self):
         return str(self.user)

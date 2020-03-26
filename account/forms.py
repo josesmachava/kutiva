@@ -45,19 +45,22 @@ class StudentSignUpForm(UserCreationForm):
 
 
 class StudentSignUpdateForm(ModelForm):
-    first_name = forms.CharField(label="", widget=forms.TextInput(attrs={'placeholder': 'Nome'}), max_length=30, required=False, help_text='Optional.')
-    last_name = forms.CharField(label="", widget=forms.TextInput(attrs={'placeholder': 'Apelido'}), max_length=30, required=False, help_text='Optional.')
-    email = forms.EmailField(label="", widget=forms.TextInput(attrs={'placeholder': 'E-mail'}), max_length=254, help_text='Required. Inform a valid email address.')
-    location = forms.CharField(label="", widget=forms.TextInput(attrs={'placeholder': 'loacal'}), max_length=30, required=False)
-    phone_number = forms.CharField(label="", widget=forms.TextInput(attrs={'placeholder': 'Número de telefone'}), max_length=30)
-    description = forms.CharField(label="",widget=forms.TextInput(attrs={'placeholder': 'Sobre me'}), max_length=30)
-    educational_institution = forms.CharField(label="Instuticao de ensino", widget=forms.TextInput(attrs={'placeholder': 'Instuticao de ensino'}), max_length=30, required=False, help_text='Optional.')
+    first_name = forms.CharField(label="Nome", widget=forms.TextInput(attrs={'placeholder': 'Nome'}), max_length=30, required=False)
+    last_name = forms.CharField(label="Apelido", widget=forms.TextInput(attrs={'placeholder': 'Apelido'}), max_length=30, required=False)
+    email = forms.EmailField(label="Email", widget=forms.TextInput(attrs={'placeholder': 'E-mail'}), max_length=254)
+    location = forms.CharField(label="Província", widget=forms.TextInput(attrs={'placeholder': 'Província'}), max_length=30, required=False)
+    phone_number = forms.CharField(label="Número de telefone", widget=forms.TextInput(attrs={'placeholder': 'Número de telefone'}), max_length=30)
+    description = forms.CharField(label="Biografia",widget=forms.Textarea(attrs={'placeholder': 'Sobre me'}), max_length=30)
+    educational_institution = forms.CharField(label="Instituição de ensino", widget=forms.TextInput(attrs={'placeholder': 'Instuticao de ensino'}), max_length=30, required=False)
+    role = forms.CharField(label="Profisacao", widget=forms.TextInput(attrs={'placeholder': 'Estudante'}),
+                                  max_length=30)
+
     birth_date = forms.DateField(widget=forms.SelectDateWidget)
         
     
     class Meta:
         model = User
-        fields = ('first_name', 'last_name', 'email', 'location', 'birth_date', 'educational_institution', 'phone_number', 'description')
+        fields = ('first_name', 'last_name', 'email', 'role', 'location', 'birth_date', 'educational_institution', 'phone_number', 'description')
 
 
       

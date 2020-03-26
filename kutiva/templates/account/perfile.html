@@ -5,6 +5,7 @@
 
 {% endcomment %}
 {% load staticfiles %}
+{% load crispy_forms_tags %}
 
 {# overide the tile of the page #}
 {% block title %}
@@ -19,10 +20,14 @@
 <meta http-equiv="X-UA-Compatible", content="IE=edge">
 <meta name="viewport", content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="{% static 'stylesheet/kutiva/main.css' %}">
+    <link rel="stylesheet" href="{% static 'stylesheet/account/signin.css' %}">
+
     <link rel="stylesheet" href="{% static 'stylesheet/kutiva/footer.css' %}">
 
 <style type="text/css">
-
+    form{
+        box-shadow: none;
+    }
 </style>
 
 <!-- Global site tag (gtag.js) - Google Analytics -->
@@ -53,29 +58,63 @@
 <main>
    <div class="container">
         <div class="row">
-            <div class="col-md-4">
-                <aside>
-                     <ul>
-                         <li><i class="far fa-user"></i></li>
-                         <li>{{ user.first_name }}  {{ user.last_name }}</li>
-                          <li><i class="fas fa-phone-alt"></i> {{ user.phone_number }}</li>  
-                          <li><i class="fas fa-envelope"></i>{{ user.email }}</li>
-                          <li><i class="fas fa-building"></i>{{ user.student.educational_institution }}</li>
-                          <li><i class="fas fa-map-marker-alt"></i>{{ user.student.location }}</li>
+            <div class="col-md-12">
+                <form method="post">{% csrf_token %}
+   {% csrf_token %}
+                    <input type="hidden" name="next" value="{{ next }}">
+                    <div class="row">
+                        <div class="col-md-6">
+                            {{ form.first_name|as_crispy_field }}
+                        </div>
+                        <div class="col-md-6">
+                            {{ form.last_name|as_crispy_field }}
+                        </div>
+                    </div>
+                    <div class="row">
+                            <div class="col-md-6">
 
-                     </ul> 
-                </aside>
-            </div>
-            <div class="col-md-8">
-                <h1>Sobre me    </h1>
-                <p>{{ user.student.description }}</p>
+                    {{ form.phone_number|as_crispy_field }}
+                                </div>
+                                <div class="col-md-6">
 
-                <p>Adicione linguagens de programacao de dominio</p>
-                <button>Adicionar</button>
+                    {{ form.email|as_crispy_field }}
 
-            </div>
+
+
+                                </div>
+                </div>
+<div class="row">
+                   <div class="col-md-12">
+
+                                        {{ form.educational_institution|as_crispy_field }}
+             </div>
+
+     <div class="col-md-6">
+
+                                        {{ form.location|as_crispy_field }}
+             </div>
+    <div class="col-md-6">
+
+                                        {{ form.role|as_crispy_field }}
+             </div>
+
+</div>
+
+                    <div class="row">
+                   <div class="col-md-12">
+                    {{ form.description|as_crispy_field }}
+             </div>
+
+</div>
+
+
+
+
+    <input type="submit" value="Update">
+</form>
         </div>
     </div>
+       </div>
 
 </main>
 {% include "kutiva/layout/footer.html" %}
