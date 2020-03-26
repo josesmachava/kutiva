@@ -236,33 +236,113 @@
             </div>
             <div class="container-fluid content">
                 <div class="row">
-                    <div class="col-md-12">
-                        <h1 class="instructor-title">Conteúdo</h1>
-                        <div>
+                    <div class="col-md-12 course-class" id="accordion">
 
-                            {% for chapter in  course.chapter.all %}
+                    {% for chapter in  course.chapter.all %}
+                        <h3 data-toggle="collapse"
+                            data-target="#collapse-{{ chapter.id }}"> {{ chapter.name|capfirst }}</h3>
+                        <ul id="collapse-{{ chapter.id }}" class="collapse show"
+                            aria-labelledby="heading-{{ chapter.id }}" data-parent="#accordion">
+                            {% for lesson in chapter.lessons.all %}
 
-                                <h6 class=""> {{ chapter.name|capfirst }}</h6>
 
-
-                                {% for lesson in chapter.lessons.all %}
-
-                                    <ul class="">
-
-                                    <li class="unstyledList classTopic"><i class="fal fa-play"></i><a
-                                            class="unstyledLink"
-                                            href="{% url 'watch' course.id lesson.id %}"> {{ lesson.name|capfirst }}</a>
-                                    </li>
-                                {% endfor %}
-                            </ul>
-
-                                </div>
-
+                                <li class="unstyledList classTopic"><i class="fal fa-lock"></i><a class="unstyledLink"
+                                                                                                  href="{% url 'watch' course.id lesson.id %}"> {{ lesson.name|capfirst }}</a>
+                                </li>
                             {% endfor %}
+                        </ul>
 
+                    {% endfor %}
+
+
+                </div>
+                </div>
+            </div>
+
+        <div class="container-fluid subscription">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <h1>Selecione um plano de aprendizagem.</h1>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="month">
+
+                                        <h4 class="text-center">1000 MZN por mês</h4>
+
+                                        <ul>
+                                            <li>
+                                                <span><i class="fal fa-university"></i></span> Acesse todos cursos
+                                                criados
+                                                por especialistas.
+                                            </li>
+                                            <li><span><i class="fal fa-book-open"></i></span> Faça quantos cursos
+                                                desejar;
+                                                não há limite.
+                                            </li>
+                                            <li><span><i class="fal fa-photo-video"></i></span> Obtenha recomendações
+                                                personalizadas de cursos
+                                            </li>
+                                            <li><span> <i class="fal fa-computer-classic"></i></span> Assista no
+                                                computador
+                                                ou celular sempre que desejar.
+                                            </li>
+                                            <li><span><i class="fal fa-file-certificate"></i></span> Receba um
+                                                certificado
+                                                quando completar o curso.
+                                            </li>
+                                            <li><span><i class="fal fa-laptop-code"></i></span> Valide o que você está
+                                                aprendendo com testes dentro dos cursos.
+                                            </li>
+                                            <li><span> <i class="fal fa-times"></i> </span>Cancele quando desejar.</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 ">
+                                    <div class="anual">
+                                        <h4 class="text-center">10000 MZN por ano</h4>
+
+                                        <ul>
+
+                                            <li><span>   <i class="fal fa-tag"></i></span> Poupe 2000 meticais no pacote
+                                                anual.
+                                            </li>
+
+                                            <li><span><i class="fal fa-university"></i></span> Acesse todos cursos
+                                                criados
+                                                por especialistas.
+                                            </li>
+                                            <li><span><i class="fal fa-book-open"></i></span> Faça quantos cursos
+                                                desejar;
+                                                não há limite.
+                                            </li>
+                                            <li><span><i class="fal fa-photo-video"></i></span> Obtenha recomendações
+                                                personalizadas de cursos
+                                            </li>
+                                            <li><span> <i class="fal fa-computer-classic"></i></span> Assista no
+                                                computador
+                                                ou celular sempre que desejar.
+                                            </li>
+                                            <li><span><i class="fal fa-file-certificate"></i></span> Receba um
+                                                certificado
+                                                quando completar o curso.
+                                            </li>
+                                            <li><span><i class="fal fa-laptop-code"></i></span> Valide o que você está
+                                                aprendendo com testes dentro dos cursos.
+                                            </li>
+                                            <li><span> <i class="fal fa-times"></i> </span>Cancele quando desejar.</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            </ul>
+                        </div>
                     </div>
                 </div>
             </div>
+
         </div>
 
 
