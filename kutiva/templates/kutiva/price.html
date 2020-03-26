@@ -8,126 +8,155 @@
 
 {# overide the tile of the page #}
 {% block title %}
-<title>kutiva</title>
+    <title>kutiva</title>
 {% endblock %}
 
 {% block styles %}
-{#    only include css  files needed for thi page bootstap and other libs are add in base template #}
+    {#    only include css  files needed for thi page bootstap and other libs are add in base template #}
 
-<meta charset="utf-8">
-<meta charset="UTF-8">
-<meta http-equiv="X-UA-Compatible", content="IE=edge">
-<meta name="viewport", content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="{% static 'stylesheet/kutiva/main.css' %}">
-<link rel="stylesheet" href="{% static 'stylesheet/kutiva/footer.css' %}">
+    <meta charset="utf-8">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" , content="IE=edge">
+    <meta name="viewport" , content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="{% static 'stylesheet/kutiva/main.css' %}">
+    <link rel="stylesheet" href="{% static 'stylesheet/kutiva/footer.css' %}">
 
 
-<!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-140073016-1"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-140073016-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
 
-  gtag('config', 'UA-140073016-1');
-</script>
+        function gtag() {
+            dataLayer.push(arguments);
+        }
 
-<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+        gtag('js', new Date());
+
+        gtag('config', 'UA-140073016-1');
+    </script>
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
+          integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
 {% endblock %}
 
 
 {% block scripts %}
-{#    only include css  files needed for thi page bootstap and other libs are add in base template #}
+    {#    only include css  files needed for thi page bootstap and other libs are add in base template #}
 
 {% endblock %}
 
 
 {% block content %}
 
-{% include "kutiva/layout/navegation.html" %}
+    {% include "kutiva/layout/navegation.html" %}
 
 
-<main>
-<header class="hero hero--header">
-    <div class="container-fluid header header-price">
-        <div class="row">
-            <div class="col-md-12">
+    <main>
+        <header class="hero hero--header">
+            <div class="container-fluid header header-price">
+                <div class="row">
+                    <div class="col-md-12">
 
-                <h1 class="header-title"></h1>
-                <h2 class="header-subtitle"></h2>
-                <div class="header-button">
-      <!--          <button>
+                        <h1 class="header-title"></h1>
+                        <h2 class="header-subtitle"></h2>
+                        <div class="header-button">
+                            <!--          <button>
 
-      Comece seu mês grátis
+                            Comece seu mês grátis
 
-                    </button>-->
+                                          </button>-->
+                        </div>
+
+
+                    </div>
+
                 </div>
-
 
             </div>
 
-                </div>
 
+        </header>
+        <div class="container-fluid subscription">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <h1>Selecione um plano de aprendizagem.</h1>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="month">
+
+                                    <h4 class="text-center">1000 MZN por mês</h4>
+
+                                    <ul>
+                                        <li>
+                                            <span><i class="fal fa-university"></i></span> Acesse todos cursos criados
+                                            por especialistas.
+                                        </li>
+                                        <li><span><i class="fal fa-book-open"></i></span> Faça quantos cursos desejar;
+                                            não há limite.
+                                        </li>
+                                        <li><span><i class="fal fa-photo-video"></i></span> Obtenha recomendações
+                                            personalizadas de cursos
+                                        </li>
+                                        <li><span> <i class="fal fa-computer-classic"></i></span> Assista no computador
+                                            ou celular sempre que desejar.
+                                        </li>
+                                        <li><span><i class="fal fa-file-certificate"></i></span> Receba um certificado
+                                            quando completar o curso.
+                                        </li>
+                                        <li><span><i class="fal fa-laptop-code"></i></span> Valide o que você está
+                                            aprendendo com testes dentro dos cursos.
+                                        </li>
+                                        <li><span> <i class="fal fa-times"></i> </span>Cancele quando desejar.</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="col-md-6 ">
+                                <div class="anual">
+                                    <h4 class="text-center">10000 MZN por ano</h4>
+
+                                    <ul>
+
+                                        <li><span>   <i class="fal fa-tag"></i></span> Poupe 2000 meticais no pacote
+                                            anual.
+                                        </li>
+
+                                        <li><span><i class="fal fa-university"></i></span> Acesse todos cursos criados
+                                            por especialistas.
+                                        </li>
+                                        <li><span><i class="fal fa-book-open"></i></span> Faça quantos cursos desejar;
+                                            não há limite.
+                                        </li>
+                                        <li><span><i class="fal fa-photo-video"></i></span> Obtenha recomendações
+                                            personalizadas de cursos
+                                        </li>
+                                        <li><span> <i class="fal fa-computer-classic"></i></span> Assista no computador
+                                            ou celular sempre que desejar.
+                                        </li>
+                                        <li><span><i class="fal fa-file-certificate"></i></span> Receba um certificado
+                                            quando completar o curso.
+                                        </li>
+                                        <li><span><i class="fal fa-laptop-code"></i></span> Valide o que você está
+                                            aprendendo com testes dentro dos cursos.
+                                        </li>
+                                        <li><span> <i class="fal fa-times"></i> </span>Cancele quando desejar.</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        </ul>
+                    </div>
+                </div>
             </div>
-
-
-
-
-</header>
-<div class="container-fluid subscription">
-    <div class="container">
-       <div class="row">
-           <div class="col-md-12">
-        <h1>Selecione um plano de aprendizagem.</h1>
-            <div class="row">
-               <div class="col-md-6">
-<div class="month">
-
-                    <h4 class="text-center">1000 MZN por mês</h4>
-
-                     <ul>
-                   <li>
-                       <span><i class="fal fa-university"></i></span> Acesse todos  cursos criados por especialistas.</li>
-                         <li> <span><i class="fal fa-book-open"></i></span> Faça quantos cursos desejar; não há limite.</li>
-                         <li><span><i class="fal fa-photo-video"></i></span> Obtenha recomendações personalizadas de cursos</li>
-                         <li><span> <i class="fal fa-computer-classic"></i></span> Assista no computador ou celular sempre que desejar.</li>
-                         <li><span><i class="fal fa-file-certificate"></i></span> Receba um certificado quando completar o curso.</li>
-  <li> <span><i class="fal fa-laptop-code"></i></span> Valide o que você está aprendendo com testes dentro dos cursos.</li>
-                         <li><span> <i class="fal fa-times"></i> </span>Cancele quando desejar.</li>
-                </ul>   </div>
-               </div>
-               <div class="col-md-6 ">
-                    <div class="anual">
-    <h4 class="text-center">10000 MZN por ano</h4>
-
-                            <ul>
-
-                                  <li> <span>   <i class="fal fa-tag"></i></span> Poupe 2000 meticais no pacote anual.</li>
-
-                   <li> <span><i class="fal fa-university"></i></span> Acesse todos  cursos criados por especialistas.</li>
-                         <li> <span><i class="fal fa-book-open"></i></span> Faça quantos cursos desejar; não há limite.</li>
-                         <li><span><i class="fal fa-photo-video"></i></span> Obtenha recomendações personalizadas de cursos</li>
-                         <li><span> <i class="fal fa-computer-classic"></i></span> Assista no computador ou celular sempre que desejar.</li>
-                         <li><span><i class="fal fa-file-certificate"></i></span> Receba um certificado quando completar o curso.</li>
-  <li> <span><i class="fal fa-laptop-code"></i></span> Valide o que você está aprendendo com testes dentro dos cursos.</li>
-                         <li><span> <i class="fal fa-times"></i> </span>Cancele quando desejar.</li>
-                </ul>
-                   </div>
-                   </div>
-                </div>
-
-
-
-                </ul>
-           </div>
-       </div>
         </div>
-               </div>
 
 
-</div>
-</main>
-{% include "kutiva/layout/footer.html" %}
+        </div>
+    </main>
+    {% include "kutiva/layout/footer.html" %}
 
 
 {% endblock %}

@@ -10,202 +10,289 @@
 
 {# overide the tile of the page #}
 {% block title %}
-<title>kutiva</title>
+    <title>kutiva</title>
 {% endblock %}
 
 {% block styles %}
-{#    only include css  files needed for thi page bootstap and other libs are add in base template #}
-<style>
+    {#    only include css  files needed for thi page bootstap and other libs are add in base template #}
+    <style>
 
-main{
-    position: relative;
-    top:52px;
-    height: 100vh;
-}
+        main {
+            position: relative;
+            top: 52px;
+            height: 100vh;
+        }
 
-</style>
+    </style>
 
-<meta charset="utf-8">
-<meta charset="UTF-8">
-<meta http-equiv="X-UA-Compatible", content="IE=edge">
-<meta name="viewport", content="width=device-width, initial-scale=1">
+    <meta charset="utf-8">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" , content="IE=edge">
+    <meta name="viewport" , content="width=device-width, initial-scale=1">
 
-<link rel="stylesheet" href="{% static 'stylesheet/course/course.css' %}">
-<link rel="stylesheet" href="{% static 'stylesheet/kutiva/footer.css' %}">
+    <link rel="stylesheet" href="{% static 'stylesheet/course/course.css' %}">
+    <link rel="stylesheet" href="{% static 'stylesheet/kutiva/footer.css' %}">
 {% endblock %}
 
 {% block content %}
 
-{% include "kutiva/layout/navegation.html" %}
+    {% include "kutiva/layout/navegation.html" %}
 
 
-<main>
+    <main>
         <div class="container desktop-course-details">
             <div class="row">
                 <div class="col-md-9">
                     <div class="row">
-                    <div class="col-md-12">
-                                        <div id="players">
-                           </div>
+                        <div class="col-md-12">
+                            <div id="player">
+                            </div>
                         </div>
 
                         <div class="col-md-12">
-                             <div class="course-content">
-                              <h1 class="course-title">{{ course.name }}</h1>
-                               <p>Lançado em {{ course.created_date|date:"M d, Y" }} </p>
+                            <div class="course-content">
+                                <h1 class="course-title">{{ course.name }}</h1>
+                                <p>Lançado em {{ course.created_date|date:"M d, Y" }} </p>
 
 
+                            </div>
+
+                            <p> {{ course.description }}</p>
+
+                            <div class="instructor">
+                                <div>
+                                    <img src="{% static "images/perfil.jpg" %}" class="instructor-photo"
+                                         alt="testimonial photo">
                                 </div>
 
-                              <p> {{ course.description }}</p>
+                                <div class="instructor-details">
+                                    <h5 class="instructor-subtitle">{{ course.author.first_name|capfirst }} {{ course.author.last_name|capfirst }}</h5>
+                                    <h6 class="instructor-subtitle">Engenheiro de Software</h6>
 
-                        <p>Instructor:   {{ course.author.first_name|capfirst }} {{ course.author.last_name|capfirst }}</p>
-
+                                </div>
+                            </div>
 
                         </div>
-                        </div>
+                    </div>
 
                 </div>
-                <div class="col-md-3 course-class">
+                <div class="col-md-3 course-class" id="accordion">
 
-                 {% for chapter in  course.chapter.all  %}
-                 <h3 class=""> {{ chapter.name|capfirst }}</h3>
-                 <ul class="">
-                 {% for lesson in chapter.lessons.all  %}
-
-
-                     <li class="unstyledList classTopic"><i class="fal fa-play"></i><a class="unstyledLink" href="{% url 'watch' course.id lesson.id %}"> {{ lesson.name|capfirst }}</a></li>
-                      {% endfor %}
-                       </ul>
-
-             {% endfor %}
+                    {% for chapter in  course.chapter.all %}
+                        <h3 data-toggle="collapse"
+                            data-target="#collapse-{{ chapter.id }}"> {{ chapter.name|capfirst }}</h3>
+                        <ul id="collapse-{{ chapter.id }}" class="collapse show"
+                            aria-labelledby="heading-{{ chapter.id }}" data-parent="#accordion">
+                            {% for lesson in chapter.lessons.all %}
 
 
+                                <li class="unstyledList classTopic"><i class="fal fa-lock"></i><a class="unstyledLink"
+                                                                                                  href="{% url 'watch' course.id lesson.id %}"> {{ lesson.name|capfirst }}</a>
+                                </li>
+                            {% endfor %}
+                        </ul>
+
+                    {% endfor %}
+
+
+                </div>
+            </div>
+            <div class="container-fluid subscription">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <h1>Selecione um plano de aprendizagem.</h1>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="month">
+
+                                        <h4 class="text-center">1000 MZN por mês</h4>
+
+                                        <ul>
+                                            <li>
+                                                <span><i class="fal fa-university"></i></span> Acesse todos cursos
+                                                criados
+                                                por especialistas.
+                                            </li>
+                                            <li><span><i class="fal fa-book-open"></i></span> Faça quantos cursos
+                                                desejar;
+                                                não há limite.
+                                            </li>
+                                            <li><span><i class="fal fa-photo-video"></i></span> Obtenha recomendações
+                                                personalizadas de cursos
+                                            </li>
+                                            <li><span> <i class="fal fa-computer-classic"></i></span> Assista no
+                                                computador
+                                                ou celular sempre que desejar.
+                                            </li>
+                                            <li><span><i class="fal fa-file-certificate"></i></span> Receba um
+                                                certificado
+                                                quando completar o curso.
+                                            </li>
+                                            <li><span><i class="fal fa-laptop-code"></i></span> Valide o que você está
+                                                aprendendo com testes dentro dos cursos.
+                                            </li>
+                                            <li><span> <i class="fal fa-times"></i> </span>Cancele quando desejar.</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 ">
+                                    <div class="anual">
+                                        <h4 class="text-center">10000 MZN por ano</h4>
+
+                                        <ul>
+
+                                            <li><span>   <i class="fal fa-tag"></i></span> Poupe 2000 meticais no pacote
+                                                anual.
+                                            </li>
+
+                                            <li><span><i class="fal fa-university"></i></span> Acesse todos cursos
+                                                criados
+                                                por especialistas.
+                                            </li>
+                                            <li><span><i class="fal fa-book-open"></i></span> Faça quantos cursos
+                                                desejar;
+                                                não há limite.
+                                            </li>
+                                            <li><span><i class="fal fa-photo-video"></i></span> Obtenha recomendações
+                                                personalizadas de cursos
+                                            </li>
+                                            <li><span> <i class="fal fa-computer-classic"></i></span> Assista no
+                                                computador
+                                                ou celular sempre que desejar.
+                                            </li>
+                                            <li><span><i class="fal fa-file-certificate"></i></span> Receba um
+                                                certificado
+                                                quando completar o curso.
+                                            </li>
+                                            <li><span><i class="fal fa-laptop-code"></i></span> Valide o que você está
+                                                aprendendo com testes dentro dos cursos.
+                                            </li>
+                                            <li><span> <i class="fal fa-times"></i> </span>Cancele quando desejar.</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            </ul>
+                        </div>
+                    </div>
                 </div>
             </div>
 
 
         </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
         <div class="container-fluid mobile-course-details">
             <div class="row">
-                    <div class="container-fluid header-course-details">
-                        <div class="row">
+                <div class="container-fluid header-course-details">
+                    <div class="row">
                         <div class="col-md-12">
-                                 <h1 class="course-title">{{ course.name }}</h1>
-                                 <p class="course-subtitle">Inciante</p>
-                                 <p class="course-subtitle">Lançado em {{ course.created_date|date:"M d, Y" }} </p>
-                        </div>
+                            <h1 class="course-title">{{ course.name }}</h1>
+                            <p class="course-subtitle">Inciante</p>
+                            <p class="course-subtitle">Lançado em {{ course.created_date|date:"M d, Y" }} </p>
                         </div>
                     </div>
+                </div>
                 <div class="container-fluid">
-                        <div class="row">
+                    <div class="row">
 
-                          <div class="col-md-12 player-box">
-                                        <div id="player">
-                           </div>
+                        <div class="col-md-12 player-box">
+                            <div id="players">
+                            </div>
                         </div>
-</div>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="col-md-12">
+                <h3 class="course-description-title">Descrição do curso</h3>
+                <p class="course-description-subtitle"> {{ course.description }}</p>
+            </div>
+            <div class="col-md-12">
+
+                <h4 class="instructor-title">Instructor</h4>
+
+                <div class="row">
+                    <div class="instructor">
+                        <div>
+                            <img src="{% static "images/perfil.jpg" %}" class="instructor-photo"
+                                 alt="testimonial photo">
+                        </div>
+
+                        <div class="instructor-details">
+                            <h5 class="instructor-subtitle">{{ course.author.first_name|capfirst }} {{ course.author.last_name|capfirst }}</h5>
+                            <h6 class="instructor-subtitle">Engenheiro de Software</h6>
+
+                        </div>
                     </div>
 
-            </div>
-
-                <div class="col-md-12">
-                    <h3 class="course-description-title">Descrição do curso</h3>
-                    <p class="course-description-subtitle"> {{ course.description }}</p>
-                </div>
-                <div class="col-md-12">
-
-                    <h4 class="instructor-title">Instructor</h4>
-
-                        <div class="row">
-                            <div class="instructor">
-                                <div>
-                                     <img src="{% static "images/perfil.jpg" %}" class="instructor-photo" alt="testimonial photo">
-                                        </div>
-
-                            <div class="instructor-details">
-                                 <h5 class="instructor-subtitle">{{ course.author.first_name|capfirst }} {{ course.author.last_name|capfirst }}</h5>
-                                <h6 class="instructor-subtitle">Engenheiro de Software</h6>
-
-                            </div>
-                                     </div>
-
-                             </div>
-
-
-
                 </div>
 
+
             </div>
-
-
-        <div class="container-fluid content">
-        <div class="row">
-             <div class="col-md-12">
+            <div class="container-fluid content">
+                <div class="row">
+                    <div class="col-md-12">
                         <h1 class="instructor-title">Conteúdo</h1>
-                     <div>
+                        <div>
 
-                 {% for chapter in  course.chapter.all  %}
-                 <h6 class=""> {{ chapter.name|capfirst }}</h6>
-                 <ul class="">
-                 {% for lesson in chapter.lessons.all  %}
+                            {% for chapter in  course.chapter.all %}
 
-
-                     <li class="unstyledList classTopic"><i class="fal fa-play"></i><a class="unstyledLink" href="{% url 'watch' course.id lesson.id %}"> {{ lesson.name|capfirst }}</a></li>
-                      {% endfor %}
-                       </ul>
-
-             {% endfor %}
+                                <h6 class=""> {{ chapter.name|capfirst }}</h6>
 
 
+                                {% for lesson in chapter.lessons.all %}
+
+                                    <ul class="">
+
+                                    <li class="unstyledList classTopic"><i class="fal fa-play"></i><a
+                                            class="unstyledLink"
+                                            href="{% url 'watch' course.id lesson.id %}"> {{ lesson.name|capfirst }}</a>
+                                    </li>
+                                {% endfor %}
+                            </ul>
+
+                                </div>
+
+                            {% endfor %}
+
+                    </div>
                 </div>
+            </div>
         </div>
-</div>
 
 
+        </div>
 
-   </main>
 
-{% include "kutiva/layout/footer.html" %}
+    </main>
+
+    {% include "kutiva/layout/footer.html" %}
 
 
     {% block scripts %}
-     <script  src="https://cdn.jwplayer.com/libraries/NUULarCy.js"></script>
-    <script>
-          jwplayer("player").setup({
-            "streamer": "rtmp:/s1hokzd6wxykag.cloudfront.net/cfx/st",
-            "file": "{{ lesson.video }}",
-            "image": "{{ lesson.image }}",
-            "width": "100%",
-            "aspectratio": "16:9"
-        });
-    </script>
+        <script src="https://cdn.jwplayer.com/libraries/NUULarCy.js"></script>
+        <script>
+            jwplayer("players").setup({
+                "streamer": "rtmp:/s1hokzd6wxykag.cloudfront.net/cfx/st",
+                "file": "{{ lesson.video }}",
+                "image": "{{ lesson.image }}",
+                "width": "100%",
+                "aspectratio": "16:9"
+            });
+
+            jwplayer("player").setup({
+                "streamer": "rtmp:/s1hokzd6wxykag.cloudfront.net/cfx/st",
+                "file": "{{ lesson.video }}",
+                "image": "{{ lesson.image }}",
+                "width": "100%",
+                "aspectratio": "16:9"
+            });
+        </script>
 
     {% endblock %}
 {% endblock %}
