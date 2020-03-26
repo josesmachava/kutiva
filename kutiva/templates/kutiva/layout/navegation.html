@@ -12,8 +12,8 @@
         <ul>
             <li><a href="{% url 'course' %}"> <span><i class="fal fa-book-open"></i></span></a></li>
             <li><span><i class="fal fa-bell"></i></span></li>
-            <li class="user-icon">
-                {{ user.first_name|capfirst }} {{ user.last_name|capfirst }}</li>
+            <li class="user-icon user-name">
+                {{ user.first_name|capfirst|make_list|first }} {{ user.last_name|capfirst|make_list|first }}</li>
                 <ul class="user-menu">
 
                 <li><a href="{% url 'logout' %}">Perfil</a></li>
