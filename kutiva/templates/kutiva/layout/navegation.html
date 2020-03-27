@@ -16,7 +16,7 @@
                 {{ user.first_name|capfirst|make_list|first }} {{ user.last_name|capfirst|make_list|first }}</li>
                 <ul class="user-menu">
 
-                <li><a href="{% url 'perfile' user.id %}">Editar</a></li>
+                <li><a href="{% url 'perfile' user.student.id %}">Editar</a></li>
               <!--  <li><a href="{% url 'logout' %}">Ajuda</a></li> -->
                 <li><a href="{% url 'logout' %}">Sair</a></li>
         </ul>
@@ -66,7 +66,8 @@
             <li><img src="{% static "images/perfil.jpg" %}" class="user-photo" alt="testimonial photo">
                 {{ user.first_name|capfirst }} {{ user.last_name|capfirst }}</li>
 
-            <li><a href="{% url 'perfile' user.id %}">Editar</a></li>
+            <li><a href="{% url 'perfile' user.student.id %}">Editar</a></li>
+            {{ user.student.id }}
             <li><a href="{% url 'logout' %}">Sair</a></li>
         </ul>
     {% else %}
