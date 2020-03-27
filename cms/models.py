@@ -3,14 +3,15 @@ from datetime import timezone
 from django.db import models
 from django.utils import timezone
 from embed_video.fields import EmbedVideoField
-
+from s3direct.fields import S3DirectField
 from kutiva import settings
 
 
 class Lesson(models.Model):
     name = models.CharField(max_length=1000)
-    video = models.URLField()
-    image = models.URLField()
+    video = models.FileField()
+    #image = S3DirectField(dest='primary_destination', blank=True)
+    image = models.FileField()
     is_active = models.BooleanField(default=False)
     created_date = models.DateTimeField(auto_now_add=True)
     uploaded_at = models.DateTimeField(auto_now_add=True)
@@ -50,7 +51,7 @@ class Course(models.Model):
     category = models.ForeignKey(Category, on_delete='CASCADE', related_name='lesson')
     chapter = models.ManyToManyField(Chapter)
     is_active = models.BooleanField(default=False)
-    cover = models.ImageField(upload_to='course_cover')
+    image = models.FileField()
     description = models.CharField(max_length=1000)
     created_date = models.DateTimeField(default=timezone.now)
 

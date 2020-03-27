@@ -81,8 +81,8 @@
     {% for course in courses %}
     <div class="col-md-4">
     <article class="course ">
-    <img src="https://udemy-images.udemy.com/course/240x135/1430746_2f43_2.jpg" alt="screencast cover" class="course-image">
-    <div class="course-content">
+     <img src="{{ course.image.url  }}" alt="screessncast cover" class="course-image">
+        <div class="course-content">
               <h1 class="course-title"><a class="text-decoration-none" href="{% url 'details' course.id %}">{{ course.name }}</a></h1>
                <ul>
                  <li class="course-author">{{ course.author.first_name|capfirst }} {{ course.author.last_name|capfirst }}</li>

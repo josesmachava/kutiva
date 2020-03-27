@@ -60,6 +60,7 @@ INSTALLED_APPS = [
     'storages',
     'embed_video',
     'api',
+    's3direct',
     'account',
     'cms',
     'payment',
@@ -212,3 +213,15 @@ STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 # STATIC_URL = "https://%s/%s/" % (AWS_S3_CUSTOM_DOMAIN, AWS_LOCATION)
 #
 # DEFAULT_FILE_STORAGE = 'kutiva.storage_backends.MediaStorage'
+
+
+
+AWS_ACCESS_KEY_ID = 'AKIA4Y4LY4AEPAH4TGNG'
+AWS_SECRET_ACCESS_KEY = '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'
+DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
+AWS_STORAGE_BUCKET_NAME = 'kutiva'
+AWS_S3_REGION_NAME = 'us-east-2'
+
+
+
+

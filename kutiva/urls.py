@@ -33,7 +33,7 @@ urlpatterns = [
     path("security", views.security, name="security"),
     path("policies", views.policies, name="policies"),
     path('api/', include('api.urls')), # new
-    
+
     #path('cms/', include('cms.urls')),
    
 ]

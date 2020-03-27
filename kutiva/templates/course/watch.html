@@ -75,8 +75,8 @@ main{
         <script>
             jwplayer("player").setup({
                 "streamer": "rtmp://d1ev2os4nitws0.cloudfront.net/cfx/st",
-                "file": "{{ lesson.video }}",
-                "image": "{{ lesson.image }}",
+                "file": "{{ lesson.video.url }}",
+                "image": "{{ lesson.image.url }}",
                 "width": "100%",
                 "aspectratio": "16:9"
             });

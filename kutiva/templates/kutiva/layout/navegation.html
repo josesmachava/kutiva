@@ -13,7 +13,13 @@
             <li><a href="{% url 'course' %}"> <span><i class="fal fa-book-open"></i></span></a></li>
             <!--<li><span><i class="fal fa-bell"></i></span></li> -->
             <li class="user-icon user-name">
-                {{ user.first_name|capfirst|make_list|first }} {{ user.last_name|capfirst|make_list|first }}</li>
+                 {% if user.student.photo %}
+                    <img src="{{ user.student.photo.url }}" class="user-photo" alt="testimonial photo">
+
+                 {% else %}
+                       {{ user.first_name|capfirst|make_list|first }} {{ user.last_name|capfirst|make_list|first }}</li>
+
+                 {% endif %}</li>
                 <ul class="user-menu">
 
                 <li><a href="{% url 'perfile' user.student.id %}">Editar</a></li>
@@ -57,17 +63,28 @@
             <!--  <li><i class="fal fa-bars"></i></li>-->
             <li class="search-icon"><span><i class="fal fa-search"></i></span></li>
             <li><a href="{% url 'course' %}"> <span><i class="fal fa-book-open"></i></span></a></li>
-            <li class="user-icon"><img src="{% static "images/perfil.jpg" %}" class="user-photo" alt="user photo">
+            <li class="user-icon">
+                  {% if user.student.photo %}
+                    <img src="{{ user.student.photo.url }}" class="user-photo" alt="testimonial photo">
 
+                 {% else %}
+                       {{ user.first_name|capfirst|make_list|first }} {{ user.last_name|capfirst|make_list|first }}</li>
+
+                 {% endif %}
 
             </li>
         </ul>
         <ul class="user-menu">
-            <li><img src="{% static "images/perfil.jpg" %}" class="user-photo" alt="testimonial photo">
-                {{ user.first_name|capfirst }} {{ user.last_name|capfirst }}</li>
+            <li>
+                {% if user.student.photo %}
+                    <img src="{{ user.student.photo.url }}" class="user-photo" alt="testimonial photo">
 
+                 {% else %}
+                        {{ user.first_name|capfirst|make_list|first }} {{ user.last_name|capfirst|make_list|first }}</li>
+
+                 {% endif %}
             <li><a href="{% url 'perfile' user.student.id %}">Editar</a></li>
-            {{ user.student.id }}
+
             <li><a href="{% url 'logout' %}">Sair</a></li>
         </ul>
     {% else %}

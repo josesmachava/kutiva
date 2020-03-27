@@ -24,7 +24,7 @@ urlpatterns = [
     path('payment', views.payment, name='payment'),
     path('classroom/<id>', views.classroom, name='classroom'),
     path('watch/<course_id>/<lesson_id>', views.watch, name='watch'),
-
+    path('s3direct/', include('s3direct.urls')),
     path('mycourses', views.user_courses, name="mycourses"),
     path('<id>', views.add_course, name='add_course'),
 ]
