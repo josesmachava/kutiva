@@ -12,12 +12,12 @@
         <ul>
             <li><a href="{% url 'course' %}"> <span><i class="fal fa-book-open"></i></span></a></li>
             <!--<li><span><i class="fal fa-bell"></i></span></li> -->
-            <li class="user-icon user-name">
+            <li class="user-icon">
                  {% if user.student.photo %}
                     <img src="{{ user.student.photo.url }}" class="user-photo" alt="testimonial photo">
 
                  {% else %}
-                       {{ user.first_name|capfirst|make_list|first }} {{ user.last_name|capfirst|make_list|first }}</li>
+                       <span class="user-name">{{ user.first_name|capfirst|make_list|first }} {{ user.last_name|capfirst|make_list|first }}</span></li>
 
                  {% endif %}</li>
                 <ul class="user-menu">
