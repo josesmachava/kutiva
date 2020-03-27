@@ -55,9 +55,9 @@ def sudentsignup(request):
             phone_number = form.cleaned_data.get('phone_number')
             educational_institution = form.cleaned_data.get('educational_institution')
             user = form.save()
-            user.student.phone_number = phone_number
+           # user.student.phone_number = phone_number
 
-            user.student. educational_institution =  educational_institution
+           # user.student. educational_institution =  educational_institution
             user.student.save()
             
             user = authenticate(username=email, password=raw_password)
@@ -76,7 +76,7 @@ class StudentPerfile(UpdateView):
     #template_name_suffix = 'account/perfile.html'
     template_name = "account/perfile.html"
     form_class = StudentSignUpdateForm
-    model = Student
+    model = User
     success_url = reverse_lazy('index')
 
 
