@@ -72,11 +72,11 @@ def sudentsignup(request):
 
 
 class StudentPerfile(UpdateView):
-    model = Student
+
     #template_name_suffix = 'account/perfile.html'
     template_name = "account/perfile.html"
     form_class = StudentSignUpdateForm
-    #model = User
+    model = Student
     success_url = reverse_lazy('index')
 
 
