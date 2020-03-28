@@ -47,6 +47,7 @@
                       <h1><img src="{% static 'images/logo2.png' %}" class="logo" alt="kutiva logo"></h1>
                     {% csrf_token %}
                     <input type="hidden" name="next" value="{{ next }}">
+
                     <div class="row">
                         <div class="col-md-6">
                             {{ form.first_name|as_crispy_field }}

@@ -62,6 +62,13 @@
                 <form method="post">{% csrf_token %}
    {% csrf_token %}
                     <input type="hidden" name="next" value="{{ next }}">
+                       <div class="row">
+                        <div class="col-md-12">
+                            {{ form.photo|as_crispy_field }}
+
+                        </div>
+
+                    </div>
                     <div class="row">
                         <div class="col-md-6">
                             {{ form.first_name|as_crispy_field }}

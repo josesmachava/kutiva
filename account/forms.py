@@ -45,6 +45,7 @@ class StudentSignUpForm(UserCreationForm):
 
 
 class StudentSignUpdateForm(ModelForm):
+    photo = forms.FileField()
     first_name = forms.CharField(label="Nome", widget=forms.TextInput(attrs={'placeholder': 'Nome'}), max_length=30, required=False)
     last_name = forms.CharField(label="Apelido", widget=forms.TextInput(attrs={'placeholder': 'Apelido'}), max_length=30, required=False)
     email = forms.EmailField(label="Email", widget=forms.TextInput(attrs={'placeholder': 'E-mail'}), max_length=254, required=False)
@@ -59,8 +60,8 @@ class StudentSignUpdateForm(ModelForm):
         
     
     class Meta:
-        model = User
-        fields = ('first_name', 'last_name', 'email', 'role', 'location', 'birth_date', 'educational_institution', 'phone_number', 'description')
+        model = Student
+        fields = ('photo', 'first_name', 'last_name', 'email', 'role', 'location', 'birth_date', 'educational_institution', 'phone_number', 'description')
 
 
       
