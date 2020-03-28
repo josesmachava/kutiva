@@ -35,7 +35,7 @@ LANGUAGES = (
 SECRET_KEY = 'cqd9i9ua1mo@zbr2r41sm3)pd5__a_r1%4h^=tc^+z9p)z(mfg'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = [
                  "*",
@@ -127,23 +127,20 @@ WSGI_APPLICATION = 'kutiva.wsgi.application'
 # Parse database configuration from $DATABASE_URL
 # Enable Persistent Connections
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-    }
-}   
 
 
 try:
     from .settings_local import *
 except ImportError:
-    
-    
+
+    ALLOWED_HOSTS = ['*']
+
+    ADMINS = [('Guidione  Machava', 'geral.market.co.mz@gmail.com'),
+              ('Jose Machava', 'josesmachava@gmail.com'), ]
     # Parse database configuration from $DATABASE_URL
-    DATABASES['default'] = dj_database_url.config()  # Reverted RDS Migration
+    DATABASES = {}
+    DATABASES['default'] = dj_database_url.config(conn_max_age=600)
     # Enable Persistent Connections
-    DATABASES['default']['CONN_MAX_AGE'] = 500
 
    
 
