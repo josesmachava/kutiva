@@ -1,0 +1,17 @@
+{% load staticfiles %}
+{% load sass_tags %}
+!!! 5
+html(lang="en")
+  head
+    title Error 404
+    link(rel="stylesheet",   href="{% static 'stylesheet/malangatana.min.css' %}")
+  body
+    main
+        .error-page.mtn-flex-align-center
+                .error-404
+                     h1.align-center 404
+                     p.align-center Erro: Página não encontrada
+                     p.align-center A página que procura deve ter sido eliminada ou esteja temporariamente indisponível. Clica aqui para
+                         a(href="{% url "index" %}") Voltar
+
+

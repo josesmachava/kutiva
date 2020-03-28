@@ -39,5 +39,5 @@ urlpatterns = [
 ]
 
 
-handler404 = 'kutiva.views.error_404_view'
-handler500 = 'kutiva.views.error_500_view'
+handler404 = "kutiva.views.handler404"
+handler500 = "kutiva.views.handler500"

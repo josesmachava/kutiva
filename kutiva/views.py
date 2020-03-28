@@ -24,7 +24,6 @@ def security(request):
     return render(request, "about/security.html")
 
 
-
 def terms(request):
     return render(request, "about/terms.html")
 
@@ -33,9 +32,9 @@ def policies(request):
     return render(request, "about/policies.html")
 
 
-def error_404_view(request):
-    return render(request, 'error/404.html')
+def handler404(request, exception):
+    return render(request, 'error/404.jade', status=404)
 
 
-def error_500_view(request):
-    return render(request, 'error/500.html')
+def handler500(request):
+    return render(request, 'error/500.jade', status=500)
