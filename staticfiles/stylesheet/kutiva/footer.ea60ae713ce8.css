@@ -1,0 +1,71 @@
+footer {
+    height: auto;
+    padding-top: 50px;
+    margin-top: 150px;
+
+    background-color: whitesmoke;
+}
+
+.logo {
+    width: 40px;
+}
+
+ul {
+    padding: 0;
+    margin: 0;
+}
+
+ul li {
+    list-style: none;
+}
+
+footer ul li span {
+    padding-right: 10px;
+}
+
+.social-media {
+    margin: 20px 0;
+
+}
+
+.social-media li {
+    display: inline;
+    margin: 0 5px;
+}
+
+i {
+    color: rgb(7, 71, 166);
+
+}
+
+footer h1 {
+    text-transform: capitalize;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+li a, p a {
+    color: black;
+    text-decoration: none;
+}
+
+li a:hover, p a:hover {
+    color: black;
+    text-decoration: none;
+}
+
+{
+    color: black
+;
+    text-decoration: none
+;
+}
+li:first-letter {
+    text-transform: capitalize;
+}
+
+footer p {
+    text-align: center;
+    padding: 0;
+    margin: 0;
+}

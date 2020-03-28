@@ -1,0 +1,206 @@
+body, html{
+     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+}
+
+
+.unstyledList {
+    list-style-type: none;
+
+
+}
+
+.capitalize:first-letter{
+     text-transform: capitalize;
+
+
+}
+
+.unstyledLink {
+    text-decoration: none;
+   
+}
+
+.unstyledLink :hover {
+   
+}
+
+.resetPadding{
+    padding: 0;
+
+}
+.error{
+    color:red;
+}
+.resetMargin{
+    margin: 0;
+}
+input{
+      box-sizing: border-box;
+    padding-left: 15px;
+    padding-right: 15px;
+    border: 1px solid #dbe2e8;
+    font-size: 14px;
+    -webkit-box-shadow: 0 2px 2px 0 rgba(46,60,73,.05);
+    box-shadow: 0 2px 2px 0 rgba(46,60,73,.05);
+    border-radius: 2px;
+    color: #2e3d49;
+    margin: 10px;
+        border-radius: 4px;
+            height: 44px;
+
+}
+.inputField{
+    box-sizing: border-box;
+    padding-left: 15px;
+    padding-right: 15px;
+    border: 1px solid #dbe2e8;
+    font-size: 14px;
+    -webkit-box-shadow: 0 2px 2px 0 rgba(46,60,73,.05);
+    box-shadow: 0 2px 2px 0 rgba(46,60,73,.05);
+    border-radius: 2px;
+    color: #2e3d49;
+    margin: 10px;
+    border-radius: 4px;
+    height: 44px;
+
+}
+
+.alignCenter{
+  display: grid;
+  height: 100vh;
+  place-items: center center;
+
+}
+
+.alignElementCenter{
+  display: grid;
+  place-items: center center;
+  height: 100%;
+}
+
+.alignTextCenter{
+    text-align: center;
+}
+
+.alignTextRight{
+    text-align: right;
+}
+.alignRight{
+
+display: flex;
+justify-content: flex-end;
+   
+}
+.alignTextLeft{
+    text-align: left;
+}
+
+.alignCenterSingleElement{    margin: 0 auto;
+    display: block;
+
+
+}
+.defaultHeader{
+
+    height: 15vh;
+    color: #3a343a;
+    background-color: #F6F8FA;
+        margin: 0 -5.5%;
+
+ }
+
+
+/*typography*/
+
+
+.primary-font{
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+}
+
+/*typography*/
+
+/*buttons*/
+ .primary-button{
+    border: none;
+    background-color: rgb(7, 71, 166);
+    color: white;
+    height: 40px;
+    width: auto;
+    font-weight: bold;
+    border-radius: 4px;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+
+}
+
+ 
+ .default-button{
+    border: none;
+    background-color: rgba(9, 30, 66, 0.08);
+    color: black;
+    height: 40px;
+    width: auto;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+
+    border-radius: 4px;
+ }
+ .link-button{
+    color: rgb(7, 71, 166);
+        font-weight: bold;
+    font-family: Ubuntu;
+
+ }
+ .warning-button{
+     border: none;
+    background-color: #F5AA07;
+    color: black;
+    height: 40px;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+
+    width: auto;
+    border-radius: 4px;    
+ } 
+ .danger-button{
+    border: none;
+    background-color:#DE350A;
+    color: white;
+    height: 40px;
+    width: auto;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+
+    border-radius: 4px; 
+ } 
+ .disable-button{
+
+ }
+
+ /*buttons*/
+
+
+@media only screen and  (max-width: 480px) {
+
+    .smallHeading{
+        font-size: 25px;
+        text-transform: capitalize;
+    }
+
+}
+@media only screen and (min-width: 768px  ) and (max-width: 992px) {
+
+    .mediumHeading{
+
+    }
+
+}
+@media only screen and (min-width: 993px) and (max-width: 1200px){
+    .largeHeading{
+
+    }
+}
+
+
+
+@media only screen and  (min-width: 1201px){
+    .extraLargeHeading{
+
+    }
+}
