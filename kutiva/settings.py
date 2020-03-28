@@ -101,30 +101,35 @@ EMAIL_HOST_PASSWORD = 'lEkPR&3j,UFb'
 EMAIL_USE_TLS = True
 DEFAULT_FROM_EMAIL = 'noreply@kutiva.co.mz'
 
+
+
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': ['kutiva/templates'],
-        'APP_DIRS': True,
+        'DIRS': [
+            os.path.join(BASE_DIR, 'kutiva/templates')
+        ],
         'OPTIONS': {
             'context_processors': [
                 'django.template.context_processors.debug',
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
-                'django.core.context_processors.request'
             ],
+            # PyPugJS part:
             'loaders': [
-                # PyJade part:   ##############################
-                ('pyjade.ext.django.Loader', (
+                ('pypugjs.ext.django.Loader', (
                     'django.template.loaders.filesystem.Loader',
                     'django.template.loaders.app_directories.Loader',
                 ))
             ],
-            'builtins': ['pyjade.ext.django.templatetags'],
+            'builtins': [
+                'pypugjs.ext.django.templatetags',
+            ],
         },
     },
 ]
+
 
 WSGI_APPLICATION = 'kutiva.wsgi.application'
 

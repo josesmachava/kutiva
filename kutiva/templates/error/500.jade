@@ -8,7 +8,7 @@
 
 {# overide the tile of the page #}
 {% block title %}
-title     kutiva - Página não encontrada
+title     kutiva - Erro interno do servidor
 {% endblock %}
 
 
@@ -48,10 +48,12 @@ main
         .row
             .col-md-12
                 .page-error
-                    h1.error-title Página não encontrada
-                    h2.error-subtitle Não conseguimos encontrar a página que você está procurando.
+
+                    h1.error-title Erro interno do servidor
+
+
                     h3.error-subtitle Tente voltar à página anterior ou
-                        a(href="{% url 'index'   %}")  Voltar
+                        a(href="{% url 'index'   %}")   Voltar
 
 {% include "kutiva/layout/footer.html" %}
 

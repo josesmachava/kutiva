@@ -2,7 +2,9 @@ footer {
     height: auto;
     padding-top: 50px;
     margin-top: 150px;
-
+    position: absolute;
+bottom: 0;
+width: 100%;
     background-color: whitesmoke;
 }
 

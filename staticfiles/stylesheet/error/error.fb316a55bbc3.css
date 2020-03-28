@@ -1,0 +1,15 @@
+.page-error {
+    margin-top: 115px;
+}
+
+.error-title {
+    font-size: 25px;
+    color: #333;
+    text-align: center;
+}
+
+.error-subtitle {
+    text-align: center;
+    font-size: 18px;
+    color: #333;
+}
