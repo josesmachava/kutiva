@@ -67,7 +67,7 @@ INSTALLED_APPS = [
   
     
 ]
-
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'  # During development only
 
 GRAPHENE = {
     'SCHEMA': 'kutiva.schema.schema' # Where your Graphene schema lives
@@ -93,15 +93,14 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = 'kutiva.urls'
-EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+
+
 EMAIL_HOST = 'mail.kutiva.co.mz'
-EMAIL_PORT = 587
+EMAIL_PORT = 26
 EMAIL_HOST_USER = 'noreply@kutiva.co.mz'
-EMAIL_HOST_PASSWORD = 'lEkPR&3j,UFb'
+EMAIL_HOST_PASSWORD = '849394995Jose'
 EMAIL_USE_TLS = True
 DEFAULT_FROM_EMAIL = 'noreply@kutiva.co.mz'
-
-
 
 TEMPLATES = [
     {

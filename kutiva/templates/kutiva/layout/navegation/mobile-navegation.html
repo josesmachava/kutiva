@@ -1,0 +1,29 @@
+ <ul class="login">
+
+            <!--  <li><i class="fal fa-bars"></i></li>-->
+            <li class="search-icon"><span><i class="fal fa-search"></i></span></li>
+            <li><a href="{% url 'course' %}"> <span><i class="fal fa-book-open"></i></span></a></li>
+            <li class="user-icon">
+                  {% if user.student.photo %}
+                    <img src="{{ user.student.photo.url }}" class="user-photo" alt="testimonial photo">
+
+                 {% else %}
+                       {{ user.first_name|capfirst|make_list|first }} {{ user.last_name|capfirst|make_list|first }}</li>
+
+                 {% endif %}
+
+            </li>
+        </ul>
+        <ul class="user-menu">
+            <li>
+                {% if user.student.photo %}
+                    <img src="{{ user.student.photo.url }}" class="user-photo" alt="testimonial photo">
+
+                 {% else %}
+                        {{ user.first_name|capfirst|make_list|first }} {{ user.last_name|capfirst|make_list|first }}</li>
+
+                 {% endif %}
+            <li><a href="{% url 'perfile' user.student.id %}">Editar</a></li>
+
+            <li><a href="{% url 'logout' %}">Sair</a></li>
+        </ul>
