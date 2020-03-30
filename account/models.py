@@ -79,7 +79,7 @@ class Instructor(models.Model):
 
 class Student(models.Model):
     user = models.OneToOneField(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
-    photo = models.FileField()
+    photo = models.ImageField(default="kutiva/static/images/default-profile-2020.webp")
 
     location = models.CharField(max_length=100, blank=True)
     phone_number = models.CharField(max_length=30, blank=True)

@@ -1,9 +1,4 @@
-main {
-    height: auto;
-    position: relative;
-    top: 52px;
 
-}
 
 .course-header {
     height: 300px;
@@ -37,9 +32,7 @@ main {
     display: none;
 }
 
-.course {
-    min-height: 100vh;
-}
+
 
 
 @media (min-width: 1281px) {
