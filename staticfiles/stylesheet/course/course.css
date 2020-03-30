@@ -1,0 +1,169 @@
+
+
+.course-header {
+    height: 300px;
+}
+
+.subscription h1 {
+    font-size: 25px;
+}
+
+.instructor-photo {
+    border-radius: 100%;
+    width: 40px;
+    height: 40px;
+}
+
+.instructor-details {
+    margin-left: 20px;
+}
+
+.instructor {
+    display: flex;
+    flex-wrap: wrap;
+    padding-bottom: 20px;
+}
+
+.desktop-course-details {
+    display: block;
+}
+
+.mobile-course-details {
+    display: none;
+}
+
+
+
+
+@media (min-width: 1281px) {
+
+
+}
+
+/*
+  ##Device = Laptops, Desktops
+  ##Screen = B/w 1025px to 1280px
+*/
+
+@media (min-width: 1025px) and (max-width: 1280px) {
+
+
+}
+
+/*
+  ##Device = Tablets, Ipads (portrait)
+  ##Screen = B/w 768px to 1024px
+*/
+
+@media (min-width: 768px) and (max-width: 1024px) {
+
+
+}
+
+/*
+  ##Device = Tablets, Ipads (landscape)
+  ##Screen = B/w 768px to 1024px
+*/
+
+@media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
+
+
+}
+
+/*
+  ##Device = Low Resolution Tablets, Mobiles (Landscape)
+  ##Screen = B/w 481px to 767px
+*/
+
+@media (min-width: 481px) and (max-width: 767px) {
+
+
+}
+
+/*
+  ##Device = Most of the Smartphones Mobiles (Portrait)
+  ##Screen = B/w 320px to 479px
+*/
+
+@media (min-width: 320px) and (max-width: 480px) {
+    .desktop-course-details {
+        display: none;
+    }
+
+    .course-header {
+        height: 200px;
+    }
+
+    .mobile-course-details {
+        display: block;
+    }
+
+    .header-course-details {
+        background: #f3f6f8;
+        padding-bottom: 10px;
+    }
+
+    .course-title {
+        font-size: 30px;
+        margin-bottom: 8px;
+        display: block;
+        color: #000;
+        padding-top: 10px;
+    }
+
+    .course-subtitle {
+        color: rgba(0, 0, 0, .6);
+        padding: 0;
+        margin: 0;
+    }
+
+    .course-subscription-title {
+        font-size: 20px;
+        margin-top: 20px;
+    }
+
+    .course-details-content ul li {
+        margin-top: -29px;
+        margin-left: 35px;
+
+    }
+
+    .course-description-title {
+        margin-top: 20px;
+        font-size: 19px;
+    }
+
+    .instructor-photo {
+        border-radius: 100%;
+        width: 40px;
+        height: 40px;
+    }
+
+    .instructor-title {
+        font-size: 18px;
+    }
+
+    .instructor-subtitle {
+        font-size: 17px;
+    }
+
+    .subscription h1 {
+        font-size: 15px;
+    }
+
+    .subscription {
+        padding:0 0;
+    }
+
+    .content {
+
+        margin-bottom: 150px;
+    }
+
+    .player-box {
+        padding: 0;
+
+    }
+
+
+}
