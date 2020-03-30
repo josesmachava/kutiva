@@ -184,6 +184,7 @@ input[type='search'] {
         width: 100%;
         background: whitesmoke;
         padding-top: 5px;
+        height: 55px;
     }
 
     .footer-mobile-navigation li span {
