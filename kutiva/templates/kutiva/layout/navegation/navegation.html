@@ -16,19 +16,20 @@
             <li><a href="{% url 'course' %}"> <span><i class="fal fa-book-open"></i></span></a></li>
             <!--<li><span><i class="fal fa-bell"></i></span></li> -->
             <li class="user-icon">
-                 {% if user.student.photo %}
+                {% if user.student.photo %}
                     <img src="{{ user.student.photo.url }}" class="user-photo" alt="testimonial photo">
 
-                 {% else %}
-                       <span class="user-name">{{ user.first_name|capfirst|make_list|first }} {{ user.last_name|capfirst|make_list|first }}</span></li>
+                {% else %}
+                    <span class="user-name">{{ user.first_name|capfirst|make_list|first }} {{ user.last_name|capfirst|make_list|first }}</span>
+                    </li>
 
-                 {% endif %}</li>
-                <ul class="user-menu">
+                {% endif %}</li>
+            <ul class="user-menu">
 
                 <li><a href="{% url 'perfile' user.student.id %}">Editar</a></li>
-              <!--  <li><a href="{% url 'logout' %}">Ajuda</a></li> -->
+                <!--  <li><a href="{% url 'logout' %}">Ajuda</a></li> -->
                 <li><a href="{% url 'logout' %}">Sair</a></li>
-        </ul>
+            </ul>
 
         </ul>
 
@@ -58,51 +59,28 @@
 
 
 <nav class="mobile-menu">
-    <a class="" href="{% url 'index' %}"><h1><img src="{% static 'images/logo2.png' %}" alt="kutiva logo">
-    </h1></a>
+
     {% if user.is_authenticated %}
-        <ul class="login">
+        {% include "kutiva/layout/navegation/search.html" %}
 
-            <!--  <li><i class="fal fa-bars"></i></li>-->
-            <li class="search-icon"><span><i class="fal fa-search"></i></span></li>
-            <li><a href="{% url 'course' %}"> <span><i class="fal fa-book-open"></i></span></a></li>
-            <li class="user-icon">
-                  {% if user.student.photo %}
-                    <img src="{{ user.student.photo.url }}" class="user-photo" alt="testimonial photo">
-
-                 {% else %}
-                       {{ user.first_name|capfirst|make_list|first }} {{ user.last_name|capfirst|make_list|first }}</li>
-
-                 {% endif %}
-
-            </li>
-        </ul>
-        <ul class="user-menu">
-            <li>
-                {% if user.student.photo %}
-                    <img src="{{ user.student.photo.url }}" class="user-photo" alt="testimonial photo">
-
-                 {% else %}
-                        {{ user.first_name|capfirst|make_list|first }} {{ user.last_name|capfirst|make_list|first }}</li>
-
-                 {% endif %}
-            <li><a href="{% url 'perfile' user.student.id %}">Editar</a></li>
-
-            <li><a href="{% url 'logout' %}">Sair</a></li>
-        </ul>
     {% else %}
-        <ul class="logout">
-        <li class="nav-item link-button"><a class="unstyledLink link-button" href="{% url 'signin' %}">Entrar</a></li>
-        <li class="nav-item link-button"><a class="unstyledLink link-button " href="{% url 'student_sigin' %}">criar
-            conta</a></li>
+        <h1>
+            <a class="" href="{% url 'index' %}">
+                <img src="{% static 'images/logo2.png' %}" alt="kutiva logo">
+            </a>
+        </h1>
+        <nav>
 
+            <ul>
+                <li><a href="{% url 'signin' %}">Entrar</a></li>
+                <li><a href="{% url 'student_sigin' %}">Criar conta</a></li>
+
+
+            </ul>
+
+        </nav>
 
     {% endif %}
-    </ul>
-    <form action="" class="search-mobile">
-        <input type="search" placeholder="pesquisar" id="search">
-    </form>
-    <ul class="list-group" id="result"></ul>
 
 
 </nav>

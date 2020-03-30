@@ -66,7 +66,9 @@ footer p {
     margin: 0;
 }
 
-
+.mobile-footer{
+    display: none;
+}
 
 @media (min-width: 1281px) {
 
