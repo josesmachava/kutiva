@@ -1,7 +1,7 @@
 
 $(document).ready(function(){
    //   $('.testimonials').slick();
-    $('.search-mobile').hide();
+    //$('.search-mobile').hide();
     $('.user-menu').hide();
     $('.search-icon').click(function () {
               $('.search-mobile').toggle('slow');
