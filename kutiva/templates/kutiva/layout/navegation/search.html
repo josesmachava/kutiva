@@ -1,7 +1,12 @@
 {% load staticfiles %}
 <script src="{% static 'javascript/search.js' %}"></script>
 
-<form action="">
+<form action="" class="search-desktop">
        <input type="search" name="search" id="search" placeholder="pesquisar cursos"  />
+       <ul class="list-group" id="result"></ul>
+</form>
+
+<form action="" class="search-mobile">
+       <input type="search" name="search" id="search-mobile" placeholder="pesquisar cursos"  />
        <ul class="list-group" id="result"></ul>
 </form>
