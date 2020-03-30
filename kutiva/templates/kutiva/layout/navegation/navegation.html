@@ -1,5 +1,6 @@
 {% load staticfiles %}
 <script src="{% static 'javascript/navegation.js' %}"></script>
+
 <link rel="stylesheet" href="{% static 'stylesheet/kutiva/navegation.css' %}">
 
 {% load staticfiles %}
@@ -7,7 +8,8 @@
 
 <nav class="desktop-menu">
     <h1><a href="{% url 'index' %}"> <img src="{% static 'images/logo2.png' %}" alt="kutiva logo"></a></h1>
-    <input type="search" placeholder="pesquisar">
+    {% include "kutiva/layout/navegation/search.html" %}
+
     {% if user.is_authenticated %}
         <ul>
             <li><a href="{% url 'course' %}"> <span><i class="fal fa-book-open"></i></span></a></li>
@@ -97,7 +99,10 @@
     {% endif %}
     </ul>
     <form action="" class="search-mobile">
-        <input type="search" placeholder="pesquisar">
+        <input type="search" placeholder="pesquisar" id="search">
     </form>
+    <ul class="list-group" id="result"></ul>
+
+
 </nav>
 

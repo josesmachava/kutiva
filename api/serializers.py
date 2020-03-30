@@ -9,8 +9,7 @@ class CourseSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Course
-        fields = ('id', 'author', 'name', 'category',
-                  'chapter', 'cover', 'description', 'created_date')
+        fields = '__all__'
 
 
 # class TalkSerializer(serializers.ModelSerializer):
