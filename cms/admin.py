@@ -17,7 +17,3 @@ class PartnerAdmin(admin.ModelAdmin):
     list_display = ['name']
 
 admin.site.register(Partner, PartnerAdmin)
-
-
-
-admin.site.register(Enrolled)
