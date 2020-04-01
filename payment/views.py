@@ -104,3 +104,5 @@ data = {'api_dev_key':API_KEY,
 #print("The pastebin URL is:%s"%pastebin_url)
 
 
+def index(request):
+    pass
