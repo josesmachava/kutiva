@@ -105,4 +105,4 @@ data = {'api_dev_key':API_KEY,
 
 
 def index(request):
-    pass
+    return render(request, 'index.html')
