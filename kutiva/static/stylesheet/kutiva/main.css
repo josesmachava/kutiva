@@ -388,6 +388,9 @@ hsla(0, 0 %, 47 %, .75);
         margin: 0 auto;
         display: block;
     }
+    .perfil ul li span{
+        padding-right: 10px;
+    }
 
     .perfil-title {
         font-size: 20px;

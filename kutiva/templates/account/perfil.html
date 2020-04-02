@@ -85,11 +85,11 @@
                         {{ student.user.last_name|capfirst }}</h1>
                         <h2 class="perfil-subtitle">{{ student.role }}</h2>
                         <ul>
-                            <li>{{ student.educational_institution }}</li>
-                             <li>{{ student.phone_number }}</li>
-                            <li>{{ student.location }}</li>
-                            <li>{{ student.user.email }}</li>
-                            <li>{{ student.birth_date }}</li>
+                            <li><span><i class="fal fa-university"></i></span> {{ student.educational_institution }}</li>
+                             <li><span><i class="fal fa-phone-alt"></i></span>{{ student.phone_number }}</li>
+                            <li><span><i class="fal fa-map-marker-check"></i></span>{{ student.location }}</li>
+                            <li><span><i class="fal fa-envelope"></i></span>{{ student.user.email }}</li>
+                            <li><span><i class="fal fa-calendar-alt"></i></span>{{ student.birth_date }}</li>
                         </ul>
                          <a href="{% url 'edit' user.student.id %}">  Editar</a>
 
