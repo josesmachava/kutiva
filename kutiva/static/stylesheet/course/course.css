@@ -89,6 +89,9 @@
     .desktop-course-details {
         display: none;
     }
+    .mobile-course-details{
+        margin-top: 50px;
+    }
 
     .course-header {
         height: 200px;

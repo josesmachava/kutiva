@@ -13,16 +13,11 @@ def course(request):
 def course_details(request, id):
     try:
         if request.user.is_authenticated:
-            enrolled = Enrolled.objects.filter(user=request.user)
+
 
             courses = Course.objects.all()
             course = Course.objects.get(id=id)
-            enrolled_course = list()
-            for i in enrolled:
-                print()
-                enrolled_course.append(i.course.id)
-            return render(request, 'course/details.html',
-                          {'course': course, 'courses': courses, 'enrolled_course': enrolled_course})
+
         courses = Course.objects.all()
         course = Course.objects.get(id=id)
     except Course.DoesNotExist:
