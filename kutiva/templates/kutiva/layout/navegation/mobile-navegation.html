@@ -2,11 +2,11 @@
 
     <li><span><i class="fal fa-bell"></i></span></li>
     <li><a href="{% url 'course' %}"> <span><i class="fal fa-book-open"></i></span></a>
-    </li>
-    <li>
 
 
-        <img src="{{ user.student.photo.url }}" alt="">
+                <li><a href="{% url 'edit' user.student.id %}">  <img src="{{ user.student.photo.url }}" alt=""></a></li>
 
-    </li>
+
+
+
 </ul>
