@@ -19,7 +19,7 @@ body{
     border-radius: 2px;
 
 }
-form{
+.sign form{
         box-shadow: 0 0 0 1px rgba(0,0,0,.15),0 2px 3px rgba(0,0,0,.2);
     padding: 50px;
     margin: 50px 10px;
