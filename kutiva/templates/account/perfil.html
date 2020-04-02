@@ -11,6 +11,7 @@
 <title>kutiva</title>
 {% endblock %}
 
+
 {% block styles %}
 {#    only include css  files needed for thi page bootstap and other libs are add in base template #}
 
@@ -19,14 +20,12 @@
 <meta http-equiv="X-UA-Compatible", content="IE=edge">
 <meta name="viewport", content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="{% static 'stylesheet/kutiva/main.css' %}">
-    <link rel="stylesheet" href="{% static 'stylesheet/account/signin.css' %}">
+    <link rel="stylesheet" href="{% static 'stylesheet/course/course.css' %}">
 
-    <link rel="stylesheet" href="{% static 'stylesheet/kutiva/footer.css' %}">
+<link rel="stylesheet" href="{% static 'stylesheet/kutiva/footer.css' %}">
 
 <style type="text/css">
-    form{
-        box-shadow: none;
-    }
+
 </style>
 
 <!-- Global site tag (gtag.js) - Google Analytics -->
@@ -55,21 +54,53 @@
 
 
 <main>
-   <div class="container">
+<header class="hero hero--header course-header">
+    <div class="container-fluid">
         <div class="row">
             <div class="col-md-12">
 
-             </div>
+
+            </div>
+
+                </div>
+
+            </div>
+
+
+
+
+</header>
+
+
+
+
+
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                    <div class="perfil">
+                        <img class="perfil-photo" src="{{ student.photo.url }}" alt="user photo">
+                        <h1 class="perfil-title">{{ student.user.first_name|capfirst }}
+                        {{ student.user.last_name|capfirst }}</h1>
+                        <h2 class="perfil-subtitle">{{ student.role }}</h2>
+                        <ul>
+                            <li>{{ student.educational_institution }}</li>
+                             <li>{{ student.phone_number }}</li>
+                            <li>{{ student.location }}</li>
+                            <li>{{ student.user.email }}</li>
+                            <li>{{ student.birth_date }}</li>
+                        </ul>
+                         <a href="{% url 'edit' user.student.id %}">  Editar</a>
+
+
+
+                    </div>
+
+            </div>
 
 </div>
-
-
-
-
-        </div>
     </div>
-       </div>
-
 </main>
 {% include "kutiva/layout/footer.html" %}
 

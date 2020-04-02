@@ -6,10 +6,11 @@ from django.contrib.auth.decorators import login_required
 from django.shortcuts import render, redirect, HttpResponse
 from django.contrib.auth.models import User
 from django.contrib import messages
-from django.views.generic import CreateView, UpdateView, DeleteView
+from django.views.generic import CreateView, UpdateView, DeleteView, DetailView
 from .forms import SignUpForm, StudentSignUpForm, StudentSignUpdateForm
 from kutiva.views import index
 from .models import *
+
 
 def signin(request):
     if request.method == 'POST':
@@ -55,11 +56,11 @@ def sudentsignup(request):
             phone_number = form.cleaned_data.get('phone_number')
             educational_institution = form.cleaned_data.get('educational_institution')
             user = form.save()
-           # user.student.phone_number = phone_number
+            # user.student.phone_number = phone_number
 
-           # user.student. educational_institution =  educational_institution
+            # user.student. educational_institution =  educational_institution
             user.student.save()
-            
+
             user = authenticate(username=email, password=raw_password)
             if user is not None:
                 login(request, user)
@@ -70,20 +71,18 @@ def sudentsignup(request):
     return render(request, 'account/student_signup.html', {'form': form})
 
 
-
 class EditPerfile(UpdateView):
-
-    #template_name_suffix = 'account/edit.html'
+    # template_name_suffix = 'account/edit.html'
     template_name = "account/edit.html"
     form_class = StudentSignUpdateForm
     model = Student
     success_url = reverse_lazy('index')
 
 
-def perfile(request):
-
-    return render(request, 'account/perfil.html')
-
+class PerfilDetailView(DetailView):
+    model = Student
+    template_name = 'account/perfil.html'
+    context_object_name = 'student'
 
 
 @login_required()

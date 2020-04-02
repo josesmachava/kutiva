@@ -24,7 +24,7 @@ urlpatterns = [
     # path('signup', views.signup, name="signup"),
     path('signup/student', views.sudentsignup, name='student_sigin'),
     path('edit/<pk>', views.EditPerfile.as_view(), name="edit"),
-    path('perfil', views.perfile, name="perfil"),
+    path('perfil/<int:pk>', views.PerfilDetailView.as_view() , name="perfil"),
 
     # path('logout', 'django.contrib.auth.views.logout',  {'next_page': '/successfully_logged_out/'}).
     path('', include('django.contrib.auth.urls')),
