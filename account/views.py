@@ -74,7 +74,7 @@ def sudentsignup(request):
 class EditPerfile(UpdateView):
 
     #template_name_suffix = 'account/edit.html'
-    template_name = "account/editar.html"
+    template_name = "account/edit.html"
     form_class = StudentSignUpdateForm
     model = Student
     success_url = reverse_lazy('index')
@@ -82,7 +82,7 @@ class EditPerfile(UpdateView):
 
 def perfile(request):
 
-    return render(request, 'account/edit.html')
+    return render(request, 'account/perfil.html')
 
 
 
