@@ -9,7 +9,7 @@ from kutiva import settings
 
 class Lesson(models.Model):
     name = models.CharField(max_length=1000)
-    video = models.FileField()
+    video = models.URLField()
     # image = S3DirectField(dest='primary_destination', blank=True)
     image = models.FileField()
     is_active = models.BooleanField(default=False)
