@@ -13,8 +13,6 @@ def course(request):
 def course_details(request, id):
     try:
         if request.user.is_authenticated:
-
-
             courses = Course.objects.all()
             course = Course.objects.get(id=id)
 
@@ -31,6 +29,13 @@ def classroom(request, id):
     if request.user.is_student == False:
         return render(request, 'course/payment.html')
 
+    elif request.user.is_student == False or request.user.student.subscription.expired_date == datetime.date.today():
+        return render(request, 'course/payment.html')
+
+    elif request.user.student.subscription.expired_date == datetime.date.today():
+        return render(request, 'course/payment.html')
+
+
     else:
 
         try:
@@ -44,6 +49,12 @@ def classroom(request, id):
 @login_required()
 def watch(request, course_id, lesson_id=1):
     if request.user.is_student == False:
+        return render(request, 'course/payment.html')
+
+    elif request.user.is_student == False or request.user.student.subscription.expired_date == datetime.date.today():
+        return render(request, 'course/payment.html')
+
+    elif request.user.student.subscription.expired_date == datetime.date.today():
         return render(request, 'course/payment.html')
 
     else:
@@ -80,8 +91,3 @@ def add_course(request, id):
         raise Http404('This item does not exist')
 
     return redirect('mycourses')
-
-
-
-
-

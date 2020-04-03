@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import User, Student
+from .models import User, Student, Subscription
 
 # Register your models here.
 
@@ -16,4 +16,12 @@ class StudentAdmin(admin.ModelAdmin):
     list_display = ['user']
 
 admin.site.register(Student, StudentAdmin)
+
+
+
+
+class SubscriptionAdmin(admin.ModelAdmin):
+    list_display = ['expired_date']
+
+admin.site.register(Subscription, SubscriptionAdmin)
 

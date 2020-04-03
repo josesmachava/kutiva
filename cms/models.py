@@ -2,15 +2,15 @@ from datetime import timezone
 
 from django.db import models
 from django.utils import timezone
-from embed_video.fields import EmbedVideoField
-from s3direct.fields import S3DirectField
+import datetime
+from dateutil.relativedelta import relativedelta
 from kutiva import settings
 
 
 class Lesson(models.Model):
     name = models.CharField(max_length=1000)
     video = models.FileField()
-    #image = S3DirectField(dest='primary_destination', blank=True)
+    # image = S3DirectField(dest='primary_destination', blank=True)
     image = models.FileField()
     is_active = models.BooleanField(default=False)
     created_date = models.DateTimeField(auto_now_add=True)
@@ -45,6 +45,16 @@ class Chapter(models.Model):
         return str(self.name)
 
 
+class Subscription(models.Model):
+    #name = models.CharField(max_length=1000)
+    created_date = models.DateTimeField(default=timezone.now)
+    month = models.IntegerField(default=1, blank=False)
+    expired_date = models.DateField(default=datetime.date.today() + relativedelta(months=1))
+
+    def __str__(self):
+        return str(self.expired_date)
+
+
 class Course(models.Model):
     author = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
     name = models.CharField(max_length=1000)
@@ -65,8 +75,6 @@ class Testimonial(models.Model):
 
     def __str__(self):
         return str(self.user)
-
-
 
 
 class SocialNetwork(models.Model):
