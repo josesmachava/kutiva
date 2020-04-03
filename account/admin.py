@@ -1,4 +1,6 @@
 from django.contrib import admin
+
+from cms.models import SubscriptionType
 from .models import User, Student, Subscription
 
 # Register your models here.
@@ -16,6 +18,14 @@ class StudentAdmin(admin.ModelAdmin):
     list_display = ['user']
 
 admin.site.register(Student, StudentAdmin)
+
+
+
+
+class SubscriptionTypeAdmin(admin.ModelAdmin):
+    list_display = ['name']
+
+admin.site.register(SubscriptionType, SubscriptionTypeAdmin)
 
 
 

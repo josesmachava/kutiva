@@ -45,14 +45,27 @@ class Chapter(models.Model):
         return str(self.name)
 
 
-class Subscription(models.Model):
-    #name = models.CharField(max_length=1000)
-    created_date = models.DateTimeField(default=timezone.now)
+class SubscriptionType(models.Model):
+    name = models.CharField(max_length=1000)
     month = models.IntegerField(default=1, blank=False)
-    expired_date = models.DateField(default=datetime.date.today() + relativedelta(months=1))
+    price = models.IntegerField()
+    created_date = models.DateTimeField(default=timezone.now)
+
+    def __str__(self):
+        return str(self.name)
+
+    def get_month(self):
+        return self.month
+
+
+class Subscription(models.Model):
+    subscription_type =  models.ForeignKey(SubscriptionType, on_delete='CASCADE', blank=True, null=True)
+    created_date = models.DateTimeField(default=timezone.now)
+    expired_date = models.DateField(default=datetime.date.today() + relativedelta(months=SubscriptionType._meta.get_field('month').get_default()))
 
     def __str__(self):
         return str(self.expired_date)
+
 
 
 class Course(models.Model):
