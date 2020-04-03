@@ -123,10 +123,10 @@
                               {% if testimonial %}
                             <div class="col-md-4">
                                 <div class="testimonial">
-
+                                     {% if testimonial.user.student.photo %}
                                     <img src="{{ testimonial.user.student.photo.url }}" class="testimonial-photo"
-                                         alt="testimonial photo">
-
+                                         alt="{{  testimonial.user.first_name  }} {{  testimonial.user.last_name }} photo">
+                                     {% endif %}
                                     <div class="testimonial-content">
                                         <h1 class="testimonial-name">{{ testimonial.user.first_name|capfirst }} {{ testimonial.user.last_name|capfirst }}</h1>
                                         <h2 class="testimonial-hobby"></h2>
