@@ -16,6 +16,9 @@ class Lesson(models.Model):
     created_date = models.DateTimeField(auto_now_add=True)
     uploaded_at = models.DateTimeField(auto_now_add=True)
 
+    class Meta:
+        ordering = ['id']
+
     def __str__(self):
         return str(self.name)
 
@@ -41,6 +44,9 @@ class Chapter(models.Model):
     lessons = models.ManyToManyField(Lesson)
     created_date = models.DateTimeField(default=timezone.now)
 
+    class Meta:
+        ordering = ['id']
+
     def __str__(self):
         return str(self.name)
 
@@ -59,13 +65,13 @@ class SubscriptionType(models.Model):
 
 
 class Subscription(models.Model):
-    subscription_type =  models.ForeignKey(SubscriptionType, on_delete='CASCADE', blank=True, null=True)
+    subscription_type = models.ForeignKey(SubscriptionType, on_delete='CASCADE', blank=True, null=True)
     created_date = models.DateTimeField(default=timezone.now)
-    expired_date = models.DateField(default=datetime.date.today() + relativedelta(months=SubscriptionType._meta.get_field('month').get_default()))
+    expired_date = models.DateField(
+        default=datetime.date.today() + relativedelta(months=SubscriptionType._meta.get_field('month').get_default()))
 
     def __str__(self):
         return str(self.expired_date)
-
 
 
 class Course(models.Model):
@@ -77,6 +83,9 @@ class Course(models.Model):
     image = models.FileField()
     description = models.CharField(max_length=1000)
     created_date = models.DateTimeField(default=timezone.now)
+
+    class Meta:
+        ordering = ['id']
 
     def __str__(self):
         return str(self.name)
