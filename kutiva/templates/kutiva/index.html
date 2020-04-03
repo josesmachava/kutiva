@@ -8,151 +8,164 @@
 
 {# overide the tile of the page #}
 {% block title %}
-<title>kutiva</title>
+    <title>kutiva</title>
 {% endblock %}
 
 {% block styles %}
-{#    only include css  files needed for thi page bootstap and other libs are add in base template #}
+    {#    only include css  files needed for thi page bootstap and other libs are add in base template #}
 
-<meta charset="utf-8">
-<meta charset="UTF-8">
-<meta http-equiv="X-UA-Compatible", content="IE=edge">
-<meta name="viewport", content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="{% static 'stylesheet/kutiva/main.css' %}">
-<link rel="stylesheet" href="{% static 'stylesheet/kutiva/footer.css' %}">
+    <meta charset="utf-8">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" , content="IE=edge">
+    <meta name="viewport" , content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="{% static 'stylesheet/kutiva/main.css' %}">
+    <link rel="stylesheet" href="{% static 'stylesheet/kutiva/footer.css' %}">
 
 
-<!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-140073016-1"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-140073016-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
 
-  gtag('config', 'UA-140073016-1');
-</script>
+        function gtag() {
+            dataLayer.push(arguments);
+        }
 
-<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+        gtag('js', new Date());
+
+        gtag('config', 'UA-140073016-1');
+    </script>
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
+          integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
 {% endblock %}
 
 
 {% block scripts %}
-{#    only include css  files needed for thi page bootstap and other libs are add in base template #}
+    {#    only include css  files needed for thi page bootstap and other libs are add in base template #}
 
 {% endblock %}
 
 
 {% block content %}
 
-{% include "kutiva/layout/navegation/navegation.html" %}
+    {% include "kutiva/layout/navegation/navegation.html" %}
 
 
-<main>
-<header class="hero hero--header">
-    <div class="container-fluid header">
-        <div class="row">
-            <div class="col-md-12">
-
-                <h1 class="header-title">Garante seu futuro aprendendo novas habilidades online.</h1>
-                <h2 class="header-subtitle"></h2>
-                <div class="header-button">
-      <!--          <button>
-
-      Comece seu mês grátis
-
-                    </button>-->
-                </div>
-
-
-            </div>
-
-                </div>
-
-            </div>
-
-
-
-
-</header>
-
-
-
-    <div class="container">
-        <div class="row">
-    {% for course in courses %}
-    <div class="col-md-4">
-   <article class="course ">
-    <img src="{{ course.image.url  }}" alt="screencast cover" class="course-image">
-    <div class="course-content">
-              <h1 class="course-title"><a class="text-decoration-none" href="{% url 'details' course.id %}">{{ course.name }}</a></h1>
-               <ul>
-                 <li class="course-author">{{ course.author.first_name|capfirst }} {{ course.author.last_name|capfirst }}</li>
-
-        </ul>
-    </div>
-
-
-
-  </article>
-    </div>
-  
-              {% endfor %}
-
-        </div>
-    </div>
-
-
-    <div class="container">
-        <div class="row">
-        <div class="col-md-12">
-        <div class="testimonial">
-        <h1 class="testimonial-title">Da comunidade Kutiva</h1>
-        <h2 class="testimonial-subtitle">Mais de 100 de pessoas já estão estudando no kutiva</h2>
-        </div>
-              {% for testimonial in testimonials %}
-            <div class="col-md-4">
-                <div class="testimonial">
-
-                       <img src="{% static "images/perfil.jpg" %}" class="testimonial-photo" alt="testimonial photo">
-
-                      <div class="testimonial-content">
-                        <h1 class="testimonial-name">{{ testimonial.user.first_name|capfirst }} {{ testimonial.user.last_name|capfirst }}</h1>
-                        <h2 class="testimonial-hobby"></h2>
-
-
-
-                    <p class="testimonial-text">{{ testimonial.testimonial|slice:":255" }}</p>
-                     </div>
-
-                </div>
-                </div>
-            </div>
-             {% endfor %}
-
-        </div>
-        </div>
-
-    <div class="container">
-            <section class="partner">
-                 <h1 class="partner-title">Garante um estágio profissional com os nossos parceiros.</h1>
+    <main>
+        <header class="hero hero--header">
+            <div class="container-fluid header">
                 <div class="row">
+                    <div class="col-md-12">
+
+                        <h1 class="header-title">Garante seu futuro aprendendo novas habilidades online.</h1>
+                        <h2 class="header-subtitle"></h2>
+                        <div class="header-button">
+                            <!--          <button>
+
+                            Comece seu mês grátis
+
+                                          </button>-->
+                        </div>
+
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+        </header>
+
+
+        <div class="container">
+            <div class="row">
+                {% for course in courses %}
+                    <div class="col-md-4">
+                        <article class="course ">
+                            <img src="{{ course.image.url }}" alt="screencast cover" class="course-image">
+                            <div class="course-content">
+                                <h1 class="course-title"><a class="text-decoration-none"
+                                                            href="{% url 'details' course.id %}">{{ course.name }}</a>
+                                </h1>
+                                <ul>
+                                    <li class="course-author">{{ course.author.first_name|capfirst }} {{ course.author.last_name|capfirst }}</li>
+
+                                </ul>
+                            </div>
+
+
+                        </article>
+                    </div>
+
+                {% endfor %}
+
+            </div>
+        </div>
+
+
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="">
+                        <h1 class="testimonial-title">Da comunidade Kutiva</h1>
+                        <h2 class="testimonial-subtitle">Mais de 100 de pessoas já estão estudando no kutiva</h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+            <div class="container-fluid testimonials">
+                <div class="container">
+                    <div class="row">
+
+                        {% for testimonial in testimonials %}
+                              {% if testimonial %}
+                            <div class="col-md-4">
+                                <div class="testimonial">
+
+                                    <img src="{% static "images/perfil.jpg" %}" class="testimonial-photo"
+                                         alt="testimonial photo">
+
+                                    <div class="testimonial-content">
+                                        <h1 class="testimonial-name">{{ testimonial.user.first_name|capfirst }} {{ testimonial.user.last_name|capfirst }}</h1>
+                                        <h2 class="testimonial-hobby"></h2>
+
+
+                                        <p class="testimonial-text">{{ testimonial.testimonial|slice:":155" }}</p>
+                                    </div>
+
+                                </div>
+                            </div>
+                                {% endif %}
+                            </div>
+                        {% endfor %}
+
+                </div>
+            </div>
+        </div>
+
+
+        <section class="partner">
+            <h1 class="partner-title">Garante um estágio profissional com os nossos parceiros.</h1>
+            <div class="row">
 
                 {% for partner in partners %}
-                 <div class="col-md-4 partner-{{ partner.id }}">
-                     <a href="{{ partner.url }}" target="_blank">
-                         <img src="{{ partner.image }}" alt="{{ partner.name }}">
-                     </a>
+                    <div class="col-md-4 partner-{{ partner.id }}">
+                        <a href="{{ partner.url }}" target="_blank">
+                            <img src="{{ partner.image }}" alt="{{ partner.name }}">
+                        </a>
 
-                 </div>
+                    </div>
                 {% endfor %}
-                </div>
-            </section>
-
+            </div>
+        </section>
         </div>
-    </div>
+        </div>
 
-</main>
-{% include "kutiva/layout/footer.html" %}
+
+    </main>
+    {% include "kutiva/layout/footer.html" %}
 
 
 {% endblock %}

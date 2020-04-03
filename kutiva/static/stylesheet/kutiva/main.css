@@ -123,10 +123,19 @@ a:hover {
 }
 
 .testimonial {
-    margin: 100px 0;
-
+   background-color: #fff;
+border-radius: 3px;
+box-shadow: 0 1px 3px 0 rgba(20,23,28,.15);
+min-height: 260px;
+height: auto;
+padding: 18px;
+width: auto;
+margin: 30px 0;
 }
 
+.testimonials{
+
+}
 .testimonial-title {
     font-family: OpenSans, Arial, sans-serif;
     font-weight: 700;
@@ -160,7 +169,7 @@ a:hover {
 }
 
 .testimonial-photo {
-    width: 210px;
+    width: 50px;
     border-radius: 100%;
 
     display: block;
@@ -172,8 +181,9 @@ a:hover {
 
 .testimonial-name {
     font-family: OpenSans, Arial, sans-serif;
-    font-weight: 700;
-    font-size: 20px;
+
+    font-size: 18px;
+    font-weight: normal;
     line-height: 27px;
     text-align: center;
 }
