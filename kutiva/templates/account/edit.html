@@ -9,121 +9,126 @@
 
 {# overide the tile of the page #}
 {% block title %}
-<title>kutiva</title>
+    <title>kutiva</title>
 {% endblock %}
 
 {% block styles %}
-{#    only include css  files needed for thi page bootstap and other libs are add in base template #}
+    {#    only include css  files needed for thi page bootstap and other libs are add in base template #}
 
-<meta charset="utf-8">
-<meta charset="UTF-8">
-<meta http-equiv="X-UA-Compatible", content="IE=edge">
-<meta name="viewport", content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="{% static 'stylesheet/kutiva/main.css' %}">
-    <link rel="stylesheet" href="{% static 'stylesheet/account/signin.css' %}">
-
+    <meta charset="utf-8">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" , content="IE=edge">
+    <meta name="viewport" , content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="{% static 'stylesheet/kutiva/footer.css' %}">
+     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-140073016-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
 
-<style type="text/css">
-    form{
-        box-shadow: none;
-    }
-</style>
+        function gtag() {
+            dataLayer.push(arguments);
+        }
 
-<!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-140073016-1"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+        gtag('js', new Date());
 
-  gtag('config', 'UA-140073016-1');
-</script>
+        gtag('config', 'UA-140073016-1');
+    </script>
 
-<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
+          integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
 {% endblock %}
 
 
 {% block scripts %}
-{#    only include css  files needed for thi page bootstap and other libs are add in base template #}
+    {#    only include css  files needed for thi page bootstap and other libs are add in base template #}
 
 {% endblock %}
 
 
 {% block content %}
 
-{% include "kutiva/layout/navegation/navegation.html" %}
+    {% include "kutiva/layout/navegation/navegation.html" %}
 
 
-<main>
-   <div class="container">
-        <div class="row">
-            <div class="col-md-12">
-                <form method="post">{% csrf_token %}
-   {% csrf_token %}
-                    <input type="hidden" name="next" value="{{ next }}">
-                       <div class="row">
-                        <div class="col-md-12">
-                            {{ form.photo|as_crispy_field }}
+    <main>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="card">
+                    <form method="post">{% csrf_token %}
+
+                        {% csrf_token %}
+                        <input type="hidden" name="next" value="{{ next }}">
+                        <div
+                                class="row">
+                            <div class="col-md-12">
+                                {{ form.photo|as_crispy_field }}
+
+                            </div>
 
                         </div>
 
-                    </div>
-                    <div class="row">
-                        <div class="col-md-6">
-                            {{ form.first_name|as_crispy_field }}
-                        </div>
-                        <div class="col-md-6">
-                            {{ form.last_name|as_crispy_field }}
-                        </div>
-                    </div>
-                    <div class="row">
+                        <div class="row">
                             <div class="col-md-6">
 
-                    {{ form.phone_number|as_crispy_field }}
-                                </div>
-                                <div class="col-md-6">
-                        {{ form.email|as_crispy_field }}
+                                {{ form.phone_number|as_crispy_field }}
+                            </div>
+                            <div class="col-md-6">
 
 
-                                </div>
-                </div>
-<div class="row">
-                   <div class="col-md-12">
-
-                                        {{ form.educational_institution|as_crispy_field }}
-             </div>
-
-     <div class="col-md-6">
-
-                                        {{ form.location|as_crispy_field }}
-             </div>
-    <div class="col-md-6">
-
-                                        {{ form.role|as_crispy_field }}
-             </div>
-
-</div>
-
-                    <div class="row">
-                   <div class="col-md-12">
-                    {{ form.description|as_crispy_field }}
-             </div>
-
-</div>
-
-
-
-
-    <input type="submit" value="Update">
-</form>
-        </div>
+                                 <div class="input-group date" id="datetimepicker1" data-target-input="nearest">
+       {{ form.birth_date }}
+      <div class="input-group-append" data-target="#datetimepicker1" data-toggle="datetimepicker">
+        <div class="input-group-text"><i class="fa fa-calendar"></i></div>
+      </div>
     </div>
-       </div>
+                            </div>
+                        </div>
+                          <div class="row">
+                               <div class="col-md-6">
+                                {{ form.educational_institution|as_crispy_field }}
 
-</main>
-{% include "kutiva/layout/footer.html" %}
 
+                            </div>
+                          </div>
+                        <div class="row">
+
+
+                            <div class="col-md-6">
+
+                                {{ form.location|as_crispy_field }}
+                            </div>
+                            <div class="col-md-6">
+
+                                {{ form.role|as_crispy_field }}
+                            </div>
+
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-12">
+                                {{ form.description|as_crispy_field }}
+                            </div>
+
+                        </div>
+
+
+    <button type="submit" class="btn btn-success">Update</button>                    </form>
+                </div>
+            </div>
+        </div>
+            </div>
+
+    </main>
+    {% include "kutiva/layout/footer.html" %}
+      <script>
+      $(function () {
+         $("#datetimepicker1").datetimepicker({
+             format: 'DD/MM/YYYY',
+    });
+      });
+    </script>
 
 {% endblock %}
 

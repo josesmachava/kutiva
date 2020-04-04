@@ -34,7 +34,7 @@ class StudentSignUpForm(UserCreationForm):
         student = Student.objects.create(user=user)
         student.is_student = False
 
-        return user        
+        return user
 
 
 
@@ -48,16 +48,21 @@ class StudentSignUpdateForm(ModelForm):
     location = forms.CharField(label="Província", widget=forms.TextInput(attrs={'placeholder': 'Província'}), max_length=30, required=False)
     phone_number = forms.CharField(label="Número de telefone", widget=forms.TextInput(attrs={'placeholder': 'Número de telefone'}), max_length=30)
     description = forms.CharField(label="Biografia",widget=forms.Textarea(attrs={'placeholder': 'Sobre me'}), max_length=30, required=False)
-    educational_institution = forms.CharField(label="Instituição de ensino", widget=forms.TextInput(attrs={'placeholder': 'Instuticao de ensino'}), max_length=30, required=False)
+    educational_institution = forms.CharField(label="Instituição de ensino", widget=forms.TextInput(attrs={'placeholder': 'Instuticao de ensino'}), max_length=150, required=False)
     role = forms.CharField(label="Profisacao", widget=forms.TextInput(attrs={'placeholder': 'Estudante'}),
                                   max_length=30, required=False)
 
-    birth_date = forms.DateField(widget=forms.SelectDateWidget)
-        
-    
+    birth_date = forms.DateField(
+        label="Data de nascimento",
+        input_formats=['%d/%m/%Y'],
+        widget=forms.DateInput(attrs={
+            'class': 'form-control datetimepicker-input',
+            'data-target': '#datetimepicker1'
+        })
+    )
+
     class Meta:
         model = Student
-        fields = ('photo', 'first_name', 'last_name', 'email', 'role', 'location', 'birth_date', 'educational_institution', 'phone_number', 'description')
+        fields = ('photo', 'role', 'location', 'birth_date', 'educational_institution', 'phone_number', 'description')
 
 
-      

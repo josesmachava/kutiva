@@ -6,7 +6,12 @@
     position: relative;
     color: white;
 }
-
+.perfil-header p{
+    text-align: center;
+    font-size: 15px;
+    font-weight: normal;
+    color: whitesmoke;
+}
 .perfil-information ul li span {
     font-size: 22px;
     padding: 10px;
@@ -34,13 +39,16 @@
 
 
 }
+
 a {
     color: white;
 }
+
 a:hover {
     color: white;
 }
-button{
+
+button {
     margin-top: 30px;
 }
 
@@ -102,7 +110,7 @@ button{
     }
 
     .perfil-information {
-        margin-top: -150px;
+        margin-top: -140px;
         height: 250px;
         padding: 0px;
     }
@@ -110,6 +118,14 @@ button{
     .perfil-information ul li span {
         font-size: 18px;
         padding: 5px;
+    }
+
+    .perfil-header {
+        padding-top: 60px;
+        height: 380px;
+        background-image: url("../../images/account.png");
+        position: relative;
+        color: white;
     }
 
 }
