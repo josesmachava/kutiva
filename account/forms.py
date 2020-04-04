@@ -28,12 +28,12 @@ class StudentSignUpForm(UserCreationForm):
     @transaction.atomic
     def save(self):
         user = super().save(commit=False)
-        user.is_instructor = False
-        user.is_student = False
-       
+
         user.save()
 
         student = Student.objects.create(user=user)
+        student.is_student = False
+
         return user        
 
 
