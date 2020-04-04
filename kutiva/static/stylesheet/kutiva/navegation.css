@@ -10,6 +10,27 @@ nav {
     justify-content: space-evenly;
 }
 
+input[type="text"], input[type="password"] {
+    margin-top: 50px;
+}
+form p{
+    margin-top: 15px;
+}
+form p a:hover{
+    text-decoration: underline;
+    color: rgb(7, 71, 166);
+
+}
+input[type='submit'] {
+    width: 100%;
+    height: 45px;
+    font-size: 18px;
+}
+
+.navagation-signin-form {
+    padding: 40px;
+}
+
 nav > ul li {
     display: inline-block;
     margin: 0 20px;
@@ -154,17 +175,20 @@ input[type='search'] {
     .desktop-menu {
         display: none;
     }
-    nav ul{
+
+    nav ul {
         margin-top: -35px;
         margin-right: -165px;
         font-size: 18px;
         font-weight: 600;
         color: rgb(7, 71, 166);
     }
-    nav ul li a{
+
+    nav ul li a {
         color: rgb(7, 71, 166);
     }
-    .course{
+
+    .course {
         margin-top: 70px;
     }
 

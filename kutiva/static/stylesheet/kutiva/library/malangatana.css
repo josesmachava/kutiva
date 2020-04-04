@@ -44,9 +44,10 @@ input{
     box-shadow: 0 2px 2px 0 rgba(46,60,73,.05);
     border-radius: 2px;
     color: #2e3d49;
-    margin: 10px;
-        border-radius: 4px;
-            height: 44px;
+    width: 100%;
+    border-radius: 4px;
+    height: 44px;
+
 
 }
 .inputField{
@@ -59,7 +60,7 @@ input{
     box-shadow: 0 2px 2px 0 rgba(46,60,73,.05);
     border-radius: 2px;
     color: #2e3d49;
-    margin: 10px;
+
     border-radius: 4px;
     height: 44px;
 

@@ -45,8 +45,8 @@
             <li class="nav-item link-button"><a class="unstyledLink link-button" href="{% url 'price' %}">Preço</a></li>
 
 
-            <li class="nav-item link-button"><a class="unstyledLink link-button" href="{% url 'signin' %}">Entrar</a>
-            </li>
+            <li data-toggle="modal" data-target="#exampleModalCenter" class="nav-item link-button">Entrar </li>
+
             <li class="nav-item link-button"><a class="unstyledLink link-button" href="{% url 'student_sigin' %}">criar
                 conta</a></li>
 
@@ -71,12 +71,12 @@
         </h1>
 
 
-            <ul>
-                <li><a href="{% url 'signin' %}">Entrar</a></li>
-                <li><a href="{% url 'student_sigin' %}">Criar conta</a></li>
+        <ul>
+            <li><a href="{% url 'signin' %}">Entrar</a></li>
+            <li><a href="{% url 'student_sigin' %}">Criar conta</a></li>
 
 
-            </ul>
+        </ul>
 
 
     {% endif %}
@@ -84,3 +84,33 @@
 
 </nav>
 
+<!-- Modal -->
+<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+     aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+           <div class="modal-header">
+
+
+                <form  class="navagation-signin-form" action="{% url 'signin' %}" method="post">
+                   <!-- <p class="text-center">Crie habilidades para hoje, amanhã e além.
+Educação para preparar sua carreira para o futuro.</p>-->
+                         {% csrf_token %}
+
+                         <input type="email" placeholder="E-mail" class="inputField" name="username">
+                          {% for message in messages %}
+                          <p class="error text-center"> {{ message }}</p>
+                    {% endfor %}
+                         <input placeholder="Senha" type="password" class="inputField" name="password">
+                          <p><a href="{% url 'password_reset' %}" class="unstyledLink link-button">Esqueceu a senha?</a></p>
+
+                        <input type="submit" name="hello" class="primary-button" value="Entrar">
+
+
+                     <p class="text-center">Não tem uma conta? <a class="unstyledLink link-button" href="{% url 'student_sigin' %}">Crie uma conta em segundos</a></p>
+
+                     </form>
+           </div>
+        </div>
+    </div>
+</div>
