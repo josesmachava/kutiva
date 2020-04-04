@@ -15,21 +15,21 @@
         <ul>
             <li><a href="{% url 'course' %}"> <span><i class="fal fa-book-open"></i></span></a></li>
             <!--<li><span><i class="fal fa-bell"></i></span></li> -->
+
+            <div class="dropdown">
+              <li class=" dropdown-toggle"  id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                   {{ user.first_name|capfirst|make_list|first }} {{ user.last_name|capfirst|make_list|first }}
+                </li>
+
+              </li>
+              <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                <a class="dropdown-item" href="{% url 'edit' user.student.id %}">Perfil</a>
+                <a class="dropdown-item" href="{% url 'logout' %}">Sair</a>
+
+              </div>
+            </div>
             <li class="user-icon">
-                {% if user.student.photo %}
-                    <img src="{{ user.student.photo.url }}" class="user-photo" alt="testimonial photo">
 
-                {% else %}
-                    <span class="user-name">{{ user.first_name|capfirst|make_list|first }} {{ user.last_name|capfirst|make_list|first }}</span>
-                    </li>
-
-                {% endif %}</li>
-            <ul class="user-menu">
-
-                <li><a href="{% url 'edit' user.student.id %}">Editar</a></li>
-                <!--  <li><a href="{% url 'logout' %}">Ajuda</a></li> -->
-                <li><a href="{% url 'logout' %}">Sair</a></li>
-            </ul>
 
         </ul>
 
