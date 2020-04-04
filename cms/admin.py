@@ -10,6 +10,8 @@ admin.site.register(Subcategory)
 admin.site.register(Chapter)
 admin.site.register(Lesson)
 admin.site.register(Testimonial)
+admin.site.register(Province)
+admin.site.register(Institution)
 
 # Register your models here.
 

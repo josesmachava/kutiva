@@ -3,7 +3,7 @@ from django.contrib.auth.forms import UserCreationForm
 from .models import User, Student
 from django.db import transaction
 from django.forms import ModelForm
-
+from cms.models import  Institution
 class SignUpForm(UserCreationForm):
     first_name = forms.CharField(max_length=30, required=False, widget=forms.TextInput(attrs={'placeholder': 'Search'}) )
     last_name = forms.CharField(max_length=30, required=False,)
@@ -24,7 +24,8 @@ class StudentSignUpForm(UserCreationForm):
     email = forms.EmailField(max_length=254, label='Email',  widget=forms.TextInput(attrs={'placeholder': 'E-mail'}))
     password1 = forms.CharField(label='Palavra passe',  widget=forms.PasswordInput(attrs={'placeholder': 'Palavra Passe'}))
     password2 = forms.CharField(label='Repitir Palavra Passe ',  widget=forms.PasswordInput(attrs={'placeholder': 'Repitir Palavra Passe  '}))
-    educational_institution = forms.CharField(label='Instituição de Ensino',  widget=forms.TextInput(attrs={'placeholder': 'Instituição de Ensino'}))
+   # educational_institution = forms.CharField(label='Instituição de Ensino',  widget=forms.TextInput(attrs={'placeholder': 'Instituição de Ensino'}))
+    educational_institution = forms.ModelChoiceField(queryset=Institution.objects.all())
     #birth_date =  forms.DateField(widget=forms.SelectDateWidget())
     class Meta(UserCreationForm.Meta):
         model = User

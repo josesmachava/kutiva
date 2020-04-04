@@ -30,6 +30,20 @@ class Subcategory(models.Model):
         return str(self.name)
 
 
+class Province(models.Model):
+    name = models.CharField(max_length=1000)
+
+    def __str__(self):
+        return str(self.name)
+
+
+class Institution(models.Model):
+    name = models.CharField(max_length=1000)
+
+    def __str__(self):
+        return str(self.name)
+
+
 class Category(models.Model):
     name = models.CharField(max_length=1000)
     subcategory = models.ForeignKey(Subcategory, on_delete='CASCADE', blank=True, null=True)
