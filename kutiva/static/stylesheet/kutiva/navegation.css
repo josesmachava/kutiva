@@ -13,14 +13,17 @@ nav {
 input[type="text"], input[type="password"] {
     margin-top: 50px;
 }
-form p{
+
+form p {
     margin-top: 15px;
 }
-form p a:hover{
+
+form p a:hover {
     text-decoration: underline;
     color: rgb(7, 71, 166);
 
 }
+
 input[type='submit'] {
     width: 100%;
     height: 45px;
@@ -73,32 +76,7 @@ li a {
     background-color: white !important;
 }
 
-.categories-menu {
-    list-style-type: none;
-    font-size: 25px;
-}
 
-
-.user-name {
-    background: whitesmoke;
-    border-radius: 100%;
-    height: 45px;
-    width: 45px;
-    text-align: center;
-    font-size: 20px;
-    line-height: 40px;
-    margin-top: -8px;
-}
-
-.user-menu {
-    position: absolute;
-    top: 45px;
-    background: white;
-    height: 300px;
-    width: 325px;
-    box-shadow: 0 0 0 1px rgba(0, 0, 0, .15), 0 2px 3px rgba(0, 0, 0, .1);
-
-}
 
 nav > ul {
     display: flex;
@@ -107,10 +85,12 @@ nav > ul {
     align-content: center;
 }
 
-.user-menu li {
-    display: block;
-    margin: 0 20px;
-    padding: 9px;
+.radius {
+    border-radius: 100%;
+    height: 30px;
+    background-color: whitesmoke;
+    width: 30px;
+    text-align: center;
 }
 
 input[type='search'] {
