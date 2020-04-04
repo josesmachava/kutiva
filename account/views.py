@@ -71,7 +71,7 @@ def sudentsignup(request):
     return render(request, 'account/student_signup.html', {'form': form})
 
 
-class EditPerfile(UpdateView):
+class   EditPerfile(UpdateView):
     # template_name_suffix = 'account/edit.html'
     template_name = "account/edit.html"
     form_class = StudentSignUpdateForm
