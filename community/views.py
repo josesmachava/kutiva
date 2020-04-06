@@ -12,6 +12,13 @@ from .forms import PostForm
 
 
 def post_list(request):
+    posts = Post.objects.all().order_by('created_date')
+    courses = Course.objects.all()
+
+    return render(request, 'community/post_list.html', {'posts': posts, 'courses': courses})
+
+
+def ask_question(request):
     if request.method == "POST":
         form = PostForm(request.POST)
         if form.is_valid():
@@ -22,11 +29,10 @@ def post_list(request):
             return redirect('post_list')
             # return redirect('post_list', pk=post.pk)
     else:
-        posts = Post.objects.all().order_by('created_date')
         courses = Course.objects.all()
         form = PostForm()
 
-    return render(request, 'community/post_list.html', {'posts': posts, 'form': form, 'courses':courses})
+    return render(request, 'community/ask.html', {'form': form, 'courses': courses})
 
 
 def post_detail(request, pk):

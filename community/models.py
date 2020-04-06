@@ -8,7 +8,8 @@ from kutiva import settings
 
 class Post(models.Model):
     user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
-    text = models.TextField()
+    title = models.CharField(max_length=250)
+    text = HTMLField()
     created_date = models.DateTimeField(default=timezone.now)
 
 

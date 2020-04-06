@@ -1,6 +1,7 @@
 {% extends "kutiva/layout/base.html" %}
 {% load staticfiles %}
 {% load humanize %}
+{% load crispy_forms_tags %}
 {% comment %}
 
 {% endcomment %}
@@ -22,17 +23,18 @@
     <link rel="stylesheet" href="{% static 'stylesheet/kutiva/main.css' %}">
     <link rel="stylesheet" href="{% static 'stylesheet/course/course.css' %}">
 
+    <script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
+    <script>tinymce.init({selector: 'textarea'});</script>
+
 
     <link rel="stylesheet" href="{% static 'stylesheet/kutiva/footer.css' %}">
 
     <style type="text/css">
         main {
             background: #faf9f7;
+            margin-top: 52px;
         }
 
-        .post {
-            margin: 5px 0px;
-        }
 
         .post-user-perfil-photo {
 
@@ -46,6 +48,8 @@
             padding-top: 20px;
 
         }
+
+
 
 
     </style>
@@ -103,32 +107,13 @@
                                                              src="{{ user.student.photo.url }}" alt="">
                                 {{ user.first_name|capfirst }} {{ user.last_name|capfirst }} </p>
                             <form method="POST" class="post-form">{% csrf_token %}
-                                {{ form.as_p }}
-                                <button type="submit" class="save btn btn-default">Save</button>
+                                {{ form.title|as_crispy_field }}
+                                {{ form.text }}
+                                <button type="submit" class="btn btn-primary float-left" style="width: auto;margin-top: 20px"> Revise sua pergunta</button>
                             </form>
 
                         </div>
-                        {% for post in posts %}
-                            <div class="col-md-12">
 
-
-                                <div class="card post">
-                                    <div class="card-body">
-                                        <p class="font-weight-bold"><img class="post-user-perfil-photo"
-                                                                         src="{{ post.user.student.photo.url }}"
-                                                                         alt="{{ post.user.first_name|capfirst }} {{ post.user.last_name|capfirst }}"> {{ post.user.first_name|capfirst }} {{ post.user.last_name|capfirst }}
-                                        </p>
-                                        <h6 class="card-subtitle mb-2 text-muted">
-                                            {{ post.created_date|naturaltime }}</h6>
-                                        <p class="card-text">{{ post.text|linebreaksbr }}</p>
-                                        <a href="#" class="card-link">Comment</a>
-                                        <a href="#" class="card-link">Vote</a>
-                                    </div>
-                                </div>
-
-
-                            </div>
-                        {% endfor %}
                     </div>
 
                 </div>
