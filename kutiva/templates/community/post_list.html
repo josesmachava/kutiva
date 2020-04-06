@@ -1,6 +1,98 @@
-<html>
-<body>
-    <p>Hi there!</p>
-    <p>It works!</p>
-</body>
-</html>
+{% extends "kutiva/layout/base.html" %}
+{% load staticfiles %}
+{% load humanize %}
+{% comment %}
+
+{% endcomment %}
+{% load staticfiles %}
+
+{# overide the tile of the page #}
+{% block title %}
+    <title>kutiva</title>
+{% endblock %}
+
+
+{% block styles %}
+    {#    only include css  files needed for thi page bootstap and other libs are add in base template #}
+
+    <meta charset="utf-8">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" , content="IE=edge">
+    <meta name="viewport" , content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="{% static 'stylesheet/kutiva/main.css' %}">
+    <link rel="stylesheet" href="{% static 'stylesheet/course/course.css' %}">
+
+    <link rel="stylesheet" href="{% static 'stylesheet/kutiva/footer.css' %}">
+
+    <style type="text/css">
+
+    </style>
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-140073016-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+
+        gtag('js', new Date());
+
+        gtag('config', 'UA-140073016-1');
+    </script>
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
+          integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+{% endblock %}
+
+
+{% block scripts %}
+    {#    only include css  files needed for thi page bootstap and other libs are add in base template #}
+
+{% endblock %}
+
+
+{% block content %}
+
+    {% include "kutiva/layout/navegation/navegation.html" %}
+
+
+    <main>
+
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3">
+
+
+                </div>
+                <div class="col-md-6">
+                    <form method="POST" class="post-form">{% csrf_token %}
+                        {{ form.as_p }}
+                        <button type="submit" class="save btn btn-default">Save</button>
+                    </form>
+                    {% for post in posts %}
+                        <div>
+                            <p>{{ post.user.first_name|capfirst }} {{ post.user.last_name|capfirst }}
+                            </p>
+                            <p>published: {{ post.created_date|naturaltime }}</p>
+
+                            <p>{{ post.text|linebreaksbr }}</p>
+                        </div>
+                    {% endfor %}
+
+                </div>
+                <div class="col-md-3">
+
+
+                </div>
+            </div>
+
+        </div>
+
+
+    </main>
+    {% include "kutiva/layout/footer.html" %}
+
+
+{% endblock %}
