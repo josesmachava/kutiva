@@ -28,7 +28,7 @@ urlpatterns = [
     path('cms/', include('cms.urls')),
     path('payment/', include('payment.urls')),
     path("terms", views.terms, name="terms"),
-    path('community', include('community.urls')),
+    path('community/', include('community.urls')),
     path("price", views.price, name="price"),
     path("security", views.security, name="security"),
     path("policies", views.policies, name="policies"),

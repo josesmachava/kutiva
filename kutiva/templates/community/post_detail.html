@@ -93,15 +93,6 @@
                 <div class="col-md-7">
                     <div class="row">
 
-                        <div class="col-md-12">
-
-                            <form method="POST" class="post-form">{% csrf_token %}
-                                {{ form.as_p }}
-                                <button type="submit" class="save btn btn-default">Save</button>
-                            </form>
-
-                        </div>
-                        {% for post in posts %}
                             <div class="col-md-12">
 
 
@@ -111,14 +102,48 @@
                                         <h6 class="card-subtitle mb-2 text-muted">
                                           {{ post.created_date|naturaltime }}</h6>
                                         <p class="card-text">{{ post.text|linebreaksbr }}</p>
-                                        <a href="#" class="card-link">Comment</a>
-                                        <a href="#" class="card-link">Vote</a>
+
                                     </div>
                                 </div>
 
 
                             </div>
+
+                <div class="col-md-12 card mb-6  mt-3 ">
+                    <div class="card-body">
+                        <!-- comments -->
+                        <h2>{{ comments.count }} comments</h2>
+
+                        {% for comment in comments %}
+                            <div class="comments" style="padding: 10px;">
+                                <p class="font-weight-bold"><img class="post-user-perfil-photo" src="{{ comment.user.student.photo.url }}" />
+                                    {{ comment.user.first_name }}{{ comment.user.last_name  }}
+                                    <span class=" text-muted font-weight-normal">
+              {{ comment.created_on|naturaltime }}
+            </span>
+                                </p>
+                                {{ comment.body | linebreaks }}
+                            </div>
                         {% endfor %}
+                    </div>
+                </div>
+                <div class="col-md-12 card mb-6  mt-3 ">
+                    <div class="card-body">
+                        {% if new_comment %}
+                            <div class="alert alert-success" role="alert">
+                                Your comment is awaiting moderation
+                            </div>
+                        {% else %}
+                            <h3>Leave a comment</h3>
+                            <form method="post" style="margin-top: 1.3em;">
+                                {{ comment_form.as_p }}
+                                {% csrf_token %}
+                                <button type="submit" class="btn btn-primary  btn-lg">Submit</button>
+                            </form>
+                        {% endif %}
+                    </div>
+                </div>
+
                     </div>
 
                 </div>
@@ -137,3 +162,6 @@
 
 
 {% endblock %}
+
+
+

@@ -69,7 +69,7 @@ class Instructor(models.Model):
 
 class Student(models.Model):
     user = models.OneToOneField(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
-    photo = models.ImageField(default="default-profile-2020.jpg")
+    photo = models.ImageField(default="default-profile-2020.jpg", upload_to="photo")
     subscription = models.ForeignKey(Subscription, on_delete='CASCADE', blank=True, null=True)
     location = models.CharField(max_length=100, blank=True)
     phone_number = models.CharField(max_length=30, blank=True)
