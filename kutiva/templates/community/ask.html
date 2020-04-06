@@ -99,15 +99,14 @@
                     <div class="row">
 
                         <div class="col-md-12">
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <h5> Explore nossas perguntas </h5>
-                                </div>
-                                <div class="col-md-6">
-                                    <a class="btn btn-primary float-right" href="#" role="button">Faça uma pergunta</a>
-                                </div>
+                            <p class="font-weight-bold"><img class="post-user-perfil-photo"
+                                                             src="{{ user.student.photo.url }}" alt="">
+                                {{ user.first_name|capfirst }} {{ user.last_name|capfirst }} </p>
+                            <form method="POST" class="post-form">{% csrf_token %}
+                                {{ form.as_p }}
+                                <button type="submit" class="save btn btn-default">Save</button>
+                            </form>
 
-                            </div>
                         </div>
                         {% for post in posts %}
                             <div class="col-md-12">
