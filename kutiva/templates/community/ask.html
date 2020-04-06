@@ -92,7 +92,7 @@
                     <div class="card">
                         <div class="card-body">
                             {% for course in courses %}
-                                <h5 class="card-title">{{ course.name }}</h5>
+                                <h5 class="card-title"><a href="{% url 'details' course.id %}">{{ course.name }}</a></h5>
                                 <h6 class="card-subtitle mb-2 text-muted">
                                     hello</h6>
                             {% endfor %}
