@@ -17,18 +17,18 @@
             <!--<li><span><i class="fal fa-bell"></i></span></li> -->
 
             <div class="dropdown">
-              <li class="radius"  id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                   {{ user.first_name|capfirst|make_list|first }}
+                <li class="radius" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true"
+                    aria-expanded="false">
+                    {{ user.first_name|capfirst|make_list|first }}
                 </li>
 
-              </li>
-              <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                <a class="dropdown-item" href="{% url 'perfil' user.student.id %}">Perfil</a>
-                <a class="dropdown-item" href="{% url 'logout' %}">Sair</a>
+                </li>
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                    <a class="dropdown-item" href="{% url 'perfil' user.student.id %}">Perfil</a>
+                    <a class="dropdown-item" href="{% url 'logout' %}">Sair</a>
 
-              </div>
+                </div>
             </div>
-
 
 
         </ul>
@@ -45,7 +45,7 @@
             <li class="nav-item link-button"><a class="unstyledLink link-button" href="{% url 'price' %}">Preço</a></li>
 
 
-            <li data-toggle="modal" data-target="#exampleModalCenter" class="nav-item link-button">Entrar </li>
+            <li data-toggle="modal" data-target="#exampleModalCenter" class="nav-item link-button">Entrar</li>
 
             <li class="nav-item link-button"><a class="unstyledLink link-button" href="{% url 'student_sigin' %}">criar
                 conta</a></li>
@@ -89,28 +89,36 @@
      aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content">
-           <div class="modal-header">
+            <div class="modal-header">
+                <form action="{% url 'signin' %}" method="post">
+                    {% csrf_token %}
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">Email</label>
+                        <input type="email" class="form-control" name="username" id="exampleInputEmail1"
+                               aria-describedby="emailHelp" placeholder="Enter email">
 
-
-                <form  class="navagation-signin-form" action="{% url 'signin' %}" method="post">
-                   <!-- <p class="text-center">Crie habilidades para hoje, amanhã e além.
-Educação para preparar sua carreira para o futuro.</p>-->
-                         {% csrf_token %}
-
-                         <input type="email" placeholder="E-mail" class="inputField" name="username">
-                          {% for message in messages %}
-                          <p class="error text-center"> {{ message }}</p>
+                    </div>
+                    {% for message in messages %}
+                        <p class="error text-center"> {{ message }}</p>
                     {% endfor %}
-                         <input placeholder="Senha" type="password" class="inputField" name="password">
-                          <p><a href="{% url 'password_reset' %}" class="unstyledLink link-button">Esqueceu a senha?</a></p>
+                    <div class="form-group">
+                        <label for="exampleInputPassword1">Senha</label>
+                        <input type="password" class="form-control" id="exampleInputPassword1" name="password"
+                               placeholder="Senha">
+                    </div>
+                    <p><a href="{% url 'password_reset' %}" class="text-primary">Esqueceu a senha?</a></p>
+                    <button type="submit" class="btn btn-primary">Entrar</button>
+                    <div class="form-check">
+                        <!--<input type="checkbox" class="form-check-input" id="exampleCheck1">
+                        <label class="form-check-label" for="exampleCheck1">Check me out</label>-->                  </div>
+                    <p class="text-center"> Não tem uma conta?<a href="{% url 'student_sigin' %}" class="text-primary">  Crie
+                        uma conta em
+                        segundos</a></p>
 
-                        <input type="submit" name="hello" class="primary-button" value="Entrar">
+                </form>
 
 
-                     <p class="text-center">Não tem uma conta? <a class="unstyledLink link-button" href="{% url 'student_sigin' %}">Crie uma conta em segundos</a></p>
-
-                     </form>
-           </div>
+            </div>
         </div>
     </div>
 </div>

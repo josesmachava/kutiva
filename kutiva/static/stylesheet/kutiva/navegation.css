@@ -9,25 +9,15 @@ nav {
     flex-wrap: wrap;
     justify-content: space-evenly;
 }
-
-input[type="text"], input[type="password"] {
-    margin-top: 50px;
-}
-
-form p {
-    margin-top: 15px;
-}
-
-form p a:hover {
-    text-decoration: underline;
-    color: rgb(7, 71, 166);
-
-}
-
-input[type='submit'] {
+.modal-header form{
     width: 100%;
-    height: 45px;
+    padding: 35px;
+}
+
+form button{
+    width: 100%;
     font-size: 18px;
+    margin-bottom: 20px;
 }
 
 .navagation-signin-form {
