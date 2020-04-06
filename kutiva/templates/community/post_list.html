@@ -29,19 +29,23 @@
         main {
             background: #faf9f7;
         }
-    .post{
-        margin: 5px 0px;
-    }
-    .post-user-perfil-photo{
 
-	border-radius: 100%;
-	height: 35px;
+        .post {
+            margin: 5px 0px;
+        }
 
-    }
-    .post-text{
-        font-weight: normal;
-        font-size: 18px;
-    }
+        .post-user-perfil-photo {
+
+            border-radius: 100%;
+            height: 35px;
+
+        }
+
+        main {
+            margin-top: 52px;
+            padding-top: 20px;
+
+        }
 
 
     </style>
@@ -80,23 +84,24 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-4">
-                           <div class="card">
-                                    <div class="card-body">
-                                        <h5 class="card-title">html basico</h5>
-                                        <h6 class="card-subtitle mb-2 text-muted">
-                                            hello</h6>
-                                        <p class="card-text">hello</p>
-                                        <a href="#" class="card-link">Comment</a>
-                                        <a href="#" class="card-link">Vote</a>
-                                    </div>
-                                </div>
+                    <div class="card">
+                        <div class="card-body">
+                            {% for course in courses %}
+                                <h5 class="card-title">{{ course.name }}</h5>
+                                <h6 class="card-subtitle mb-2 text-muted">
+                                    hello</h6>
+                            {% endfor %}
+
+                        </div>
+                    </div>
                 </div>
                 <div class="col-md-7">
                     <div class="row">
 
                         <div class="col-md-12">
-                          <p class="font-weight-bold"><img   class="post-user-perfil-photo" src="{{  user.student.photo.url }}" alt="">
-                             {{ user.first_name|capfirst }} {{ user.last_name|capfirst }} </p>
+                            <p class="font-weight-bold"><img class="post-user-perfil-photo"
+                                                             src="{{ user.student.photo.url }}" alt="">
+                                {{ user.first_name|capfirst }} {{ user.last_name|capfirst }} </p>
                             <form method="POST" class="post-form">{% csrf_token %}
                                 {{ form.as_p }}
                                 <button type="submit" class="save btn btn-default">Save</button>
@@ -109,9 +114,12 @@
 
                                 <div class="card post">
                                     <div class="card-body">
-                                        <p class="font-weight-bold"><img class="post-user-perfil-photo" src="{{ post.user.student.photo.url }}" alt="{{ post.user.first_name|capfirst }} {{ post.user.last_name|capfirst }}"> {{ post.user.first_name|capfirst }} {{ post.user.last_name|capfirst }}</p>
+                                        <p class="font-weight-bold"><img class="post-user-perfil-photo"
+                                                                         src="{{ post.user.student.photo.url }}"
+                                                                         alt="{{ post.user.first_name|capfirst }} {{ post.user.last_name|capfirst }}"> {{ post.user.first_name|capfirst }} {{ post.user.last_name|capfirst }}
+                                        </p>
                                         <h6 class="card-subtitle mb-2 text-muted">
-                                          {{ post.created_date|naturaltime }}</h6>
+                                            {{ post.created_date|naturaltime }}</h6>
                                         <p class="card-text">{{ post.text|linebreaksbr }}</p>
                                         <a href="#" class="card-link">Comment</a>
                                         <a href="#" class="card-link">Vote</a>

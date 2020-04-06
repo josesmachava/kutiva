@@ -1,5 +1,7 @@
 from django.shortcuts import render, redirect
 from django.utils import timezone
+
+from cms.models import Course
 from .models import Post
 from .forms import CommentForm
 from django.shortcuts import render, get_object_or_404
@@ -21,16 +23,17 @@ def post_list(request):
             # return redirect('post_list', pk=post.pk)
     else:
         posts = Post.objects.all().order_by('created_date')
-
+        courses = Course.objects.all()
         form = PostForm()
 
-    return render(request, 'community/post_list.html', {'posts': posts, 'form': form})
+    return render(request, 'community/post_list.html', {'posts': posts, 'form': form, 'courses':courses})
 
 
 def post_detail(request, pk):
     template_name = 'community/post_detail.html'
     post = get_object_or_404(Post, pk=pk)
     comments = post.comments.filter(active=True)
+    courses = Course.objects.all()
     new_comment = None
     # Comment posted
     if request.method == 'POST':
@@ -49,4 +52,5 @@ def post_detail(request, pk):
     return render(request, template_name, {'post': post,
                                            'comments': comments,
                                            'new_comment': new_comment,
-                                           'comment_form': comment_form})
+                                           'comment_form': comment_form,
+                                           'courses': courses})
