@@ -59,36 +59,57 @@
 
 
     <main>
-
         <div class="container">
             <div class="row">
                 <div class="col-md-3">
 
-
                 </div>
                 <div class="col-md-6">
-                    <form method="POST" class="post-form">{% csrf_token %}
-                        {{ form.as_p }}
-                        <button type="submit" class="save btn btn-default">Save</button>
-                    </form>
-                    {% for post in posts %}
-                        <div>
-                            <p>{{ post.user.first_name|capfirst }} {{ post.user.last_name|capfirst }}
-                            </p>
-                            <p>published: {{ post.created_date|naturaltime }}</p>
+                    <div class="row">
 
-                            <p>{{ post.text|linebreaksbr }}</p>
+                        <div class="col-md-12">
+
+                            <form method="POST" class="post-form">{% csrf_token %}
+                                {{ form.as_p }}
+                                <button type="submit" class="save btn btn-default">Save</button>
+                            </form>
+
                         </div>
-                    {% endfor %}
-
-                </div>
-                <div class="col-md-3">
+                         {% for post in posts %}
+                        <div class="col-md-12">
 
 
+
+
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">{{ post.user.first_name|capfirst }} {{ post.user.last_name|capfirst }}</h5>
+                    <h6 class="card-subtitle mb-2 text-muted">
+                        published: {{ post.created_date|naturaltime }}</h6>
+                    <p class="card-text">{{ post.text|linebreaksbr }}</p>
+                    <a href="#" class="card-link">Comment</a>
+                    <a href="#" class="card-link">Vote</a>
                 </div>
             </div>
 
+
+
+
+                        </div>
+                          {% endfor %}
+                    </div>
+
+                </div>
+
+                <div class="col-md-3">
+
+                </div>
+
+
+            </div>
         </div>
+
+
 
 
     </main>
