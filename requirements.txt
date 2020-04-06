@@ -14,6 +14,7 @@ django-filter==2.1.0
 django-s3direct==1.1.5
 django-storages==1.7.1
 django-stubs==0.9.0
+django-tinymce==2.8.0
 djangorestframework==3.9.1
 djangorestframework-stubs==0.3.0
 docutils==0.14
