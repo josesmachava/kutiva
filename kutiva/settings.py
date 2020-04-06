@@ -58,6 +58,7 @@ INSTALLED_APPS = [
     'graphene_django',
     'crispy_forms',
     'storages',
+    'community',
     'embed_video',
     'api',
     's3direct',
