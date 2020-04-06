@@ -79,7 +79,7 @@
     <main>
         <div class="container">
             <div class="row">
-                <div class="col-md-3">
+                <div class="col-md-4">
                            <div class="card">
                                     <div class="card-body">
                                         <h5 class="card-title">html basico</h5>
@@ -95,7 +95,8 @@
                     <div class="row">
 
                         <div class="col-md-12">
-
+                          <p class="font-weight-bold"><img   class="post-user-perfil-photo" src="{{  user.student.photo.url }}" alt="">
+                             {{ user.first_name|capfirst }} {{ user.last_name|capfirst }} </p>
                             <form method="POST" class="post-form">{% csrf_token %}
                                 {{ form.as_p }}
                                 <button type="submit" class="save btn btn-default">Save</button>
