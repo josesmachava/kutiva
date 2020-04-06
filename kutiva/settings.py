@@ -63,6 +63,7 @@ INSTALLED_APPS = [
     'embed_video',
     'api',
     's3direct',
+    'tinymce',
     'account',
     'corsheaders',
     'cms',

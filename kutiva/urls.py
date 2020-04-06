@@ -31,6 +31,7 @@ urlpatterns = [
     path('community/', include('community.urls')),
     path("price", views.price, name="price"),
     path("security", views.security, name="security"),
+    path('tinymce/', include('tinymce.urls')),
     path("policies", views.policies, name="policies"),
     path('api/', include('api.urls')), # new
 

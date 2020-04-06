@@ -22,6 +22,7 @@
     <link rel="stylesheet" href="{% static 'stylesheet/kutiva/main.css' %}">
     <link rel="stylesheet" href="{% static 'stylesheet/course/course.css' %}">
 
+
     <link rel="stylesheet" href="{% static 'stylesheet/kutiva/footer.css' %}">
 
     <style type="text/css">
@@ -107,7 +108,7 @@
 
                                 <div class="card post">
                                     <div class="card-body">
-                                        <h5 class="card-title post-text"><img class="post-user-perfil-photo" src="{{ post.user.student.photo.url }}" alt="{{ post.user.first_name|capfirst }} {{ post.user.last_name|capfirst }}"> {{ post.user.first_name|capfirst }} {{ post.user.last_name|capfirst }}</h5>
+                                        <p class="font-weight-bold"><img class="post-user-perfil-photo" src="{{ post.user.student.photo.url }}" alt="{{ post.user.first_name|capfirst }} {{ post.user.last_name|capfirst }}"> {{ post.user.first_name|capfirst }} {{ post.user.last_name|capfirst }}</p>
                                         <h6 class="card-subtitle mb-2 text-muted">
                                           {{ post.created_date|naturaltime }}</h6>
                                         <p class="card-text">{{ post.text|linebreaksbr }}</p>

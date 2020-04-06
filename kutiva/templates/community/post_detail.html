@@ -21,6 +21,9 @@
     <meta name="viewport" , content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="{% static 'stylesheet/kutiva/main.css' %}">
     <link rel="stylesheet" href="{% static 'stylesheet/course/course.css' %}">
+    <!DOCTYPE html>
+    <script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
+    <script>tinymce.init({selector: 'textarea'});</script>
 
     <link rel="stylesheet" href="{% static 'stylesheet/kutiva/footer.css' %}">
 
@@ -28,19 +31,22 @@
         main {
             background: #faf9f7;
         }
-    .post{
-        margin: 5px 0px;
-    }
-    .post-user-perfil-photo{
 
-	border-radius: 100%;
-	height: 35px;
+        .post {
+            margin: 5px 0px;
+        }
 
-    }
-    .post-text{
-        font-weight: normal;
-        font-size: 18px;
-    }
+        .post-user-perfil-photo {
+
+            border-radius: 100%;
+            height: 35px;
+
+        }
+
+        .post-text {
+            font-weight: normal;
+            font-size: 18px;
+        }
 
 
     </style>
@@ -79,70 +85,74 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-3">
-                           <div class="card">
-                                    <div class="card-body">
-                                        <h5 class="card-title">html basico</h5>
-                                        <h6 class="card-subtitle mb-2 text-muted">
-                                            hello</h6>
-                                        <p class="card-text">hello</p>
-                                        <a href="#" class="card-link">Comment</a>
-                                        <a href="#" class="card-link">Vote</a>
-                                    </div>
-                                </div>
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">html basico</h5>
+                            <h6 class="card-subtitle mb-2 text-muted">
+                                hello</h6>
+                            <p class="card-text">hello</p>
+                            <a href="#" class="card-link">Comment</a>
+                            <a href="#" class="card-link">Vote</a>
+                        </div>
+                    </div>
                 </div>
                 <div class="col-md-7">
                     <div class="row">
 
-                            <div class="col-md-12">
+                        <div class="col-md-12">
 
 
-                                <div class="card post">
-                                    <div class="card-body">
-                                        <h5 class="card-title post-text"><img class="post-user-perfil-photo" src="{{ post.user.student.photo.url }}" alt="{{ post.user.first_name|capfirst }} {{ post.user.last_name|capfirst }}"> {{ post.user.first_name|capfirst }} {{ post.user.last_name|capfirst }}</h5>
-                                        <h6 class="card-subtitle mb-2 text-muted">
-                                          {{ post.created_date|naturaltime }}</h6>
-                                        <p class="card-text">{{ post.text|linebreaksbr }}</p>
+                            <div class="card post">
+                                <div class="card-body">
+                                    <h5 class="card-title post-text"><img class="post-user-perfil-photo"
+                                                                          src="{{ post.user.student.photo.url }}"
+                                                                          alt="{{ post.user.first_name|capfirst }} {{ post.user.last_name|capfirst }}"> {{ post.user.first_name|capfirst }} {{ post.user.last_name|capfirst }}
+                                    </h5>
+                                    <h6 class="card-subtitle mb-2 text-muted">
+                                        {{ post.created_date|naturaltime }}</h6>
+                                    <p class="card-text">{{ post.text|linebreaksbr }}</p>
 
-                                    </div>
                                 </div>
-
-
                             </div>
 
-                <div class="col-md-12 card mb-6  mt-3 ">
-                    <div class="card-body">
-                        <!-- comments -->
-                        <h2>{{ comments.count }} comments</h2>
 
-                        {% for comment in comments %}
-                            <div class="comments" style="padding: 10px;">
-                                <p class="font-weight-bold"><img class="post-user-perfil-photo" src="{{ comment.user.student.photo.url }}" />
-                                    {{ comment.user.first_name }}{{ comment.user.last_name  }}
-                                    <span class=" text-muted font-weight-normal">
+                        </div>
+
+                        <div class="col-md-12 card mb-6  mt-3 ">
+                            <div class="card-body">
+                                <!-- comments -->
+                                <h2>{{ comments.count }} comments</h2>
+
+                                {% for comment in comments %}
+                                    <div class="comments" style="padding: 10px;">
+                                        <p class="font-weight-bold"><img class="post-user-perfil-photo"
+                                                                         src="{{ comment.user.student.photo.url }}"/>
+                                            {{ comment.user.first_name|capfirst }} {{ comment.user.last_name|capfirst }}
+                                            <span class=" text-muted font-weight-normal">
               {{ comment.created_on|naturaltime }}
             </span>
-                                </p>
-                                {{ comment.body | linebreaks }}
+                                        </p>
+                                        {{ comment.body|safe|linebreaksbr }}
+                                    </div>
+                                {% endfor %}
                             </div>
-                        {% endfor %}
-                    </div>
-                </div>
-                <div class="col-md-12 card mb-6  mt-3 ">
-                    <div class="card-body">
-                        {% if new_comment %}
-                            <div class="alert alert-success" role="alert">
-                                Your comment is awaiting moderation
+                        </div>
+                        <div class="col-md-12 card mb-6  mt-3 ">
+                            <div class="card-body">
+                                {% if new_comment %}
+                                    <div class="alert alert-success" role="alert">
+                                        Your comment is awaiting moderation
+                                    </div>
+                                {% else %}
+                                    <h3>Leave a comment</h3>
+                                    <form method="post" style="margin-top: 1.3em;">
+                                        {{ comment_form.as_p }}
+                                        {% csrf_token %}
+                                        <button type="submit" class="btn btn-primary  btn-lg">Submit</button>
+                                    </form>
+                                {% endif %}
                             </div>
-                        {% else %}
-                            <h3>Leave a comment</h3>
-                            <form method="post" style="margin-top: 1.3em;">
-                                {{ comment_form.as_p }}
-                                {% csrf_token %}
-                                <button type="submit" class="btn btn-primary  btn-lg">Submit</button>
-                            </form>
-                        {% endif %}
-                    </div>
-                </div>
+                        </div>
 
                     </div>
 
