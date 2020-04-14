@@ -127,7 +127,7 @@
                         <div class="col-md-12 card mb-6  mt-3 ">
                             <div class="card-body">
                                 <!-- comments -->
-                                <h2>{{ comments.count }} comments</h2>
+                                <h5>{{ comments.count }} Respostas</h5>
 
                                 {% for comment in comments %}
                                     <div class="comments" style="padding: 10px;">
@@ -147,14 +147,15 @@
                             <div class="card-body">
                                 {% if new_comment %}
                                     <div class="alert alert-success" role="alert">
-                                        Your comment is awaiting moderation
+                                    Seu comentário está aguardando aprovação
                                     </div>
                                 {% else %}
-                                    <h3>Leave a comment</h3>
+                                    <h3> Sua resposta </h3>
                                     <form method="post" style="margin-top: 1.3em;">
                                         {{ comment_form.as_p }}
                                         {% csrf_token %}
-                                        <button type="submit" class="btn btn-primary  btn-lg">Submit</button>
+                                        <button type="submit" class="btn btn-primary  btn-lg">
+Publique sua resposta                                        </button>
                                     </form>
                                 {% endif %}
                             </div>

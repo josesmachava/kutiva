@@ -6,6 +6,15 @@
     position: relative;
     color: white;
 }
+main{
+    background: whitesmoke;
+}
+.edit-perfil{
+    margin-top: 80px;
+    margin-bottom: 50px;
+    padding: 50px;
+    background: white;
+}
 .perfil-header p{
     text-align: center;
     font-size: 15px;

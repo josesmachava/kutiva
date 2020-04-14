@@ -19,7 +19,10 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" , content="IE=edge">
     <meta name="viewport" , content="width=device-width, initial-scale=1">
+
+        <link rel="stylesheet" href="{% static 'stylesheet/account/perfil.css' %}">
     <link rel="stylesheet" href="{% static 'stylesheet/kutiva/footer.css' %}">
+
      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-140073016-1"></script>
@@ -55,8 +58,8 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
-                    <div class="card">
-                    <form method="post">{% csrf_token %}
+                    <div class="">
+                    <form class="edit-perfil" method="post">{% csrf_token %}
 
                         {% csrf_token %}
                         <input type="hidden" name="next" value="{{ next }}">

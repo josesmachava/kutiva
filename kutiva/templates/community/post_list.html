@@ -119,8 +119,9 @@
                                         </p>
                                         <h6 class="card-subtitle mb-2 text-muted">
                                             {{ post.created_date|naturaltime }}</h6>
-                                        <p class="card-text"><a href="{% url 'post_detail' post.id %}">{{ post.title|linebreaksbr }}</a></p>
-                                        <a href="#" class="card-link">Comment</a>
+                                        <p class="card-text text-primary"><a class="text-primary" href="{% url 'post_detail' post.id %}">{{ post.title|linebreaksbr }}</a></p>
+                                        <a class="card-link" href="{% url 'post_detail' post.id %}">
+                                        Responder</a>
                                         <a href="#" class="card-link">Vote</a>
                                     </div>
                                 </div>
