@@ -35,7 +35,7 @@ LANGUAGES = (
 SECRET_KEY = 'cqd9i9ua1mo@zbr2r41sm3)pd5__a_r1%4h^=tc^+z9p)z(mfg'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = [
                  "*",
