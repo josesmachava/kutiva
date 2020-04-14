@@ -110,7 +110,12 @@
                             <form method="POST" class="post-form">{% csrf_token %}
                                 {{ form.title|as_crispy_field }}
                                 {{ form.text }}
+                                   {% if user.is_authenticated %}
                                 <button type="submit" class="btn btn-primary float-left" style="width: auto;margin-top: 20px"> Revise sua pergunta</button>
+                                {% else %}
+                                          <p><a href="{% url 'student_sigin' %}" class="text-primary">Crie uma conta</a>  ou  <a  class="text-primary" href="{% url 'signin' %}">Entre</a></p>
+
+                                {% endif %}
                             </form>
 
                         </div>

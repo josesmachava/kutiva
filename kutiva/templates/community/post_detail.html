@@ -47,7 +47,8 @@
             font-weight: normal;
             font-size: 18px;
         }
-           main {
+
+        main {
             margin-top: 52px;
             padding-top: 20px;
 
@@ -93,7 +94,8 @@
                     <div class="card">
                         <div class="card-body">
                             {% for course in courses %}
-                                   <h5 class="card-title"><a href="{% url 'details' course.id %}">{{ course.name }}</a></h5>
+                                <h5 class="card-title"><a href="{% url 'details' course.id %}">{{ course.name }}</a>
+                                </h5>
 
                             {% endfor %}
 
@@ -114,7 +116,7 @@
                                     </h5>
                                     <h6 class="card-subtitle mb-2 text-muted">
                                         {{ post.created_date|naturaltime }}</h6>
-                                    <h5 class="card-title">{{ post.title}}</h5>
+                                    <h5 class="card-title">{{ post.title }}</h5>
 
                                     <p class="card-text">{{ post.text|safe|linebreaksbr }}</p>
 
@@ -147,15 +149,26 @@
                             <div class="card-body">
                                 {% if new_comment %}
                                     <div class="alert alert-success" role="alert">
-                                    Seu comentário está aguardando aprovação
+                                        Seu comentário está aguardando aprovação
                                     </div>
                                 {% else %}
                                     <h3> Sua resposta </h3>
                                     <form method="post" style="margin-top: 1.3em;">
                                         {{ comment_form.as_p }}
                                         {% csrf_token %}
-                                        <button type="submit" class="btn btn-primary  btn-lg">
-Publique sua resposta                                        </button>
+
+                                        {% if user.is_authenticated %}
+
+                                            <button type="submit" class="btn btn-primary  btn-lg">
+                                                Publique sua resposta
+                                            </button>
+                                        {% else %}
+                                            <p><a href="{% url 'student_sigin' %}" class="text-primary">Crie uma
+                                                conta</a> ou <a class="text-primary" href="{% url 'signin' %}">Entre</a>
+                                            </p>
+
+                                        {% endif %}
+
                                     </form>
                                 {% endif %}
                             </div>

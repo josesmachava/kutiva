@@ -33,15 +33,23 @@
                    <!-- <p class="text-center">Crie habilidades para hoje, amanhã e além.
 Educação para preparar sua carreira para o futuro.</p>-->
                          {% csrf_token %}
-                        
-                         <input type="email" placeholder="E-mail" class="inputField" name="username">
+                         <div class="form-group">
+    <label for="exampleInputEmail1">Email address</label>
+                         <input type="email" class="form-control" placeholder="E-mail" name="username">
+
+  </div>
                           {% for message in messages %}
                           <p class="error text-center"> {{ message }}</p>
                     {% endfor %}
-                         <input placeholder="Senha" type="password" class="inputField" name="password">
+                      <div class="form-group">
+    <label for="exampleInputPassword1">Senha</label>
+    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Senha"  name="password" >
+
+
+  </div>
                      <p class="text-center"><a class="unstyledLink link-button" href="{% url 'student_sigin' %}">ou criar conta</a></p>
 
-                        <input type="submit" name="hello" class="primary-button" value="Entrar">
+                        <input type="submit" name="hello" class="btn btn-primary" value="Entrar">
                           
 
                     <p class="text-center"><a href="{% url 'password_reset' %}" class="unstyledLink link-button">Esqueceu a senha?</a></p>
