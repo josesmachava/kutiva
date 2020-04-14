@@ -48,7 +48,7 @@ def classroom(request, id):
 
 @login_required()
 def watch(request, course_id, lesson_id=1):
-    if request.user.is_student == False:
+    if request.user.student.is_student == False:
         return render(request, 'course/payment.html')
 
     elif request.user.is_student == False or request.user.student.subscription.expired_date == datetime.date.today():
