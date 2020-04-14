@@ -19,6 +19,7 @@ def post_list(request):
 
 
 def ask_question(request):
+    courses = Course.objects.all()
     if request.method == "POST":
         form = PostForm(request.POST)
         if form.is_valid():
@@ -29,7 +30,7 @@ def ask_question(request):
             return redirect('post_list')
             # return redirect('post_list', pk=post.pk)
     else:
-        courses = Course.objects.all()
+
         form = PostForm()
 
     return render(request, 'community/ask.html', {'form': form, 'courses': courses})
