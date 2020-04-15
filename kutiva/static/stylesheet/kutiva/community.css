@@ -8,21 +8,26 @@
 
 }
 
-       main {
-            background: #faf9f7;
-        }
+p span {
+    padding: 10px;
 
-        .post {
-            margin: 5px 0px;
-        }
+    font-size: 21px;
+}
 
-        .post-user-perfil-photo {
+main {
+    background: #faf9f7;
+}
 
-            border-radius: 100%;
-            height: 35px;
+.post {
+    margin: 5px 0px;
+}
 
-        }
+.post-user-perfil-photo {
 
+    border-radius: 100%;
+    height: 35px;
+
+}
 
 
 @media (min-width: 1281px) {
@@ -76,5 +81,8 @@
 */
 
 @media (min-width: 320px) and (max-width: 480px) {
+    .community-header {
+        height: auto;
+    }
 
 }
