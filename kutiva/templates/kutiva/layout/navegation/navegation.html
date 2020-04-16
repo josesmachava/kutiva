@@ -15,19 +15,20 @@
         <ul>
             <li><a href="{% url 'course' %}"> <span><i class="fal fa-book-open"></i></span></a></li>
             <!--<li><span><i class="fal fa-bell"></i></span></li> -->
+            <li><a href="{% url 'post_list' %}"> <span><i class="fal fa-user-friends"></i></span></a>
 
-            <div class="dropdown">
-                <li class="radius" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true"
-                    aria-expanded="false">
-                    {{ user.first_name|capfirst|make_list|first }}
-                </li>
+                <div class="dropdown">
+            <li class="radius" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true"
+                aria-expanded="false">
+                {{ user.first_name|capfirst|make_list|first }}
+            </li>
 
-                </li>
-                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                    <a class="dropdown-item" href="{% url 'perfil' user.student.id %}">Perfil</a>
-                    <a class="dropdown-item" href="{% url 'logout' %}">Sair</a>
+            </li>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                <a class="dropdown-item" href="{% url 'perfil' user.student.id %}">Perfil</a>
+                <a class="dropdown-item" href="{% url 'logout' %}">Sair</a>
 
-                </div>
+            </div>
             </div>
 
 
@@ -43,7 +44,8 @@
 
         <ul>
             <li class="nav-item link-button"><a class="unstyledLink link-button" href="{% url 'price' %}">Preço</a></li>
- <li class="nav-item link-button"><a class="unstyledLink link-button" href="{% url 'post_list' %}">Comunidade</a></li>
+            <li class="nav-item link-button"><a class="unstyledLink link-button"
+                                                href="{% url 'post_list' %}">Comunidade</a></li>
 
 
             <li data-toggle="modal" data-target="#exampleModalCenter" class="nav-item link-button">Entrar</li>
@@ -112,7 +114,8 @@
                     <div class="form-check">
                         <!--<input type="checkbox" class="form-check-input" id="exampleCheck1">
                         <label class="form-check-label" for="exampleCheck1">Check me out</label>-->                  </div>
-                    <p class="text-center"> Não tem uma conta?<a href="{% url 'student_sigin' %}" class="text-primary">  Crie
+                    <p class="text-center"> Não tem uma conta?<a href="{% url 'student_sigin' %}" class="text-primary">
+                        Crie
                         uma conta em
                         segundos</a></p>
 

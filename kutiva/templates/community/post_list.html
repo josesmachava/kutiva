@@ -1,6 +1,7 @@
 {% extends "kutiva/layout/base.html" %}
 {% load staticfiles %}
 {% load humanize %}
+{% load hitcount_tags %}
 {% comment %}
 
 {% endcomment %}
@@ -22,7 +23,6 @@
     <link rel="stylesheet" href="{% static 'stylesheet/kutiva/main.css' %}">
     <link rel="stylesheet" href="{% static 'stylesheet/kutiva/community.css' %}">
 
-    <link rel="stylesheet" href="{% static 'stylesheet/account/.css' %}">
 
 
 
@@ -128,6 +128,11 @@
                                         </p>
                                         <h6 class="card-subtitle mb-2 text-muted">
                                             {{ post.created_date|naturaltime }}</h6>
+
+                                        <ul>
+                                                    <p>Views: {% get_hit_count for post %}</p>
+                                            <li>{{ post.comments.count }} Respostas</li>
+                                        </ul>
                                         <p class="card-text text-primary"><a class="text-primary"
                                                                              href="{% url 'post_detail' post.id %}">{{ post.title|linebreaksbr }}</a>
                                         </p>

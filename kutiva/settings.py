@@ -68,6 +68,7 @@ INSTALLED_APPS = [
     'corsheaders',
     'cms',
     'payment',
+    'hitcount',
   
     
 ]

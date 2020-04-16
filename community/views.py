@@ -5,10 +5,15 @@ from cms.models import Course
 from .models import Post
 from .forms import CommentForm
 from django.shortcuts import render, get_object_or_404
-
+from hitcount.views import HitCountDetailView
 # Create your views here.
 from community.models import Post
 from .forms import PostForm
+
+
+class PostCountHitDetailView(HitCountDetailView):
+    model = Post  # your model goes here
+    count_hit = True
 
 
 def post_list(request):
@@ -39,7 +44,10 @@ def ask_question(request):
 def post_detail(request, pk):
     template_name = 'community/post_detail.html'
     post = get_object_or_404(Post, pk=pk)
+    HitCountDetailView.count_hit = True
+    # post = Post.objects.filter(pk=pk).order_by('-hit_count_generic__hits')[:3]
     comments = post.comments.filter(active=True)
+
     courses = Course.objects.all()
     new_comment = None
     # Comment posted

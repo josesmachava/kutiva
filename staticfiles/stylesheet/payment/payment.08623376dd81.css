@@ -1,0 +1,119 @@
+
+.payment-notice{
+    box-shadow: 0 0 0 1px rgba(0,0,0,.15),0 2px 3px rgba(0,0,0,.2);
+    padding: 50px;
+    margin: 50px 10px;
+}
+.payment-title{
+    text-align: center;
+    font-size: 25px;
+}
+ span{
+    padding: 10px;
+}
+.payment-subtitle{
+
+    font-size: 20px;
+font-weight: normal;
+width: 540px;
+margin: auto;
+text-align: left;
+padding: 18px 0;
+    font-weight: normal;
+}
+.payment-content{
+    width: 500px;
+
+    margin: auto;
+}
+.payment-content span{
+    margin: 10px;
+}
+/*
+  ##Device = Desktops
+  ##Screen = 1281px to higher resolution desktops
+*/
+
+@media (min-width: 1281px) {
+
+
+
+}
+
+/*
+  ##Device = Laptops, Desktops
+  ##Screen = B/w 1025px to 1280px
+*/
+
+@media (min-width: 1025px) and (max-width: 1280px) {
+
+
+
+}
+
+/*
+  ##Device = Tablets, Ipads (portrait)
+  ##Screen = B/w 768px to 1024px
+*/
+
+@media (min-width: 768px) and (max-width: 1024px) {
+
+
+
+}
+
+/*
+  ##Device = Tablets, Ipads (landscape)
+  ##Screen = B/w 768px to 1024px
+*/
+
+@media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
+
+
+
+}
+
+/*
+  ##Device = Low Resolution Tablets, Mobiles (Landscape)
+  ##Screen = B/w 481px to 767px
+*/
+
+@media (min-width: 481px) and (max-width: 767px) {
+
+
+
+}
+
+/*
+  ##Device = Most of the Smartphones Mobiles (Portrait)
+  ##Screen = B/w 320px to 479px
+*/
+
+@media (min-width: 320px) and (max-width: 480px) {
+
+    .payment-header{
+            height: 200px;
+    }
+    .payment-title{
+        padding-top: 10px;
+    }
+    .payment-notice{
+        padding: 0;
+        height: 320px;
+
+    }
+    .payment-content{
+        width: auto;
+    }
+    .payment-subtitle{
+        font-size: 17px;
+font-weight: normal;
+width: auto;
+margin: auto;
+text-align: left;
+padding: 18px 0;
+font-weight: normal;
+padding: 16px;
+    }
+
+}
