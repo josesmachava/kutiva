@@ -72,12 +72,14 @@
                 <div class="row">
                     <div class="col-md-6">
                         <p>
-                            Em caso de qualquer dúvida relacionada a programação, sinta-se a vontade em partilhar  neste espaço criado para perguntas e respostas para  programadores profissionais e
+                            Em caso de qualquer dúvida relacionada a programação, sinta-se a vontade em partilhar neste
+                            espaço criado para perguntas e respostas para programadores profissionais e
                             entusiastas.</p>
 
                     </div>
                     <div class="col-md-6">
-                        <p><span><i class="fas fa-comment-alt-lines"></i></span>Qualquer pessoa pode fazer uma pergunta </p>
+                        <p><span><i class="fas fa-comment-alt-lines"></i></span>Qualquer pessoa pode fazer uma pergunta
+                        </p>
                         <p><span><i class="fad fa-comments-alt"></i> </span>Qualquer um pode responder </p>
                     </div>
 
@@ -126,19 +128,25 @@
                                                                          src="{{ post.user.student.photo.url }}"
                                                                          alt="{{ post.user.first_name|capfirst }} {{ post.user.last_name|capfirst }}"> {{ post.user.first_name|capfirst }} {{ post.user.last_name|capfirst }}
                                         </p>
-                                        <h6 class="card-subtitle mb-2 text-muted">
-                                            {{ post.created_date|naturaltime }}</h6>
+
 
                                         <ul>
-                                                    <p>Views: {% get_hit_count for post %}</p>
+                                            <li>{% get_hit_count for post %}    Visitas: </li>
                                             <li>{{ post.comments.count }} Respostas</li>
                                         </ul>
                                         <p class="card-text text-primary"><a class="text-primary"
                                                                              href="{% url 'post_detail' post.id %}">{{ post.title|linebreaksbr }}</a>
                                         </p>
-                                        <a class="card-link" href="{% url 'post_detail' post.id %}">
-                                            Responder</a>
-                                        <a href="#" class="card-link">Vote</a>
+                                        <ul>
+                                            <li class="text-primary"> <a class="card-link  text-primary" href="{% url 'post_detail' post.id %}">
+                                                responder</a></li>
+                                            <li class="text-primary"><a  href="#" class="card-link text-primary">vote</a></li>
+                                            <li>
+                                                perguntada
+                                                {{ post.created_date|naturaltime }}</li>
+                                        </ul>
+
+
                                     </div>
                                 </div>
 

@@ -28,6 +28,15 @@ main {
     height: 35px;
 
 }
+.post ul{
+    display: inline-flex;
+}
+.post ul li{
+
+    text-transform: lowercase;
+
+}
+
 
 
 @media (min-width: 1281px) {
